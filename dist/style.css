@@ -1,0 +1,18 @@
+@charset "UTF-8";
+body {
+  font-family: 'Conv_Lato-Black'; }
+
+.buttons-header {
+  font-size: 20px;
+  color: #797979;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  margin-top: 83px; }
+
+@font-face {
+  font-family: 'Conv_Lato-Black';
+  src: url(fonts/Lato-Black.eot);
+  src: local("\263A"), url(fonts/Lato-Black.woff) format("woff"), url(fonts/Lato-Black.ttf) format("truetype"), url(fonts/Lato-Black.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
