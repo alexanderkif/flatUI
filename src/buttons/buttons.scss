@@ -1,0 +1,92 @@
+
+.btn {
+    width: 124px; //483
+    height: 37px; // 149
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+.small {
+    width: 83px; //483
+    height: 24px; // 149
+    font-size: 10px;
+    border-radius: 3px;
+}
+.red {
+    background-color: #e75735;
+}
+.green {
+    background-color: #4eb7a8;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    &.red {
+        box-shadow: 0 3px #bf3e1f;
+    }
+    &.green {
+        box-shadow: 0 3px #28a290;
+    }
+    &.small {
+        transform: translateY(-2px);
+        &.red {
+            box-shadow: 0 2px #bf3e1f;
+        }
+        &.green {
+            box-shadow: 0 2px #28a290;
+        }
+    }
+}
+.btn:active, .btn.small:active {
+    transform: translateY(0px);
+    &.red, &.green {
+        box-shadow: 0 0px;
+    }
+}
+
+.disable {
+    // opacity: 0.6;
+    background-color: white;
+    cursor: default;    
+    &.red {
+        color: #e75735;
+        border: 1px solid #e75735;
+        border-bottom-width: 3px;
+    }
+    &.green {
+        color: #4eb7a8;
+        border: 1px solid #4eb7a8;
+        border-bottom-width: 3px;
+    }
+}
+.disable:hover, .small.disable:hover {
+    transform: none;
+    &.red, &.green {
+        box-shadow: 0 0px;
+    }
+}
+
+/*  Ripple */
+
+.ripple {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    position: absolute;
+    opacity: 1;
+  }
+  .rippleEffect {
+      animation: rippleDrop .6s linear;
+  }
+  
+  @keyframes rippleDrop {
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }

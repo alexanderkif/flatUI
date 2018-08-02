@@ -1,9 +1,27 @@
+include /buttons/buttons
+
+
 html
   head
     meta(charset='UTF-8')
     title flatUI
-    link(rel="stylesheet" href="style.css")
     //- link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel="stylesheet" href="style.css")
+    
   body
     div.buttons-header standard buttons
+    div.buttons
+      +button('button', 'small green')
+      +button('button', 'green')
+      +button('button', 'red')
+      +button('button', 'small red')
+    div.buttons
+      +button('button', 'small green disable')
+      +button('button', 'green disable')
+      +button('button', 'red disable')
+      +button('button', 'small red disable')
+
+
+
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js")
     script(src="main.js")

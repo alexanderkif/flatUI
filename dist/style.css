@@ -1,14 +1,99 @@
 @charset "UTF-8";
+.btn {
+  width: 124px;
+  height: 37px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none; }
+
+.small {
+  width: 83px;
+  height: 24px;
+  font-size: 10px;
+  border-radius: 3px; }
+
+.red {
+  background-color: #e75735; }
+
+.green {
+  background-color: #4eb7a8; }
+
+.btn:hover {
+  transform: translateY(-3px); }
+  .btn:hover.red {
+    box-shadow: 0 3px #bf3e1f; }
+  .btn:hover.green {
+    box-shadow: 0 3px #28a290; }
+  .btn:hover.small {
+    transform: translateY(-2px); }
+    .btn:hover.small.red {
+      box-shadow: 0 2px #bf3e1f; }
+    .btn:hover.small.green {
+      box-shadow: 0 2px #28a290; }
+
+.btn:active, .btn.small:active {
+  transform: translateY(0px); }
+  .btn:active.red, .btn:active.green, .btn.small:active.red, .btn.small:active.green {
+    box-shadow: 0 0px; }
+
+.disable {
+  background-color: white;
+  cursor: default; }
+  .disable.red {
+    color: #e75735;
+    border: 1px solid #e75735;
+    border-bottom-width: 3px; }
+  .disable.green {
+    color: #4eb7a8;
+    border: 1px solid #4eb7a8;
+    border-bottom-width: 3px; }
+
+.disable:hover, .small.disable:hover {
+  transform: none; }
+  .disable:hover.red, .disable:hover.green, .small.disable:hover.red, .small.disable:hover.green {
+    box-shadow: 0 0px; }
+
+/*  Ripple */
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  position: absolute;
+  opacity: 1; }
+
+.rippleEffect {
+  animation: rippleDrop .6s linear; }
+
+@keyframes rippleDrop {
+  100% {
+    transform: scale(2);
+    opacity: 0; } }
+
 body {
   font-family: 'Conv_Lato-Black'; }
 
 .buttons-header {
+  display: block;
   font-size: 20px;
   color: #797979;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0px;
-  margin-top: 83px; }
+  margin-top: 83px;
+  margin-bottom: 75px; }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 520px;
+  margin: 20px auto; }
 
 @font-face {
   font-family: 'Conv_Lato-Black';
