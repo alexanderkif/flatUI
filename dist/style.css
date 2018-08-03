@@ -14,19 +14,19 @@
 .red {
   color: #e75735;
   border: 1px solid #e75735;
-  box-shadow: 1px 3px #e75735; }
+  box-shadow: 0px 3px #e75735; }
 
 .green {
   color: #4eb7a8;
   border: 1px solid #4eb7a8;
-  box-shadow: 1px 3px #4eb7a8; }
+  box-shadow: 0px 3px #4eb7a8; }
 
 .small {
   width: 83px;
   height: 24px;
   font-size: 12px;
   border-radius: 3px;
-  box-shadow: 1px 2px; }
+  box-shadow: 0px 2px; }
 
 .btn:hover, .btn.small:hover {
   color: white; }
@@ -60,19 +60,17 @@
   height: 50px;
   font-size: 32px;
   border-radius: 50%;
-  border: 1px solid #4eb7a8;
+  border: 3px solid #4eb7a8;
   color: #4eb7a8;
   background-color: white;
-  transform: none;
-  box-shadow: 1px 3px #28a290; }
+  transform: none; }
   .btn.arrow:hover {
     background-color: #4eb7a8;
     color: white; }
   .btn.arrow.disable {
-    box-shadow: 1px 3px gray;
     border: 0px;
     color: white;
-    background-color: lightgray; }
+    background-color: #e5e5e5; }
 
 .btn:active, .btn.small:active {
   transform: translateY(3px); }
@@ -99,6 +97,15 @@
     transform: scale(2);
     opacity: 0; } }
 
+svg {
+  font-family: 'Conv_Lato-Regular';
+  width: 115px;
+  height: auto; }
+
+#cnvs {
+  width: 115px;
+  height: 115px; }
+
 body {
   font-family: 'Conv_Lato-Black'; }
 
@@ -111,6 +118,12 @@ body {
   letter-spacing: 0px;
   margin-top: 83px;
   margin-bottom: 75px; }
+  .header.header-arrow-buttons {
+    margin-top: 110px;
+    margin-bottom: 40px; }
+  .header.header-percentages {
+    margin-top: 50px;
+    margin-bottom: 0px; }
 
 .content {
   display: flex;
@@ -118,10 +131,22 @@ body {
   align-items: flex-end;
   width: 520px;
   margin: 20px auto; }
+  .content.content-arrow-buttons {
+    width: 460px; }
+  .content.content-percentages {
+    margin-top: 15px;
+    width: 680px; }
 
 @font-face {
   font-family: 'Conv_Lato-Black';
   src: url(fonts/Lato-Black.eot);
   src: local("\263A"), url(fonts/Lato-Black.woff) format("woff"), url(fonts/Lato-Black.ttf) format("truetype"), url(fonts/Lato-Black.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Conv_Lato-Regular';
+  src: url(fonts/Lato-Regular.eot);
+  src: local("\263A"), url(fonts/Lato-Regular.woff) format("woff"), url(fonts/Lato-Regular.ttf) format("truetype"), url(fonts/Lato-Regular.svg) format("svg");
   font-weight: normal;
   font-style: normal; }

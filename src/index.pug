@@ -1,5 +1,5 @@
 include /buttons/buttons
-
+include /percentages/percentages
 
 html
   head
@@ -21,14 +21,22 @@ html
       +button('button', 'red disable')
       +button('button', 'red small disable')
 
-    div.header arrow buttons
-    div.content
+    div.header.header-arrow-buttons arrow buttons
+    div.content.content-arrow-buttons
       +button('<', 'arrow')
       +button('>', 'arrow')
       +button('<', 'arrow disable')
       +button('>', 'arrow disable')
+      +button('<', 'arrow')
+      +button('>', 'arrow')
 
-    div.header percentages/pie chart
+    div.header.header-percentages percentages/pie chart
+    div.content.content-percentages
+      +percentage(0)
+      +percentage(38)
+      +percentage(62)
+      +percentage(89)
+      +percentage4list(10,25,30)
 
 
     script(src="https://code.jquery.com/jquery-3.3.1.min.js")
