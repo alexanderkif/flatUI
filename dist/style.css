@@ -1,61 +1,85 @@
 @charset "UTF-8";
 .btn {
+  position: relative;
   width: 124px;
   height: 37px;
-  font-size: 14px;
+  font-size: 16px;
   border: none;
   border-radius: 4px;
-  color: white;
+  background-color: white;
   text-transform: uppercase;
   cursor: pointer;
   outline: none; }
 
+.red {
+  color: #e75735;
+  border: 1px solid #e75735;
+  box-shadow: 1px 3px #e75735; }
+
+.green {
+  color: #4eb7a8;
+  border: 1px solid #4eb7a8;
+  box-shadow: 1px 3px #4eb7a8; }
+
 .small {
   width: 83px;
   height: 24px;
-  font-size: 10px;
-  border-radius: 3px; }
+  font-size: 12px;
+  border-radius: 3px;
+  box-shadow: 1px 2px; }
 
-.red {
-  background-color: #e75735; }
-
-.green {
-  background-color: #4eb7a8; }
-
-.btn:hover {
-  transform: translateY(-3px); }
-  .btn:hover.red {
-    box-shadow: 0 3px #bf3e1f; }
-  .btn:hover.green {
-    box-shadow: 0 3px #28a290; }
-  .btn:hover.small {
-    transform: translateY(-2px); }
-    .btn:hover.small.red {
-      box-shadow: 0 2px #bf3e1f; }
-    .btn:hover.small.green {
-      box-shadow: 0 2px #28a290; }
-
-.btn:active, .btn.small:active {
-  transform: translateY(0px); }
-  .btn:active.red, .btn:active.green, .btn.small:active.red, .btn.small:active.green {
-    box-shadow: 0 0px; }
+.btn:hover, .btn.small:hover {
+  color: white; }
+  .btn:hover.red, .btn.small:hover.red {
+    box-shadow: 1px 3px #bf3e1f;
+    background-color: #e75735; }
+  .btn:hover.green, .btn.small:hover.green {
+    box-shadow: 1px 3px #28a290;
+    background-color: #4eb7a8; }
 
 .disable {
-  background-color: white;
   cursor: default; }
-  .disable.red {
-    color: #e75735;
-    border: 1px solid #e75735;
-    border-bottom-width: 3px; }
-  .disable.green {
-    color: #4eb7a8;
-    border: 1px solid #4eb7a8;
-    border-bottom-width: 3px; }
+  .disable.red, .disable.green {
+    color: lightgray;
+    border: 1px solid lightgray;
+    box-shadow: 0 3px lightgray; }
+  .disable.small {
+    box-shadow: 0 2px; }
 
-.disable:hover, .small.disable:hover {
+.disable:hover, .disable.small:hover {
   transform: none; }
-  .disable:hover.red, .disable:hover.green, .small.disable:hover.red, .small.disable:hover.green {
-    box-shadow: 0 0px; }
+  .disable:hover.red, .disable:hover.green, .disable.small:hover.red, .disable.small:hover.green {
+    background-color: white;
+    color: lightgray;
+    box-shadow: 0 3px lightgray; }
+    .disable:hover.red.small, .disable:hover.green.small, .disable.small:hover.red.small, .disable.small:hover.green.small {
+      box-shadow: 0 2px lightgray; }
+
+.btn.arrow {
+  width: 50px;
+  height: 50px;
+  font-size: 32px;
+  border-radius: 50%;
+  border: 1px solid #4eb7a8;
+  color: #4eb7a8;
+  background-color: white;
+  transform: none;
+  box-shadow: 1px 3px #28a290; }
+  .btn.arrow:hover {
+    background-color: #4eb7a8;
+    color: white; }
+  .btn.arrow.disable {
+    box-shadow: 1px 3px gray;
+    border: 0px;
+    color: white;
+    background-color: lightgray; }
+
+.btn:active, .btn.small:active {
+  transform: translateY(3px); }
+  .btn:active.red:not(.disable), .btn:active.green:not(.disable), .btn:active.arrow:not(.disable), .btn.small:active.red:not(.disable), .btn.small:active.green:not(.disable), .btn.small:active.arrow:not(.disable) {
+    box-shadow: 0px 0px; }
+  .btn:active.disable, .btn.small:active.disable {
+    transform: translateY(0px); }
 
 /*  Ripple */
 .ripple {
@@ -78,7 +102,7 @@
 body {
   font-family: 'Conv_Lato-Black'; }
 
-.buttons-header {
+.header {
   display: block;
   font-size: 20px;
   color: #797979;
@@ -88,7 +112,7 @@ body {
   margin-top: 83px;
   margin-bottom: 75px; }
 
-.buttons {
+.content {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;

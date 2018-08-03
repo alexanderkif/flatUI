@@ -9,18 +9,26 @@ html
     link(rel="stylesheet" href="style.css")
     
   body
-    div.buttons-header standard buttons
-    div.buttons
-      +button('button', 'small green')
+    div.header standard buttons
+    div.content
+      +button('button', 'green small')
       +button('button', 'green')
       +button('button', 'red')
-      +button('button', 'small red')
-    div.buttons
-      +button('button', 'small green disable')
+      +button('button', 'red small')
+    div.content
+      +button('button', 'green small disable')
       +button('button', 'green disable')
       +button('button', 'red disable')
-      +button('button', 'small red disable')
+      +button('button', 'red small disable')
 
+    div.header arrow buttons
+    div.content
+      +button('<', 'arrow')
+      +button('>', 'arrow')
+      +button('<', 'arrow disable')
+      +button('>', 'arrow disable')
+
+    div.header percentages/pie chart
 
 
     script(src="https://code.jquery.com/jquery-3.3.1.min.js")
