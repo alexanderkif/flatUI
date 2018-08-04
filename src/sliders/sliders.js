@@ -1,0 +1,1 @@
+$(".range-example-input").asRange({});

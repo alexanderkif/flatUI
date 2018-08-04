@@ -35,11 +35,11 @@ $color-red-shadow: #bf3e1f;
 .btn:hover, .btn.small:hover {
     color: white;
     &.red {
-        box-shadow: 1px 3px $color-red-shadow;
+        box-shadow: 0px 3px $color-red-shadow;
         background-color: $color-red;
     }
     &.green {
-        box-shadow: 1px 3px $color-green-shadow;
+        box-shadow: 0px 3px $color-green-shadow;
         background-color: $color-green;
     }
 }

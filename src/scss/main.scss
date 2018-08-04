@@ -1,5 +1,6 @@
 @import '../buttons/buttons';
 @import '../percentages/percentages';
+@import '../sliders/sliders';
 
 body {
     font-family: 'Conv_Lato-Black';
@@ -21,6 +22,14 @@ body {
         margin-top: 50px;
         margin-bottom: 0px;
     }
+    &.header-sliders {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    &.header-stages {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
 }
 .content {
     display: flex;
@@ -34,6 +43,14 @@ body {
     &.content-percentages {
         margin-top: 15px;
         width: 680px;
+    }
+    &.content-sliders {
+        width: 710px;
+        margin-bottom: 10px;
+    }
+    &.content-stages {
+        width: 680px;
+        margin-bottom: 10px;
     }
 }
 

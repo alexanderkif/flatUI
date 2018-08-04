@@ -1,5 +1,7 @@
 include /buttons/buttons
 include /percentages/percentages
+include /sliders/sliders
+//- include /sliders/sliders2
 
 html
   head
@@ -38,6 +40,16 @@ html
       +percentage(89)
       +percentage4list(10,25,30)
 
+    div.header.header-sliders sliders
+    div.content.content-sliders
+      +slider1(40)
+      +slider2(75)
+
+    div.header.header-stages stages
+    div.content.content-stages
+
 
     script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/jquery-asRange.min.js")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/css/asRange.css")
     script(src="main.js")

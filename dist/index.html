@@ -60,7 +60,27 @@
       </svg>
       <canvas id="cnvs" width="400px" height="400px" p1="10" p2="25" p3="30"></canvas>
     </div>
+    <div class="header header-sliders">sliders</div>
+    <div class="content content-sliders">
+      <div class="slider-1">
+        <input class="range-example-input" type="text" min="0" max="100" value="40" name="points" step="1">
+      </div>
+      <div class="slider-2">
+        <input class="range-example-input" type="text" min="0" max="100" value="75" name="points" step="0.1">
+        <div class="scale">
+          <div class="digit">0</div>
+          <div class="digit">25</div>
+          <div class="digit">50</div>
+          <div class="digit">75</div>
+          <div class="digit">100</div>
+        </div>
+      </div>
+    </div>
+    <div class="header header-stages">stages</div>
+    <div class="content content-stages"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/jquery-asRange.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/css/asRange.css">
     <script src="main.js"></script>
   </body>
 </html>
