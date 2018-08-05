@@ -1,4 +1,31 @@
+mixin form-input(placeholder, btntext, btncolor)
+        input.form-input(type="text" placeholder=placeholder)
+        input.form-button(type="button", value=btntext, class='form-button-'+btncolor)
+        .button-arrow(class='form-button-'+btncolor)
+
 mixin form
-    form(action="#", method="post")
-        .form-left= 1
-        .form-right= 2
+    form(action="", method="get")
+        .form-left
+            .form-block
+                +form-input('Your Name', 'ERROR', 'red')
+            .form-block
+                +form-input('Your Email', 'THANKS!', 'green')
+            .form-block
+                textarea.form-input.form-textarea(placeholder="Your Message", cols="30", rows="4")
+            .form-block
+                +button('submit', 'green')
+        .form-right
+            .form-block.center
+                .header.header-informs toggles
+            .form-block.center
+                .toggle-1
+                    input(type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off")
+                .toggle-2
+                    input(type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off")
+            .form-block.center
+                .header.header-informs tick boxes
+            .form-block.center
+                .tick-1.active
+                    i(class="material-icons icons-size")= 'done'
+                .tick-2
+                    i(class="material-icons icons-size")= 'done'

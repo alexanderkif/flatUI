@@ -9,7 +9,123 @@ form {
 }
 .form-left {
     display: table-cell;
+    width: 50%;
+    padding: 5px;
 }
 .form-right {
     display: table-cell;
+    width: 50%;
+    padding: 5px;
+}
+.form-block {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 2px;
+    .btn {
+        margin: 5px;
+    }
+    &.center {
+        justify-content: center;
+    }
+}
+.form-input {
+    display: block;
+    margin: 5px;
+    flex: 1 auto;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: $color-lightgray;
+    color: $color-grey;
+    font-family: 'Conv_Lato-Regular';
+    font-size: 14px;
+    padding-left: 12px;
+    outline: none;
+}
+.form-textarea {
+    height: auto;
+    padding: 12px;
+    outline: none;
+    resize: none;
+}
+.form-button {
+    display: block;
+    flex: 0 75px;
+    margin: 5px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    font-family: 'Conv_Lato-Regular';
+    font-size: 12px;
+    outline: none;
+}
+.form-button-red {
+    background-color: $color-red;    
+}
+.form-button-green {
+    background-color: $color-green;
+}
+.button-arrow {
+    position: absolute;
+    bottom: 17px;
+    right: 77px;
+    width: 6px;
+    height: 6px;
+    transform: rotate(-45deg);
+}
+.header.header-informs {
+    margin: 0;
+}
+.toggle-1, .toggle-2 {
+    display: inline-block;
+    margin: 25px 5px 35px 5px;
+    .lcs_switch {
+        box-shadow: 0 0 0px !important;
+        width: 60px !important;
+        height: 24px;
+    }
+    .lcs_label {
+        font-family: 'Conv_Lato-Regular' !important;
+        font-size: 12px !important;
+    }
+    .lcs_cursor {
+        width: 18px;
+        height: 18px;
+    }
+    .lcs_switch.lcs_on .lcs_cursor {
+        left: 40px !important;
+    }
+    .lcs_switch.lcs_off .lcs_label_off {
+        right: 5px !important;
+    }
+    .lcs_switch.lcs_on .lcs_label_on {
+        left: 7px !important;
+    }
+    .lcs_on {
+        background-color: $color-green !important;
+    }
+    .lcs_off {
+        background-color: $color-lightgray !important;
+    }
+}
+.tick-1, .tick-2 {
+    display: inline-block;
+    margin: 25px 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $color-lightgray;
+    color: $color-grey;
+    text-align: center;
+    i {
+        font-size: 18px;
+        margin-top: 3px;
+    }
+    &.active {
+        background-color: $color-green;
+        color: white;
+    }
 }

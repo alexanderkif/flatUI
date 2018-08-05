@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>flatUI</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -113,14 +114,52 @@
     </div>
     <div class="header header-forms">form elements</div>
     <div class="content content-forms">
-      <form action="#" method="post">
-        <div class="form-left">1</div>
-        <div class="form-right">2</div>
+      <form action="" method="get">
+        <div class="form-left">
+          <div class="form-block">
+            <input class="form-input" type="text" placeholder="Your Name">
+            <input class="form-button form-button-red" type="button" value="ERROR">
+            <div class="button-arrow form-button-red"></div>
+          </div>
+          <div class="form-block">
+            <input class="form-input" type="text" placeholder="Your Email">
+            <input class="form-button form-button-green" type="button" value="THANKS!">
+            <div class="button-arrow form-button-green"></div>
+          </div>
+          <div class="form-block">
+            <textarea class="form-input form-textarea" placeholder="Your Message" cols="30" rows="4"></textarea>
+          </div>
+          <div class="form-block">
+            <button class="btn green">submit</button>
+          </div>
+        </div>
+        <div class="form-right">
+          <div class="form-block center">
+            <div class="header header-informs">toggles</div>
+          </div>
+          <div class="form-block center">
+            <div class="toggle-1">
+              <input class="lcs_check" type="checkbox" name="check-1" value="4" autocomplete="off">
+            </div>
+            <div class="toggle-2">
+              <input class="lcs_check lcs_tt1" type="checkbox" name="check-3" value="6" checked="checked" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-block center">
+            <div class="header header-informs">tick boxes</div>
+          </div>
+          <div class="form-block center">
+            <div class="tick-1 active"><i class="material-icons icons-size">done</i></div>
+            <div class="tick-2"><i class="material-icons icons-size">done</i></div>
+          </div>
+        </div>
       </form>
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-asRange.min.js"></script>
     <link rel="stylesheet" href="css/asRange.css">
+    <script src="js/lc_switch.min.js"></script>
+    <link rel="stylesheet" href="css/lc_switch.css">
     <script src="main.js"></script>
   </body>
 </html>
