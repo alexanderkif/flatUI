@@ -1,7 +1,8 @@
 include /buttons/buttons
 include /percentages/percentages
 include /sliders/sliders
-//- include /sliders/sliders2
+include /stages/stages
+include /forms/forms
 
 html
   head
@@ -47,9 +48,15 @@ html
 
     div.header.header-stages stages
     div.content.content-stages
+      +stage(5,3)
 
-
-    script(src="https://code.jquery.com/jquery-3.3.1.min.js")
-    script(src="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/jquery-asRange.min.js")
-    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/css/asRange.css")
+    div.header.header-forms form elements
+    div.content.content-forms
+      +form
+    script(src="js/jquery-3.3.1.min.js")
+    script(src="js/jquery-asRange.min.js")
+    link(rel="stylesheet" href="css/asRange.css")
+    //- script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+    //- script(src="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/jquery-asRange.min.js")
+    //- link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/css/asRange.css")
     script(src="main.js")

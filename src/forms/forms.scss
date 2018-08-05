@@ -1,0 +1,15 @@
+$color-green: #4eb7a8;
+$color-grey: #747474;
+$color-red: #e75735;
+$color-lightgray: #e5e5e5;
+
+form {
+    width: 100%;
+    display: table;
+}
+.form-left {
+    display: table-cell;
+}
+.form-right {
+    display: table-cell;
+}

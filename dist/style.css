@@ -174,6 +174,54 @@ svg {
       color: #e5e5e5;
       margin-top: 10px; }
 
+.steps {
+  width: 100%;
+  display: table;
+  font-family: 'Conv_Lato-Black'; }
+
+.first {
+  width: 0px; }
+  .first .svg-stage {
+    margin-left: -15px; }
+
+.step {
+  display: table-cell;
+  text-align: right; }
+  .step.act {
+    border-top: 5px solid #e75735; }
+  .step.pas {
+    border-top: 5px solid #e5e5e5; }
+
+.svg-stage {
+  width: 30px;
+  height: auto;
+  margin-right: -15px;
+  margin-top: -18px; }
+
+.act .text {
+  font-family: 'Conv_Lato-Black';
+  fill: white; }
+
+.act .round {
+  fill: #e75735; }
+
+.pas .text {
+  font-family: 'Conv_Lato-Black';
+  fill: #747474; }
+
+.pas .round {
+  fill: #e5e5e5; }
+
+form {
+  width: 100%;
+  display: table; }
+
+.form-left {
+  display: table-cell; }
+
+.form-right {
+  display: table-cell; }
+
 body {
   font-family: 'Conv_Lato-Black'; }
 
@@ -198,6 +246,9 @@ body {
   .header.header-stages {
     margin-top: 30px;
     margin-bottom: 40px; }
+  .header.header-forms {
+    margin-top: 30px;
+    margin-bottom: 40px; }
 
 .content {
   display: flex;
@@ -214,8 +265,11 @@ body {
     width: 710px;
     margin-bottom: 10px; }
   .content.content-stages {
-    width: 680px;
-    margin-bottom: 10px; }
+    width: 600px;
+    margin-bottom: 60px; }
+  .content.content-forms {
+    width: 600px;
+    margin-bottom: 60px; }
 
 @font-face {
   font-family: 'Conv_Lato-Black';

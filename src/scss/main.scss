@@ -1,6 +1,8 @@
 @import '../buttons/buttons';
 @import '../percentages/percentages';
 @import '../sliders/sliders';
+@import '../stages/stages';
+@import '../forms/forms';
 
 body {
     font-family: 'Conv_Lato-Black';
@@ -30,6 +32,10 @@ body {
         margin-top: 30px;
         margin-bottom: 40px;
     }
+    &.header-forms {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
 }
 .content {
     display: flex;
@@ -49,8 +55,12 @@ body {
         margin-bottom: 10px;
     }
     &.content-stages {
-        width: 680px;
-        margin-bottom: 10px;
+        width: 600px;
+        margin-bottom: 60px;
+    }
+    &.content-forms {
+        width: 600px;
+        margin-bottom: 60px;
     }
 }
 
