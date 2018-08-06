@@ -49,3 +49,31 @@
 .search-button-green {
     background-color: $color-green;
 }
+.search-button:active {
+    transform: translate(2px,1px);
+}
+.dropdown-menu-1 {
+    position: absolute;
+    visibility: hidden;
+    top: 34px;
+    width: 100%;
+    background-color: $color-green;
+    border-radius: 2px;
+    .menu-block {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &.visible {
+        visibility: visible;        
+    }
+    .dropdown-item {
+        flex: 1 auto;
+        margin: 0;
+        text-decoration-line: none;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        padding-top: 7px;
+        height: 23px;
+        z-index: 10000;
+    }
+}

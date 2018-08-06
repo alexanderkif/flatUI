@@ -1,23 +1,17 @@
 mixin search-input(placeholder, btncolor, status)
     input.search-input(type="text" placeholder=placeholder, class=status)
-    .search-button(class="search-button-"+btncolor)
+    .search-button(class="btn search-button-"+btncolor)
         i(class="material-icons icons-size")= 'search'
 
 mixin dropdown-input(placeholder, btncolor)
     input.search-input(type="text" placeholder=placeholder)
-    .search-button(type="button" class="dropdown-toggle dropdown-toggle-split search-button-"+btncolor  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+    .search-button(type="button" class="dropdownclick-1 btn search-button-"+btncolor)
         i(class="material-icons icons-size")= 'keyboard_arrow_down'
-    //- .btn-group
-    //-     button(type="button" class="btn btn-danger")= 'Action'
-    //-     button(type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-    //-         span(class="sr-only")= 'Toggle Dropdown'
-        
-    //- .dropdown-menu
-    //-     a(class="dropdown-item" href="#")= 'Action'
-    //-     a(class="dropdown-item" href="#")= 'Another action'
-    //-     a(class="dropdown-item" href="#")= 'Something else here'
-    //-     .dropdown-divider
-    //-     a(class="dropdown-item" href="#")= 'Separated link'
+    .dropdown-menu-1
+        a(class="search-input dropdown-item" href="#")= 'This is option 1'
+        a(class="search-input dropdown-item" href="#")= 'This is option 2'
+        a(class="search-input dropdown-item" href="#")= 'This is option 3'
+        a(class="search-input dropdown-item" href="#")= 'This is option 4'
 
 mixin search
     .search-block

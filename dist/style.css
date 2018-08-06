@@ -374,6 +374,31 @@ form {
 .search-button-green {
   background-color: #4eb7a8; }
 
+.search-button:active {
+  transform: translate(2px, 1px); }
+
+.dropdown-menu-1 {
+  position: absolute;
+  visibility: hidden;
+  top: 34px;
+  width: 100%;
+  background-color: #4eb7a8;
+  border-radius: 2px; }
+  .dropdown-menu-1 .menu-block {
+    display: flex;
+    justify-content: flex-end; }
+  .dropdown-menu-1.visible {
+    visibility: visible; }
+  .dropdown-menu-1 .dropdown-item {
+    flex: 1 auto;
+    margin: 0;
+    text-decoration-line: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    padding-top: 7px;
+    height: 23px;
+    z-index: 10000; }
+
 body {
   font-family: 'Conv_Lato-Black'; }
 
