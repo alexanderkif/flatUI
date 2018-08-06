@@ -3,6 +3,7 @@
 @import '../sliders/sliders';
 @import '../stages/stages';
 @import '../forms/forms';
+@import '../search/search';
 
 body {
     font-family: 'Conv_Lato-Black';
@@ -60,7 +61,12 @@ body {
     }
     &.content-forms {
         width: 650px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
+    }
+    &.search-profile {
+        width: 650px;
+        margin-bottom: 150px;
+        display: table;
     }
 }
 
