@@ -399,6 +399,18 @@ form {
     height: 23px;
     z-index: 10000; }
 
+.user-card {
+  display: block;
+  width: 200px; }
+
+.user-left {
+  display: inline-block;
+  border-radius: 50%;
+  border: 3px solid #e5e5e5; }
+
+.user-right {
+  display: inline-block; }
+
 body {
   font-family: 'Conv_Lato-Black'; }
 

@@ -1,0 +1,13 @@
+.user-card {
+    display: block;
+    width: 200px;
+    
+}
+.user-left {
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid $color-lightgray;
+}
+.user-right {
+    display: inline-block;
+}

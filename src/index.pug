@@ -4,6 +4,7 @@ include /sliders/sliders
 include /stages/stages
 include /forms/forms
 include /search/search
+include /user/user
 
 html
   head
@@ -64,14 +65,13 @@ html
         .form-block.center
           .header.header-informs user profile
         .form-block.center
+          +user-card('john', 'John Smith', 'ux designer')
       
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/jquery-asRange.min.js")
     link(rel="stylesheet" href="css/asRange.css")
     script(src="js/lc_switch.min.js")
     link(rel="stylesheet" href="css/lc_switch.css")
-    //- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    //- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     //- script(src="https://code.jquery.com/jquery-3.3.1.min.js")
     //- script(src="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/jquery-asRange.min.js")
     //- link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/jquery-asRange@0.3.4/dist/css/asRange.css")
