@@ -15,7 +15,7 @@ body {
     color: #797979;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 1px;
     margin-top: 83px;
     margin-bottom: 75px;
     &.header-arrow-buttons {
@@ -37,6 +37,13 @@ body {
     &.header-forms {
         margin-top: 30px;
         margin-bottom: 35px;
+    }
+    &.header-search {
+        margin: 0px;
+    }
+    &.header-user {
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
 }
 .content {
@@ -66,7 +73,7 @@ body {
     }
     &.search-profile {
         width: 650px;
-        margin-bottom: 150px;
+        margin-bottom: 70px;
         display: table;
     }
 }

@@ -11,6 +11,7 @@ html
     meta(charset='UTF-8')
     title flatUI
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet")
     link(rel="stylesheet" href="style.css")
     
   body
@@ -59,14 +60,19 @@ html
     div.content.search-profile
       .form-left
         .form-block.center
-          .header.header-informs search/drop down
+          .header.header-search search/drop down
         +search
       .form-right
         .form-block.center
-          .header.header-informs user profile
-        .form-block.center
-          +user-card('john', 'John Smith', 'ux designer')
-      
+          .header.header-user user profile
+        +user-card('john', 'John Smith', 'ux designer')
+        +user-card('sarah', 'Sarah Brown', 'developer', 'user-green')
+    
+    div.header.header-forms news & events
+    div.content.content-forms
+
+
+
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/jquery-asRange.min.js")
     link(rel="stylesheet" href="css/asRange.css")

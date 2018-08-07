@@ -1,7 +1,16 @@
-mixin user-card(img, name, prof)
+mixin user-card(img, name, prof, color)
     .user-card
+        //- .user-left
         img.user-left(src="img/"+img+".png", alt="no image")
-        .user-right
+        div(class="user-right "+color)
+            .romb
             .user-name= name
             .user-prof= prof
+            .socials
+                a(href="")
+                    i.ion-logo-facebook
+                a(href="")
+                    i.ion-logo-twitter
+                a(href="")
+                    i.ion-logo-dribbble
             

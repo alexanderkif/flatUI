@@ -102,6 +102,9 @@ svg {
   width: 115px;
   height: auto; }
 
+.svg-text {
+  fill: #747474; }
+
 #cnvs {
   width: 115px;
   height: 115px; }
@@ -401,15 +404,63 @@ form {
 
 .user-card {
   display: block;
-  width: 200px; }
+  width: 282px;
+  height: 100px;
+  margin: 25px; }
 
 .user-left {
-  display: inline-block;
+  display: block;
+  float: left;
   border-radius: 50%;
-  border: 3px solid #e5e5e5; }
+  border: 3px solid #e5e5e5;
+  margin: 5px;
+  transform: scale(1.1); }
 
 .user-right {
-  display: inline-block; }
+  display: block;
+  float: right;
+  width: 170px;
+  height: 100px;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  position: relative;
+  text-align: center; }
+  .user-right .romb {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #e5e5e5;
+    transform: rotate(45deg);
+    top: 43px;
+    left: -3px; }
+  .user-right .user-name {
+    font-family: 'Conv_Lato-Regular';
+    margin: 0;
+    margin-top: 10px;
+    color: #e75735;
+    font-size: 20px; }
+  .user-right .user-prof {
+    margin: 0;
+    text-transform: uppercase;
+    color: #747474;
+    font-size: 12px;
+    letter-spacing: 1px; }
+  .user-right .socials {
+    margin: 5px auto; }
+    .user-right .socials i {
+      font-size: 32px;
+      letter-spacing: 10px;
+      margin-left: 8px;
+      color: #747474; }
+      .user-right .socials i.ion-logo-twitter {
+        color: #e75735; }
+  .user-right.user-green {
+    background-color: #4eb7a8;
+    color: white; }
+    .user-right.user-green .romb {
+      background-color: #4eb7a8; }
+    .user-right.user-green .user-name, .user-right.user-green .user-prof, .user-right.user-green i, .user-right.user-green i.ion-logo-twitter {
+      color: white; }
 
 body {
   font-family: 'Conv_Lato-Black'; }
@@ -420,7 +471,7 @@ body {
   color: #797979;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   margin-top: 83px;
   margin-bottom: 75px; }
   .header.header-arrow-buttons {
@@ -438,6 +489,11 @@ body {
   .header.header-forms {
     margin-top: 30px;
     margin-bottom: 35px; }
+  .header.header-search {
+    margin: 0px; }
+  .header.header-user {
+    margin-top: 0px;
+    margin-bottom: 0px; }
 
 .content {
   display: flex;
@@ -461,7 +517,7 @@ body {
     margin-bottom: 40px; }
   .content.search-profile {
     width: 650px;
-    margin-bottom: 150px;
+    margin-bottom: 70px;
     display: table; }
 
 @font-face {
