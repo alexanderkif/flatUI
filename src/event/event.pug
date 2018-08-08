@@ -1,0 +1,7 @@
+mixin event(header, date, text, img)
+    .event-block
+        img(src="img/"+img+".png", alt="no img")
+        .event-content
+            .event-header= header
+            .event-date= date
+            .event-text= text

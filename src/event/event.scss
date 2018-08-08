@@ -1,0 +1,40 @@
+.event-block {
+    display: block;
+    // margin-top: 0;
+    // top: 30px;
+    margin: 5px;
+    width: 290px;
+    height: 212px;
+    background-color: $color-green;
+    border-radius: 5px;
+    font-family: 'Conv_Lato-Regular';
+    color: white;
+    img {
+        display: block;
+        float: left;
+        width: 95px;
+        height: 100%;
+        border-radius: 5px 0px 0px 5px;
+    }
+    .event-content {
+        display: block;
+        margin-left: 110px;
+        padding: 10px;
+        .event-header {
+            margin-top: 10px;
+            display: block;
+            font-size: 26px;
+        }
+        .event-date {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            text-transform: uppercase;        
+        }
+        .event-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+mixin news(header, date, text, img)
+    .news-block
+        img(src="img/"+img+".png", alt="no img")
+        .news-content
+            .news-header= header
+            .news-date= date
+            .news-text= text

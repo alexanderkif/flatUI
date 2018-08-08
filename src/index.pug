@@ -5,6 +5,8 @@ include /stages/stages
 include /forms/forms
 include /search/search
 include /user/user
+include /news/news
+include /event/event
 
 html
   head
@@ -58,20 +60,25 @@ html
       +form
     
     div.content.search-profile
-      .form-left
-        .form-block.center
+      .content-left
+        .content-block.center
           .header.header-search search/drop down
         +search
-      .form-right
-        .form-block.center
+      .content-right
+        .content-block.center
           .header.header-user user profile
         +user-card('john', 'John Smith', 'ux designer')
         +user-card('sarah', 'Sarah Brown', 'developer', 'user-green')
     
-    div.header.header-forms news & events
-    div.content.content-forms
+    div.header.header-news news & events
+    div.content.content-news
+      .news-left
+        +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor", "velo")
+      .news-right
+        +event("It's all going downhill", "24 august 2013", "", "city")
 
-
+    div.header.header-location location
+    div.content.content-location
 
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/jquery-asRange.min.js")
