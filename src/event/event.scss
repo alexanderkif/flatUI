@@ -18,23 +18,39 @@
     }
     .event-content {
         display: block;
-        margin-left: 110px;
+        margin-left: 105px;
         padding: 10px;
-        .event-header {
-            margin-top: 10px;
-            display: block;
-            font-size: 26px;
+        .big-date {
+            .event-date {
+                display: inline-block;
+                font-size: 72px;       
+            }
+            .event-month {
+                display: inline-block;
+                font-size: 32px;
+            }
         }
-        .event-date {
+        .event-header {
+            margin-top: 5px;
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }        
+        .event-text {
             display: block;
             margin-top: 5px;
             font-size: 12px;
-            text-transform: uppercase;        
         }
-        .event-text {
-            display: block;
-            margin-top: 10px;
-            font-size: 12px;
+        .event-button {
+            margin-top: 13px;
+            margin-left: 12px;
+            .btn {
+                width: 130px;
+                height: 23px;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
         }
     }
 }

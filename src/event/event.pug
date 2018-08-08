@@ -1,7 +1,11 @@
-mixin event(header, date, text, img)
+mixin event(header, date, month , text, img)
     .event-block
         img(src="img/"+img+".png", alt="no img")
         .event-content
-            .event-header= header
-            .event-date= date
+            .big-date
+                .event-date= date
+                .event-month= month
+            .event-header= header            
             .event-text= text
+            .event-button
+                +button('add to calendar', 'green')

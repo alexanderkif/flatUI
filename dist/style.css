@@ -404,7 +404,7 @@ form {
 
 .user-card {
   display: block;
-  width: 270px;
+  width: 265px;
   height: 90px;
   margin: 30px; }
 
@@ -511,21 +511,32 @@ form {
     border-radius: 5px 0px 0px 5px; }
   .event-block .event-content {
     display: block;
-    margin-left: 110px;
+    margin-left: 105px;
     padding: 10px; }
+    .event-block .event-content .big-date .event-date {
+      display: inline-block;
+      font-size: 72px; }
+    .event-block .event-content .big-date .event-month {
+      display: inline-block;
+      font-size: 32px; }
     .event-block .event-content .event-header {
-      margin-top: 10px;
-      display: block;
-      font-size: 26px; }
-    .event-block .event-content .event-date {
-      display: block;
       margin-top: 5px;
+      display: block;
       font-size: 12px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      letter-spacing: 1px; }
     .event-block .event-content .event-text {
       display: block;
-      margin-top: 10px;
+      margin-top: 5px;
       font-size: 12px; }
+    .event-block .event-content .event-button {
+      margin-top: 13px;
+      margin-left: 12px; }
+      .event-block .event-content .event-button .btn {
+        width: 130px;
+        height: 23px;
+        font-size: 10px;
+        letter-spacing: 1px; }
 
 body {
   font-family: 'Conv_Lato-Black'; }
@@ -589,36 +600,37 @@ body {
     margin-bottom: 40px; }
   .content.content-forms {
     width: 620px;
-    margin-bottom: 40px; }
+    margin-bottom: 45px; }
   .content.search-profile {
-    width: 520px;
+    width: 610px;
+    height: 300px;
     margin-bottom: 30px;
-    display: table;
-    padding-left: 20px; }
+    display: block; }
     .content.search-profile .content-left {
-      display: table-cell;
-      width: 50%;
-      padding: 5px; }
+      float: left;
+      width: 50%; }
     .content.search-profile .content-right {
-      display: table-cell;
+      float: right;
       width: 50%;
-      padding: 5px;
-      margin-top: 5;
       padding-left: 0; }
   .content.content-news {
-    width: 610px;
-    margin-top: 30px;
+    width: 615px;
+    height: 220px;
+    margin-top: 27px;
+    padding-left: 5px;
     margin-bottom: 45px;
-    display: table; }
+    display: block; }
     .content.content-news .news-left {
-      display: table-cell;
+      float: left;
       width: 50%;
       height: 214px; }
     .content.content-news .news-right {
-      display: table-cell;
+      float: right;
       width: 50%;
-      height: 214px;
-      margin-top: 0; }
+      height: 214px; }
+
+a {
+  text-decoration-line: none; }
 
 @font-face {
   font-family: 'Conv_Lato-Black';
