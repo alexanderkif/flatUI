@@ -10,8 +10,9 @@
     height: 70px;
     display: table;
     border-radius: 0px 0px 5px 5px;
-    a {
-        color: white;
+    user-select: none;
+    &:hover {
+        cursor: default;
     }
 }
 .map-slog {
@@ -38,4 +39,7 @@
     vertical-align: middle;
     text-align: center;
     width: 55px;
+    i {
+        cursor: pointer;
+    }
 }

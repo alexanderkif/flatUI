@@ -8,6 +8,7 @@ include /user/user
 include /news/news
 include /event/event
 include /maps/maps
+include /calendar/calendar
 
 html
   head
@@ -83,11 +84,11 @@ html
     div.content.content-location
       +map()
 
-    div.content.calendar
+    div.content.content-calendar
       .content-left
         .content-block.center
           .header.header-calendar calendar
-        
+        +calendar
       .content-right
         .content-block.center
           .header.header-messaging messaging

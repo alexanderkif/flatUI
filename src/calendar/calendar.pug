@@ -1,0 +1,17 @@
+
+mixin calendar
+    .calendar
+        .date= '24'
+        .month-carusel
+            .month-left
+                i.material-icons= "keyboard_arrow_left"
+            .month= 'September'
+            .month-right
+                i.material-icons= "keyboard_arrow_right"
+        .week
+            each day in ['mon','tue','wed','thu','fri','sat','sun']
+                .days= day
+        
+        .calendar-row
+
+        .footer
