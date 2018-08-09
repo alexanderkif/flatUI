@@ -7,6 +7,7 @@
 @import '../user/user';
 @import '../news/news';
 @import '../event/event';
+@import '../maps/maps';
 
 body {
     font-family: 'Conv_Lato-Black';
@@ -55,8 +56,14 @@ body {
         margin-bottom: 10px;
     }
     &.header-location {
-        margin-top: 25px;
-        margin-bottom: 50px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    &.header-calendar, &.header-messaging {
+        margin: 0px;
+        margin-top: 30px;
+        margin-bottom: 13px;
+        letter-spacing: 0px;
     }
 }
 .content {
@@ -116,6 +123,25 @@ body {
             float: right;
             width: 50%;
             height: 214px;
+        }
+    }
+    &.content-location {
+        margin-top: 20px;
+    }
+    &.calendar {
+        width: 610px;
+        height: 300px;
+        margin-bottom: 30px;
+        display: block;
+        .content-left {
+            float: left;
+            width: 50%;
+            height: 300px;
+        }
+        .content-right {
+            float: right;
+            width: 50%;
+            height: 300px;
         }
     }
 }

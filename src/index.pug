@@ -7,6 +7,7 @@ include /search/search
 include /user/user
 include /news/news
 include /event/event
+include /maps/maps
 
 html
   head
@@ -15,6 +16,7 @@ html
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     link(href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet")
     link(rel="stylesheet" href="style.css")
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
     
   body
     div.header standard buttons
@@ -79,6 +81,17 @@ html
 
     div.header.header-location location
     div.content.content-location
+      +map()
+
+    div.content.calendar
+      .content-left
+        .content-block.center
+          .header.header-calendar calendar
+        
+      .content-right
+        .content-block.center
+          .header.header-messaging messaging
+
 
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/jquery-asRange.min.js")

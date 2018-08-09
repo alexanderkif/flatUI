@@ -1,0 +1,41 @@
+.map {
+    width: 590px;
+    height: 270px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.map-bottom {
+    background-color: $color-red;
+    color: white;
+    width: 100%;
+    height: 70px;
+    display: table;
+    a {
+        color: white;
+    }
+}
+.map-slog {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Conv_Lato-Regular';
+    font-size: 28px;
+    text-align: center;
+    width: 160px;
+}
+.map-address {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Conv_Lato-Black';
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.map-address1, .map-address2 {
+    display: block;
+}
+.map-point, .map-target {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 55px;
+}

@@ -5,7 +5,7 @@
     <title>flatUI</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"><script src="https://maps.googleapis.com/maps/api/js?key="></script>
   </head>
   <body>
     <div class="header">standard buttons</div>
@@ -225,7 +225,30 @@
       </div>
     </div>
     <div class="header header-location">location</div>
-    <div class="content content-location"></div>
+    <div class="content content-location">
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12611.823497676294!2d-122.42383280687835!3d37.791073857081514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858092e7ee4833%3A0xba9adf323eff9155!2zMTI1OSBDYWxpZm9ybmlhIFN0LCBTYW4gRnJhbmNpc2NvLCBDQSA5NDEwOSwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1533790748152" width="590" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div class="map-bottom">
+          <div class="map-slog">Meet us!</div>
+          <div class="map-address">
+            <div class="map-address">1259 california st</div>
+            <div class="map-address1">san francisco, ca</div>
+          </div><a class="map-point" href=""><i class="material-icons">location_searching</i></a><a class="map-target" href=""><i class="material-icons">location_on</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="content calendar">
+      <div class="content-left">
+        <div class="content-block center">
+          <div class="header header-calendar">calendar</div>
+        </div>
+      </div>
+      <div class="content-right">
+        <div class="content-block center">
+          <div class="header header-messaging">messaging</div>
+        </div>
+      </div>
+    </div>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-asRange.min.js"></script>
     <link rel="stylesheet" href="css/asRange.css">

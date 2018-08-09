@@ -104,7 +104,7 @@ eval("$(\".btn\").click(function (e) {\n\n  // Remove any old one\n  $(\".ripple
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n\n\t// triggered each time a field changes status\n\t// $('body').delegate('.lcs_check', 'lcs-statuschange', function() {\n\t// \tvar status = ($(this).is(':checked')) ? 'checked' : 'unchecked';\n\t// \tconsole.log('field changed status: '+ status );\n\t// });\n\n\n\t// // triggered each time a field is checked\n\t// $('body').delegate('.lcs_check', 'lcs-on', function() {\n\t// \tconsole.log('field is checked');\n\t// });\n\n\n\t// // triggered each time a is unchecked\n\t// $('body').delegate('.lcs_check', 'lcs-off', function() {\n\t// \tconsole.log('field is unchecked');\n\t// });\n});\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
+eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n});\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
 
 /***/ }),
 
