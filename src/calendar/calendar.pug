@@ -1,3 +1,13 @@
+mixin wweek(first_day)
+    - var sevendays = [0,1,2,3,4,5,6]
+    each day in sevendays
+        if first_day + day > 0 
+            if first_day + day < 31
+                .day.inn= first_day + day
+            else
+                .day= first_day + day -30
+        else
+            .day= first_day + day + 31
 
 mixin calendar
     .calendar
@@ -12,6 +22,10 @@ mixin calendar
             each day in ['mon','tue','wed','thu','fri','sat','sun']
                 .days= day
         
-        .calendar-row
+        - var first_days= [-2,5,12,19,26]
 
-        .footer
+        each first_day in first_days
+            .calendar-row
+                +wweek(first_day)  
+
+        .footer= 'today'

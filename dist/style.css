@@ -582,9 +582,10 @@ form {
     cursor: pointer; }
 
 .calendar {
-  width: 95%;
+  width: 280px;
   color: white;
-  border-radius: 5px; }
+  border-radius: 5px;
+  user-select: none; }
 
 .date {
   width: 100%;
@@ -609,7 +610,8 @@ form {
   .month-carusel .month-left, .month-carusel .month-right {
     flex: 1; }
     .month-carusel .month-left i, .month-carusel .month-right i {
-      font-size: 32px; }
+      font-size: 32px;
+      cursor: pointer; }
   .month-carusel .month {
     flex: 4; }
 
@@ -626,19 +628,42 @@ form {
   align-items: center; }
 
 .calendar-row {
-  background-color: #e5e5e5;
+  margin-left: -1px;
+  width: 282px;
+  background-color: #eee;
   font-family: 'Conv_Lato-Regular';
   font-size: 10px;
   text-transform: uppercase;
   text-align: center;
   display: flex;
-  justify-content: space-around;
-  align-items: center; }
+  justify-content: space-around; }
   .calendar-row .day {
-    width: 20px;
-    height: 20px; }
+    width: 100%;
+    height: 28px;
+    padding-top: 10px;
+    border: 1px solid white;
+    font-family: 'Conv_Lato-Regular';
+    font-size: 18px;
+    vertical-align: middle; }
     .calendar-row .day.inn {
       color: #747474; }
+      .calendar-row .day.inn:hover {
+        background-color: #e75735;
+        color: white;
+        cursor: pointer; }
+
+.footer {
+  display: block;
+  width: 258px;
+  height: 32px;
+  background-color: #e5e5e5;
+  color: #747474;
+  font-family: 'Conv_Lato-Regular';
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-top: 18px;
+  padding-left: 22px;
+  border-radius: 0px 0px 5px 5px; }
 
 body {
   font-family: 'Conv_Lato-Black'; }
@@ -740,7 +765,7 @@ body {
   .content.content-calendar {
     width: 600px;
     height: 300px;
-    margin-bottom: 30px;
+    margin-bottom: 250px;
     display: block; }
     .content.content-calendar .content-left {
       float: left;
