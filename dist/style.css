@@ -592,7 +592,7 @@ form {
   height: 90px;
   background-color: #e75735;
   font-family: 'Conv_Lato-Regular';
-  font-size: 72px;
+  font-size: 78px;
   text-align: center;
   padding-top: 20px;
   border-radius: 5px 5px 0px 0px; }
@@ -601,7 +601,7 @@ form {
   display: flex;
   width: 100%;
   height: 40px;
-  background-color: #bf3e1f;
+  background-color: #d54c2c;
   text-align: center;
   align-items: center; }
   .month-carusel .month-left, .month-carusel .month, .month-carusel .month-right {
@@ -617,7 +617,7 @@ form {
 
 .week {
   width: 100%;
-  height: 30px;
+  height: 29px;
   background-color: #e75735;
   font-family: 'Conv_Lato-Regular';
   font-size: 10px;
@@ -625,23 +625,24 @@ form {
   text-align: center;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  border-bottom: 1px solid white; }
 
 .calendar-row {
-  margin-left: -1px;
-  width: 282px;
-  background-color: #eee;
+  width: 280px;
+  height: 40px;
+  background-color: white;
   font-family: 'Conv_Lato-Regular';
   font-size: 10px;
   text-transform: uppercase;
   text-align: center;
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-between; }
   .calendar-row .day {
-    width: 100%;
-    height: 28px;
+    width: 39px;
+    height: 29px;
     padding-top: 10px;
-    border: 1px solid white;
+    background-color: #f2f2f2;
     font-family: 'Conv_Lato-Regular';
     font-size: 18px;
     vertical-align: middle; }
@@ -658,12 +659,103 @@ form {
   height: 32px;
   background-color: #e5e5e5;
   color: #747474;
-  font-family: 'Conv_Lato-Regular';
+  font-family: 'Conv_Lato-Black';
   font-size: 14px;
   text-transform: uppercase;
   padding-top: 18px;
   padding-left: 22px;
   border-radius: 0px 0px 5px 5px; }
+
+.messaging {
+  display: flex;
+  width: 290px;
+  height: 430px;
+  flex-direction: column;
+  border-radius: 5px;
+  user-select: none;
+  align-items: center;
+  text-align: center;
+  font-family: 'Conv_Lato-Regular';
+  color: #747474; }
+
+.messaging-header {
+  width: 100%;
+  height: 70px;
+  background-color: #4eb7a8;
+  font-size: 32px;
+  color: white;
+  padding-top: 20px;
+  border-radius: 5px 5px 0px 0px; }
+
+.hr-green {
+  width: 100%;
+  height: 35px;
+  background-color: #28a290; }
+  .hr-green .icons {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between; }
+    .hr-green .icons i {
+      margin-top: 55px;
+      z-index: 1000;
+      cursor: pointer; }
+
+.messaging-body {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: #f2f2f2;
+  border-radius: 0px 0px 5px 5px;
+  font-size: 14px; }
+  .messaging-body .white-message {
+    position: relative;
+    margin: 15px auto;
+    width: 210px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+    user-select: text;
+    cursor: text; }
+    .messaging-body .white-message .corner {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+      background-color: white;
+      right: 50%;
+      top: -4px; }
+  .messaging-body .grey-message {
+    margin: 17px auto;
+    width: 210px;
+    height: 50px;
+    background-color: #e5e5e5;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+    user-select: text;
+    cursor: text; }
+  .messaging-body .btn {
+    width: 240px;
+    height: 33px;
+    font-family: 'Conv_Lato-Black';
+    font-size: 12px;
+    letter-spacing: 1px; }
+
+.user-photo {
+  border-radius: 50%;
+  border: 3px solid #e5e5e5;
+  margin-top: -45px; }
+
+.video {
+  display: flex;
+  width: 280px;
+  color: #e5e5e5;
+  border-radius: 5px;
+  user-select: none; }
 
 body {
   font-family: 'Conv_Lato-Black'; }
@@ -711,6 +803,9 @@ body {
     margin-top: 30px;
     margin-bottom: 20px;
     letter-spacing: 0px; }
+  .header.header-video {
+    margin-top: 45px;
+    margin-bottom: 30px; }
 
 .content {
   display: flex;
@@ -763,18 +858,21 @@ body {
   .content.content-location {
     margin-top: 20px; }
   .content.content-calendar {
-    width: 600px;
-    height: 300px;
-    margin-bottom: 250px;
+    width: 610px;
+    height: 510px;
+    margin-bottom: 30px;
+    padding-left: 20px;
     display: block; }
     .content.content-calendar .content-left {
       float: left;
       width: 50%;
-      height: 300px; }
+      height: 510px; }
     .content.content-calendar .content-right {
       float: right;
       width: 50%;
-      height: 300px; }
+      height: 510px; }
+  .content.content-video {
+    margin-top: 20px; }
 
 a {
   text-decoration-line: none; }

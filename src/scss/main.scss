@@ -9,6 +9,8 @@
 @import '../event/event';
 @import '../maps/maps';
 @import '../calendar/calendar';
+@import '../messaging/messaging';
+@import '../video/video';
 
 body {
     font-family: 'Conv_Lato-Black';
@@ -65,6 +67,10 @@ body {
         margin-top: 30px;
         margin-bottom: 20px;
         letter-spacing: 0px;
+    }
+    &.header-video {
+        margin-top: 45px;
+        margin-bottom: 30px;
     }
 }
 .content {
@@ -130,20 +136,24 @@ body {
         margin-top: 20px;
     }
     &.content-calendar {
-        width: 600px;
-        height: 300px;
-        margin-bottom: 250px;
+        width: 610px;
+        height: 510px;
+        margin-bottom: 30px;
+        padding-left: 20px;
         display: block;
         .content-left {
             float: left;
             width: 50%;
-            height: 300px;
+            height: 510px;
         }
         .content-right {
             float: right;
             width: 50%;
-            height: 300px;
+            height: 510px;
         }
+    }
+    &.content-video {
+        margin-top: 20px;
     }
 }
 

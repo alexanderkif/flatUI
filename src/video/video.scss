@@ -1,0 +1,9 @@
+$color-grey-light: #f2f2f2;
+
+.video {
+    display: flex;
+    width: 280px;
+    color: $color-lightgray;
+    border-radius: 5px;
+    user-select: none;
+}

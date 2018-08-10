@@ -9,6 +9,8 @@ include /news/news
 include /event/event
 include /maps/maps
 include /calendar/calendar
+include /messaging/messaging
+include /video/video
 
 html
   head
@@ -92,7 +94,11 @@ html
       .content-right
         .content-block.center
           .header.header-messaging messaging
+        +messaging
 
+    div.header.header-video video
+    div.content.content-video
+      +video()
 
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/jquery-asRange.min.js")

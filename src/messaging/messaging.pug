@@ -1,0 +1,13 @@
+mixin messaging
+    .messaging
+        .messaging-header= 'Sarah Brown'
+        .hr-green
+            .icons
+                i.material-icons= "mode_comment"
+                i.material-icons= "local_see"
+        .messaging-body
+            img.user-photo(src="img/sarah.png", alt="no image")
+            .white-message= 'Hey! So are we cool to meet at the art gallery? Say 8pm'
+                .corner
+            .grey-message= 'Yeah that sounds great. See you then.'
+            +button('reply', 'green')

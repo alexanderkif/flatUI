@@ -1,0 +1,93 @@
+$color-grey-light: #f2f2f2;
+
+.messaging {
+    display: flex;
+    width: 290px;
+    height: 430px;
+    flex-direction: column;
+    border-radius: 5px;
+    user-select: none;
+    align-items: center;
+    text-align: center;
+	font-family: 'Conv_Lato-Regular';
+    color: $color-grey;
+}
+.messaging-header {
+    width: 100%;
+    height: 70px;
+    background-color: $color-green;
+    font-size: 32px;
+    color: white;
+    padding-top: 20px;
+    border-radius: 5px 5px 0px 0px;
+}
+.hr-green {
+    width: 100%;
+    height: 35px;
+    background-color: $color-green-shadow;
+    .icons {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        i {
+            margin-top: 55px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+    }
+}
+
+.messaging-body {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-color: #f2f2f2;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 14px;
+    .white-message {
+        position: relative;
+        margin: 15px auto;
+        width: 210px;
+        height: 40px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 15px;
+        text-align: left;
+        user-select: text;
+        cursor: text;
+        .corner {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            background-color: white;
+            right: 50%;
+            top: -4px;
+        }
+    }
+    .grey-message {
+        margin: 17px auto;
+        width: 210px;
+        height: 50px;
+        background-color: $color-lightgray;
+        border: 3px solid white;
+        border-radius: 5px;
+        padding: 15px;
+        text-align: left;
+        user-select: text;
+        cursor: text;
+    }
+    .btn {
+        width: 240px;
+        height: 33px;
+        font-family: 'Conv_Lato-Black';
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+}
+.user-photo {
+    border-radius: 50%;
+    border: 3px solid $color-lightgray;
+    margin-top: -45px;
+}
