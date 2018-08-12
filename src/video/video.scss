@@ -1,9 +1,48 @@
 $color-grey-light: #f2f2f2;
 
 .video {
-    display: flex;
-    width: 280px;
+    position: relative;
+    width: 640px;
+    text-align: center;
     color: $color-lightgray;
-    border-radius: 5px;
     user-select: none;
+}
+.video-title, .video-from, .video-url {
+    position: absolute;
+    font-family: 'Conv_Lato-Regular';
+}
+.video-title {
+    top: 45px;
+    left: 60px;
+    font-size: 32px;
+}
+.video-from {
+    top: 80px;
+    left: 60px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.video-url {
+    top: 120px;
+    left: 60px;
+    font-size: 16px;
+}
+.vp-controls .play, .vp-controls .play:hover {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+.vp-sidedock, .badge, .logo, .icon-gear-cog, .vp-prefs, .volume, .vp-title-header {
+    display: none !important;
+}
+.fullscreen-icon, .unfullscreen-icon {
+    transform: translate(-20px, -20px);
+    width: 50px;
+    height: 50px !important;
+    padding: 12px;
+    background-color: $color-red;
+}
+.fullscreen-icon svg, .unfullscreen-icon svg {
+    width: 26px;
+}
+.play-bar button:not(.toggle):hover .fill {
+    fill: white !important;
 }
