@@ -1,22 +1,14 @@
 mixin search-input(placeholder, btncolor, status)
-    input.search-input(type="text" placeholder=placeholder, class=status)
-    .search-button(class="btn search-button-"+btncolor)
-        i(class="material-icons icons-size")= 'search'
+    .search-block
+        input.search-input(type="text" placeholder=placeholder, class=status)
+        .search-button(class="btn search-button-"+btncolor)
+            i(class="material-icons icons-size")= 'search'
 
-mixin dropdown-input(placeholder, btncolor)
-    input.search-input(type="text" placeholder=placeholder)
-    .search-button(type="button" class="dropdownclick-1 btn search-button-"+btncolor)
-        i(class="material-icons icons-size")= 'keyboard_arrow_down'
-    .dropdown-menu-1
-        a(class="search-input dropdown-item" href="#")= 'This is option 1'
-        a(class="search-input dropdown-item" href="#")= 'This is option 2'
-        a(class="search-input dropdown-item" href="#")= 'This is option 3'
-        a(class="search-input dropdown-item" href="#")= 'This is option 4'
-
-mixin search
+mixin dropdown-input(placeholder, btncolor, options)
     .search-block
-        +search-input('Search', 'red')
-    .search-block
-        +search-input('I\'ve not found what I\'m looking for...', 'red', 'not-found')
-    .search-block
-        +dropdown-input('Choose An Option', 'green')
+        input.search-input(type="text" placeholder=placeholder)
+        .search-button(type="button" class="dropdownclick-1 btn search-button-"+btncolor)
+            i(class="material-icons icons-size")= 'keyboard_arrow_down'
+        .dropdown-menu-1
+            each option in options
+                a(class="search-input dropdown-item" href="#")= option

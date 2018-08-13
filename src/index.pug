@@ -67,7 +67,9 @@ html
       .content-left
         .content-block.center
           .header.header-search search/drop down
-        +search
+        +search-input('Search', 'red')
+        +search-input('I\'ve not found what I\'m looking for...', 'red', 'not-found')
+        +dropdown-input('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
       .content-right
         .content-block.center
           .header.header-user user profile
