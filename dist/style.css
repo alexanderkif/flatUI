@@ -613,7 +613,8 @@ form {
       font-size: 32px;
       cursor: pointer; }
   .month-carusel .month {
-    flex: 4; }
+    flex: 4;
+    text-transform: capitalize; }
 
 .week {
   width: 100%;

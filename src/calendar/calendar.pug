@@ -1,31 +1,36 @@
-mixin wweek(first_day)
+mixin wweek(first_day, daysinmonth)
     - var sevendays = [0,1,2,3,4,5,6]
     each day in sevendays
         if first_day + day > 0 
-            if first_day + day < 31
+            if first_day + day < daysinmonth + 1
                 .day.inn= first_day + day
             else
-                .day= first_day + day -30
+                .day= first_day + day - daysinmonth
         else
             .day= first_day + day + 31
 
-mixin calendar
+mixin calendar(date, month, firstdayinweek, daysinmonth)
     .calendar
-        .date= '24'
+        .date= date
         .month-carusel
             .month-left
                 i.material-icons= "keyboard_arrow_left"
-            .month= 'September'
+            .month= month
             .month-right
                 i.material-icons= "keyboard_arrow_right"
         .week
             each day in ['mon','tue','wed','thu','fri','sat','sun']
                 .days= day
-        
-        - var first_days= [-2,5,12,19,26]
+        - var currentday = 2 - firstdayinweek
+        - var first_days= [currentday] //[-2,5,12,19,26]
+
+        while currentday < daysinmonth - 6
+            - currentday= 7 + currentday
+            - first_days.push(currentday)
 
         each first_day in first_days
             .calendar-row
-                +wweek(first_day)  
+                +wweek(first_day, daysinmonth)  
+
 
         .footer= 'today'

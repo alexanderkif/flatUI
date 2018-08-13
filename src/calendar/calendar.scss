@@ -39,6 +39,7 @@ $color-red-carusel: #d54c2c;
     }
     .month {
         flex: 4;
+        text-transform: capitalize;
     }
 }
 .week {

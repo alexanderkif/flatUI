@@ -1,13 +1,13 @@
-mixin messaging
+mixin messaging(user, img, message1, message2)
     .messaging
-        .messaging-header= 'Sarah Brown'
+        .messaging-header= user
         .hr-green
             .icons
                 i.material-icons= "mode_comment"
                 i.material-icons= "local_see"
         .messaging-body
-            img.user-photo(src="img/sarah.png", alt="no image")
-            .white-message= 'Hey! So are we cool to meet at the art gallery? Say 8pm'
+            img.user-photo(src="img/"+img+".png", alt="no image")
+            .white-message= message1
                 .corner
-            .grey-message= 'Yeah that sounds great. See you then.'
+            .grey-message= message2
             +button('reply', 'green')
