@@ -57,7 +57,18 @@ module.exports = {
     //   filename: 'index.html'
     // })
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: 'src/index.pug',
+      inject: false,
+      metadata: {
+        // available in index.pug under locals
+        // TODO: This doesn't work, and we need to figure out how to pass these via apply-loader
+        // title, server, baseUrl
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: '1.html',
+      template: 'src/html/1.pug',
       inject: false,
       metadata: {
         // available in index.pug under locals

@@ -1,0 +1,26 @@
+.main-div {
+    display: block;
+    width: 80%;
+    min-width: 900px;
+    font-family: 'Conv_Lato-Regular';
+    font-size: 12px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.main-page {
+    display: inline-flex;
+    margin-top: 50px;
+}
+
+.main-page-left {
+    flex-grow: 2;
+}
+
+.main-page-right {
+    flex-grow: 1;
+}
+
+.main-page-video-text {
+    display: block;
+}
