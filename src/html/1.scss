@@ -1,26 +1,71 @@
+$color-green: hsl(171, 42%, 51%);
+$color-green-shadow: hsl(171, 60%, 40%);
+$color-green-l: hsl(171, 60%, 81%);
+$color-green-body: hsl(169, 51%, 95%);
+$color-red-l: #e6a192;
+$color-red: #e75735;
+$color-red-shadow: #bf3e1f;
+
+body {
+    background-color: $color-green-body;
+}
+
 .main-div {
     display: block;
-    width: 80%;
-    min-width: 900px;
+    width: 95%;
+    min-width: 1024px;
+    max-width: 1280px;
     font-family: 'Conv_Lato-Regular';
-    font-size: 12px;
+    font-size: 16px;
     margin: 0 auto;
     margin-top: 50px;
 }
 
 .main-page {
-    display: inline-flex;
     margin-top: 50px;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .main-page-left {
     flex-grow: 2;
+    margin: 0 auto;
 }
 
 .main-page-right {
     flex-grow: 1;
+    margin: 0 auto;
+}
+
+.video-block {
+    width: 660px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    background-color: $color-green-l;
+    box-shadow: 5px 10px 25px $color-red-l;
+    border-radius: 5px;
+    border: 1px solid $color-red;
+
+}
+
+.in-left-block {
+    width: 300px;
+    margin: 0 auto;
+    padding: 25px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    background-color: $color-green-l;
+    box-shadow: 5px 10px 25px $color-red-l;
+    border-radius: 5px;
+    border: 1px solid $color-red;
 }
 
 .main-page-video-text {
     display: block;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
 }

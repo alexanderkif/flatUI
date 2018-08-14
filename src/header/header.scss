@@ -2,14 +2,16 @@
 .header-top {
     display: flex;
     width: 100%;
-    height: 150px;
+    height: 250px;
     font-family: 'Conv_Lato-Black';
     font-size: 100px;
     text-transform: uppercase;
     letter-spacing: 30px;
-    color: white;
-    background-color: $color-green;
+    color: $color-red;
+    background: linear-gradient($color-red, $color-green-l, $color-green);
     justify-content: center;
     align-items: flex-end;
     border-radius: 10px;
+    box-shadow: 5px 10px 30px $color-red-l;
+    border: 1px solid $color-red-l;
 }
