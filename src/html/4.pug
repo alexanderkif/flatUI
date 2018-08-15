@@ -1,0 +1,57 @@
+include ../buttons/buttons
+include ../percentages/percentages
+include ../sliders/sliders
+include ../stages/stages
+include ../forms/forms
+include ../search/search
+include ../user/user
+include ../news/news
+include ../event/event
+include ../maps/maps
+include ../calendar/calendar
+include ../messaging/messaging
+include ../video/video
+include ../header/header
+include ../footer/footer
+
+- var page= 'user page'
+
+html
+    head
+        meta(charset='UTF-8')
+        title= page
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet")
+        link(rel="stylesheet" href="style.css")
+        
+    body
+        .stat-div
+            +header(page)
+
+            //- = = = = = = Insert page here = = = = = = = = =
+            .stat-page
+                .stat-page-center
+                    .block
+                        +percentage(0)
+                        +percentage(48)
+                        +percentage(13)
+                        +percentage(89)
+                        +percentage(100)
+                        
+                    .block
+                        +percentage4list(50,35,10,400)
+
+                    .block
+                        +button('<', 'arrow')
+                        +button('>', 'arrow')
+
+                    .block
+                        +slider1(40)
+                        +slider2(75)
+
+                    .block
+                        +button('<', 'arrow disable')
+                        +button('>', 'arrow disable')
+
+            //- = = = = = = = = end of page = = = = = = = = = =
+            +footer

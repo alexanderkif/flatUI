@@ -1,5 +1,5 @@
-mixin news(header, date, text, img)
-    a(href="")
+mixin news(header, date, text, img, href)
+    a(href=href)
         .news-block
             img(src="img/"+img+".png", alt="no img")
             .news-content

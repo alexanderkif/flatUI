@@ -68,13 +68,23 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: '1.html',
-      template: 'src/html/1.pug',
-      inject: false,
-      metadata: {
-        // available in index.pug under locals
-        // TODO: This doesn't work, and we need to figure out how to pass these via apply-loader
-        // title, server, baseUrl
-      }
+      template: 'src/html/1.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '2.html',
+      template: 'src/html/2.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '3.html',
+      template: 'src/html/3.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '4.html',
+      template: 'src/html/4.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '5.html',
+      template: 'src/html/5.pug'
     })
   ]
-}
+};

@@ -1,0 +1,49 @@
+include ../buttons/buttons
+include ../percentages/percentages
+include ../sliders/sliders
+include ../stages/stages
+include ../forms/forms
+include ../search/search
+include ../user/user
+include ../news/news
+include ../event/event
+include ../maps/maps
+include ../calendar/calendar
+include ../messaging/messaging
+include ../video/video
+include ../header/header
+include ../footer/footer
+
+- var page= 'user page'
+
+html
+    head
+        meta(charset='UTF-8')
+        title= page
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet")
+        link(rel="stylesheet" href="style.css")
+        
+    body
+        .user-div
+            +header(page)
+
+            //- = = = = = = Insert page here = = = = = = = = =
+            .user-page
+                .user-page-left
+                    .video-block
+                        +form
+                        .stage
+                            +stage(7,2)
+
+                .user-page-right
+                    .in-left-block
+                        +search-input('Search', 'red')
+                        +dropdown-input('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
+      
+                    .in-left-block
+                        +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
+
+
+            //- = = = = = = = = end of page = = = = = = = = = =
+            +footer

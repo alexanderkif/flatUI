@@ -6,7 +6,7 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
-.main-div {
+.stat-div {
     display: block;
     width: 95%;
     min-width: 1024px;
@@ -15,49 +15,32 @@ $color-red-shadow: #bf3e1f;
     font-size: 16px;
     margin: 0 auto;
     margin-top: 50px;
-    .main-page {
+    .stat-page {
         margin-top: 50px;
         display: inline-flex;
         width: 100%;
         justify-content: space-around;
     }
     
-    .main-page-left {
-        flex-grow: 2;
+    .stat-page-center {
+        width: 73%;
         margin: 0 auto;
-    }
-    
-    .main-page-right {
-        flex-grow: 1;
-        margin: 0 auto;
-    }
-    
-    .video-block {
-        width: 660px;
-        margin: 0 auto;
-        padding-top: 20px;
-        padding-bottom: 30px;
         margin-bottom: 50px;
         background-color: white;
         box-shadow: 5px 10px 25px $color-red-l;
         border-radius: 5px;
         border: 1px solid $color-red;
-    
+        .block {
+            display: flex;
+            flex-wrap: wrap;  
+            justify-content: space-around;
+            width: 90%;
+            margin: 100px auto;
+        }
     }
     
-    .in-left-block {
-        width: 300px;
-        margin: 0 auto;
-        padding: 25px;
-        padding-bottom: 30px;
-        margin-bottom: 50px;
-        background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
-        border-radius: 5px;
-        border: 1px solid $color-red;
-    }
     
-    .main-page-video-text {
+    .stat-page-text {
         display: block;
         width: 600px;
         margin: 0 auto;

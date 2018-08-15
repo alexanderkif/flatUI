@@ -1,0 +1,38 @@
+include ../buttons/buttons
+include ../percentages/percentages
+include ../sliders/sliders
+include ../stages/stages
+include ../forms/forms
+include ../search/search
+include ../user/user
+include ../news/news
+include ../event/event
+include ../maps/maps
+include ../calendar/calendar
+include ../messaging/messaging
+include ../video/video
+include ../header/header
+include ../footer/footer
+
+- var page= 'user page'
+
+html
+    head
+        meta(charset='UTF-8')
+        title= page
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet")
+        link(rel="stylesheet" href="style.css")
+        
+    body
+        .stat-div
+            +header(page)
+
+            //- = = = = = = Insert page here = = = = = = = = =
+            .stat-page
+                .stat-page-center
+                    .block
+                        +map(37.791235, -122.414842)
+
+            //- = = = = = = = = end of page = = = = = = = = = =
+            +footer
