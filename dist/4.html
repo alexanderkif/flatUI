@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>user page</title>
+    <title>Statistic</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -10,11 +10,12 @@
   <body>
     <div class="stat-div">
       <div class="header-top">
-        <div class="inn">user page</div>
+        <div class="inn">Statistic</div>
         <div class="menu"><a href="1.html">Home</a><a href="2.html">News</a><a href="3.html">User</a><a href="4.html">Statistic</a><a href="5.html">About</a></div>
       </div>
       <div class="stat-page">
         <div class="stat-page-center">
+          <h1>Real time parameters</h1>
           <div class="block">
             <svg viewbox="0 0 10 10" style="width:115px;">
               <defs>
@@ -52,34 +53,45 @@
               <text class="svg-text" x="5" y="6.5" text-anchor="middle" font-size="3.5">100</text>
             </svg>
           </div>
+          <div class="block-btn">
+            <div class="left"><span>Prev</span>
+              <button class="btn arrow">&lt;</button>
+            </div>
+            <div class="right">
+              <button class="btn arrow">&gt;</button><span>Next</span>
+            </div>
+          </div>
+          <h1>Round diagram</h1>
           <div class="block">
             <canvas id="cnvs" width="400px" height="400px" r="200" p1="50" p2="35" p3="10" style="width:400px;height:400px;"></canvas>
           </div>
-          <div class="block">
-            <button class="btn arrow">&lt;</button>
-            <button class="btn arrow">&gt;</button>
-          </div>
-          <div class="block">
-            <div class="slider-1">
-              <input class="range-example-input" type="text" min="0" max="100" value="40" name="points" step="1">
+          <div class="block-btn">
+            <div class="left"><span>Prev</span>
+              <button class="btn arrow disable">&lt;</button>
             </div>
-            <div class="slider-2">
-              <input class="range-example-input" type="text" min="0" max="100" value="75" name="points" step="0.1">
-              <div class="scale">
-                <div class="digit">0</div>
-                <div class="digit">25</div>
-                <div class="digit">50</div>
-                <div class="digit">75</div>
-                <div class="digit">100</div>
-              </div>
+            <div class="right">
+              <button class="btn arrow disable">&gt;</button><span>Next</span>
             </div>
-          </div>
-          <div class="block">
-            <button class="btn arrow disable">&lt;</button>
-            <button class="btn arrow disable">&gt;</button>
           </div>
         </div>
       </div>
+    </div>
+    <div class="block1">
+      <div class="slider-1">
+        <input class="range-example-input" type="text" min="0" max="100" value="40" name="points" step="1">
+      </div>
+      <div class="slider-2">
+        <input class="range-example-input" type="text" min="0" max="100" value="75" name="points" step="0.1">
+        <div class="scale">
+          <div class="digit">0</div>
+          <div class="digit">25</div>
+          <div class="digit">50</div>
+          <div class="digit">75</div>
+          <div class="digit">100</div>
+        </div>
+      </div>
+    </div>
+    <div class="block1"><span>Brightness</span><span>Contrast</span>
       <div class="main-footer">footer here</div>
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/jquery-asRange.min.js"></script>

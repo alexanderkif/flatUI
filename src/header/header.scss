@@ -8,13 +8,13 @@
     text-transform: uppercase;
     letter-spacing: 30px;
     color: $color-green;
-    background: linear-gradient($color-green-l, white, white, white, $color-red-l);
+    background: linear-gradient($color-red, $color-red, $color-green-l);
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
     border-radius: 10px;
-    box-shadow: 5px 20px 20px $color-green-l;
-    border: 2px solid $color-red-l;
+    box-shadow: 5px 10px 25px $color-shadow;
+    border: 1px solid $color-border;
     .menu {
         width: 100%;
         display: flex;

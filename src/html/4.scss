@@ -6,6 +6,15 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
+body {
+    font-family: 'Conv_Lato-Black';
+    color: #797979;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-top: 80px;
+}
 .stat-div {
     display: block;
     width: 95%;
@@ -27,18 +36,40 @@ $color-red-shadow: #bf3e1f;
         margin: 0 auto;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-shadow;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-border;
+        text-align: center;
         .block {
             display: flex;
             flex-wrap: wrap;  
             justify-content: space-around;
             width: 90%;
-            margin: 100px auto;
+            margin: 30px auto;
+        }
+        .block-btn {
+            display: flex;
+            flex-wrap: wrap;  
+            justify-content: center;
+            width: 100%;
+            margin: 30px auto;
+            span {
+                font-size: 32px;
+                margin: 10px;
+            }
+            .left, .right {
+                margin: 20px;
+            }
         }
     }
     
+    span {
+        font-size: 24px;
+        display: inline-block;
+        text-align: left;
+        margin: 5px;
+        margin-right: 40px;
+    }
     
     .stat-page-text {
         display: block;
@@ -46,5 +77,14 @@ $color-red-shadow: #bf3e1f;
         margin: 0 auto;
         margin-top: 20px;
     }
+}
+.block1 {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-around;
+    font-size: 24px;
+    width: 90%;
+    margin: 10px auto;
+    color: $color-border;
 }
 

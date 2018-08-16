@@ -1,31 +1,41 @@
 mixin form-input(placeholder, btntext, btncolor)
+    .form-block
         input.form-input(type="text" placeholder=placeholder)
         input.form-button(type="button", value=btntext, class='form-button-'+btncolor)
         .button-arrow(class='form-button-'+btncolor)
 
+mixin textarea(placeholder, cols, rows)
+    .form-block
+        textarea.form-input.form-textarea(placeholder=placeholder, cols=cols, rows=rows)
+
+mixin toggle(name, value, tglclass, checked)
+    .toggle
+        if checked
+            input(type="checkbox", name=name, value=value, class=tglclass, checked="checked", autocomplete="off")
+        else
+            input(type="checkbox", name=name, value=value, class=tglclass, autocomplete="off")
+
+mixin tick(active)
+    .tick(class=active onclick="this.classList.toggle('active');")
+        i(class="material-icons icons-size")= 'done'
+
+
 mixin form
     form(action="", method="get")
         .form-left
-            .form-block
-                +form-input('Your Name', 'ERROR', 'red')
-            .form-block
-                +form-input('Your Email', 'THANKS!', 'green')
-            .form-block
-                textarea.form-input.form-textarea(placeholder="Your Message", cols="30", rows="4")
+            +form-input('Your Name', 'ERROR', 'red')
+            +form-input('Your Email', 'THANKS!', 'green')
+            +textarea("Your Message", "30", "4")
             .form-block
                 +button('submit', 'green')
         .form-right
             .form-block.center
                 .header.header-informs toggles
-            .form-block.center
-                .toggle-1
-                    input(type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off")
-                .toggle-2
-                    input(type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off")
+            .form-block.center                
+                +toggle("check-1","4","lcs_check",false)
+                +toggle("check-3","6","lcs_check lcs_tt1",true)
             .form-block.center
                 .header.header-informs tick boxes
             .form-block.center
-                .tick-1.active(onclick="this.classList.toggle('active');")
-                    i(class="material-icons icons-size")= 'done'
-                .tick-2(onclick="this.classList.toggle('active');")
-                    i(class="material-icons icons-size")= 'done'
+                +tick('active')
+                +tick('')

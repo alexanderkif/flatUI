@@ -14,7 +14,7 @@ include ../video/video
 include ../header/header
 include ../footer/footer
 
-- var page= 'user page'
+- var page= 'Statistic'
 
 html
     head
@@ -31,27 +31,42 @@ html
             //- = = = = = = Insert page here = = = = = = = = =
             .stat-page
                 .stat-page-center
+                    //- .block
+                    h1 Real time parameters
                     .block
                         +percentage(0)
                         +percentage(48)
                         +percentage(13)
                         +percentage(89)
                         +percentage(100)
+
+                    .block-btn
+                        .left
+                            span Prev
+                            +button('<', 'arrow')
+                        .right
+                            +button('>', 'arrow')
+                            span Next
                         
+                    h1 Round diagram
+
                     .block
                         +percentage4list(50,35,10,400)
 
-                    .block
-                        +button('<', 'arrow')
-                        +button('>', 'arrow')
+                    .block-btn
+                        .left
+                            span Prev
+                            +button('<', 'arrow disable')
+                        .right
+                            +button('>', 'arrow disable')
+                            span Next
 
-                    .block
-                        +slider1(40)
-                        +slider2(75)
-
-                    .block
-                        +button('<', 'arrow disable')
-                        +button('>', 'arrow disable')
+        .block1
+            +slider1(40)
+            +slider2(75)
+        .block1
+            span Brightness
+            span Contrast
 
             //- = = = = = = = = end of page = = = = = = = = = =
             +footer

@@ -7,11 +7,12 @@
     text-transform: uppercase;
     letter-spacing: 30px;
     color: $color-green-l;
-    background: linear-gradient(white, $color-red-l);
+    background: linear-gradient(white, $color-red);
     justify-content: center;
     align-items: flex-end;
     border-radius: 10px;
-    box-shadow: 5px 10px 30px $color-green-shadow;
-    border: 1px solid $color-green;
+    box-shadow: 5px 10px 25px $color-shadow;
+    border: 1px solid $color-border;
     margin-bottom: 50px;
+    margin-top: 50px;
 }

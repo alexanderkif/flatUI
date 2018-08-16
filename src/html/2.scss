@@ -6,6 +6,7 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
+
 .news-div {
     display: block;
     width: 95%;
@@ -39,9 +40,9 @@ $color-red-shadow: #bf3e1f;
         padding-bottom: 30px;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-shadow;
         display: flex;
         flex-wrap: wrap;  
         justify-content: space-around;
@@ -54,9 +55,9 @@ $color-red-shadow: #bf3e1f;
         padding-bottom: 30px;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-shadow;
     }
     
     .news-page-video-text {

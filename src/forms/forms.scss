@@ -79,7 +79,7 @@ form {
 .header.header-informs {
     margin: 0;
 }
-.toggle-1, .toggle-2 {
+.toggle {
     display: inline-block;
     margin: 20px 5px 35px 5px;
     .lcs_switch {
@@ -111,7 +111,7 @@ form {
         background-color: $color-lightgray !important;
     }
 }
-.tick-1, .tick-2 {
+.tick {
     display: inline-block;
     margin: 25px 10px;
     width: 24px;

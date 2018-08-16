@@ -7,7 +7,7 @@ mixin search-input(placeholder, btncolor, status)
 mixin dropdown-input(placeholder, btncolor, options)
     .search-block
         input.search-input(type="text" placeholder=placeholder)
-        .search-button(type="button" class="dropdownclick-1 btn search-button-"+btncolor)
+        .search-button(type="button" class="dropdownclick-1 btn search-button-"+btncolor onclick="this.parentElement.getElementsByClassName('dropdown-menu-1')[0].classList.toggle('visible');")
             i(class="material-icons icons-size")= 'keyboard_arrow_down'
         .dropdown-menu-1
             each option in options

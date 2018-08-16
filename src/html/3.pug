@@ -14,7 +14,7 @@ include ../video/video
 include ../header/header
 include ../footer/footer
 
-- var page= 'user page'
+- var page= 'User page'
 
 html
     head
@@ -32,7 +32,37 @@ html
             .user-page
                 .user-page-left
                     .video-block
-                        +form
+                        span Send to us your message
+                        +form-input('Your Name', 'ERROR', 'red')
+                        +form-input('Your Email', 'THANKS!', 'green')
+                        +textarea("Your Message", "30", "4")
+                        .form-block
+                            +button('submit', 'green')
+                        .toggles
+                            .toggle-block
+                                +toggle("check-3","6","lcs_check lcs_tt1",true)
+                                span Switch borders
+                            .toggle-block
+                                +toggle("check-3","6","lcs_check lcs_tt1",true)
+                                span Switch shadows
+                            .toggle-block
+                                +toggle("check-1","4","lcs_check",false)
+                                span Switch to turn off your PC
+
+                        .toggles
+                            span Choose options you need
+                            .toggle-block
+                                +tick('active') 
+                                span A
+                                +tick('') 
+                                span B
+                                +tick('') 
+                                span C
+                                +tick('') 
+                                span D
+                            
+
+                        span Stages to comlite your application
                         .stage
                             +stage(7,2)
 

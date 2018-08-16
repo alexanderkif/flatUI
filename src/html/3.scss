@@ -6,6 +6,7 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
+
 .user-div {
     display: block;
     width: 95%;
@@ -38,16 +39,16 @@ $color-red-shadow: #bf3e1f;
         padding: 30px;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-shadow;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-border;
         display: flex;
         flex-wrap: wrap;  
         justify-content: center;
         .stage {
             width: 90%;
-            margin: 30px auto;
-            margin-top: 60px;
+            margin: 20px auto;
+            margin-bottom: 30px;
         }
     }
     
@@ -58,9 +59,9 @@ $color-red-shadow: #bf3e1f;
         padding-bottom: 30px;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-shadow;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-border;
     }
     
     .user-page-video-text {
@@ -68,6 +69,27 @@ $color-red-shadow: #bf3e1f;
         width: 600px;
         margin: 0 auto;
         margin-top: 20px;
+    }
+    .toggles {
+        display: block;
+        width: 100%;
+        margin: 30px;
+    }
+    .toggle-block {
+        display: block;
+        width: 100%;
+        margin: 0px auto;
+    }
+    span {
+        font-size: 24px;
+        display: inline-block;
+        text-align: left;
+        margin: 5px;
+        margin-right: 40px;
+    }
+    .toggle {
+        display: inline-block;
+        margin: 5px;
     }
 }
 

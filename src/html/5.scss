@@ -6,6 +6,7 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
+
 .stat-div {
     display: block;
     width: 95%;
@@ -27,10 +28,10 @@ $color-red-shadow: #bf3e1f;
         margin: 0 auto;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-shadow;
         border-radius: 5px;
-        border: 1px solid $color-red;
-        .block {
+        border: 1px solid $color-border;
+        .block-about {
             display: flex;
             flex-wrap: wrap;  
             justify-content: space-around;
@@ -44,7 +45,12 @@ $color-red-shadow: #bf3e1f;
         display: block;
         width: 600px;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 30px;
+        span {
+            font-size: 16px;
+            text-align: justify;
+            width: 100%;
+        }
     }
 }
 

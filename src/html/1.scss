@@ -5,6 +5,9 @@ $color-green-body: hsl(169, 51%, 95%);
 $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
+$color-border: #bbbbbb;
+$color-shadow: #bbbbbb;
+
 
 .main-div {
     display: block;
@@ -39,9 +42,9 @@ $color-red-shadow: #bf3e1f;
         padding-bottom: 30px;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-shadow;
     
     }
     
@@ -52,9 +55,9 @@ $color-red-shadow: #bf3e1f;
         padding-bottom: 30px;
         margin-bottom: 50px;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-red-l;
+        box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
-        border: 1px solid $color-red;
+        border: 1px solid $color-shadow;
     }
     
     .main-page-video-text {
