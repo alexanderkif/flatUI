@@ -949,7 +949,7 @@ form {
     width: 100%;
     margin: 0px auto; }
   .user-div span {
-    font-size: 24px;
+    font-size: 18px;
     display: inline-block;
     text-align: left;
     margin: 5px;
@@ -994,8 +994,31 @@ h1 {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+      align-items: center;
       width: 90%;
       margin: 30px auto; }
+      .stat-div .stat-page-center .block span {
+        font-size: 14px;
+        margin: 0px; }
+      .stat-div .stat-page-center .block .row {
+        display: block;
+        margin: 10px;
+        text-align: left; }
+        .stat-div .stat-page-center .block .row .color {
+          width: 35px;
+          height: 15px;
+          display: inline-block;
+          margin-right: 20px; }
+          .stat-div .stat-page-center .block .row .color.color-1 {
+            background-color: #747474; }
+          .stat-div .stat-page-center .block .row .color.color-2 {
+            background-color: #e75735; }
+          .stat-div .stat-page-center .block .row .color.color-3 {
+            background-color: #4eb7a7; }
+          .stat-div .stat-page-center .block .row .color.color-4 {
+            background-color: #e5e5e5; }
+        .stat-div .stat-page-center .block .row span {
+          font-size: 24px; }
     .stat-div .stat-page-center .block-btn {
       display: flex;
       flex-wrap: wrap;
@@ -1099,8 +1122,8 @@ h1 {
   font-size: 100px;
   text-transform: uppercase;
   letter-spacing: 30px;
-  color: #b1ece3;
-  background: linear-gradient(white, #e75735);
+  color: #4eb7a7;
+  background: linear-gradient(#b1ece3, #e75735);
   justify-content: center;
   align-items: flex-end;
   border-radius: 10px;

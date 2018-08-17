@@ -36,8 +36,6 @@ html
                         +form-input('Your Name', 'ERROR', 'red')
                         +form-input('Your Email', 'THANKS!', 'green')
                         +textarea("Your Message", "30", "4")
-                        .form-block
-                            +button('submit', 'green')
                         .toggles
                             .toggle-block
                                 +toggle("check-3","6","lcs_check lcs_tt1",true)
@@ -60,11 +58,13 @@ html
                                 span C
                                 +tick('') 
                                 span D
+                        .form-block
+                            +button('submit', 'green')
                             
 
-                        span Stages to comlite your application
-                        .stage
-                            +stage(7,2)
+                        //- span Stages to complite your application
+                        //- .stage
+                        //-     +stage(7,2)
 
                 .user-page-right
                     .in-left-block

@@ -44,8 +44,39 @@ h1 {
             display: flex;
             flex-wrap: wrap;  
             justify-content: space-around;
+            align-items: center;
             width: 90%;
             margin: 30px auto;
+            span {
+                font-size: 14px;
+                margin: 0px;
+            }
+            .row {
+                display: block;
+                margin: 10px;
+                text-align: left;
+                .color {
+                    width: 35px;
+                    height: 15px;
+                    display: inline-block;
+                    margin-right: 20px;
+                    &.color-1 {
+                    background-color: $color-grey;
+                    }
+                    &.color-2 {
+                    background-color: $color-red;
+                    }
+                    &.color-3 {
+                    background-color: $color-green;
+                    }
+                    &.color-4 {
+                    background-color: $color-lightgray;
+                    }
+                }
+                span {
+                    font-size: 24px;
+                }
+            }
         }
         .block-btn {
             display: flex;

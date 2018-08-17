@@ -14,7 +14,7 @@ include ../video/video
 include ../header/header
 include ../footer/footer
 
-- var page= 'Statistic'
+- var page= 'Currency'
 
 html
     head
@@ -32,34 +32,47 @@ html
             .stat-page
                 .stat-page-center
                     //- .block
-                    h1 Real time parameters
+                    h1 USD/RUB exchange rates
                     .block
-                        +percentage(0)
-                        +percentage(48)
-                        +percentage(13)
-                        +percentage(89)
-                        +percentage(100)
+                        +percentage(64)
+                        +percentage(67)
+                        +percentage(68)
+                        +percentage(66)
+                        +percentage(67)
+                    .block
+                        span 09.08.2018
+                        span 11.08.2018
+                        span 14.08.2018
+                        span 16.08.2018
+                        span 17.08.2018
 
                     .block-btn
                         .left
                             span Prev
                             +button('<', 'arrow')
                         .right
-                            +button('>', 'arrow')
-                            span Next
-                        
-                    h1 Round diagram
-
-                    .block
-                        +percentage4list(50,35,10,400)
-
-                    .block-btn
-                        .left
-                            span Prev
-                            +button('<', 'arrow disable')
-                        .right
                             +button('>', 'arrow disable')
                             span Next
+                        
+                    h1 recommendation
+
+                    .block
+                        .left
+                            +percentage4list(50,35,10,400)
+                        .right
+                            .row
+                                .color.color-1
+                                span Buy
+                            .row
+                                .color.color-2
+                                span Sell
+                            .row
+                                .color.color-3
+                                span Hold
+                            .row
+                                .color.color-4
+                                span No recomendations
+
 
         .block1
             +slider1(40)
@@ -69,4 +82,5 @@ html
             span Contrast
 
             //- = = = = = = = = end of page = = = = = = = = = =
+        .stat-div
             +footer
