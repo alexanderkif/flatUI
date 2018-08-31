@@ -1,0 +1,59 @@
+$sliderm-body-height: 50px;
+$sliderm-body-width: 300px;
+$sliderm-body-color: grey;
+$sliderm-line-color: lightgrey;
+$sliderm-active-color: yellow;
+$sliderm-line-height: 6px;
+$sliderm-value: 36;
+$sliderm-point-size: 25px;
+$sliderm-hint-height: 30px;
+$sliderm-hint-width: 50px;
+
+.sliderm-body {
+    position: relative;
+    height: $sliderm-body-height;
+    width: $sliderm-body-width;
+    border: 1px dashed $sliderm-body-color;
+}
+.sliderm-line {
+    position: absolute;
+    height: $sliderm-line-height;
+    width: 100%;
+    border-radius: $sliderm-line-height/2;
+    background-color: $sliderm-line-color;
+    top: $sliderm-body-height/2;
+    &.active {
+        width: $sliderm-body-width*$sliderm-value/100;
+        background-color: $sliderm-active-color;
+        justify-content: left;
+    }
+}
+.sliderm-point {
+    position: absolute;
+    height: $sliderm-point-size;
+    width: $sliderm-point-size;
+    background-color: $sliderm-active-color;
+    top: ($sliderm-body-height + $sliderm-line-height - $sliderm-point-size)/2;
+    left: $sliderm-body-width*$sliderm-value/100 - $sliderm-point-size/2;
+    border-radius: $sliderm-point-size/2;
+}
+.sliderm-hint {
+    position: absolute;
+    height: $sliderm-hint-height;
+    width: $sliderm-hint-width;
+    top: ($sliderm-body-height + $sliderm-line-height)/2 - $sliderm-hint-height - $sliderm-point-size;
+    left: $sliderm-body-width*$sliderm-value/100 - $sliderm-hint-width/2;
+    background-color: $sliderm-active-color;
+    border-radius: $sliderm-hint-height/5;
+    &:before {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        height: $sliderm-hint-width/5;
+        width: $sliderm-hint-width/5;
+        top: $sliderm-hint-height - 0.55*$sliderm-hint-width/5;
+        left: $sliderm-hint-width/2 - 0.55*$sliderm-hint-width/5;
+        background-color: $sliderm-active-color;
+        transform: rotate(-45deg);
+    }
+}

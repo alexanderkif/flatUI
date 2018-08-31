@@ -172,6 +172,52 @@ svg {
       color: #e5e5e5;
       margin-top: 10px; }
 
+.sliderm-body {
+  position: relative;
+  height: 50px;
+  width: 300px;
+  border: 1px dashed grey; }
+
+.sliderm-line {
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: lightgrey;
+  top: 25px; }
+  .sliderm-line.active {
+    width: 108px;
+    background-color: yellow;
+    justify-content: left; }
+
+.sliderm-point {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  top: 15.5px;
+  left: 95.5px;
+  border-radius: 12.5px; }
+
+.sliderm-hint {
+  position: absolute;
+  height: 30px;
+  width: 50px;
+  top: -27px;
+  left: 83px;
+  background-color: yellow;
+  border-radius: 6px; }
+  .sliderm-hint:before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    top: 24.5px;
+    left: 19.5px;
+    background-color: yellow;
+    transform: rotate(-45deg); }
+
 .steps {
   width: 100%;
   display: table;
