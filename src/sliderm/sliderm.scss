@@ -6,8 +6,10 @@ $sliderm-active-color: yellow;
 $sliderm-line-height: 6px;
 $sliderm-value: 36;
 $sliderm-point-size: 25px;
-$sliderm-hint-height: 30px;
-$sliderm-hint-width: 50px;
+$sliderm-hint-height: 35px;
+$sliderm-hint-width: 75px;
+
+$sliderm-hint-arrow-side: $sliderm-hint-width/8;
 
 .sliderm-body {
     position: relative;
@@ -36,24 +38,22 @@ $sliderm-hint-width: 50px;
     top: ($sliderm-body-height + $sliderm-line-height - $sliderm-point-size)/2;
     left: $sliderm-body-width*$sliderm-value/100 - $sliderm-point-size/2;
     border-radius: $sliderm-point-size/2;
-}
-.sliderm-hint {
-    position: absolute;
-    height: $sliderm-hint-height;
-    width: $sliderm-hint-width;
-    top: ($sliderm-body-height + $sliderm-line-height)/2 - $sliderm-hint-height - $sliderm-point-size;
-    left: $sliderm-body-width*$sliderm-value/100 - $sliderm-hint-width/2;
-    background-color: $sliderm-active-color;
-    border-radius: $sliderm-hint-height/5;
-    &:before {
+    .sliderm-hint {
         position: absolute;
-        content: "";
-        display: inline-block;
-        height: $sliderm-hint-width/5;
-        width: $sliderm-hint-width/5;
-        top: $sliderm-hint-height - 0.55*$sliderm-hint-width/5;
-        left: $sliderm-hint-width/2 - 0.55*$sliderm-hint-width/5;
+        height: $sliderm-hint-height;
+        width: $sliderm-hint-width;
+        // top: - $sliderm-hint-height - $sliderm-hint-arrow-side/2 - 10px;
+        left: $sliderm-point-size/2 - $sliderm-hint-width/2;
         background-color: $sliderm-active-color;
-        transform: rotate(-45deg);
+        border-radius: $sliderm-hint-arrow-side;
+        .sliderm-hint-arrow {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            height: $sliderm-hint-arrow-side;
+            width: $sliderm-hint-arrow-side;
+            background-color: $sliderm-active-color;
+            transform: rotate(-45deg);
+        }
     }
 }

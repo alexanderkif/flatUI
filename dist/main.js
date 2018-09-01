@@ -149,7 +149,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/sliderm/sliderm.js?");
+eval("var slidermHintWidth = $('.sliderm-hint').width();\nvar slidermHintHeight = $('.sliderm-hint').height();\nvar slidermHintArrowSide = $('.sliderm-hint-arrow').height();\nvar slidermHintArrowKatet = Math.sqrt(slidermHintArrowSide * slidermHintArrowSide / 2);\n\nvar elems = $('.sliderm-hint-arrow');\n[].forEach.call(elems, element => {\n    element.style.top = slidermHintHeight - slidermHintArrowSide / 2 + \"px\";\n    element.style.left = slidermHintWidth / 2 - slidermHintArrowSide / 2 + \"px\";\n    element.parentElement.style.top = -slidermHintHeight - slidermHintArrowKatet - 5 + \"px\";\n});\n\n//# sourceURL=webpack:///./src/sliderm/sliderm.js?");
 
 /***/ }),
 

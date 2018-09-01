@@ -198,25 +198,21 @@ svg {
   top: 15.5px;
   left: 95.5px;
   border-radius: 12.5px; }
-
-.sliderm-hint {
-  position: absolute;
-  height: 30px;
-  width: 50px;
-  top: -27px;
-  left: 83px;
-  background-color: yellow;
-  border-radius: 6px; }
-  .sliderm-hint:before {
+  .sliderm-point .sliderm-hint {
     position: absolute;
-    content: "";
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    top: 24.5px;
-    left: 19.5px;
+    height: 35px;
+    width: 75px;
+    left: -25px;
     background-color: yellow;
-    transform: rotate(-45deg); }
+    border-radius: 9.375px; }
+    .sliderm-point .sliderm-hint .sliderm-hint-arrow {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      height: 9.375px;
+      width: 9.375px;
+      background-color: yellow;
+      transform: rotate(-45deg); }
 
 .steps {
   width: 100%;
