@@ -175,8 +175,8 @@ svg {
 .sliderm-body {
   position: relative;
   height: 50px;
-  width: 300px;
-  border: 1px dashed grey; }
+  width: 270px;
+  user-select: none; }
 
 .sliderm-line {
   position: absolute;
@@ -185,34 +185,53 @@ svg {
   border-radius: 3px;
   background-color: lightgrey;
   top: 25px; }
-  .sliderm-line.active {
-    width: 108px;
-    background-color: yellow;
-    justify-content: left; }
-
-.sliderm-point {
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  background-color: yellow;
-  top: 15.5px;
-  left: 95.5px;
-  border-radius: 12.5px; }
-  .sliderm-point .sliderm-hint {
+  .sliderm-line .sliderm-line-active {
     position: absolute;
-    height: 35px;
-    width: 75px;
-    left: -25px;
-    background-color: yellow;
-    border-radius: 9.375px; }
-    .sliderm-point .sliderm-hint .sliderm-hint-arrow {
+    height: inherit;
+    border-radius: inherit;
+    background-color: #ffbb00;
+    justify-content: left; }
+    .sliderm-line .sliderm-line-active .sliderm-point {
       position: absolute;
-      content: "";
-      display: inline-block;
-      height: 9.375px;
-      width: 9.375px;
-      background-color: yellow;
-      transform: rotate(-45deg); }
+      height: 20px;
+      width: 20px;
+      background-color: #ffbb00;
+      top: -7px;
+      border-radius: 10px; }
+      .sliderm-line .sliderm-line-active .sliderm-point .sliderm-hint {
+        position: absolute;
+        display: table;
+        height: auto;
+        width: auto;
+        padding: 3px 10px;
+        background-color: #ffbb00;
+        border-radius: 4px;
+        text-align: center; }
+        .sliderm-line .sliderm-line-active .sliderm-point .sliderm-hint .sliderm-hint-arrow {
+          position: absolute;
+          content: "";
+          height: 8px;
+          width: 8px;
+          background-color: #ffbb00;
+          transform: rotate(-45deg);
+          z-index: -1; }
+        .sliderm-line .sliderm-line-active .sliderm-point .sliderm-hint .sliderm-hint-text {
+          display: table-cell;
+          vertical-align: middle;
+          color: #ff0000;
+          font-family: 'Conv_Lato-Black';
+          font-size: 16px; }
+  .sliderm-line .sliderm-scale {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    left: 0px;
+    justify-content: space-between;
+    top: 15px;
+    color: lightgrey;
+    font-size: 12px; }
+    .sliderm-line .sliderm-scale .sliderm-value, .sliderm-line .sliderm-scale .sliderm-max, .sliderm-line .sliderm-scale .sliderm-intervals {
+      display: none; }
 
 .steps {
   width: 100%;
