@@ -58,9 +58,9 @@ html
   
     div.header.header-sliders sliderm
     div.content.content-sliders
-      //- sliderm(value, maximum, scale-intervals) 
-      +sliderm(135, 1000, 4)
-      +sliderm(73, 126, 9)
+      //- sliderm(value, min, max, step, scale-intervals)
+      +sliderm(135, 80, 1000, 5, 4)
+      +sliderm(73, 8, 126, 2, 9)
 
     div.header.header-stages stages
     div.content.content-stages

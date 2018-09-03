@@ -1,4 +1,4 @@
-mixin sliderm(value, max, intervals)
+mixin sliderm(value, min, max, step, intervals)
     .sliderm-body
         .sliderm-line
             .sliderm-line-active
@@ -7,6 +7,9 @@ mixin sliderm(value, max, intervals)
                         .sliderm-hint-arrow
                         .sliderm-hint-text
             .sliderm-scale
-                .sliderm-value= value
-                .sliderm-max= max
-                .sliderm-intervals= intervals
+                .hidden
+                    .sliderm-value= value
+                    .sliderm-min= min
+                    .sliderm-max= max
+                    .sliderm-step= step
+                    .sliderm-intervals= intervals

@@ -230,7 +230,7 @@ svg {
     top: 15px;
     color: lightgrey;
     font-size: 12px; }
-    .sliderm-line .sliderm-scale .sliderm-value, .sliderm-line .sliderm-scale .sliderm-max, .sliderm-line .sliderm-scale .sliderm-intervals {
+    .sliderm-line .sliderm-scale .hidden {
       display: none; }
 
 .steps {

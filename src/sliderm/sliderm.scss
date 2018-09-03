@@ -74,7 +74,7 @@ $sliderm-hint-arrow-side: 8px;
         top: $sliderm-point-size/2 + 5px;
         color: $sliderm-line-color;
         font-size: 12px;
-        .sliderm-value, .sliderm-max, .sliderm-intervals {
+        .hidden {
             display: none;
         }
     }

@@ -8,23 +8,25 @@ var elems = $('.sliderm-body');
     var line = element.querySelector('.sliderm-line');
     var value = element.querySelector('.sliderm-value').textContent;
     var scale = element.querySelector('.sliderm-scale');
+    var min = element.querySelector('.sliderm-min').textContent;
     var max = element.querySelector('.sliderm-max').textContent;
+    var step = element.querySelector('.sliderm-step').textContent;
     var intervals = element.querySelector('.sliderm-intervals').textContent;
     var text = element.querySelector('.sliderm-hint-text');
     
     for(var i = 0; i <= intervals; i++) {
         var digit = document.createElement('div');
-        digit.innerHTML = Math.round(max*i/intervals);
+        digit.innerHTML = Math.round(+min + (max-min)*i/intervals);
         scale.appendChild(digit);
         if (i==intervals) {
             scale.style.width = scale.offsetWidth + digit.offsetWidth + "px";
-        };
-    };
+        }
+    }
     
 
     var draw = function() {
-        lineActive.style.width = element.clientWidth*value/max;
-        point.style.left = element.clientWidth*value/max - point.clientWidth/2;
+        lineActive.style.width = element.clientWidth*(value-min)/(max-min);
+        point.style.left = element.clientWidth*(value-min)/(max-min) - point.clientWidth/2;
         text.innerHTML = Math.round(value);
         
         hintArrow.style.top = (hint.clientHeight - hintArrow.clientHeight/2) + "px";
@@ -38,7 +40,7 @@ var elems = $('.sliderm-body');
     line.onmousedown = function(e) {
         var lineCoords = getCoords(line);
         var shiftX = e.pageX - lineCoords.left;
-        value = (shiftX)*max/element.clientWidth;
+        value = +min + (shiftX/element.clientWidth)*(max-min);
         draw();
 
         var pointCoords = getCoords(point);
@@ -47,7 +49,7 @@ var elems = $('.sliderm-body');
 
         document.onmousemove = function(e) {
             var newLeft = e.pageX - shiftX - elementCoords.left;
-
+            
             if (newLeft < -point.clientWidth/2) {
             newLeft = -point.clientWidth/2;
             }
@@ -56,7 +58,7 @@ var elems = $('.sliderm-body');
             newLeft = rightEdge;
             }
 
-            value = (newLeft + point.clientWidth/2)*max/element.clientWidth;
+            value = +min + (newLeft + point.clientWidth/2)*(max-min)/element.clientWidth;
             draw();
         }
 
@@ -77,5 +79,5 @@ var elems = $('.sliderm-body');
             top: box.top + pageYOffset,
             left: box.left + pageXOffset
         };
-    };
+    }
 });
