@@ -1,15 +1,30 @@
-mixin sliderm(value, min, max, step, intervals)
-    .sliderm-body
-        .sliderm-line
-            .sliderm-line-active
-                .sliderm-point
-                    .sliderm-hint
-                        .sliderm-hint-arrow
-                        .sliderm-hint-text
-            .sliderm-scale
-                .hidden
-                    .sliderm-value= value
-                    .sliderm-min= min
-                    .sliderm-max= max
-                    .sliderm-step= step
-                    .sliderm-intervals= intervals
+mixin sliderm(value, min, max, step, intervals, hint, scale)
+    .sliderm
+        .sliderm-body
+            .sliderm-line
+                .sliderm-line-active
+                    .sliderm-point
+                        .sliderm-hint
+                            .sliderm-hint-arrow
+                            .sliderm-hint-text
+                .sliderm-scale
+        .inputs
+            .label Value
+            input.sliderm-value(value= value)
+            br
+            .label ScaleMin
+            input.sliderm-min(value= min)
+            br
+            .label ScaleMax
+            input.sliderm-max(value= max)
+            br
+            .label Step
+            input.sliderm-step(value= step)
+            br
+            .label Intervals
+            input.sliderm-intervals(value= intervals)
+            br
+            .label Hint
+            +tick('tick-hint ' + hint)
+            .label Scale
+            +tick('tick-scale ' + scale)
