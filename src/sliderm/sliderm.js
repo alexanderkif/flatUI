@@ -40,7 +40,7 @@ var elems = $('.sliderm-body');
     line.onmousedown = function(e) {
         var lineCoords = getCoords(line);
         var shiftX = e.pageX - lineCoords.left;
-        value = +min + (shiftX/element.clientWidth)*(max-min);
+        value = step * Math.round((+min + (shiftX / element.clientWidth) * (max-min)) / step);
         draw();
 
         var pointCoords = getCoords(point);
@@ -58,7 +58,7 @@ var elems = $('.sliderm-body');
             newLeft = rightEdge;
             }
 
-            value = +min + (newLeft + point.clientWidth/2)*(max-min)/element.clientWidth;
+            value = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / element.clientWidth) / step);
             draw();
         }
 
@@ -76,7 +76,7 @@ var elems = $('.sliderm-body');
     function getCoords(elem) {
         var box = elem.getBoundingClientRect();
         return {
-            top: box.top + pageYOffset,
+            // top: box.top + pageYOffset,
             left: box.left + pageXOffset
         };
     }
