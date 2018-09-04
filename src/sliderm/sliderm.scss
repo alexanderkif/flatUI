@@ -65,6 +65,40 @@ $sliderm-hint-arrow-side: 8px;
                     }
                 }
             }
+            .sliderm-startpoint {
+                position: absolute;
+                height: $sliderm-point-size;
+                width: $sliderm-point-size;
+                background-color: $sliderm-active-color;
+                top: ($sliderm-line-height - $sliderm-point-size)/2;
+                border-radius: $sliderm-point-size/2;
+                .sliderm-starthint {
+                    position: absolute;
+                    display: table;
+                    height: auto;
+                    width: auto;
+                    padding: 3px 10px;
+                    background-color: $sliderm-active-color;
+                    border-radius: 4px; //$sliderm-hint-height/7;
+                    text-align: center;
+                    .sliderm-starthint-arrow {
+                        position: absolute;
+                        content: "";
+                        height: $sliderm-hint-arrow-side;
+                        width: $sliderm-hint-arrow-side;
+                        background-color: $sliderm-active-color;
+                        transform: rotate(-45deg);
+                        z-index: -1;
+                    }
+                    .sliderm-starthint-text {
+                        display: table-cell;
+                        vertical-align: middle;
+                        color: $sliderm-text-color;
+                        font-family: 'Conv_Lato-Black';
+                        font-size: $sliderm-hint-font-size;
+                    }
+                }
+            }
         }
         .sliderm-scale {
             position: absolute;
@@ -82,11 +116,14 @@ $sliderm-hint-arrow-side: 8px;
         margin: 20px auto;
         .label {
             display: inline-block;
-            width: 80px;
+            width: 120px;
             color: $color-grey;
             font-family: 'Conv_Lato-Regular';
             font-size: 16px;
             text-align: right;
+            &.shot {
+                width: 80px;
+            }
         }
         input {
             display: inline-block;

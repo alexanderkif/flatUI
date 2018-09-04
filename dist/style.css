@@ -221,6 +221,36 @@ svg {
           color: #ff0000;
           font-family: 'Conv_Lato-Black';
           font-size: 16px; }
+    .sliderm .sliderm-line .sliderm-line-active .sliderm-startpoint {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: #ffbb00;
+      top: -7px;
+      border-radius: 10px; }
+      .sliderm .sliderm-line .sliderm-line-active .sliderm-startpoint .sliderm-starthint {
+        position: absolute;
+        display: table;
+        height: auto;
+        width: auto;
+        padding: 3px 10px;
+        background-color: #ffbb00;
+        border-radius: 4px;
+        text-align: center; }
+        .sliderm .sliderm-line .sliderm-line-active .sliderm-startpoint .sliderm-starthint .sliderm-starthint-arrow {
+          position: absolute;
+          content: "";
+          height: 8px;
+          width: 8px;
+          background-color: #ffbb00;
+          transform: rotate(-45deg);
+          z-index: -1; }
+        .sliderm .sliderm-line .sliderm-line-active .sliderm-startpoint .sliderm-starthint .sliderm-starthint-text {
+          display: table-cell;
+          vertical-align: middle;
+          color: #ff0000;
+          font-family: 'Conv_Lato-Black';
+          font-size: 16px; }
   .sliderm .sliderm-line .sliderm-scale {
     position: absolute;
     display: flex;
@@ -236,11 +266,13 @@ svg {
   margin: 20px auto; }
   .sliderm .inputs .label {
     display: inline-block;
-    width: 80px;
+    width: 120px;
     color: #747474;
     font-family: 'Conv_Lato-Regular';
     font-size: 16px;
     text-align: right; }
+    .sliderm .inputs .label.shot {
+      width: 80px; }
   .sliderm .inputs input {
     display: inline-block;
     width: 150px;
@@ -1281,7 +1313,8 @@ body {
     padding-right: 15px; }
   .content.content-sliders {
     width: 670px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    align-items: flex-start; }
   .content.content-stages {
     width: 560px;
     margin-bottom: 40px; }
