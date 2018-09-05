@@ -1,54 +1,39 @@
 
 var elems = $('.sliderm');
 [].forEach.call(elems, element => {
-
-    var hint;
-    var starthint;
-    var hintArrow;
-    var starthintArrow;
-    var point;
-    var startpoint;
-    var lineActive;
-    var line;
+    
+    var body = element.querySelector('.sliderm-body');
+    var hint = element.querySelector('.sliderm-hint');
+    var starthint = element.querySelector('.sliderm-starthint');
+    var hintArrow = element.querySelector('.sliderm-hint-arrow');
+    var starthintArrow = element.querySelector('.sliderm-starthint-arrow');
+    var point = element.querySelector('.sliderm-point');
+    var startpoint = element.querySelector('.sliderm-startpoint');
+    var lineActive = element.querySelector('.sliderm-line-active');
+    var line = element.querySelector('.sliderm-line');
+    var scale = element.querySelector('.sliderm-scale');
+    var text = element.querySelector('.sliderm-hint-text');
+    var starttext = element.querySelector('.sliderm-starthint-text');
+    var inputs = element.querySelector('.inputs');
+    var interval = element.querySelector('.interval');
+    var tickHint = element.getElementsByClassName('tick-hint')[0];
+    var tickScale = element.getElementsByClassName('tick-scale')[0];
+    var tickInterval = element.getElementsByClassName('tick-interval')[0];
     var value;
-    var scale;
     var min;
     var max;
     var step;
     var intervals;
-    var text;
-    var starttext;
-    var inputs;
-    var tickHint;
-    var tickScale;
-    var interval;
-    var tickInterval;
     var start;
 
     var getInputs = function() {        
-        hint = element.querySelector('.sliderm-hint');
-        starthint = element.querySelector('.sliderm-starthint');
-        hintArrow = element.querySelector('.sliderm-hint-arrow');
-        starthintArrow = element.querySelector('.sliderm-starthint-arrow');
-        point = element.querySelector('.sliderm-point');
-        startpoint = element.querySelector('.sliderm-startpoint');
-        lineActive = element.querySelector('.sliderm-line-active');
-        line = element.querySelector('.sliderm-line');
         value = element.querySelector('.sliderm-value').value;
-        scale = element.querySelector('.sliderm-scale');
         min = element.querySelector('.sliderm-min').value;
         max = element.querySelector('.sliderm-max').value;
         step = element.querySelector('.sliderm-step').value;
         intervals = element.querySelector('.sliderm-intervals').value;
         start = element.querySelector('.sliderm-start').value;
-        text = element.querySelector('.sliderm-hint-text');
-        starttext = element.querySelector('.sliderm-starthint-text');
-        inputs = element.querySelector('.inputs');
-        interval = element.querySelector('.interval');
-        tickHint = element.getElementsByClassName('tick-hint')[0];
-        tickScale = element.getElementsByClassName('tick-scale')[0];
-        tickInterval = element.getElementsByClassName('tick-interval')[0];
-    }
+    };
     
     getInputs();
     
@@ -69,11 +54,11 @@ var elems = $('.sliderm');
 
     createScale();
 
-    var drawHint = function(hint, hintArrow, point) {
-        hintArrow.style.top = (hint.clientHeight - hintArrow.clientHeight/2) + "px";
-        hintArrow.style.left = (hint.clientWidth/2 - hintArrow.clientHeight/2) + "px";
-        hint.style.top = - hint.clientHeight - Math.sqrt(hintArrow.clientHeight*hintArrow.clientHeight/2) - 3 + "px";
-        hint.style.left = point.clientWidth/2 - hint.clientWidth/2 + "px";
+    var drawHint = function(h, ha, p) {
+        ha.style.top = (h.clientHeight - ha.clientHeight/2) + "px";
+        ha.style.left = (h.clientWidth/2 - ha.clientHeight/2) + "px";
+        h.style.top = - h.clientHeight - Math.sqrt(ha.clientHeight*ha.clientHeight/2) - 3 + "px";
+        h.style.left = p.clientWidth/2 - h.clientWidth/2 + "px";
     }
 
     var draw = function() {
@@ -84,94 +69,109 @@ var elems = $('.sliderm');
         drawHint(hint, hintArrow, point);
         drawHint(starthint, starthintArrow, startpoint);       
 
-        if(tickHint.classList.contains('active')){
+        if (tickHint.classList.contains('active')) {
             hint.style.visibility = "visible";
             starthint.style.visibility = "visible";
-        }else{
+        } else {
             hint.style.visibility = "hidden";
             starthint.style.visibility = "hidden";
         }
 
-        if(tickScale.classList.contains('active')){
+        if (tickScale.classList.contains('active')) {
             scale.style.visibility = "visible";
-        }else{
+        } else {
             scale.style.visibility = "hidden";
         }
 
-        if(tickInterval.classList.contains('active')){
+        if (tickInterval.classList.contains('active')) {
             startpoint.style.visibility = "visible";
-            if(tickHint.classList.contains('active')) starthint.style.visibility = "visible";
-            interval.style.display = "block";
-            lineActive.style.left = start + "px";
-            lineActive.style.width = element.clientWidth*(value-min)/(max-min) - start + "px";
-            point.style.left = element.clientWidth*(value-min)/(max-min) - point.clientWidth/2 - start + "px";
-        }else{
+            if (tickHint.classList.contains('active')) starthint.style.visibility = "visible";
+            interval.style.display = "inherit";
+            var leftpoint = line.clientWidth*(start-min)/(max-min) - startpoint.clientWidth/2;
+            var rightpoint = line.clientWidth*(value-min)/(max-min) - point.clientWidth/2;
+            lineActive.style.left = leftpoint + startpoint.clientWidth/2 + "px";
+            lineActive.style.width = rightpoint - leftpoint + "px";
+            startpoint.style.left = leftpoint + "px";
+            point.style.left = rightpoint + "px";
+        } else {
             startpoint.style.visibility = "hidden";
             starthint.style.visibility = "hidden";
             interval.style.display = "none";
             lineActive.style.left = 0 + "px";
-            lineActive.style.width = element.clientWidth*(value-min)/(max-min) + "px";
-            point.style.left = element.clientWidth*(value-min)/(max-min) - point.clientWidth/2 + "px";
+            lineActive.style.width = line.clientWidth*(value-min)/(max-min) + "px";
+            point.style.left = line.clientWidth*(value-min)/(max-min) - point.clientWidth/2 + "px";
         }
     };
     
     draw();
 
-    line.onmousedown = function(e) {
-        if (e.buttons==2 && tickInterval.classList.contains('active')
-                || !tickInterval.classList.contains('active')) {
-            var lineCoords = getCoords(line);
-            var shiftX = e.pageX - lineCoords.left;
-            value = step * Math.round((+min + (shiftX / element.clientWidth) * (max-min)) / step);
+    body.onmousedown = function(e) {
+
+        var lineCoords = getCoords(line);
+        var shiftX = e.pageX - lineCoords.left; //0-270
+        var pointCoords;
+        var elementCoords = getCoords(element);
+
+        if (tickInterval.classList.contains('active') && e.buttons==1) {
+            console.log('e.buttons==1');
+            
+            start = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
             draw();
 
-            var pointCoords = getCoords(point);
-            shiftX = e.pageX - pointCoords.left;
-            var elementCoords = getCoords(element);
+            startpointCoords = getCoords(startpoint);
+            shiftX = e.pageX - startpointCoords.left;
 
             document.onmousemove = function(e) {
                 var newLeft = e.pageX - shiftX - elementCoords.left;
-                console.log();
-                if (newLeft < -point.clientWidth/2) {
-                newLeft = -point.clientWidth/2;
+                // console.log('newLeft = '+newLeft);
+                if (newLeft < -startpoint.clientWidth/2) {
+                newLeft = -startpoint.clientWidth/2;
                 }
-                var rightEdge = element.offsetWidth - point.offsetWidth + point.clientWidth/2;
+                // var rightEdge = line.clientWidth - startpoint.clientWidth/2;
+                // if (newLeft > rightEdge) {
+                // newLeft = rightEdge;
+                // }
+                console.log('newLeft = '+newLeft);
+                console.log('start = '+start);
+
+                start = step * Math.round((+min + (newLeft + startpoint.clientWidth/2) * (max-min) / line.clientWidth) / step);
+                
+                if (start >= value) {
+                    start = value;
+                }
+                
+                draw();
+            };
+        } else {
+            console.log('e.buttons==2');
+            
+            value = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
+            draw();
+
+            pointCoords = getCoords(point);
+            shiftX = e.pageX - pointCoords.left;
+
+            document.onmousemove = function(e) {
+                var newLeft = e.pageX - shiftX - elementCoords.left;
+                // console.log('newLeft = '+newLeft);
+                // if (newLeft < -point.clientWidth/2) {
+                // newLeft = -point.clientWidth/2;
+                // }
+
+                var rightEdge = line.clientWidth - point.clientWidth/2;
                 if (newLeft > rightEdge) {
                 newLeft = rightEdge;
                 }
 
-                value = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / element.clientWidth) / step);
+                value = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
+                if (value <= start) {
+                    value = start;
+                }
+
                 draw();
             };
         }
-
-        // if (e.buttons==1 && tickInterval.classList.contains('active')) {
-        //     var lineCoords = getCoords(line);
-        //     var shiftX = e.pageX - lineCoords.left;
-        //     start = step * Math.round((+min + (shiftX / element.clientWidth) * (max-min)) / step);
-        //     draw();
-
-        //     var startpointCoords = getCoords(startpoint);
-        //     shiftX = e.pageX - startpointCoords.left;
-        //     var elementCoords = getCoords(element);
-
-        //     document.onmousemove = function(e) {
-        //         var newLeft = e.pageX - shiftX - elementCoords.left;
-        //         console.log();
-        //         if (newLeft < -point.clientWidth/2) {
-        //         newLeft = -point.clientWidth/2;
-        //         }
-        //         var rightEdge = element.offsetWidth - point.offsetWidth + point.clientWidth/2;
-        //         if (newLeft > rightEdge) {
-        //         newLeft = rightEdge;
-        //         }
-
-        //         start = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / element.clientWidth) / step);
-                
-        //         draw();
-        //     };
-        // }
 
         document.onmouseup = function() {
             document.onmousemove = document.onmouseup = null;
@@ -180,7 +180,7 @@ var elems = $('.sliderm');
         return false; // disable selection start (cursor change)
     };
 
-    line.ondragstart = function() {
+    body.ondragstart = function() {
         return false;
     };
 
