@@ -19,6 +19,12 @@ var elems = $('.sliderm');
     var tickHint = element.getElementsByClassName('tick-hint')[0];
     var tickScale = element.getElementsByClassName('tick-scale')[0];
     var tickInterval = element.getElementsByClassName('tick-interval')[0];
+    var slidermValue = element.querySelector('.sliderm-value');
+    var slidermStart = element.querySelector('.sliderm-start');
+    var slidermMin = element.querySelector('.sliderm-min');
+    var slidermMax = element.querySelector('.sliderm-max');
+    var slidermStep = element.querySelector('.sliderm-step');
+    var slidermIntervals = element.querySelector('.sliderm-intervals');
     var value;
     var min;
     var max;
@@ -27,12 +33,12 @@ var elems = $('.sliderm');
     var start;
 
     var getInputs = function() {        
-        value = element.querySelector('.sliderm-value').value;
-        min = element.querySelector('.sliderm-min').value;
-        max = element.querySelector('.sliderm-max').value;
-        step = element.querySelector('.sliderm-step').value;
-        intervals = element.querySelector('.sliderm-intervals').value;
-        start = element.querySelector('.sliderm-start').value;
+        value = slidermValue.value;
+        start = slidermStart.value;
+        min = slidermMin.value;
+        max = slidermMax.value;
+        step = slidermStep.value;
+        intervals = slidermIntervals.value;
     };
     
     getInputs();
@@ -50,7 +56,7 @@ var elems = $('.sliderm');
                 scale.style.width = scale.offsetWidth + digit.offsetWidth + "px";
             }
         }
-    }
+    };
 
     createScale();
 
@@ -59,10 +65,16 @@ var elems = $('.sliderm');
         ha.style.left = (h.clientWidth/2 - ha.clientHeight/2) + "px";
         h.style.top = - h.clientHeight - Math.sqrt(ha.clientHeight*ha.clientHeight/2) - 3 + "px";
         h.style.left = p.clientWidth/2 - h.clientWidth/2 + "px";
-    }
+    };
 
     var draw = function() {
-        
+
+        if (+value > +max) value = max;
+        if (+value < +min) value = min;
+        if (+start < +min) start = min;
+
+        slidermStart.value = '' + step * Math.round(start / step);
+        slidermValue.value = '' + step * Math.round(value / step);
         text.innerHTML = step * Math.round(value / step);
         starttext.innerHTML = step * Math.round(start / step);
         
@@ -113,9 +125,10 @@ var elems = $('.sliderm');
         var elementCoords = getCoords(element);
 
         if (tickInterval.classList.contains('active') && e.buttons==1) {
-            console.log('e.buttons==1');
             
             start = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
+
+            if (start >= value) start = value;
             draw();
 
             startpointCoords = getCoords(startpoint);
@@ -123,29 +136,18 @@ var elems = $('.sliderm');
 
             document.onmousemove = function(e) {
                 var newLeft = e.pageX - shiftX - elementCoords.left;
-                // console.log('newLeft = '+newLeft);
-                if (newLeft < -startpoint.clientWidth/2) {
-                newLeft = -startpoint.clientWidth/2;
-                }
-                // var rightEdge = line.clientWidth - startpoint.clientWidth/2;
-                // if (newLeft > rightEdge) {
-                // newLeft = rightEdge;
-                // }
-                console.log('newLeft = '+newLeft);
-                console.log('start = '+start);
+                if (newLeft < -startpoint.clientWidth/2) newLeft = -startpoint.clientWidth/2;
 
                 start = step * Math.round((+min + (newLeft + startpoint.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
-                if (start >= value) {
-                    start = value;
-                }
-                
+                if (start >= value) start = value;
                 draw();
             };
         } else {
-            console.log('e.buttons==2');
             
             value = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
+
+            if (value <= start) value = start;
             draw();
 
             pointCoords = getCoords(point);
@@ -153,22 +155,12 @@ var elems = $('.sliderm');
 
             document.onmousemove = function(e) {
                 var newLeft = e.pageX - shiftX - elementCoords.left;
-                // console.log('newLeft = '+newLeft);
-                // if (newLeft < -point.clientWidth/2) {
-                // newLeft = -point.clientWidth/2;
-                // }
-
                 var rightEdge = line.clientWidth - point.clientWidth/2;
-                if (newLeft > rightEdge) {
-                newLeft = rightEdge;
-                }
+                if (newLeft > rightEdge) newLeft = rightEdge;
 
                 value = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
-                if (value <= start) {
-                    value = start;
-                }
-
+                if (value <= start) value = start;
                 draw();
             };
         }
@@ -202,7 +194,7 @@ var elems = $('.sliderm');
         draw();
     };
 
-    element.oncontextmenu = function() {
+    body.oncontextmenu = function() {
             return false;        
     };
 });
