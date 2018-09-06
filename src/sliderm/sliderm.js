@@ -128,7 +128,7 @@ var elems = $('.sliderm');
             
             start = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
 
-            if (start >= value) start = value;
+            if (+start >= +value) start = value;
             draw();
 
             startpointCoords = getCoords(startpoint);
@@ -140,14 +140,14 @@ var elems = $('.sliderm');
 
                 start = step * Math.round((+min + (newLeft + startpoint.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
-                if (start >= value) start = value;
+                if (+start >= +value) start = value;
                 draw();
             };
         } else {
             
             value = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
 
-            if (value <= start) value = start;
+            if (+value <= +start && tickInterval.classList.contains('active')) value = start;
             draw();
 
             pointCoords = getCoords(point);
@@ -160,7 +160,7 @@ var elems = $('.sliderm');
 
                 value = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
-                if (value <= start) value = start;
+                if (+value <= +start && tickInterval.classList.contains('active')) value = start;
                 draw();
             };
         }
