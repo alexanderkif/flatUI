@@ -1,4 +1,4 @@
-mixin sliderm(value, min, max, step, intervals, hint, scale, interval, start)
+mixin sliderm(value, min, max, step, intervals, hint, scale, interval, start, vertical)
     .sliderm
         .sliderm-body
             .sliderm-line
@@ -39,3 +39,5 @@ mixin sliderm(value, min, max, step, intervals, hint, scale, interval, start)
             br
             .label.shot Scale
             +tick('tick-scale ' + scale)
+            .label.shot Vertical
+            +tick('tick-vertical ' + vertical)

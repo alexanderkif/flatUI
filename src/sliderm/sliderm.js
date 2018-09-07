@@ -19,6 +19,7 @@ var elems = $('.sliderm');
     var tickHint = element.getElementsByClassName('tick-hint')[0];
     var tickScale = element.getElementsByClassName('tick-scale')[0];
     var tickInterval = element.getElementsByClassName('tick-interval')[0];
+    var tickVertical = element.getElementsByClassName('tick-vertical')[0];
     var slidermValue = element.querySelector('.sliderm-value');
     var slidermStart = element.querySelector('.sliderm-start');
     var slidermMin = element.querySelector('.sliderm-min');
@@ -60,11 +61,18 @@ var elems = $('.sliderm');
 
     createScale();
 
-    var drawHint = function(h, ha, p) {
-        ha.style.top = (h.clientHeight - ha.clientHeight/2) + "px";
-        ha.style.left = (h.clientWidth/2 - ha.clientHeight/2) + "px";
-        h.style.top = - h.clientHeight - Math.sqrt(ha.clientHeight*ha.clientHeight/2) - 3 + "px";
-        h.style.left = p.clientWidth/2 - h.clientWidth/2 + "px";
+    var drawHint = function(h, ha, p) {        
+        if (body.classList.contains('vertical')) {
+            ha.style.top = (h.clientHeight/2 - ha.clientHeight/2) + "px";
+            ha.style.left = (h.clientWidth - ha.clientHeight/2) + "px";
+            h.style.top = -h.clientWidth/2 - Math.sqrt(ha.clientHeight*ha.clientHeight/2) - p.clientWidth/2 - 3 + "px";
+            h.style.left = p.clientHeight/2 - h.clientWidth/2 + "px";
+        } else {
+            ha.style.top = (h.clientHeight - ha.clientHeight/2) + "px";
+            ha.style.left = (h.clientWidth/2 - ha.clientHeight/2) + "px";
+            h.style.top = - h.clientHeight - Math.sqrt(ha.clientHeight*ha.clientHeight/2) - 3 + "px";
+            h.style.left = p.clientWidth/2 - h.clientWidth/2 + "px";
+        }
     };
 
     var draw = function() {
@@ -73,13 +81,8 @@ var elems = $('.sliderm');
         if (+value < +min) value = min;
         if (+start < +min) start = min;
 
-        slidermStart.value = '' + step * Math.round(start / step);
-        slidermValue.value = '' + step * Math.round(value / step);
-        text.innerHTML = step * Math.round(value / step);
-        starttext.innerHTML = step * Math.round(start / step);
-        
-        drawHint(hint, hintArrow, point);
-        drawHint(starthint, starthintArrow, startpoint);       
+        text.innerHTML = slidermValue.value = '' + step * Math.round(value / step);
+        starttext.innerHTML = slidermStart.value = '' + step * Math.round(start / step);     
 
         if (tickHint.classList.contains('active')) {
             hint.style.visibility = "visible";
@@ -113,14 +116,25 @@ var elems = $('.sliderm');
             lineActive.style.width = line.clientWidth*(value-min)/(max-min) + "px";
             point.style.left = line.clientWidth*(value-min)/(max-min) - point.clientWidth/2 + "px";
         }
+
+        if (tickVertical.classList.contains('active')) {
+            body.classList.add('vertical');
+        } else {
+            body.classList.remove('vertical');
+        }
+        
+        drawHint(hint, hintArrow, point);
+        drawHint(starthint, starthintArrow, startpoint);  
     };
     
     draw();
 
     body.onmousedown = function(e) {
 
-        var lineCoords = getCoords(line);
-        var shiftX = e.pageX - lineCoords.left; //0-270
+        var lineCoords = getCoords(line);        
+        var shiftX;
+        if (body.classList.contains('vertical')) shiftX = line.clientWidth + lineCoords.top - e.pageY;
+        else shiftX = e.pageX - lineCoords.left;
         var pointCoords;
         var elementCoords = getCoords(element);
 
@@ -132,10 +146,14 @@ var elems = $('.sliderm');
             draw();
 
             startpointCoords = getCoords(startpoint);
-            shiftX = e.pageX - startpointCoords.left;
+            if (body.classList.contains('vertical')) shiftX = e.pageY - startpointCoords.top;
+            else shiftX = e.pageX - startpointCoords.left;
+            
 
             document.onmousemove = function(e) {
-                var newLeft = e.pageX - shiftX - elementCoords.left;
+                var newLeft;
+                if (body.classList.contains('vertical')) newLeft = elementCoords.top + line.clientWidth - e.pageY;
+                else newLeft = e.pageX - shiftX - elementCoords.left;
                 if (newLeft < -startpoint.clientWidth/2) newLeft = -startpoint.clientWidth/2;
 
                 start = step * Math.round((+min + (newLeft + startpoint.clientWidth/2) * (max-min) / line.clientWidth) / step);
@@ -151,10 +169,14 @@ var elems = $('.sliderm');
             draw();
 
             pointCoords = getCoords(point);
-            shiftX = e.pageX - pointCoords.left;
+            if (body.classList.contains('vertical')) shiftX = e.pageY - pointCoords.top;
+            else shiftX = e.pageX - pointCoords.left;
+            
 
             document.onmousemove = function(e) {
-                var newLeft = e.pageX - shiftX - elementCoords.left;
+                var newLeft;
+                if (body.classList.contains('vertical')) newLeft = elementCoords.top + line.clientWidth - e.pageY;
+                else newLeft = e.pageX - shiftX - elementCoords.left;
                 var rightEdge = line.clientWidth - point.clientWidth/2;
                 if (newLeft > rightEdge) newLeft = rightEdge;
 
@@ -179,7 +201,7 @@ var elems = $('.sliderm');
     function getCoords(elem) {
         var box = elem.getBoundingClientRect();
         return {
-            // top: box.top + pageYOffset,
+            top: box.top + pageYOffset,
             left: box.left + pageXOffset
         };
     }
@@ -196,5 +218,9 @@ var elems = $('.sliderm');
 
     body.oncontextmenu = function() {
             return false;        
+    };
+
+    tickVertical.onclick = function() {
+        tickVertical.classList.toggle('active');        
     };
 });
