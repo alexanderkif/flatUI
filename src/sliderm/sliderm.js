@@ -1,6 +1,6 @@
 
 var elems = $('.sliderm');
-[].forEach.call(elems, element => {
+[].forEach.call(elems, function(element) {
     
     var body = element.querySelector('.sliderm-body');
     var hint = element.querySelector('.sliderm-hint');
@@ -128,6 +128,7 @@ var elems = $('.sliderm');
     };
     
     draw();
+    // setTimeout(draw(), 3000);
 
     body.onmousedown = function(e) {
 
