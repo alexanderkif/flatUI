@@ -224,5 +224,5 @@ var elems = document.getElementsByClassName('sliderm');
 
     setTimeout(function(){
         draw();
-    }, 300);
+    }, 1000);
 });
