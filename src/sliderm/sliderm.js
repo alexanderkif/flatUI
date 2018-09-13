@@ -1,8 +1,7 @@
-
-var elems = $('.sliderm');
+var elems = document.getElementsByClassName('sliderm');
 [].forEach.call(elems, function(element) {
     
-    var body = element.querySelector('.sliderm-body');
+    var slbody = element.querySelector('.sliderm-body');
     var hint = element.querySelector('.sliderm-hint');
     var starthint = element.querySelector('.sliderm-starthint');
     var hintArrow = element.querySelector('.sliderm-hint-arrow');
@@ -61,8 +60,10 @@ var elems = $('.sliderm');
 
     createScale();
 
-    var drawHint = function(h, ha, p) {        
-        if (body.classList.contains('vertical')) {
+    var drawHint = function(h, ha, p, text, value) {
+        text.innerHTML = slidermValue.value = '' + step * Math.round(value / step);
+        
+        if (slbody.classList.contains('vertical')) {
             ha.style.top = (h.clientHeight/2 - ha.clientHeight/2) + "px";
             ha.style.left = (h.clientWidth - ha.clientHeight/2) + "px";
             h.style.top = -h.clientWidth/2 - Math.sqrt(ha.clientHeight*ha.clientHeight/2) - p.clientWidth/2 - 3 + "px";
@@ -76,14 +77,7 @@ var elems = $('.sliderm');
     };
 
     var draw = function() {
-
-        if (+value > +max) value = max;
-        if (+value < +min) value = min;
-        if (+start < +min) start = min;
-
-        text.innerHTML = slidermValue.value = '' + step * Math.round(value / step);
-        starttext.innerHTML = slidermStart.value = '' + step * Math.round(start / step);     
-
+        
         if (tickHint.classList.contains('active')) {
             hint.style.visibility = "visible";
             starthint.style.visibility = "visible";
@@ -118,23 +112,26 @@ var elems = $('.sliderm');
         }
 
         if (tickVertical.classList.contains('active')) {
-            body.classList.add('vertical');
+            slbody.classList.add('vertical');
         } else {
-            body.classList.remove('vertical');
+            slbody.classList.remove('vertical');
         }
         
-        drawHint(hint, hintArrow, point);
-        drawHint(starthint, starthintArrow, startpoint);  
+        drawHint(hint, hintArrow, point, text, value);
+        drawHint(starthint, starthintArrow, startpoint, starttext, start);  
     };
-    
-    draw();
-    // setTimeout(draw(), 3000);
 
-    body.onmousedown = function(e) {
+    var checkRange = function() {
+        if (+value > +max) value = max;
+        if (+value < +min) value = min;
+        if (+start < +min) start = min;
+    };
+
+    slbody.onmousedown = function(e) {
 
         var lineCoords = getCoords(line);        
         var shiftX;
-        if (body.classList.contains('vertical')) shiftX = line.clientWidth + lineCoords.top - e.pageY;
+        if (slbody.classList.contains('vertical')) shiftX = line.clientWidth + lineCoords.top - e.pageY;
         else shiftX = e.pageX - lineCoords.left;
         var pointCoords;
         var elementCoords = getCoords(element);
@@ -144,22 +141,24 @@ var elems = $('.sliderm');
             start = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
 
             if (+start >= +value) start = value;
+            checkRange();
             draw();
 
             startpointCoords = getCoords(startpoint);
-            if (body.classList.contains('vertical')) shiftX = e.pageY - startpointCoords.top;
+            if (slbody.classList.contains('vertical')) shiftX = e.pageY - startpointCoords.top;
             else shiftX = e.pageX - startpointCoords.left;
             
 
             document.onmousemove = function(e) {
                 var newLeft;
-                if (body.classList.contains('vertical')) newLeft = elementCoords.top + line.clientWidth - e.pageY;
+                if (slbody.classList.contains('vertical')) newLeft = elementCoords.top + line.clientWidth - e.pageY;
                 else newLeft = e.pageX - shiftX - elementCoords.left;
                 if (newLeft < -startpoint.clientWidth/2) newLeft = -startpoint.clientWidth/2;
 
                 start = step * Math.round((+min + (newLeft + startpoint.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
                 if (+start >= +value) start = value;
+                checkRange();
                 draw();
             };
         } else {
@@ -167,16 +166,17 @@ var elems = $('.sliderm');
             value = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
 
             if (+value <= +start && tickInterval.classList.contains('active')) value = start;
+            checkRange();
             draw();
 
             pointCoords = getCoords(point);
-            if (body.classList.contains('vertical')) shiftX = e.pageY - pointCoords.top;
+            if (slbody.classList.contains('vertical')) shiftX = e.pageY - pointCoords.top;
             else shiftX = e.pageX - pointCoords.left;
             
 
             document.onmousemove = function(e) {
                 var newLeft;
-                if (body.classList.contains('vertical')) newLeft = elementCoords.top + line.clientWidth - e.pageY;
+                if (slbody.classList.contains('vertical')) newLeft = elementCoords.top + line.clientWidth - e.pageY;
                 else newLeft = e.pageX - shiftX - elementCoords.left;
                 var rightEdge = line.clientWidth - point.clientWidth/2;
                 if (newLeft > rightEdge) newLeft = rightEdge;
@@ -184,6 +184,7 @@ var elems = $('.sliderm');
                 value = step * Math.round((+min + (newLeft + point.clientWidth/2) * (max-min) / line.clientWidth) / step);
                 
                 if (+value <= +start && tickInterval.classList.contains('active')) value = start;
+                checkRange();
                 draw();
             };
         }
@@ -195,10 +196,6 @@ var elems = $('.sliderm');
         return false; // disable selection start (cursor change)
     };
 
-    body.ondragstart = function() {
-        return false;
-    };
-
     function getCoords(elem) {
         var box = elem.getBoundingClientRect();
         return {
@@ -207,21 +204,25 @@ var elems = $('.sliderm');
         };
     }
 
-    inputs.onchange = function() {
+    slbody.ondragstart = function() {
+        return false;
+    };
+
+    inputs.addEventListener('change', function() {
         getInputs();
         draw();
         createScale();
-    };
+    });
 
-    inputs.onclick = function() {        
+    inputs.addEventListener('click', function() {        
         draw();
+    });
+
+    slbody.oncontextmenu = function() {
+        return false;        
     };
 
-    body.oncontextmenu = function() {
-            return false;        
-    };
-
-    tickVertical.onclick = function() {
-        tickVertical.classList.toggle('active');        
-    };
+    setTimeout(function(){
+        draw();
+    }, 300);
 });
