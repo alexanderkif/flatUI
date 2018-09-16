@@ -295,6 +295,40 @@ svg {
   .sliderm .inputs .tick {
     margin: 10px 10px; }
 
+.sliderm2 {
+  width: 40%;
+  margin: 0 5%; }
+  .sliderm2 .sliderm2body {
+    position: relative;
+    display: block;
+    user-select: none; }
+  .sliderm2 .inputs {
+    display: block;
+    margin: 20px auto; }
+    .sliderm2 .inputs .label {
+      display: inline-block;
+      width: 120px;
+      color: #747474;
+      font-family: 'Conv_Lato-Regular';
+      font-size: 16px;
+      text-align: right; }
+      .sliderm2 .inputs .label.shot {
+        width: 80px; }
+    .sliderm2 .inputs input {
+      display: inline-block;
+      width: 150px;
+      margin: 4px;
+      height: 30px;
+      border-radius: 5px;
+      border: 0px;
+      background-color: #e5e5e5;
+      color: #747474;
+      font-family: 'Conv_Lato-Regular';
+      font-size: 14px;
+      padding-left: 12px; }
+    .sliderm2 .inputs .tick {
+      margin: 10px 10px; }
+
 .steps {
   width: 100%;
   display: table;
@@ -1323,6 +1357,9 @@ body {
     width: 670px;
     margin-bottom: 10px;
     align-items: flex-start; }
+  .content.content-slider2 {
+    width: 80%;
+    align-items: center; }
   .content.content-stages {
     width: 560px;
     margin-bottom: 40px; }

@@ -2,6 +2,7 @@
 @import '../percentages/percentages';
 @import '../sliders/sliders';
 @import '../sliderm/sliderm';
+@import '../sliderm2/sliderm2';
 @import '../stages/stages';
 @import '../forms/forms';
 @import '../search/search';
@@ -101,6 +102,10 @@ body {
         width: 670px;
         margin-bottom: 10px;
         align-items: flex-start;
+    }
+    &.content-slider2{
+        width: 80%;
+        align-items: center;
     }
     &.content-stages {
         width: 560px;

@@ -1,0 +1,40 @@
+.sliderm2 {
+    width: 40%;
+    margin: 0 5%;
+    .sliderm2body {
+        position: relative;
+        display: block;
+        user-select: none;
+    }
+    .inputs {
+        display: block;
+        margin: 20px auto;
+        .label {
+            display: inline-block;
+            width: 120px;
+            color: $color-grey;
+            font-family: 'Conv_Lato-Regular';
+            font-size: 16px;
+            text-align: right;
+            &.shot {
+                width: 80px;
+            }
+        }
+        input {
+            display: inline-block;
+            width: 150px;
+            margin: 4px;
+            height: 30px;
+            border-radius: 5px;
+            border: 0px;
+            background-color: $color-lightgray;
+            color: $color-grey;
+            font-family: 'Conv_Lato-Regular';
+            font-size: 14px;
+            padding-left: 12px;
+        }
+        .tick {
+            margin: 10px 10px;
+        }
+    }
+}

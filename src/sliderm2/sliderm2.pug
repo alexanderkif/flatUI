@@ -1,0 +1,32 @@
+mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical)
+    .sliderm2(min=min, max=max, value1=value1, value2=value2, step=step, intervals=intervals, hint=hint, scale=scale, interval=interval, vertical=vertical)
+        .sliderm2body
+        .inputs
+            .label ScaleMin
+            input.sliderm-min(value= min)
+            br
+            .label ScaleMax
+            input.sliderm-max(value= max)
+            br
+            .interval
+                .label Value1
+                input.sliderm-start(value= value1)
+                br
+            .label Value2
+            input.sliderm-value(value= value2)
+            br
+            .label Step
+            input.sliderm-step(value= step)
+            br
+            .label Scale Intervals
+            input.sliderm-intervals(value= intervals)
+            br
+            .label.shot Hint
+            +tick('tick-hint ' + hint)
+            .label.shot Interval
+            +tick('tick-interval ' + interval)
+            br
+            .label.shot Scale
+            +tick('tick-scale ' + scale)
+            .label.shot Vertical
+            +tick('tick-vertical ' + vertical)
