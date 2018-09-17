@@ -5,6 +5,30 @@
         position: relative;
         display: block;
         user-select: none;
+        &.vertical {
+            transform: rotate(-90deg) translateX(-$sliderm-body-width/2);
+            margin-bottom: $sliderm-body-width;
+            .sliderm-scale {
+                div {
+                    transform: rotate(90deg);
+                }
+            }
+            .sliderm-point, .sliderm-startpoint {
+                .sliderm-hint, .sliderm-starthint {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        .sliderm2scale {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            left: 0px;
+            justify-content: space-between;
+            // top: ($sliderm-body-height + $sliderm-line-height + $sliderm-point-size)/2 + 5px;
+            color: $sliderm-line-color;
+            font-size: 12px;
+        }
     }
     .inputs {
         display: block;

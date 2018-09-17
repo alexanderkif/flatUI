@@ -302,6 +302,21 @@ svg {
     position: relative;
     display: block;
     user-select: none; }
+    .sliderm2 .sliderm2body.vertical {
+      transform: rotate(-90deg) translateX(-135px);
+      margin-bottom: 270px; }
+      .sliderm2 .sliderm2body.vertical .sliderm-scale div {
+        transform: rotate(90deg); }
+      .sliderm2 .sliderm2body.vertical .sliderm-point .sliderm-hint, .sliderm2 .sliderm2body.vertical .sliderm-point .sliderm-starthint, .sliderm2 .sliderm2body.vertical .sliderm-startpoint .sliderm-hint, .sliderm2 .sliderm2body.vertical .sliderm-startpoint .sliderm-starthint {
+        transform: rotate(90deg); }
+    .sliderm2 .sliderm2body .sliderm2scale {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      left: 0px;
+      justify-content: space-between;
+      color: lightgrey;
+      font-size: 12px; }
   .sliderm2 .inputs {
     display: block;
     margin: 20px auto; }

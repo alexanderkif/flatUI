@@ -22,6 +22,7 @@ var DrawLine = function(div, line) {
     lineDiv.style.borderRadius = sliderm2Height / 2 + 'px';
     var sliderm2body = div.getElementsByClassName('sliderm2body')[0];
     sliderm2body.appendChild(lineDiv);
+    sliderm2body.style.height = pointHeight/2 + lineDiv.clientHeight/2 + 20 + 'px';
     return lineDiv;
 };
 
@@ -60,7 +61,7 @@ var DrawPoints = function(div, points) {
         pointDiv.style.height = pointDiv.style.width = pointHeight + 'px';
         pointDiv.style.borderRadius = '50%';
         pointDiv.style.top = sliderm2Height/2 - pointHeight/2 + 'px';
-        pointDiv.style.left = 'calc(' + point.value + '% - ' +'px)';
+        pointDiv.style.left = 'calc(' + point.value + '% - '+ pointHeight/2 +'px)';
         pointDiv.style.backgroundColor = sliderm2RangeColor;
         div.appendChild(pointDiv);
         return pointDiv;
@@ -73,6 +74,20 @@ var Sliderm2ClassRemove = function(div, removingClass) {
     while (elem) {
         elem.remove();
         elem = div.getElementsByClassName(removingClass)[0];
+    }
+};
+
+var createScale = function(div, line, drawLine, intervals) {
+    Sliderm2ClassRemove(div, 'sliderm2scale')
+    var scaleDiv = document.createElement("div");
+    scaleDiv.className = "sliderm2scale";
+    scaleDiv.style.top = pointHeight/2 + 5 + 'px';
+    div.appendChild(scaleDiv);
+    scaleDiv.style.width = '100%';
+    for(var i = 0; i <= intervals; i++) {
+        var digit = document.createElement('div');
+        digit.innerHTML = Math.round( + line.min + line.range * i / intervals);
+        scaleDiv.appendChild(digit);
     }
 };
 
@@ -91,17 +106,14 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var slidermStep = element.querySelector('.sliderm-step');
     var slidermIntervals = element.querySelector('.sliderm-intervals');
 
-    // var min = element.getAttribute('min');
-    // var max = element.getAttribute('max');
     var line = new Line(element.getAttribute('min'), element.getAttribute('max'));
     var drawLine = new DrawLine(element, line);
 
-    var value1 = element.getAttribute('value1');
-    var value2 = element.getAttribute('value2');
-    var range = new Range(value1, value2, line);
+    var range = new Range(element.getAttribute('value1'), element.getAttribute('value2'), line);
     var drawRange = new DrawRange(drawLine, range);
     
     var step = element.getAttribute('step');
+    var intervals = element.getAttribute('intervals');
 
     var drawPoints = new DrawPoints(drawLine, [range.point1, range.point2]);
 
@@ -109,8 +121,17 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         line = new Line(slidermMin.value, slidermMax.value);
         range = new Range(slidermValue1.value, slidermValue2.value, line);
         step = slidermStep.value;
-        // intervals = slidermIntervals.value;
+        intervals = slidermIntervals.value;
     };
+
+    var setInputs = function() {
+        if (tickInterval.classList.contains('active')) slidermValue1.value = range.value1;
+        slidermValue2.value = range.value2;
+        slidermMin.value = line.min;
+        slidermMax.value = line.max;
+        slidermStep.value = step;
+        slidermIntervals.value = intervals;
+    }
 
     var inputs = element.querySelector('.inputs');
 
@@ -119,67 +140,63 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         draw();
     });
 
+    inputs.addEventListener('click', function() {
+        if (tickInterval.classList.contains('active')) range.value1 = slidermValue1.value;
+        draw();
+    });
+
+    sliderm2body.oncontextmenu = function() {
+        return false;        
+    };
+
+    sliderm2body.ondragstart = function() {
+        return false;
+    };
+
     var draw = function() {
-        checkRange();
-        var points = [range.point1, range.point2];
-        if (tickInterval.classList.contains('active')) {
-            range = new Range(value1, value2, line);
-        } else {
-            range = new Range(line.min, value2, line);
-            points = [range.point2];
-        }
+        var points = checkRange();
+        setInputs();
         drawLine = new DrawLine(element, line);
         drawRange = new DrawRange(drawLine, range);        
         drawPoints = new DrawPoints(drawLine, points);
+        if (tickScale.classList.contains('active')) createScale(sliderm2body, line, drawLine, intervals);
+        else Sliderm2ClassRemove(sliderm2body, 'sliderm2scale');
     };
 
     var checkRange = function() {
-        if (+value2 > +line.max) value2 = line.max;
-        if (+value2 < +line.min) value2 = line.min;
-        if (+value1 < +line.min) value1 = line.min;
+        if (+range.value2 > +line.max) range.value2 = line.max;
+        if (+range.value2 < +line.min) range.value2 = line.min;
+        if (+range.value1 < +line.min) range.value1 = line.min;
+        var points = [];
+        if (tickInterval.classList.contains('active')) {
+            range = new Range(range.value1, range.value2, line);
+            points = [range.point1, range.point2];
+        } else {            
+            range = new Range(line.min, range.value2, line);
+            points = [range.point2];
+        }
+        return points;
     };
 
-    sliderm2body.onmousedown = function(e) {
-        var lineCoords = getCoords(drawLine);        
-        var shiftX;
-        if (sliderm2body.classList.contains('vertical')) shiftX = drawLine.clientWidth + lineCoords.top - e.pageY;
-        else shiftX = e.pageX - lineCoords.left;
-        var elementCoords = getCoords(element);
+    sliderm2body.addEventListener('mousedown', function(e) {
+        var lineCoords = getCoords(drawLine);
 
         if (tickInterval.classList.contains('active') && e.buttons==1) {
-            
-            value1 = step * Math.round((+line.min + (shiftX / drawLine.clientWidth) * line.range) / step);
-
-            if (+value1 >= +value2) value1 = value2;
+            range.value1 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);
+            if (+range.value1 >= +range.value2) range.value1 = range.value2;
             draw();
-
             document.onmousemove = function(e) {
-                var newLeft;
-                if (sliderm2body.classList.contains('vertical')) newLeft = elementCoords.top + drawLine.clientWidth - e.pageY;
-                else newLeft = e.pageX - lineCoords.left - pointHeight/2;
-                if (newLeft < - pointHeight/2) newLeft = - pointHeight/2;
-
-                value1 = step * Math.round((+line.min + (newLeft + pointHeight/2) * line.range / drawLine.clientWidth) / step);
-                
-                if (+value1 >= +value2) value1 = value2;
+                range.value1 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);                
+                if (+range.value1 >= +range.value2) range.value1 = range.value2;
                 draw();
             };
-        } else {
-            value2 = step * Math.round((+line.min + (shiftX / drawLine.clientWidth) * line.range) / step);
-
-            if (+value2 <= +value1 && tickInterval.classList.contains('active')) value2 = value1;
+        } else {            
+            range.value2 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);
+            if (+range.value2 <= +range.value1 && tickInterval.classList.contains('active')) range.value2 = range.value1;
             draw();
-
             document.onmousemove = function(e) {
-                var newLeft;
-                if (sliderm2body.classList.contains('vertical')) newLeft = elementCoords.top + drawLine.clientWidth - e.pageY;
-                else newLeft = e.pageX - lineCoords.left - pointHeight/2;
-                var rightEdge = drawLine.clientWidth - pointHeight/2;
-                if (newLeft > rightEdge) newLeft = rightEdge;
-
-                value2 = step * Math.round((+line.min + (newLeft + pointHeight/2) * line.range / drawLine.clientWidth) / step);
-                
-                if (+value2 <= +value1 && tickInterval.classList.contains('active')) value2 = value1;
+                range.value2 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);                
+                if (+range.value2 <= +range.value1 && tickInterval.classList.contains('active')) range.value2 = range.value1;
                 draw();
             };
         }
@@ -189,7 +206,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         };
 
         return false; // disable selection start (cursor change)
-    };
+    });
 
     function getCoords(elem) {
         var box = elem.getBoundingClientRect();
@@ -198,5 +215,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
             left: box.left + pageXOffset
         };
     }
+
+    draw();
 });
 
