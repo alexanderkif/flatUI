@@ -134,6 +134,7 @@ var elems = document.getElementsByClassName('sliderm');
         if (slbody.classList.contains('vertical')) shiftX = line.clientWidth + lineCoords.top - e.pageY;
         else shiftX = e.pageX - lineCoords.left;
         var pointCoords;
+        var startpointCoords;
         var elementCoords = getCoords(element);
 
         if (tickInterval.classList.contains('active') && e.buttons==1) {
