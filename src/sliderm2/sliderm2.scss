@@ -1,3 +1,8 @@
+$color-point: #4eb7a8;
+$color-line: #e6e6e6;
+$color-scale: lightgrey;
+$lineHeight: 36px;
+
 .sliderm2 {
     width: 40%;
     margin: 0 5%;
@@ -19,14 +24,23 @@
                 }
             }
         }
+        .sliderm2line, .sliderm2point {
+            background-color: $color-line;
+        }
+        // .sliderm2range, .sliderm2line {
+        //     height: $lineHeight;
+        //     border-radius: $lineHeight/2;
+        // }
+        .sliderm2range, .sliderm2point {
+            background-color: $color-point;
+        }
         .sliderm2scale {
             position: absolute;
             display: flex;
             width: 100%;
             left: 0px;
             justify-content: space-between;
-            // top: ($sliderm-body-height + $sliderm-line-height + $sliderm-point-size)/2 + 5px;
-            color: $sliderm-line-color;
+            color: $color-scale;
             font-size: 12px;
         }
     }

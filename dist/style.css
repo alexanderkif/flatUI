@@ -309,6 +309,10 @@ svg {
         transform: rotate(90deg); }
       .sliderm2 .sliderm2body.vertical .sliderm-point .sliderm-hint, .sliderm2 .sliderm2body.vertical .sliderm-point .sliderm-starthint, .sliderm2 .sliderm2body.vertical .sliderm-startpoint .sliderm-hint, .sliderm2 .sliderm2body.vertical .sliderm-startpoint .sliderm-starthint {
         transform: rotate(90deg); }
+    .sliderm2 .sliderm2body .sliderm2line, .sliderm2 .sliderm2body .sliderm2point {
+      background-color: #e6e6e6; }
+    .sliderm2 .sliderm2body .sliderm2range, .sliderm2 .sliderm2body .sliderm2point {
+      background-color: #4eb7a8; }
     .sliderm2 .sliderm2body .sliderm2scale {
       position: absolute;
       display: flex;

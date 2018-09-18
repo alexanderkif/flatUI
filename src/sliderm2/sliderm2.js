@@ -1,9 +1,9 @@
 var classSliderm2 = 'sliderm2';
-var sliderm2LineColor = 'lightgrey';
-var sliderm2RangeColor = '#ffbb00';
-var sliderm2TextColor = '#ff0000';
-var sliderm2Height = 6;
-var pointHeight = 20;
+// var sliderm2LineColor = 'lightgrey';
+// var sliderm2RangeColor = '#ffbb00';
+// var sliderm2TextColor = '#ff0000';
+// var sliderm2Height;      
+// var pointHeight;
 
 
 var Line = function(min, max) {
@@ -12,17 +12,17 @@ var Line = function(min, max) {
     this.range = max - min;
 };
 
-var DrawLine = function(div, line) {
+var DrawLine = function(div, pointHeight, lineHeight) {
     Sliderm2ClassRemove(div, 'sliderm2line');
     var lineDiv = document.createElement("div");
     lineDiv.className = "sliderm2line";
-    lineDiv.style.height = sliderm2Height + 'px';
+    lineDiv.style.height = lineHeight + 'px';
     lineDiv.style.width = '100%';
-    lineDiv.style.backgroundColor = sliderm2LineColor;
-    lineDiv.style.borderRadius = sliderm2Height / 2 + 'px';
+    // lineDiv.style.backgroundColor = sliderm2LineColor;
+    lineDiv.style.borderRadius = lineHeight / 2 + 'px';
     var sliderm2body = div.getElementsByClassName('sliderm2body')[0];
     sliderm2body.appendChild(lineDiv);
-    sliderm2body.style.height = pointHeight/2 + lineDiv.clientHeight/2 + 20 + 'px';
+    sliderm2body.style.height = pointHeight/2 + lineHeight/2 + 20 + 'px';
     return lineDiv;
 };
 
@@ -42,7 +42,7 @@ var DrawRange = function(div, range) {
     rangeDiv.style.top = '0';
     rangeDiv.style.left = range.point1.value + '%';
     rangeDiv.style.width = range.point2.value - range.point1.value + '%';
-    rangeDiv.style.backgroundColor = sliderm2RangeColor;
+    // rangeDiv.style.backgroundColor = sliderm2RangeColor;
     rangeDiv.style.borderRadius = 'inherit';
     div.appendChild(rangeDiv);
     return rangeDiv;
@@ -52,7 +52,7 @@ var Point = function(value, line) {
     this.value = (value - line.min) / line.range * 100;
 };
 
-var DrawPoints = function(div, points) {
+var DrawPoints = function(div, points, pointHeight) {
     Sliderm2ClassRemove(div, 'sliderm2point');
     var pointDivs = points.map(function(point) {
         var pointDiv = document.createElement("div");
@@ -60,9 +60,9 @@ var DrawPoints = function(div, points) {
         pointDiv.style.position = 'absolute';
         pointDiv.style.height = pointDiv.style.width = pointHeight + 'px';
         pointDiv.style.borderRadius = '50%';
-        pointDiv.style.top = sliderm2Height/2 - pointHeight/2 + 'px';
+        pointDiv.style.top = div.clientHeight/2 - pointHeight/2 + 'px';
         pointDiv.style.left = 'calc(' + point.value + '% - '+ pointHeight/2 +'px)';
-        pointDiv.style.backgroundColor = sliderm2RangeColor;
+        // pointDiv.style.backgroundColor = sliderm2RangeColor;
         div.appendChild(pointDiv);
         return pointDiv;
     });
@@ -77,11 +77,11 @@ var Sliderm2ClassRemove = function(div, removingClass) {
     }
 };
 
-var createScale = function(div, line, drawLine, intervals) {
-    Sliderm2ClassRemove(div, 'sliderm2scale')
+var createScale = function(div, line, intervals, pointHeight, lineHeight) {
+    Sliderm2ClassRemove(div, 'sliderm2scale');
     var scaleDiv = document.createElement("div");
     scaleDiv.className = "sliderm2scale";
-    scaleDiv.style.top = pointHeight/2 + 5 + 'px';
+    scaleDiv.style.top = pointHeight/2 + lineHeight/2 + 5 + 'px';
     div.appendChild(scaleDiv);
     scaleDiv.style.width = '100%';
     for(var i = 0; i <= intervals; i++) {
@@ -106,16 +106,19 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var slidermStep = element.querySelector('.sliderm-step');
     var slidermIntervals = element.querySelector('.sliderm-intervals');
 
+    var pointHeight = element.getAttribute('pointSize');
+    var lineHeight = element.getAttribute('lineHeight');
+    var step = element.getAttribute('step');
+    var intervals = element.getAttribute('intervals');
+
     var line = new Line(element.getAttribute('min'), element.getAttribute('max'));
-    var drawLine = new DrawLine(element, line);
+    var drawLine = new DrawLine(element, pointHeight, lineHeight);
 
     var range = new Range(element.getAttribute('value1'), element.getAttribute('value2'), line);
     var drawRange = new DrawRange(drawLine, range);
     
-    var step = element.getAttribute('step');
-    var intervals = element.getAttribute('intervals');
 
-    var drawPoints = new DrawPoints(drawLine, [range.point1, range.point2]);
+    var drawPoints = new DrawPoints(drawLine, [range.point1, range.point2], pointHeight);
 
     var getInputs = function() {
         line = new Line(slidermMin.value, slidermMax.value);
@@ -125,14 +128,15 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     };
 
     var setInputs = function() {
-        if (tickInterval.classList.contains('active')) slidermValue1.value = range.value1;
-        slidermValue2.value = range.value2;
+        if (tickInterval.classList.contains('active')) 
+            slidermValue1.value = Math.round(range.value1 * 100) / 100;
+        slidermValue2.value = Math.round(range.value2 * 100) / 100;
         slidermMin.value = line.min;
         slidermMax.value = line.max;
         slidermStep.value = step;
         slidermIntervals.value = intervals;
-    }
-
+    };
+    
     var inputs = element.querySelector('.inputs');
 
     inputs.addEventListener('change', function() {
@@ -141,7 +145,8 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     });
 
     inputs.addEventListener('click', function() {
-        if (tickInterval.classList.contains('active')) range.value1 = slidermValue1.value;
+        if (tickInterval.classList.contains('active')) 
+            range.value1 = +slidermValue1.value < +range.value2 ? slidermValue1.value : range.value2;
         draw();
     });
 
@@ -156,10 +161,10 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var draw = function() {
         var points = checkRange();
         setInputs();
-        drawLine = new DrawLine(element, line);
+        drawLine = new DrawLine(element, pointHeight, lineHeight);
         drawRange = new DrawRange(drawLine, range);        
-        drawPoints = new DrawPoints(drawLine, points);
-        if (tickScale.classList.contains('active')) createScale(sliderm2body, line, drawLine, intervals);
+        drawPoints = new DrawPoints(drawLine, points, pointHeight);
+        if (tickScale.classList.contains('active')) createScale(sliderm2body, line, intervals, pointHeight, lineHeight);
         else Sliderm2ClassRemove(sliderm2body, 'sliderm2scale');
     };
 
@@ -179,34 +184,37 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     };
 
     sliderm2body.addEventListener('mousedown', function(e) {
-        var lineCoords = getCoords(drawLine);
-
         if (tickInterval.classList.contains('active') && e.buttons==1) {
-            range.value1 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);
+            range.value1 = getProcent(e);
             if (+range.value1 >= +range.value2) range.value1 = range.value2;
             draw();
             document.onmousemove = function(e) {
-                range.value1 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);                
+                range.value1 = getProcent(e);                
                 if (+range.value1 >= +range.value2) range.value1 = range.value2;
                 draw();
             };
         } else {            
-            range.value2 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);
-            if (+range.value2 <= +range.value1 && tickInterval.classList.contains('active')) range.value2 = range.value1;
+            range.value2 = getProcent(e);
+            if (+range.value2 <= +range.value1 && tickInterval.classList.contains('active')) 
+                range.value2 = range.value1;
             draw();
             document.onmousemove = function(e) {
-                range.value2 = step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);                
-                if (+range.value2 <= +range.value1 && tickInterval.classList.contains('active')) range.value2 = range.value1;
+                range.value2 = getProcent(e);                
+                if (+range.value2 <= +range.value1 && tickInterval.classList.contains('active')) 
+                    range.value2 = range.value1;
                 draw();
             };
-        }
-
+        }   
         document.onmouseup = function() {
             document.onmousemove = document.onmouseup = null;
         };
-
         return false; // disable selection start (cursor change)
     });
+
+    function getProcent(e) {
+        var lineCoords = getCoords(drawLine);
+        return step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);
+    }
 
     function getCoords(elem) {
         var box = elem.getBoundingClientRect();
