@@ -183,8 +183,9 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         return points;
     };
 
-    sliderm2body.addEventListener('mousedown', function(e) {
-        if (tickInterval.classList.contains('active') && e.buttons==1) {
+    sliderm2body.addEventListener('mousedown', function(e) {          
+        if (tickInterval.classList.contains('active') && 
+                getProcent(e) < (range.value2 - line.max * pointHeight/drawLine.clientWidth/2)) {
             range.value1 = getProcent(e);
             if (+range.value1 >= +range.value2) range.value1 = range.value2;
             draw();

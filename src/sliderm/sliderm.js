@@ -136,8 +136,9 @@ var elems = document.getElementsByClassName('sliderm');
         var pointCoords;
         var startpointCoords;
         var elementCoords = getCoords(element);
+        var lefter = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
 
-        if (tickInterval.classList.contains('active') && e.buttons==1) {
+        if (tickInterval.classList.contains('active') && lefter < (value - max * point.clientWidth/line.clientWidth/2)) {
             
             start = step * Math.round((+min + (shiftX / line.clientWidth) * (max-min)) / step);
 
