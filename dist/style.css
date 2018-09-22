@@ -321,6 +321,23 @@ svg {
       justify-content: space-between;
       color: lightgrey;
       font-size: 12px; }
+    .sliderm2 .sliderm2body .sliderm2hint {
+      position: absolute;
+      display: table-cell;
+      vertical-align: middle;
+      color: white;
+      font-family: 'Conv_Lato-Black';
+      width: auto;
+      padding: 2px 8px;
+      background-color: #4eb7a8;
+      border-radius: 4px;
+      text-align: center; }
+      .sliderm2 .sliderm2body .sliderm2hint .sliderm2arrow {
+        position: absolute;
+        content: "";
+        background-color: #4eb7a8;
+        transform: rotate(-45deg);
+        z-index: -1; }
   .sliderm2 .inputs {
     display: block;
     margin: 20px auto; }

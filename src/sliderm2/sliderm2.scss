@@ -1,6 +1,7 @@
 $color-point: #4eb7a8;
 $color-line: #e6e6e6;
 $color-scale: lightgrey;
+$color-text: white;
 $lineHeight: 36px;
 
 .sliderm2 {
@@ -27,10 +28,6 @@ $lineHeight: 36px;
         .sliderm2line, .sliderm2point {
             background-color: $color-line;
         }
-        // .sliderm2range, .sliderm2line {
-        //     height: $lineHeight;
-        //     border-radius: $lineHeight/2;
-        // }
         .sliderm2range, .sliderm2point {
             background-color: $color-point;
         }
@@ -42,6 +39,25 @@ $lineHeight: 36px;
             justify-content: space-between;
             color: $color-scale;
             font-size: 12px;
+        }
+        .sliderm2hint {
+            position: absolute;
+            display: table-cell;
+            vertical-align: middle;
+            color: $color-text;
+            font-family: 'Conv_Lato-Black';
+            width: auto;
+            padding: 2px 8px;
+            background-color: $color-point;
+            border-radius: 4px; //$sliderm-hint-height/7;
+            text-align: center;
+            .sliderm2arrow {
+                position: absolute;
+                content: "";
+                background-color: $color-point;
+                transform: rotate(-45deg);
+                z-index: -1;
+            }
         }
     }
     .inputs {

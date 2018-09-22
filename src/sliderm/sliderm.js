@@ -61,7 +61,7 @@ var elems = document.getElementsByClassName('sliderm');
     createScale();
 
     var drawHint = function(h, ha, p, text, value) {
-        text.innerHTML = slidermValue.value = '' + step * Math.round(value / step);
+        text.innerHTML = '' + step * Math.round(value / step);
         
         if (slbody.classList.contains('vertical')) {
             ha.style.top = (h.clientHeight/2 - ha.clientHeight/2) + "px";
@@ -223,8 +223,10 @@ var elems = document.getElementsByClassName('sliderm');
     slbody.oncontextmenu = function() {
         return false;        
     };
+    
+    draw();
 
     setTimeout(function(){
-        draw();
+        inputs.click();
     }, 1000);
 });

@@ -1,10 +1,4 @@
 var classSliderm2 = 'sliderm2';
-// var sliderm2LineColor = 'lightgrey';
-// var sliderm2RangeColor = '#ffbb00';
-// var sliderm2TextColor = '#ff0000';
-// var sliderm2Height;      
-// var pointHeight;
-
 
 var Line = function(min, max) {
     this.min = min;
@@ -18,7 +12,6 @@ var DrawLine = function(div, pointHeight, lineHeight) {
     lineDiv.className = "sliderm2line";
     lineDiv.style.height = lineHeight + 'px';
     lineDiv.style.width = '100%';
-    // lineDiv.style.backgroundColor = sliderm2LineColor;
     lineDiv.style.borderRadius = lineHeight / 2 + 'px';
     var sliderm2body = div.getElementsByClassName('sliderm2body')[0];
     sliderm2body.appendChild(lineDiv);
@@ -42,17 +35,17 @@ var DrawRange = function(div, range) {
     rangeDiv.style.top = '0';
     rangeDiv.style.left = range.point1.value + '%';
     rangeDiv.style.width = range.point2.value - range.point1.value + '%';
-    // rangeDiv.style.backgroundColor = sliderm2RangeColor;
     rangeDiv.style.borderRadius = 'inherit';
     div.appendChild(rangeDiv);
     return rangeDiv;
 };
 
 var Point = function(value, line) {
+    this.inValue = value;
     this.value = (value - line.min) / line.range * 100;
 };
 
-var DrawPoints = function(div, points, pointHeight) {
+var DrawPoints = function(div, points, pointHeight, tickHint) {
     Sliderm2ClassRemove(div, 'sliderm2point');
     var pointDivs = points.map(function(point) {
         var pointDiv = document.createElement("div");
@@ -60,13 +53,34 @@ var DrawPoints = function(div, points, pointHeight) {
         pointDiv.style.position = 'absolute';
         pointDiv.style.height = pointDiv.style.width = pointHeight + 'px';
         pointDiv.style.borderRadius = '50%';
-        pointDiv.style.top = div.clientHeight/2 - pointHeight/2 + 'px';
+        pointDiv.style.top = div.offsetHeight/2 - pointHeight/2 + 'px';
         pointDiv.style.left = 'calc(' + point.value + '% - '+ pointHeight/2 +'px)';
-        // pointDiv.style.backgroundColor = sliderm2RangeColor;
         div.appendChild(pointDiv);
+        if (tickHint.classList.contains('active')) point.drawHint = new DrawHint(pointDiv, point, pointHeight);
         return pointDiv;
     });
     return pointDivs;
+};
+
+var DrawHint = function(div, point, pointHeight) {
+    Sliderm2ClassRemove(div, 'sliderm2hint');
+    var hintDiv = document.createElement("div");
+    hintDiv.className = "sliderm2hint";
+    hintDiv.style.position = 'absolute';
+    hintDiv.style.height = pointHeight + 'px';
+    hintDiv.style.top = - pointHeight*3/2 + 'px';
+    hintDiv.style.fontSize = pointHeight*0.9;
+    hintDiv.innerHTML = Math.round(point.inValue * 100) / 100;
+    div.appendChild(hintDiv);
+    hintDiv.style.left = pointHeight/2 - hintDiv.offsetWidth/2 + 'px';
+    
+    var arrowDiv = document.createElement("div");
+    arrowDiv.className = "sliderm2arrow";
+    arrowDiv.style.height = pointHeight/3 + 'px';
+    arrowDiv.style.width = pointHeight/3 + 'px';
+    hintDiv.appendChild(arrowDiv);
+    arrowDiv.style.top = hintDiv.offsetHeight - arrowDiv.offsetHeight/2 + 'px';
+    arrowDiv.style.left = hintDiv.offsetWidth/2 - arrowDiv.offsetWidth/2 + 'px';
 };
 
 var Sliderm2ClassRemove = function(div, removingClass) {
@@ -118,7 +132,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var drawRange = new DrawRange(drawLine, range);
     
 
-    var drawPoints = new DrawPoints(drawLine, [range.point1, range.point2], pointHeight);
+    var drawPoints = new DrawPoints(drawLine, [range.point1, range.point2], pointHeight, tickHint);
 
     var getInputs = function() {
         line = new Line(slidermMin.value, slidermMax.value);
@@ -163,7 +177,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         setInputs();
         drawLine = new DrawLine(element, pointHeight, lineHeight);
         drawRange = new DrawRange(drawLine, range);        
-        drawPoints = new DrawPoints(drawLine, points, pointHeight);
+        drawPoints = new DrawPoints(drawLine, points, pointHeight, tickHint);
         if (tickScale.classList.contains('active')) createScale(sliderm2body, line, intervals, pointHeight, lineHeight);
         else Sliderm2ClassRemove(sliderm2body, 'sliderm2scale');
     };
@@ -226,5 +240,9 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     }
 
     draw();
+
+    setTimeout(function(){
+        inputs.click();
+    }, 1000);
 });
 
