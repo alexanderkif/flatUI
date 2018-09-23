@@ -297,47 +297,19 @@ svg {
 
 .sliderm2 {
   width: 40%;
-  margin: 0 5%; }
-  .sliderm2 .sliderm2body {
-    position: relative;
-    display: block;
-    user-select: none; }
-    .sliderm2 .sliderm2body.vertical {
-      transform: rotate(-90deg) translateX(-135px);
-      margin-bottom: 270px; }
-      .sliderm2 .sliderm2body.vertical .sliderm-scale div {
-        transform: rotate(90deg); }
-      .sliderm2 .sliderm2body.vertical .sliderm-point .sliderm-hint, .sliderm2 .sliderm2body.vertical .sliderm-point .sliderm-starthint, .sliderm2 .sliderm2body.vertical .sliderm-startpoint .sliderm-hint, .sliderm2 .sliderm2body.vertical .sliderm-startpoint .sliderm-starthint {
-        transform: rotate(90deg); }
-    .sliderm2 .sliderm2body .sliderm2line, .sliderm2 .sliderm2body .sliderm2point {
-      background-color: #e6e6e6; }
-    .sliderm2 .sliderm2body .sliderm2range, .sliderm2 .sliderm2body .sliderm2point {
-      background-color: #4eb7a8; }
-    .sliderm2 .sliderm2body .sliderm2scale {
-      position: absolute;
-      display: flex;
-      width: 100%;
-      left: 0px;
-      justify-content: space-between;
-      color: lightgrey;
-      font-size: 12px; }
-    .sliderm2 .sliderm2body .sliderm2hint {
-      position: absolute;
-      display: table-cell;
-      vertical-align: middle;
-      color: white;
-      font-family: 'Conv_Lato-Black';
-      width: auto;
-      padding: 2px 8px;
-      background-color: #4eb7a8;
-      border-radius: 4px;
-      text-align: center; }
-      .sliderm2 .sliderm2body .sliderm2hint .sliderm2arrow {
-        position: absolute;
-        content: "";
-        background-color: #4eb7a8;
-        transform: rotate(-45deg);
-        z-index: -1; }
+  margin: 0 5%;
+  font-family: 'Conv_Lato-Black'; }
+  .sliderm2 .sliderm2line, .sliderm2 .sliderm2point {
+    background-color: #e6e6e6; }
+  .sliderm2 .sliderm2range, .sliderm2 .sliderm2point {
+    background-color: #4eb7a8; }
+  .sliderm2 .sliderm2scale {
+    color: lightgrey; }
+  .sliderm2 .sliderm2hint {
+    color: white;
+    background-color: #4eb7a8; }
+  .sliderm2 .sliderm2arrow {
+    background-color: #4eb7a8; }
   .sliderm2 .inputs {
     display: block;
     margin: 20px auto; }
@@ -1395,7 +1367,7 @@ body {
     align-items: flex-start; }
   .content.content-slider2 {
     width: 80%;
-    align-items: center; }
+    align-items: flex-start; }
   .content.content-stages {
     width: 560px;
     margin-bottom: 40px; }

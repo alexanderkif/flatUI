@@ -2,63 +2,26 @@ $color-point: #4eb7a8;
 $color-line: #e6e6e6;
 $color-scale: lightgrey;
 $color-text: white;
-$lineHeight: 36px;
 
 .sliderm2 {
     width: 40%;
     margin: 0 5%;
-    .sliderm2body {
-        position: relative;
-        display: block;
-        user-select: none;
-        &.vertical {
-            transform: rotate(-90deg) translateX(-$sliderm-body-width/2);
-            margin-bottom: $sliderm-body-width;
-            .sliderm-scale {
-                div {
-                    transform: rotate(90deg);
-                }
-            }
-            .sliderm-point, .sliderm-startpoint {
-                .sliderm-hint, .sliderm-starthint {
-                    transform: rotate(90deg);
-                }
-            }
-        }
-        .sliderm2line, .sliderm2point {
-            background-color: $color-line;
-        }
-        .sliderm2range, .sliderm2point {
-            background-color: $color-point;
-        }
-        .sliderm2scale {
-            position: absolute;
-            display: flex;
-            width: 100%;
-            left: 0px;
-            justify-content: space-between;
-            color: $color-scale;
-            font-size: 12px;
-        }
-        .sliderm2hint {
-            position: absolute;
-            display: table-cell;
-            vertical-align: middle;
-            color: $color-text;
-            font-family: 'Conv_Lato-Black';
-            width: auto;
-            padding: 2px 8px;
-            background-color: $color-point;
-            border-radius: 4px; //$sliderm-hint-height/7;
-            text-align: center;
-            .sliderm2arrow {
-                position: absolute;
-                content: "";
-                background-color: $color-point;
-                transform: rotate(-45deg);
-                z-index: -1;
-            }
-        }
+    font-family: 'Conv_Lato-Black';
+    .sliderm2line, .sliderm2point {
+        background-color: $color-line;
+    }
+    .sliderm2range, .sliderm2point {
+        background-color: $color-point;
+    }
+    .sliderm2scale {
+        color: $color-scale;
+    }
+    .sliderm2hint {
+        color: $color-text;
+        background-color: $color-point;
+    }
+    .sliderm2arrow {
+        background-color: $color-point;
     }
     .inputs {
         display: block;

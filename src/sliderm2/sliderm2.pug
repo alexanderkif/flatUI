@@ -1,6 +1,6 @@
-mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical, lineHeight, pointSize)
+mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical, verticalSize, lineHeight, pointSize)
     .sliderm2(min=min, max=max, value1=value1, value2=value2, step=step, intervals=intervals, hint=hint, 
-            scale=scale, interval=interval, vertical=vertical, lineHeight=lineHeight, pointSize=pointSize)
+            scale=scale, interval=interval, vertical=vertical, verticalSize=verticalSize, lineHeight=lineHeight, pointSize=pointSize)
         .sliderm2body
         .inputs
             .label ScaleMin
@@ -11,10 +11,10 @@ mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval,
             br
             .interval
                 .label Value1
-                input.sliderm-start(value= value1)
+                input.sliderm-value1(value= value1)
                 br
             .label Value2
-            input.sliderm-value(value= value2)
+            input.sliderm-value2(value= value2)
             br
             .label Step
             input.sliderm-step(value= step)
@@ -31,3 +31,6 @@ mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval,
             +tick('tick-scale ' + scale)
             .label.shot Vertical
             +tick('tick-vertical ' + vertical)
+            br
+            .label Vertical size
+            input.sliderm-vertical-size(value= verticalSize)

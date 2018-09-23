@@ -80,7 +80,7 @@
     </div>
     <div class="header header-sliders">sliderm2</div>
     <div class="content content-slider2">
-      <div class="sliderm2" min="20" max="120" value1="40" value2="60" step="1" intervals="3" hint="active" scale="" interval="" vertical="active" lineHeight="20" pointSize="40">
+      <div class="sliderm2" min="20" max="120" value1="40" value2="60" step="2" intervals="3" hint="active" scale="" interval="" vertical="active" verticalSize="220" lineHeight="20" pointSize="40">
         <div class="sliderm2body"></div>
         <div class="inputs">
           <div class="label">ScaleMin</div>
@@ -89,12 +89,12 @@
           <input class="sliderm-max" value="120"><br>
           <div class="interval">
             <div class="label">Value1</div>
-            <input class="sliderm-start" value="40"><br>
+            <input class="sliderm-value1" value="40"><br>
           </div>
           <div class="label">Value2</div>
-          <input class="sliderm-value" value="60"><br>
+          <input class="sliderm-value2" value="60"><br>
           <div class="label">Step</div>
-          <input class="sliderm-step" value="1"><br>
+          <input class="sliderm-step" value="2"><br>
           <div class="label">Scale Intervals</div>
           <input class="sliderm-intervals" value="3"><br>
           <div class="label shot">Hint</div>
@@ -104,10 +104,12 @@
           <div class="label shot">Scale</div>
           <div class="tick tick-scale " onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
           <div class="label shot">Vertical</div>
-          <div class="tick tick-vertical active" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
+          <div class="tick tick-vertical active" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div><br>
+          <div class="label">Vertical size</div>
+          <input class="sliderm-vertical-size" value="220">
         </div>
       </div>
-      <div class="sliderm2" min="0" max="2000" value1="300" value2="1500" step="10" intervals="4" hint="" scale="active" interval="active" vertical="" lineHeight="6" pointSize="20">
+      <div class="sliderm2" min="0" max="2000" value1="300" value2="1500" step="10" intervals="4" hint="" scale="active" interval="active" vertical="" verticalSize="330" lineHeight="6" pointSize="20">
         <div class="sliderm2body"></div>
         <div class="inputs">
           <div class="label">ScaleMin</div>
@@ -116,10 +118,10 @@
           <input class="sliderm-max" value="2000"><br>
           <div class="interval">
             <div class="label">Value1</div>
-            <input class="sliderm-start" value="300"><br>
+            <input class="sliderm-value1" value="300"><br>
           </div>
           <div class="label">Value2</div>
-          <input class="sliderm-value" value="1500"><br>
+          <input class="sliderm-value2" value="1500"><br>
           <div class="label">Step</div>
           <input class="sliderm-step" value="10"><br>
           <div class="label">Scale Intervals</div>
@@ -131,7 +133,9 @@
           <div class="label shot">Scale</div>
           <div class="tick tick-scale active" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
           <div class="label shot">Vertical</div>
-          <div class="tick tick-vertical " onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
+          <div class="tick tick-vertical " onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div><br>
+          <div class="label">Vertical size</div>
+          <input class="sliderm-vertical-size" value="330">
         </div>
       </div>
     </div>
