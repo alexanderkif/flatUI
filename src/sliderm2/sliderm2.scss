@@ -1,28 +1,8 @@
-$color-point: #4eb7a8;
-$color-line: #e6e6e6;
-$color-scale: lightgrey;
-$color-text: white;
 
 .sliderm2 {
     width: 40%;
     margin: 0 5%;
     font-family: 'Conv_Lato-Black';
-    .sliderm2line, .sliderm2point {
-        background-color: $color-line;
-    }
-    .sliderm2range, .sliderm2point {
-        background-color: $color-point;
-    }
-    .sliderm2scale {
-        color: $color-scale;
-    }
-    .sliderm2hint {
-        color: $color-text;
-        background-color: $color-point;
-    }
-    .sliderm2arrow {
-        background-color: $color-point;
-    }
     .inputs {
         display: block;
         margin: 20px auto;

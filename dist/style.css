@@ -299,17 +299,6 @@ svg {
   width: 40%;
   margin: 0 5%;
   font-family: 'Conv_Lato-Black'; }
-  .sliderm2 .sliderm2line, .sliderm2 .sliderm2point {
-    background-color: #e6e6e6; }
-  .sliderm2 .sliderm2range, .sliderm2 .sliderm2point {
-    background-color: #4eb7a8; }
-  .sliderm2 .sliderm2scale {
-    color: lightgrey; }
-  .sliderm2 .sliderm2hint {
-    color: white;
-    background-color: #4eb7a8; }
-  .sliderm2 .sliderm2arrow {
-    background-color: #4eb7a8; }
   .sliderm2 .inputs {
     display: block;
     margin: 20px auto; }

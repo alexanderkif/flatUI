@@ -1,6 +1,7 @@
-mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical, verticalSize, lineHeight, pointSize)
-    .sliderm2(min=min, max=max, value1=value1, value2=value2, step=step, intervals=intervals, hint=hint, 
-            scale=scale, interval=interval, vertical=vertical, verticalSize=verticalSize, lineHeight=lineHeight, pointSize=pointSize)
+mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical, verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
+    .sliderm2(min=min, max=max, value1=value1, value2=value2, step=step, intervals=intervals, hint=hint, scale=scale, 
+            interval=interval, vertical=vertical, verticalSize=verticalSize, lineHeight=lineHeight, pointSize=pointSize,
+            colorLine=colorLine, colorPoint=colorPoint, colorScale=colorScale, colorText=colorText)
         .sliderm2body
         .inputs
             .label ScaleMin
