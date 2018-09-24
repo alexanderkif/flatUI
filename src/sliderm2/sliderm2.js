@@ -137,13 +137,13 @@ var createScale = function(div, line, intervals, pointHeight, lineHeight, tickVe
     scaleDiv.className = "sliderm2scale";
     scaleDiv.style.position = 'absolute';
     scaleDiv.style.display = 'flex';
-    scaleDiv.style.left = -pointHeight/4 + 'px';
+    scaleDiv.style.left = -pointHeight/2 + 'px';
     scaleDiv.style.fontSize = pointHeight * 3 / 5 + 'px';
     scaleDiv.style.justifyContent = 'space-between';
     scaleDiv.style.top = pointHeight/2 + lineHeight/2 + 5 + 'px';
     scaleDiv.style.color = colorScale;
     div.appendChild(scaleDiv);
-    scaleDiv.style.width = '105%'; //+div.offsetWidth + +pointHeight + 'px';
+    scaleDiv.style.width = 'calc(100% + '+ pointHeight +'px)';
     var digit;
     for(var i = 0; i <= intervals; i++) {
         digit = document.createElement('div');
