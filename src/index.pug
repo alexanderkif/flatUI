@@ -1,10 +1,11 @@
 include /buttons/buttons
 include /percentages/percentages
-include /sliders/sliders
-include /sliderm/sliderm
+//- include /sliders/sliders
+//- include /sliderm/sliderm
 include /sliderm2/sliderm2
 include /stages/stages
 include /forms/forms
+include /tick/tick
 include /search/search
 include /user/user
 include /news/news
@@ -54,8 +55,8 @@ html
 
     div.header.header-sliders sliders
     div.content.content-sliders
-      +slider1(40)
-      +slider2(75)
+      //- +slider1(40)
+      //- +slider2(75)
   
     //- div.header.header-sliders sliderm
     //- div.content.content-sliders
@@ -63,12 +64,12 @@ html
     //-   +sliderm(130, 80, 1000, 10, 4, 'active', '', '', 80, 'active')
     //-   +sliderm(72, 9, 126, 3, 9, '', 'active', 'active', 27, '')
       
-    div.header.header-sliders sliderm2
-    div.content.content-slider2
-      //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, vertical, verticalSize, lineHeight, 
-      //-     pointSize, colorLine, colorPoint, colorScale, colorText)
-      +sliderm2(20, 120, 40, 60, 2, 3, 'active', '', '', 'active', 220, 15, 30, '#e6e6e6', '#e75735', 'lightgrey', 'white')
-      +sliderm2(0, 2000, 300, 1500, 10, 4, '', 'active', 'active', '', 330, 6, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
+    //- div.header.header-sliders sliderm2
+    //- div.content.content-slider2
+    //-   //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, vertical, verticalSize, lineHeight, 
+    //-   //-     pointSize, colorLine, colorPoint, colorScale, colorText)
+    //-   +sliderm2(20, 120, 40, 60, 2, 3, 'active', '', '', 'active', 220, 15, 30, '#e6e6e6', '#e75735', 'lightgrey', 'white')
+    //-   +sliderm2(0, 2000, 300, 1500, 10, 4, '', 'active', 'active', '', 330, 6, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
 
     div.header.header-stages stages
     div.content.content-stages
@@ -118,8 +119,8 @@ html
       +video('62980495')
 
     script(src="js/jquery-3.3.1.min.js")
-    script(src="js/jquery-asRange.min.js")
-    link(rel="stylesheet" href="css/asRange.css")
+    //- script(src="js/jquery-asRange.min.js")
+    //- link(rel="stylesheet" href="css/asRange.css")
     script(src="js/lc_switch.min.js")
     link(rel="stylesheet" href="css/lc_switch.css")
     //- script(src="https://code.jquery.com/jquery-3.3.1.min.js")

@@ -15,11 +15,6 @@ mixin toggle(name, value, tglclass, checked)
         else
             input(type="checkbox", name=name, value=value, class=tglclass, autocomplete="off")
 
-mixin tick(active)
-    .tick(class=active onclick="this.classList.toggle('active');")
-        i(class="material-icons icons-size")= 'done'
-
-
 mixin form
     form(action="", method="get")
         .form-left

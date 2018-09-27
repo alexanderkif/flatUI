@@ -104,7 +104,7 @@ eval("$(\".btn\").click(function (e) {\n\n  // Remove any old one\n  $(\".ripple
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n});\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
+eval("\n// $(document).ready(function(e) {\n// \t$('input').lc_switch();\n// });\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
 
 /***/ }),
 
@@ -171,7 +171,7 @@ eval("var classSliderm2 = 'sliderm2';\n\nvar Line = function (min, max) {\n    t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("$(\".range-example-input\").asRange({});\n\n//# sourceURL=webpack:///./src/sliders/sliders.js?");
+eval("// $(\".range-example-input\").asRange({});\n\n//# sourceURL=webpack:///./src/sliders/sliders.js?");
 
 /***/ })
 

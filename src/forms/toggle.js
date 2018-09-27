@@ -1,4 +1,4 @@
 
-$(document).ready(function(e) {
-	$('input').lc_switch();
-});
+// $(document).ready(function(e) {
+// 	$('input').lc_switch();
+// });

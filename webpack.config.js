@@ -85,6 +85,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: '5.html',
       template: 'src/html/5.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'sliderm2page.html',
+      template: 'src/html/sliderm2page.pug'
     })
   ]
 };

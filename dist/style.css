@@ -301,7 +301,8 @@ svg {
   font-family: 'Conv_Lato-Black'; }
   .sliderm2 .inputs {
     display: block;
-    margin: 20px auto; }
+    margin: 20px auto;
+    text-align: center; }
     .sliderm2 .inputs .label {
       display: inline-block;
       width: 120px;
@@ -1243,6 +1244,36 @@ h1 {
       font-size: 16px;
       text-align: justify;
       width: 100%; }
+
+.sliderm2page {
+  display: block;
+  width: 95%;
+  min-width: 800px;
+  max-width: 1920px;
+  font-family: 'Conv_Lato-Regular';
+  font-size: 16px;
+  align-self: center;
+  margin-top: 50px;
+  padding: 50px; }
+  .sliderm2page .sliderm2page-header {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-size: 48px;
+    padding: 10px;
+    text-align: center;
+    background-color: #e5e5e5;
+    border-radius: 5px; }
+  .sliderm2page .slider2page-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  .sliderm2page .sliderm2 {
+    flex-direction: row;
+    width: 36%;
+    margin: 50px 0px;
+    background-color: white; }
 
 .header-top {
   display: flex;

@@ -1,1 +1,1 @@
-$(".range-example-input").asRange({});
+// $(".range-example-input").asRange({});

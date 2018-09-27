@@ -1,0 +1,27 @@
+include ../sliderm2/sliderm2
+include ../tick/tick
+include ../header/header
+include ../footer/footer
+
+- var page= 'Sliderm2 page'
+
+html
+    head
+        meta(charset='UTF-8')
+        title= page
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet")
+        link(rel="stylesheet" href="style.css")
+        
+    body
+        .sliderm2page
+            .sliderm2page-header sliderm2
+            .slider2page-content
+                //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, vertical, verticalSize, lineHeight, 
+                //-     pointSize, colorLine, colorPoint, colorScale, colorText)
+                +sliderm2(20, 120, 40, 60, 2, 3, 'active', '', '', 'active', 220, 15, 30, '#e6e6e6', '#e75735', 'lightgrey', 'white')
+                +sliderm2(0, 2000, 300, 1500, 10, 4, '', 'active', 'active', '', 330, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
+                +sliderm2(70, 120, 80, 100, 0.5, 6, '', 'active', '', 'active', 250, 8, 16, '#e6e6e6', '#d3aaf5', 'lightgrey', 'black')
+                +sliderm2(230, 420, 270, 320, 5, 5, 'active', 'active', 'active', '', 150, 4, 50, '#e6e6e6', '#ffdb3b', 'lightgrey', 'red')
+                
+        script(src="js/jquery-3.3.1.min.js")
