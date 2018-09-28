@@ -1,6 +1,6 @@
-#Sliderm2
+# Sliderm2
 https://alexanderkif.github.io/flatUI/dist/sliderm2page.html
-#flatUI
+# flatUI
 https://alexanderkif.github.io/flatUI/dist/
-#Example
+# Example
 https://alexanderkif.github.io/flatUI/dist/1.html
