@@ -104,7 +104,7 @@ eval("$(\".btn\").click(function (e) {\n\n  // Remove any old one\n  $(\".ripple
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n// $(document).ready(function(e) {\n// \t$('input').lc_switch();\n// });\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
+eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n});\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
 
 /***/ }),
 

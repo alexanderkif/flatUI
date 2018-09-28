@@ -102,8 +102,11 @@ body {
     }
     &.content-sliders {
         width: 670px;
-        margin-bottom: 10px;
+        margin-bottom: 35px;
         align-items: flex-start;
+        .inputs {
+            display: none;
+        }
     }
     &.content-slider2{
         width: 80%;

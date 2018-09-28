@@ -1205,7 +1205,8 @@ h1 {
   font-size: 24px;
   width: 90%;
   margin: 10px auto;
-  color: #bbbbbb; }
+  color: #bbbbbb;
+  margin-bottom: 50px; }
 
 .stat-div {
   display: block;
@@ -1383,8 +1384,10 @@ body {
     padding-right: 15px; }
   .content.content-sliders {
     width: 670px;
-    margin-bottom: 10px;
+    margin-bottom: 35px;
     align-items: flex-start; }
+    .content.content-sliders .inputs {
+      display: none; }
   .content.content-slider2 {
     width: 80%;
     align-items: flex-start; }
