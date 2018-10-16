@@ -29,9 +29,54 @@
     }
     .sliderm2 {
         flex-direction: row;
-        width: 36%;
+        width: 33%;
         margin: 50px 0px;
         background-color: white;
+    }
+    .inputs {
+        // display: block;
+        width: 39%;
+        // margin: 20px auto;
+        text-align: center;
+        .label {
+            display: inline-block;
+            width: 120px;
+            color: $color-grey;
+            font-family: 'Conv_Lato-Regular';
+            font-size: 16px;
+            text-align: right;
+            &.shot {
+                width: 80px;
+            }
+        }
+        input {
+            display: inline-block;
+            width: 150px;
+            margin: 4px;
+            height: 30px;
+            border-radius: 5px;
+            border: 0px;
+            background-color: $color-lightgray;
+            color: $color-grey;
+            font-family: 'Conv_Lato-Regular';
+            font-size: 14px;
+            padding-left: 12px;
+        }
+        .tick {
+            margin: 10px 10px;
+        }
+    }
+    .result {
+        display: inline-block;
+            width: 100%;
+            margin: 4px;
+            border-radius: 5px;
+            border: 0px;
+            background-color: $color-lightgray;
+            color: $color-grey;
+            font-family: 'Conv_Lato-Regular';
+            font-size: 14px;
+            padding-left: 12px;
     }
 }
 

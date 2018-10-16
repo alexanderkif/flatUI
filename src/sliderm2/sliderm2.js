@@ -21,6 +21,7 @@ var Sliderm2DrawLine = function(div, pointHeight, lineHeight, tickVertical, slid
     sliderm2body.style.margin = '0px auto';
     sliderm2body.style.userSelect = 'none';
     sliderm2body.style.height = pointHeight/2 + lineHeight/2 + 5 + 'px';
+    sliderm2body.style.alignItems = 'center';
     if (tickVertical) {
         sliderm2body.style.width = slidermVerticalSize+'px';
         sliderm2body.style.transform = 'rotate(-90deg) translateX('+ -slidermVerticalSize/2+'px)';
@@ -159,70 +160,82 @@ var Sliderm2createScale = function(div, line, intervals, pointHeight, lineHeight
 var elems2 = document.getElementsByClassName(classSliderm2);
 [].forEach.call(elems2, function(element) {
     var sliderm2body = element.querySelector('.sliderm2body');
-    var tickHint = element.getAttribute('hint')=='active';
-    var tickScale = element.getAttribute('scale')=='active';
-    var tickInterval = element.getAttribute('interval')=='active';
-    var tickVertical = element.getAttribute('vertical')=='active';
-    var slidermVerticalSize = element.getAttribute('verticalSize');
-    var slidermValue2 = element.getAttribute('value2');
-    var slidermValue1 = element.getAttribute('value1');
-    var slidermMin = element.getAttribute('min');
-    var slidermMax = element.getAttribute('max');
+    var tickHint = element.getAttribute('data-hint')=='active';
+    var tickScale = element.getAttribute('data-scale')=='active';
+    var tickInterval = element.getAttribute('data-interval')=='active';
+    var tickVertical = element.getAttribute('data-vertical')=='active';
+    var slidermVerticalSize = element.getAttribute('data-verticalSize');
+    var slidermValue2 = element.getAttribute('data-value2');
+    var slidermValue1 = element.getAttribute('data-value1');
+    var slidermMin = element.getAttribute('data-min');
+    var slidermMax = element.getAttribute('data-max');
 
-    var pointHeight = element.getAttribute('pointSize');
-    var lineHeight = element.getAttribute('lineHeight');
-    var step = element.getAttribute('step');
-    var intervals = element.getAttribute('intervals');
-    var colorLine = element.getAttribute('colorLine');
-    var colorPoint = element.getAttribute('colorPoint');
-    var colorScale = element.getAttribute('colorScale');
-    var colorText = element.getAttribute('colorText');
+    var pointHeight = element.getAttribute('data-pointSize');
+    var lineHeight = element.getAttribute('data-lineHeight');
+    var step = element.getAttribute('data-step');
+    var intervals = element.getAttribute('data-intervals');
+    var colorLine = element.getAttribute('data-colorLine');
+    var colorPoint = element.getAttribute('data-colorPoint');
+    var colorScale = element.getAttribute('data-colorScale');
+    var colorText = element.getAttribute('data-colorText');
 
-    var inputTickHint = element.getElementsByClassName('tick-hint')[0];
-    var inputtickScale = element.getElementsByClassName('tick-scale')[0];
-    var inputTickInterval = element.getElementsByClassName('tick-interval')[0];
-    var inputTickVertical = element.getElementsByClassName('tick-vertical')[0];
-    var inputSlidermVerticalSize = element.getElementsByClassName('sliderm-vertical-size')[0];
-    var inputSlidermValue2 = element.getElementsByClassName('sliderm-value2')[0];
-    var inputSlidermValue1 = element.getElementsByClassName('sliderm-value1')[0];
-    var inputSlidermMin = element.getElementsByClassName('sliderm-min')[0];
-    var inputSlidermMax = element.getElementsByClassName('sliderm-max')[0];
-    var inputSlidermStep = element.getElementsByClassName('sliderm-step')[0];
-    var inputSlidermIntervals = element.getElementsByClassName('sliderm-intervals')[0];
+    var inputTickHint = element.parentElement.getElementsByClassName('tick-hint')[0];
+    var inputTickScale = element.parentElement.getElementsByClassName('tick-scale')[0];
+    var inputTickInterval = element.parentElement.getElementsByClassName('tick-interval')[0];
+    var inputTickVertical = element.parentElement.getElementsByClassName('tick-vertical')[0];
+    var inputSlidermVerticalSize = element.parentElement.getElementsByClassName('sliderm-vertical-size')[0];
+    var inputSlidermValue2 = element.parentElement.getElementsByClassName('sliderm-value2')[0];
+    var inputSlidermValue1 = element.parentElement.getElementsByClassName('sliderm-value1')[0];
+    var inputSlidermMin = element.parentElement.getElementsByClassName('sliderm-min')[0];
+    var inputSlidermMax = element.parentElement.getElementsByClassName('sliderm-max')[0];
+    var inputSlidermStep = element.parentElement.getElementsByClassName('sliderm-step')[0];
+    var inputSlidermIntervals = element.parentElement.getElementsByClassName('sliderm-intervals')[0];
+    var inputSlidermResult = element.parentElement.getElementsByClassName('result')[0];
     
-    var line = new Sliderm2Line(element.getAttribute('min'), element.getAttribute('max'));
-    var range = new Sliderm2Range(element.getAttribute('value1'), element.getAttribute('value2'), line);
-
-    var getInputs = function() {
-        tickHint = inputTickHint.classList.contains('active');
-        tickScale = inputtickScale.classList.contains('active');
-        tickInterval = inputTickInterval.classList.contains('active');
-        tickVertical = inputTickVertical.classList.contains('active');
-        slidermVerticalSize = inputSlidermVerticalSize.value;
-        slidermValue2 = inputSlidermValue2.value;
-        slidermValue1 = inputSlidermValue1.value;
-        slidermMin = inputSlidermMin.value;
-        slidermMax = inputSlidermMax.value;
-        step = inputSlidermStep.value;
-        intervals = inputSlidermIntervals.value;
+    var line = new Sliderm2Line(slidermMin, slidermMax);
+    var range = new Sliderm2Range(slidermValue1, slidermValue2, line);
     
-        line = new Sliderm2Line(slidermMin, slidermMax);
-        range = new Sliderm2Range(slidermValue1, slidermValue2, line);
-    };
-
-    var setInputs = function() {
-        if (tickInterval) 
-            inputSlidermValue1.value = Math.round(range.value1 * 100) / 100;
-        inputSlidermValue2.value = Math.round(range.value2 * 100) / 100;
-        inputSlidermMin.value = line.min;
-        inputSlidermMax.value = line.max;
-        inputSlidermStep.value = step;
-        inputSlidermIntervals.value = intervals;
-    };
-    
-    var inputs = element.querySelector('.inputs');
+    var inputs = element.parentElement.querySelector('.inputs');
 
     if (inputs) {
+
+        var setResult = function() {
+            inputSlidermResult.value = `<div class="sliderm2" data-min="${slidermMin}" data-max="${slidermMax}" data-value1="${inputSlidermValue1.value}" data-value2="${inputSlidermValue2.value}" data-step="${step}" data-intervals="${intervals}" data-hint="${tickHint?"active":""}" data-scale="${tickScale?"active":""}" data-interval="${tickInterval?"active":""}" data-vertical="${tickVertical?"active":""}" data-verticalSize="${slidermVerticalSize}" data-lineHeight="15" data-pointSize="30" data-colorLine="#e6e6e6" data-colorPoint="#e75735" data-colorScale="lightgrey" data-colorText="white"></div>`;
+        };
+
+        var getInputs = function() {
+            tickHint = inputTickHint.classList.contains('active');
+            tickScale = inputTickScale.classList.contains('active');
+            tickInterval = inputTickInterval.classList.contains('active');
+            tickVertical = inputTickVertical.classList.contains('active');
+            slidermVerticalSize = inputSlidermVerticalSize.value || 250;
+            slidermValue2 = inputSlidermValue2.value;
+            slidermValue1 = inputSlidermValue1.value;
+            slidermMin = inputSlidermMin.value;
+            slidermMax = inputSlidermMax.value;
+            step = inputSlidermStep.value;
+            intervals = inputSlidermIntervals.value;
+        
+            line = new Sliderm2Line(slidermMin, slidermMax);
+            range = new Sliderm2Range(slidermValue1, slidermValue2, line);
+        };
+    
+        var setInputs = function() {
+            if (tickInterval) 
+                inputSlidermValue1.value = Math.round(range.value1 * 100) / 100;
+            inputSlidermValue2.value = Math.round(range.value2 * 100) / 100;
+            inputSlidermMin.value = line.min;
+            inputSlidermMax.value = line.max;
+            inputSlidermStep.value = step;
+            inputSlidermIntervals.value = intervals;
+            inputSlidermVerticalSize.value = slidermVerticalSize;
+            if (tickHint) inputTickHint.classList.add('active');
+            if (tickScale) inputTickScale.classList.add('active');
+            if (tickInterval) inputTickInterval.classList.add('active');
+            if (tickVertical) inputTickVertical.classList.add('active');
+            setResult();
+        };
+
         inputs.addEventListener('change', function() {
             getInputs();
             draw();
@@ -246,7 +259,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
 
     var draw = function() {
         var points = checkRange();
-        setInputs();
+        if(inputs) setInputs();
         drawLine = new Sliderm2DrawLine(element, pointHeight, lineHeight, tickVertical, slidermVerticalSize, colorLine);
         drawRange = new Sliderm2DrawRange(drawLine, range, colorPoint);        
         drawPoints = new Sliderm2DrawPoints(drawLine, points, pointHeight, tickHint, tickVertical, colorPoint, colorText);
