@@ -179,23 +179,23 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var colorScale = element.getAttribute('data-colorScale');
     var colorText = element.getAttribute('data-colorText');
 
-    var inputTickHint = element.parentElement.getElementsByClassName('tick-hint')[0];
-    var inputTickScale = element.parentElement.getElementsByClassName('tick-scale')[0];
-    var inputTickInterval = element.parentElement.getElementsByClassName('tick-interval')[0];
-    var inputTickVertical = element.parentElement.getElementsByClassName('tick-vertical')[0];
-    var inputSlidermVerticalSize = element.parentElement.getElementsByClassName('sliderm-vertical-size')[0];
-    var inputSlidermValue2 = element.parentElement.getElementsByClassName('sliderm-value2')[0];
-    var inputSlidermValue1 = element.parentElement.getElementsByClassName('sliderm-value1')[0];
-    var inputSlidermMin = element.parentElement.getElementsByClassName('sliderm-min')[0];
-    var inputSlidermMax = element.parentElement.getElementsByClassName('sliderm-max')[0];
-    var inputSlidermStep = element.parentElement.getElementsByClassName('sliderm-step')[0];
-    var inputSlidermIntervals = element.parentElement.getElementsByClassName('sliderm-intervals')[0];
-    var inputSlidermResult = element.parentElement.getElementsByClassName('result')[0];
+    var inputTickHint = element.parentElement.parentElement.getElementsByClassName('tick-hint')[0];
+    var inputTickScale = element.parentElement.parentElement.getElementsByClassName('tick-scale')[0];
+    var inputTickInterval = element.parentElement.parentElement.getElementsByClassName('tick-interval')[0];
+    var inputTickVertical = element.parentElement.parentElement.getElementsByClassName('tick-vertical')[0];
+    var inputSlidermVerticalSize = element.parentElement.parentElement.getElementsByClassName('sliderm-vertical-size')[0];
+    var inputSlidermValue2 = element.parentElement.parentElement.getElementsByClassName('sliderm-value2')[0];
+    var inputSlidermValue1 = element.parentElement.parentElement.getElementsByClassName('sliderm-value1')[0];
+    var inputSlidermMin = element.parentElement.parentElement.getElementsByClassName('sliderm-min')[0];
+    var inputSlidermMax = element.parentElement.parentElement.getElementsByClassName('sliderm-max')[0];
+    var inputSlidermStep = element.parentElement.parentElement.getElementsByClassName('sliderm-step')[0];
+    var inputSlidermIntervals = element.parentElement.parentElement.getElementsByClassName('sliderm-intervals')[0];
+    var inputSlidermResult = element.parentElement.parentElement.getElementsByClassName('result')[0];
     
     var line = new Sliderm2Line(slidermMin, slidermMax);
     var range = new Sliderm2Range(slidermValue1, slidermValue2, line);
     
-    var inputs = element.parentElement.querySelector('.inputs');
+    var inputs = element.parentElement.parentElement.querySelector('.inputs');
 
     if (inputs) {
 

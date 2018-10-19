@@ -4,35 +4,3 @@ mixin sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval,
         data-lineHeight=lineHeight, data-pointSize=pointSize, data-colorLine=colorLine, data-colorPoint=colorPoint, 
         data-colorScale=colorScale, data-colorText=colorText)
         .sliderm2body
-        //- .inputs
-            .label ScaleMin
-            input.sliderm-min(value= min)
-            br
-            .label ScaleMax
-            input.sliderm-max(value= max)
-            br
-            .interval
-                .label Value1
-                input.sliderm-value1(value= value1)
-                br
-            .label Value2
-            input.sliderm-value2(value= value2)
-            br
-            .label Step
-            input.sliderm-step(value= step)
-            br
-            .label Scale Intervals
-            input.sliderm-intervals(value= intervals)
-            br
-            .label.shot Hint
-            +tick('tick-hint ' + hint)
-            .label.shot Interval
-            +tick('tick-interval ' + interval)
-            br
-            .label.shot Scale
-            +tick('tick-scale ' + scale)
-            .label.shot Vertical
-            +tick('tick-vertical ' + vertical)
-            br
-            .label Vertical size
-            input.sliderm-vertical-size(value= verticalSize)

@@ -105,7 +105,7 @@ svg {
   fill: #747474; }
 
 .sliderm2 {
-  width: 40%;
+  width: 100%;
   font-family: 'Conv_Lato-Black'; }
 
 .steps {
@@ -1035,7 +1035,7 @@ h1 {
   font-family: 'Conv_Lato-Regular';
   font-size: 16px;
   align-self: center;
-  margin-top: 50px;
+  margin-top: 0px;
   padding: 50px; }
   .sliderm2page .sliderm2page-header {
     display: block;
@@ -1050,11 +1050,13 @@ h1 {
   .sliderm2page .slider2page-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: space-around;
+    margin-top: 50px; }
+    .sliderm2page .slider2page-content .slider-block {
+      width: 30%; }
   .sliderm2page .sliderm2 {
     flex-direction: row;
-    width: 33%;
-    margin: 50px 0px;
+    margin: 0px 0px;
     background-color: white; }
   .sliderm2page .inputs {
     width: 39%;
