@@ -988,6 +988,8 @@ h1 {
   margin: 10px auto;
   color: #bbbbbb;
   margin-bottom: 50px; }
+  .block1 .sliderm2 {
+    width: 39%; }
 
 .stat-div {
   display: block;
@@ -1206,8 +1208,8 @@ body {
     width: 670px;
     margin-bottom: 35px;
     align-items: flex-start; }
-    .content.content-sliders .inputs {
-      display: none; }
+    .content.content-sliders .sliderm2 {
+      width: 40%; }
   .content.content-slider2 {
     width: 80%;
     align-items: flex-start; }
