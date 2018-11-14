@@ -1,0 +1,331 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>flatUI</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">standard buttons</div>
+    <div class="content">
+      <button class="btn green small">button</button>
+      <button class="btn green">button</button>
+      <button class="btn red">button</button>
+      <button class="btn red small">button</button>
+    </div>
+    <div class="content">
+      <button class="btn green small disable">button</button>
+      <button class="btn green disable">button</button>
+      <button class="btn red disable">button</button>
+      <button class="btn red small disable">button</button>
+    </div>
+    <div class="header header-arrow-buttons">arrow buttons</div>
+    <div class="content content-arrow-buttons">
+      <button class="btn arrow">&lt;</button>
+      <button class="btn arrow">&gt;</button>
+      <button class="btn arrow disable">&lt;</button>
+      <button class="btn arrow disable">&gt;</button>
+      <button class="btn arrow">&lt;</button>
+      <button class="btn arrow">&gt;</button>
+    </div>
+    <div class="header header-percentages">percentages/pie chart</div>
+    <div class="content content-percentages">
+      <svg viewbox="0 0 10 10" style="width:115px;">
+        <defs>
+          <circle id="circle" cx="5" cy="5" r="4" stroke-width="0.5" fill="transparent"></circle>
+        </defs>
+        <use xlink:href="#circle" stroke="#e75735" stroke-dasharray="0,0,0,18.84,0,0"></use>
+        <text class="svg-text" x="5" y="6.5" text-anchor="middle" font-size="3.5">0</text>
+      </svg>
+      <svg viewbox="0 0 10 10" style="width:115px;">
+        <defs>
+          <circle id="circle" cx="5" cy="5" r="4" stroke-width="0.5" fill="transparent"></circle>
+        </defs>
+        <use xlink:href="#circle" stroke="#e75735" stroke-dasharray="0,0,3.2656,15.5744,9.5456,0"></use>
+        <text class="svg-text" x="5" y="6.5" text-anchor="middle" font-size="3.5">38</text>
+      </svg>
+      <svg viewbox="0 0 10 10" style="width:115px;">
+        <defs>
+          <circle id="circle" cx="5" cy="5" r="4" stroke-width="0.5" fill="transparent"></circle>
+        </defs>
+        <use xlink:href="#circle" stroke="#e75735" stroke-dasharray="0,0,9.2944,9.5456,15.5744,0"></use>
+        <text class="svg-text" x="5" y="6.5" text-anchor="middle" font-size="3.5">62</text>
+      </svg>
+      <svg viewbox="0 0 10 10" style="width:115px;">
+        <defs>
+          <circle id="circle" cx="5" cy="5" r="4" stroke-width="0.5" fill="transparent"></circle>
+        </defs>
+        <use xlink:href="#circle" stroke="#e75735" stroke-dasharray="0,0,16.076800000000002,2.7631999999999977,22.356800000000003,0"></use>
+        <text class="svg-text" x="5" y="6.5" text-anchor="middle" font-size="3.5">89</text>
+      </svg>
+      <canvas id="cnvs" width="115px" height="115px" r="57.5" p1="10" p2="25" p3="30" style="width:115px;height:115px;"></canvas>
+    </div>
+    <div class="header header-sliders">sliders</div>
+    <div class="content content-sliders">
+      <div class="sliderm2" data-min="0" data-max="100" data-value1="20" data-value2="40" data-step="5" data-intervals="3" data-hint="active" data-scale="" data-interval="" data-vertical="" data-verticalSize="200" data-lineHeight="5" data-pointSize="20" data-colorLine="#e6e6e6" data-colorPoint="#e75735" data-colorScale="lightgrey" data-colorText="white"></div>
+      <div class="sliderm2" data-min="0" data-max="100" data-value1="0" data-value2="75" data-step="1" data-intervals="4" data-hint="" data-scale="active" data-interval="" data-vertical="" data-verticalSize="200" data-lineHeight="5" data-pointSize="20" data-colorLine="#e6e6e6" data-colorPoint="#4eb7a8" data-colorScale="lightgrey" data-colorText="white"></div>
+    </div>
+    <div class="header header-stages">stages</div>
+    <div class="content content-stages">
+      <div class="steps">
+        <div class="first act">
+          <svg class="svg-stage" viewbox="0 0 30 30">
+            <circle class="round" cx="15" cy="15" r="15"></circle>
+            <text class="text" x="15" y="20" text-anchor="middle" font-size="15">1</text>
+          </svg>
+        </div>
+        <div class="step act">
+          <svg class="svg-stage" viewbox="0 0 30 30">
+            <circle class="round" cx="15" cy="15" r="15"></circle>
+            <text class="text" x="15" y="20" text-anchor="middle" font-size="15">2</text>
+          </svg>
+        </div>
+        <div class="step act">
+          <svg class="svg-stage" viewbox="0 0 30 30">
+            <circle class="round" cx="15" cy="15" r="15"></circle>
+            <text class="text" x="15" y="20" text-anchor="middle" font-size="15">3</text>
+          </svg>
+        </div>
+        <div class="step pas">
+          <svg class="svg-stage" viewbox="0 0 30 30">
+            <circle class="round" cx="15" cy="15" r="15"></circle>
+            <text class="text" x="15" y="20" text-anchor="middle" font-size="15">4</text>
+          </svg>
+        </div>
+        <div class="step pas">
+          <svg class="svg-stage" viewbox="0 0 30 30">
+            <circle class="round" cx="15" cy="15" r="15"></circle>
+            <text class="text" x="15" y="20" text-anchor="middle" font-size="15">5</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="header header-forms">form elements</div>
+    <div class="content content-forms">
+      <form action="" method="get">
+        <div class="form-left">
+          <div class="form-block">
+            <input class="form-input" type="text" placeholder="Your Name">
+            <input class="form-button form-button-red" type="button" value="ERROR">
+            <div class="button-arrow form-button-red"></div>
+          </div>
+          <div class="form-block">
+            <input class="form-input" type="text" placeholder="Your Email">
+            <input class="form-button form-button-green" type="button" value="THANKS!">
+            <div class="button-arrow form-button-green"></div>
+          </div>
+          <div class="form-block">
+            <textarea class="form-input form-textarea" placeholder="Your Message" cols="30" rows="4"></textarea>
+          </div>
+          <div class="form-block">
+            <button class="btn green">submit</button>
+          </div>
+        </div>
+        <div class="form-right">
+          <div class="form-block center">
+            <div class="header header-informs">toggles</div>
+          </div>
+          <div class="form-block center">               
+            <div class="toggle">
+              <input class="lcs_check" type="checkbox" name="check-1" value="4" autocomplete="off">
+            </div>
+            <div class="toggle">
+              <input class="lcs_check lcs_tt1" type="checkbox" name="check-3" value="6" checked="checked" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-block center">
+            <div class="header header-informs">tick boxes</div>
+          </div>
+          <div class="form-block center">
+            <div class="tick active" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
+            <div class="tick" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="content search-profile">
+      <div class="content-left">
+        <div class="content-block center">
+          <div class="header header-search">search/drop down</div>
+        </div>
+        <div class="search-block">
+          <input class="search-input" type="text" placeholder="Search">
+          <div class="search-button btn search-button-red"><i class="material-icons icons-size">search</i></div>
+        </div>
+        <div class="search-block">
+          <input class="search-input not-found" type="text" placeholder="I've not found what I'm looking for...">
+          <div class="search-button btn search-button-red"><i class="material-icons icons-size">search</i></div>
+        </div>
+        <div class="search-block">
+          <input class="search-input" type="text" placeholder="Choose An Option">
+          <div class="search-button dropdownclick-1 btn search-button-green" type="button" onclick="this.parentElement.getElementsByClassName('dropdown-menu-1')[0].classList.toggle('visible');"><i class="material-icons icons-size">keyboard_arrow_down</i></div>
+          <div class="dropdown-menu-1"><a class="search-input dropdown-item" href="#">This is option 1</a><a class="search-input dropdown-item" href="#">This is option 2</a><a class="search-input dropdown-item" href="#">This is option 3</a><a class="search-input dropdown-item" href="#">This is option 4</a>
+          </div>
+        </div>
+      </div>
+      <div class="content-right">
+        <div class="content-block center">
+          <div class="header header-user">user profile</div>
+        </div>
+        <div class="user-card"><img class="user-left" src="img/john.png" alt="no image">
+          <div class="user-right undefined">
+            <div class="romb"></div>
+            <div class="user-name">John Smith</div>
+            <div class="user-prof">ux designer</div>
+            <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+          </div>
+        </div>
+        <div class="user-card"><img class="user-left" src="img/sarah.png" alt="no image">
+          <div class="user-right user-green">
+            <div class="romb"></div>
+            <div class="user-name">Sarah Brown</div>
+            <div class="user-prof">developer</div>
+            <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header header-news">news & events</div>
+    <div class="content content-news">
+      <div class="news-left"><a href="2.html">
+          <div class="news-block"><img src="img/velo.png" alt="no img">
+            <div class="news-content">
+              <div class="news-header">It's all going downhill</div>
+              <div class="news-date">24 august 2013</div>
+              <div class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</div>
+            </div>
+          </div></a>
+      </div>
+      <div class="news-right">
+        <div class="event-block"><img src="img/city.png" alt="no img">
+          <div class="event-content">
+            <div class="big-date">
+              <div class="event-date">24</div>
+              <div class="event-month">Aug</div>
+            </div>
+            <div class="event-header">this is the title</div>
+            <div class="event-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div class="event-button">
+              <button class="btn green">add to calendar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header header-location">location</div>
+    <div class="content content-location">
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=37.791235, -122.414842&amp;z=15&amp;output=embed" width="590" height="200" frameborder="0" style="border:0"></iframe>
+        <div class="map-bottom">
+          <div class="map-slog">Meet us!</div>
+          <div class="map-address">
+            <div class="map-address">1259 california st</div>
+            <div class="map-address1">san francisco, ca</div>
+          </div>
+          <div class="map-point"><i class="material-icons">location_searching</i></div>
+          <div class="map-target"><i class="material-icons">location_on</i></div>
+        </div>
+      </div>
+    </div>
+    <div class="content content-calendar">
+      <div class="content-left">
+        <div class="content-block center">
+          <div class="header header-calendar">calendar</div>
+        </div>
+        <div class="calendar">
+          <div class="date">24</div>
+          <div class="month-carusel">
+            <div class="month-left"><i class="material-icons">keyboard_arrow_left</i></div>
+            <div class="month">september</div>
+            <div class="month-right"><i class="material-icons">keyboard_arrow_right</i></div>
+          </div>
+          <div class="week">
+            <div class="days">mon</div>
+            <div class="days">tue</div>
+            <div class="days">wed</div>
+            <div class="days">thu</div>
+            <div class="days">fri</div>
+            <div class="days">sat</div>
+            <div class="days">sun</div>
+          </div>
+          <div class="calendar-row">
+            <div class="day">29</div>
+            <div class="day">30</div>
+            <div class="day">31</div>
+            <div class="day inn">1</div>
+            <div class="day inn">2</div>
+            <div class="day inn">3</div>
+            <div class="day inn">4</div>
+          </div>
+          <div class="calendar-row">
+            <div class="day inn">5</div>
+            <div class="day inn">6</div>
+            <div class="day inn">7</div>
+            <div class="day inn">8</div>
+            <div class="day inn">9</div>
+            <div class="day inn">10</div>
+            <div class="day inn">11</div>
+          </div>
+          <div class="calendar-row">
+            <div class="day inn">12</div>
+            <div class="day inn">13</div>
+            <div class="day inn">14</div>
+            <div class="day inn">15</div>
+            <div class="day inn">16</div>
+            <div class="day inn">17</div>
+            <div class="day inn">18</div>
+          </div>
+          <div class="calendar-row">
+            <div class="day inn">19</div>
+            <div class="day inn">20</div>
+            <div class="day inn">21</div>
+            <div class="day inn">22</div>
+            <div class="day inn">23</div>
+            <div class="day inn">24</div>
+            <div class="day inn">25</div>
+          </div>
+          <div class="calendar-row">
+            <div class="day inn">26</div>
+            <div class="day inn">27</div>
+            <div class="day inn">28</div>
+            <div class="day inn">29</div>
+            <div class="day inn">30</div>
+            <div class="day">1</div>
+            <div class="day">2</div>
+          </div>
+          <div class="footer">today</div>
+        </div>
+      </div>
+      <div class="content-right">
+        <div class="content-block center">
+          <div class="header header-messaging">messaging</div>
+        </div>
+        <div class="messaging">
+          <div class="messaging-header">Sarah Brown</div>
+          <div class="hr-green">
+            <div class="icons"><i class="material-icons">mode_comment</i><i class="material-icons">local_see</i></div>
+          </div>
+          <div class="messaging-body"><img class="user-photo" src="img/sarah.png" alt="no image">
+            <div class="white-message">Hey! So are we cool to meet at the art gallery? Say 8pm
+              <div class="corner"></div>
+            </div>
+            <div class="grey-message">Yeah that sounds great. See you then.</div>
+            <button class="btn green">reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header header-video">video</div>
+    <div class="content content-video">
+      <div class="video">
+        <iframe src="https://player.vimeo.com/video/62980495?color=e75735&amp;title=1&amp;byline=1&amp;portrait=0" width="600" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/lc_switch.min.js"></script>
+    <link rel="stylesheet" href="css/lc_switch.css">
+    <script src="main.js"></script>
+  </body>
+</html>
