@@ -12,7 +12,7 @@ $color-lightgray: #e5e5e5;
     border: 0px;
     background-color: $color-lightgray;
     color: $color-grey;
-    font-family: 'Conv_Lato-Regular';
+    font-weight: normal;
     font-size: 14px;
     padding-left: 12px;
     outline: none;
@@ -31,7 +31,7 @@ $color-lightgray: #e5e5e5;
     border-radius: 5px;
     border: 0px;
     color: white;
-    font-family: 'Conv_Lato-Regular';
+    font-weight: normal;
     font-size: 12px;
     outline: none;
 }
@@ -61,7 +61,8 @@ $color-lightgray: #e5e5e5;
         height: 24px;
     }
     .lcs_label {
-        font-family: 'Conv_Lato-Regular' !important;
+        font-family: 'Conv_Lato' !important;
+        font-weight: bold !important;
         font-size: 12px !important;
     }
     .lcs_cursor {

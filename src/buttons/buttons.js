@@ -9,8 +9,10 @@ $(".btn").click(function (e) {
         buttonWidth = $(this).width(),
         buttonHeight =  $(this).height();
     
-    // Add the element
-    $(this).prepend("<span class='ripple'></span>");
+    if (!$(this).hasClass('disable')){
+      // Add the element
+      $(this).prepend("<span class='ripple'></span>");
+    }
   
     
    // Make it round!

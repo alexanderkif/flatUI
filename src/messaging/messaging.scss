@@ -9,7 +9,7 @@ $color-grey-light: #f2f2f2;
     user-select: none;
     align-items: center;
     text-align: center;
-	font-family: 'Conv_Lato-Regular';
+    font-weight: normal;
     color: $color-grey;
 }
 .messaging-header {
@@ -81,7 +81,8 @@ $color-grey-light: #f2f2f2;
     .btn {
         width: 240px;
         height: 33px;
-        font-family: 'Conv_Lato-Black';
+        font-family: 'Conv_Lato';
+        font-weight: bold;
         font-size: 12px;
         letter-spacing: 1px;
     }

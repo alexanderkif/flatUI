@@ -23,7 +23,8 @@
 
 
 body {
-    font-family: 'Conv_Lato-Black';
+    font-family: 'Conv_Lato';
+    font-weight: bold;
     color: #797979;
 }
 
@@ -48,7 +49,7 @@ body {
     }
 
     &.header-arrow-buttons {
-        margin-top: 105px;
+        margin-top: 110px;
         margin-bottom: 33px;
     }
 
@@ -68,8 +69,8 @@ body {
     }
 
     &.header-forms {
-        margin-top: 55px;
-        margin-bottom: 33px;
+        margin-top: 50px;
+        margin-bottom: 40px;
     }
 
     &.header-search {
@@ -96,21 +97,21 @@ body {
 
     &.header-calendar, &.header-messaging {
         margin: 0px;
-        margin-top: 30px;
+        margin-top: 25px;
         margin-bottom: 20px;
         letter-spacing: 0px;
     }
 
     &.header-video {
-        margin-top: 55px;
+        margin-top: 50px;
         margin-bottom: 10px;
     }
 }
 .content {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    margin: 20px auto;
+    align-items: flex-end;
+    margin: 25px auto;
     // background: #cfc;
 
     &.content-buttons{
@@ -136,7 +137,7 @@ body {
             width: 45%;
         }
     }
-    
+
     &.content-stages {
         max-width: 565px;
         margin-bottom: 40px;
@@ -183,7 +184,7 @@ body {
 
     &.search-profile {
         margin-bottom: 30px;
-        margin-top: 30px;
+        margin-top: 35px;
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
@@ -220,6 +221,7 @@ body {
     }
 
     &.calendar-messaging {
+        margin-top: 15px;
         margin-bottom: 30px;
         display: flex;
         align-items: flex-start;
@@ -243,14 +245,14 @@ a {
 }
 
 @font-face {
-	font-family: 'Conv_Lato-Black';
+	font-family: 'Conv_Lato';
 	src: url('fonts/Lato-Black.eot');
 	src: local('☺'), url('fonts/Lato-Black.woff') format('woff'), url('fonts/Lato-Black.ttf') format('truetype'), url('fonts/Lato-Black.svg') format('svg');
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Conv_Lato-Regular';
+	font-family: 'Conv_Lato';
 	src: url('fonts/Lato-Regular.eot');
 	src: local('☺'), url('fonts/Lato-Regular.woff') format('woff'), url('fonts/Lato-Regular.ttf') format('truetype'), url('fonts/Lato-Regular.svg') format('svg');
 	font-weight: normal;

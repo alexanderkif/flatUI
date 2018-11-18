@@ -6,7 +6,7 @@ $color-lightgray: #e5e5e5;
 .steps {
     width: 100%;
     display: table;
-    font-family: 'Conv_Lato-Black';
+    font-weight: bold;
 }
 .first {
     width: 0px;
@@ -31,14 +31,14 @@ $color-lightgray: #e5e5e5;
     margin-top: -18px;
 }
 .act .text {
-    font-family: 'Conv_Lato-Black';
+    font-weight: bold;
     fill: white;
 }
 .act .round {
     fill: $color-red;
 }
 .pas .text {
-    font-family: 'Conv_Lato-Black';
+    font-weight: bold;
     fill: $color-grey;
 }
 .pas .round {

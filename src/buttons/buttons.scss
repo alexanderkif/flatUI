@@ -6,97 +6,110 @@ $color-red-shadow: #bf3e1f;
 .btn {
     position: relative;
     width: 120px;
-    height: 35px;
-    font-size: 16px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: bold;
     border: none;
     border-radius: 4px;
     background-color: white;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-}
-.red {
-    color: $color-red;
-    border: 1px solid $color-red;
-    box-shadow: 0px 3px $color-red;
-}
-.green {
-    color: $color-green;
-    border: 1px solid $color-green;
-    box-shadow: 0px 3px $color-green;
-}
-.small {
-    width: 80px;
-    height: 22px;
-    font-size: 12px;
-    border-radius: 3px;
-    box-shadow: 0px 2px;
-}
-.btn:hover, .btn.small:hover {
-    color: white;
-    &.red {
-        box-shadow: 0px 3px $color-red-shadow;
-        background-color: $color-red;
-    }
-    &.green {
-        box-shadow: 0px 3px $color-green-shadow;
-        background-color: $color-green;
-    }
-}
 
-.disable {
-    // opacity: 0.6;
-    cursor: default;    
-    &.red, &.green {
-        color: lightgray;
-        border: 1px solid lightgray;
-        box-shadow: 0 3px lightgray;
+    &.red {
+        color: $color-red;
+        border: 1px solid $color-red;
+        box-shadow: 0px 3px $color-red;
     }
+
+    &.green {
+        color: $color-green;
+        border: 1px solid $color-green;
+        box-shadow: 0px 3px $color-green;
+    }
+
     &.small {
-        box-shadow: 0 2px;
+        width: 80px;
+        height: 22px;
+        font-size: 10px;
+        border-radius: 3px;
+        box-shadow: 0px 2px;
     }
-}
-.disable:hover, .disable.small:hover {
-    transform: none;
-    &.red, &.green {
-        background-color: white;
-        color: lightgray;
-        box-shadow: 0 3px lightgray;
+
+    &:hover, &.small:hover {
+        color: white;
+
+        &.red {
+            box-shadow: 0px 3px $color-red-shadow;
+            background-color: $color-red;
+        }
+
+        &.green {
+            box-shadow: 0px 3px $color-green-shadow;
+            background-color: $color-green;
+        }
+    }
+
+    &.disable {
+        cursor: default;    
+
+        &.red, &.green {
+            color: lightgray;
+            border: 1px solid lightgray;
+            box-shadow: 0 3px lightgray;
+        }
+
         &.small {
-            box-shadow: 0 2px lightgray;
+            box-shadow: 0 2px;
         }
     }
-}
-.btn.arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 32px;
-    border-radius: 50%;
-    border: 3px solid $color-green;
-    color: $color-green;
-    background-color: white;
-    transform: none;
-    // box-shadow: 1px 3px $color-green-shadow;
-    &:hover {
-        background-color: $color-green;
-        color: white;
-    }
-    &.disable {
-        // box-shadow: 1px 3px gray;
-        border: 0px;
-        color: white;
-        background-color: #e5e5e5;
-    }
-}
-.btn:active, .btn.small:active {
-    transform: translateY(3px);
-    &.red, &.green, &.arrow {
-        &:not(.disable) {
-        box-shadow: 0px 0px;
+    &.disable:hover, &.disable.small:hover {
+        transform: none;
+
+        &.red, &.green {
+            background-color: white;
+            color: lightgray;
+            box-shadow: 0 3px lightgray;
+
+            &.small {
+                box-shadow: 0 2px lightgray;
+            }
         }
     }
-    &.disable {
-        transform: translateY(0px);
+    &.arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 32px;
+        border-radius: 50%;
+        border: 3px solid $color-green;
+        color: $color-green;
+        background-color: white;
+        transform: none;
+
+        &:hover {
+            background-color: $color-green;
+            color: white;
+        }
+
+        &.disable {
+            border: 0px;
+            color: white;
+            background-color: #e5e5e5;
+        }
+    }
+
+    &:active, &.small:active {
+        transform: translateY(3px);
+
+        &.red, &.green, &.arrow {
+            &:not(.disable) {
+            box-shadow: 0px 0px;
+            }
+        }
+
+        &.disable {
+            transform: translateY(0px);
+        }
     }
 }
 

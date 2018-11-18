@@ -6,10 +6,6 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
-// body {
-//     font-family: 'Conv_Lato-Black';
-//     color: #797979;
-// }
 h1 {
     text-transform: uppercase;
     font-size: 32px;
@@ -20,7 +16,8 @@ h1 {
     width: 95%;
     min-width: 1024px;
     max-width: 1280px;
-    font-family: 'Conv_Lato-Regular';
+    font-family: 'Conv_Lato';
+    font-weight: normal;
     font-size: 16px;
     margin: 0 auto;
     margin-top: 50px;
