@@ -1,0 +1,42 @@
+$color-green: #4eb7a8;
+$color-grey: #747474;
+$color-red: #e75735;
+$color-lightgray: #e5e5e5;
+
+.form-textarea__text {
+    // font-family: inherit;
+    height: auto;
+    padding: 4px;
+    // outline: none;
+    resize: none;
+    margin: 4px;
+    // height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: $color-lightgray;
+    color: $color-grey;
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    padding-left: 12px;
+    width: 98%;
+}
+.form-button {
+    display: block;
+    flex: 0 75px;
+    margin: 4px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 12px;
+    outline: none;
+}
+.form-button-red {
+    background-color: $color-red;    
+}
+.form-button-green {
+    background-color: $color-green;
+}

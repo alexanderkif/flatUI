@@ -2,7 +2,9 @@ include /buttons/buttons
 include /percentages/percentages
 include /sliderm2/sliderm2
 include /stages/stages
-include /forms/forms
+include /forms/form-input
+include /forms/form-textarea
+include /forms/form-toggle
 include /tick/tick
 include /search/search
 include /user/user
@@ -25,24 +27,24 @@ html
     .wrapper
       header.header.header-buttons standard buttons
       div.content.content-buttons
-        +button('button', 'green small')
-        +button('button', 'green')
-        +button('button', 'red')
-        +button('button', 'red small')
+        +button('button', ['green', 'small'])
+        +button('button', ['green'])
+        +button('button', ['red'])
+        +button('button', ['red', 'small'])
       div.content.content-buttons
-        +button('button', 'green small disable')
-        +button('button', 'green disable')
-        +button('button', 'red disable')
-        +button('button', 'red small disable')
+        +button('button', ['green', 'small', 'disable'])
+        +button('button', ['green', 'disable'])
+        +button('button', ['red', 'disable'])
+        +button('button', ['red', 'small', 'disable'])
 
       header.header.header-arrow-buttons arrow buttons
       div.content.content-arrow-buttons
-        +button('<', 'arrow')
-        +button('>', 'arrow')
-        +button('<', 'arrow disable')
-        +button('>', 'arrow disable')
-        +button('<', 'arrow')
-        +button('>', 'arrow')
+        +button('<', ['arrow'])
+        +button('>', ['arrow'])
+        +button('<', ['arrow', 'disable'])
+        +button('>', ['arrow', 'disable'])
+        +button('<', ['arrow'])
+        +button('>', ['arrow'])
 
       header.header.header-percentages percentages/pie chart
       div.content.content-percentages
@@ -69,9 +71,9 @@ html
           .form-left
             +form-input('Your Name', 'ERROR', 'red')
             +form-input('Your Email', 'THANKS!', 'green')
-            +textarea("Your Message", "30", "4")
+            +form-textarea("Your Message", "30", "4")
             .form-block
-              +button('submit', 'green')
+              +button('submit', ['green'])
           .form-right
             .form-block.center
               .header.header-informs toggles

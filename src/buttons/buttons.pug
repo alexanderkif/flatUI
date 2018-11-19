@@ -1,5 +1,15 @@
 
 //- btnclass can be small red|green disable
 
-mixin button(btnlabel, btnclass)
-    button(class='btn '+btnclass)= btnlabel
+mixin button(btnlabel, btnclasses)
+    - var btnClassString = `btn`
+    each btnclass in btnclasses
+        - btnClassString = `${btnClassString} btn_${btnclass}`
+    if (btnlabel=='<')
+        button(class=btnClassString) 
+            i.material-icons= "keyboard_arrow_left"
+    if (btnlabel=='>')
+        button(class=btnClassString)
+            i.material-icons= "keyboard_arrow_right"
+    if (btnlabel!='>' && btnlabel!='<')
+        button(class=btnClassString)= btnlabel

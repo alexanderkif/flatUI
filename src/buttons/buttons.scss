@@ -16,67 +16,46 @@ $color-red-shadow: #bf3e1f;
     cursor: pointer;
     outline: none;
 
-    &.red {
+    &_red {
         color: $color-red;
-        border: 1px solid $color-red;
-        box-shadow: 0px 3px $color-red;
-    }
+        border: 1px solid $color-red-shadow;
+        box-shadow: 0px 3px $color-red-shadow;
 
-    &.green {
-        color: $color-green;
-        border: 1px solid $color-green;
-        box-shadow: 0px 3px $color-green;
-    }
+        &.btn_small {
+            box-shadow: 0px 2px $color-red-shadow;
+        }
 
-    &.small {
-        width: 80px;
-        height: 22px;
-        font-size: 10px;
-        border-radius: 3px;
-        box-shadow: 0px 2px;
-    }
-
-    &:hover, &.small:hover {
-        color: white;
-
-        &.red {
+        &:hover {
+            color: white;
             box-shadow: 0px 3px $color-red-shadow;
             background-color: $color-red;
         }
+    }
 
-        &.green {
+    &_green {
+        color: $color-green;
+        border: 1px solid $color-green-shadow;
+        box-shadow: 0px 3px $color-green-shadow;
+
+        &.btn_small {
+            box-shadow: 0px 2px $color-green-shadow;
+        }
+
+        &:hover {
+            color: white;
             box-shadow: 0px 3px $color-green-shadow;
             background-color: $color-green;
         }
     }
 
-    &.disable {
-        cursor: default;    
-
-        &.red, &.green {
-            color: lightgray;
-            border: 1px solid lightgray;
-            box-shadow: 0 3px lightgray;
-        }
-
-        &.small {
-            box-shadow: 0 2px;
-        }
+    &_small {
+        width: 80px;
+        height: 22px;
+        font-size: 10px;
+        border-radius: 3px;        
     }
-    &.disable:hover, &.disable.small:hover {
-        transform: none;
-
-        &.red, &.green {
-            background-color: white;
-            color: lightgray;
-            box-shadow: 0 3px lightgray;
-
-            &.small {
-                box-shadow: 0 2px lightgray;
-            }
-        }
-    }
-    &.arrow {
+    
+    &_arrow {
         width: 50px;
         height: 50px;
         font-size: 32px;
@@ -85,29 +64,57 @@ $color-red-shadow: #bf3e1f;
         color: $color-green;
         background-color: white;
         transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .material-icons {
+            font-size: 42px;
+            align-self: center;
+            vertical-align: middle;
+        }
 
         &:hover {
             background-color: $color-green;
             color: white;
         }
+    }
 
-        &.disable {
-            border: 0px;
+    &_disable {
+        cursor: default; 
+        border: 0px;
+        color: lightgray;
+        border: 1px solid lightgray;
+        box-shadow: 0 3px lightgray;
+
+        &:hover {
+            transform: none;
+            background-color: #e5e5e5;
+            color: white;
+            box-shadow: 0 3px lightgray;
+        }
+
+        &.btn_small {
+            box-shadow: 0 2px lightgray;
+
+            &:hover {
+                box-shadow: 0 2px lightgray;
+            }
+        }
+
+        &.btn_arrow {
+            box-shadow: 0px 0px;
             color: white;
             background-color: #e5e5e5;
         }
     }
 
-    &:active, &.small:active {
+    &:active {
         transform: translateY(3px);
-
-        &.red, &.green, &.arrow {
-            &:not(.disable) {
+        &:not(.btn_disable) {
             box-shadow: 0px 0px;
-            }
         }
-
-        &.disable {
+        &.btn_disable {
             transform: translateY(0px);
         }
     }
@@ -124,6 +131,7 @@ $color-red-shadow: #bf3e1f;
     position: absolute;
     opacity: 1;
   }
+  
   .rippleEffect {
       animation: rippleDrop .6s linear;
   }

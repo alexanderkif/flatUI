@@ -1,0 +1,7 @@
+
+mixin toggle(name, value, tglclass, checked)
+    .toggle
+        if checked
+            input(type="checkbox", name=name, value=value, class=tglclass, checked="checked", autocomplete="off")
+        else
+            input(type="checkbox", name=name, value=value, class=tglclass, autocomplete="off")

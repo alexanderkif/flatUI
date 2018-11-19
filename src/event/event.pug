@@ -1,11 +1,10 @@
 mixin event(header, date, month , text, img)
-    .event-block
-        img(src="img/"+img+".png", alt="no img")
-        .event-content
-            .big-date
-                .event-date= date
-                .event-month= month
-            .event-header= header            
-            .event-text= text
-            .event-button
-                +button('add to calendar', 'green')
+    .event
+        img.event__img(src="img/"+img+".png", alt="no img")
+        .event__content
+            .event__date= date
+            .event__month= month
+            .event__header= header            
+            .event__text= text
+            .event__button
+                +button('add to calendar', ['green', 'small'])

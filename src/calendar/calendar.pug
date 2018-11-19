@@ -1,24 +1,14 @@
-mixin wweek(first_day, daysinmonth)
-    - var sevendays = [0,1,2,3,4,5,6]
-    each day in sevendays
-        if first_day + day > 0 
-            if first_day + day < daysinmonth + 1
-                .day.inn= first_day + day
-            else
-                .day= first_day + day - daysinmonth
-        else
-            .day= first_day + day + 31
 
 mixin calendar(date, month, firstdayinweek, daysinmonth)
     .calendar
-        .date= date
-        .month-carusel
-            .month-left
+        .calendar__date= date
+        .calendar__carusel
+            .calendar__carusel-left
                 i.material-icons= "keyboard_arrow_left"
-            .month= month
-            .month-right
+            .calendar__carusel-month= month
+            .calendar__carusel-right
                 i.material-icons= "keyboard_arrow_right"
-        .week
+        .calendar__week
             each day in ['mon','tue','wed','thu','fri','sat','sun']
                 .days= day
         - var currentday = 2 - firstdayinweek
@@ -29,8 +19,16 @@ mixin calendar(date, month, firstdayinweek, daysinmonth)
             - first_days.push(currentday)
 
         each first_day in first_days
-            .calendar-row
-                +wweek(first_day, daysinmonth)  
+            .calendar__row
+                - var sevendays = [0,1,2,3,4,5,6]
+                each day in sevendays
+                    if first_day + day > 0 
+                        if first_day + day < daysinmonth + 1
+                            .calendar__day.calendar__day_thisMonth= first_day + day
+                        else
+                            .calendar__day= first_day + day - daysinmonth
+                    else
+                        .calendar__day= first_day + day + 31  
 
 
-        .footer= 'today'
+        .calendar__footer= 'today'

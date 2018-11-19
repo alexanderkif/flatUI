@@ -1,8 +1,8 @@
 include ../sliderm2/sliderm2
 
 mixin chooseColor(r, g, b, o)
-    .choose-color-row(style='width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around;')
-        .choose-color(style='width: 22%;')
+    .chooseColor(style='width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around;')
+        .chooseColor__item(style='width: 22%;')
             div Line color
             //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
             //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText) rgb(250, 235, 215, 0.5)
@@ -10,7 +10,7 @@ mixin chooseColor(r, g, b, o)
             +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'green', 'lightgrey', 'white')
             +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'blue', 'lightgrey', 'white')
             +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'white')
-        .choose-color(style='width: 22%;')
+        .chooseColor__item(style='width: 22%;')
             div Point color
             //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
             //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText) rgb(250, 235, 215, 0.5)
@@ -18,7 +18,7 @@ mixin chooseColor(r, g, b, o)
             +sliderm2(0, 255, 0, g, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'green', 'lightgrey', 'white')
             +sliderm2(0, 255, 0, b, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'blue', 'lightgrey', 'white')
             +sliderm2(0, 255, 0, o, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'white')
-        .choose-color(style='width: 22%;')
+        .chooseColor__item(style='width: 22%;')
             div Scale color
             //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
             //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText) rgb(250, 235, 215, 0.5)
@@ -26,7 +26,7 @@ mixin chooseColor(r, g, b, o)
             +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'green', 'lightgrey', 'white')
             +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'blue', 'lightgrey', 'white')
             +sliderm2(0, 255, 0, 255, 1, 1, '', '', '', '', 220, 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'white')
-        .choose-color(style='width: 22%;')
+        .chooseColor__item(style='width: 22%;')
             div Text color
             //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
             //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText) rgb(250, 235, 215, 0.5)

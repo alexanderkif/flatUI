@@ -247,11 +247,11 @@ var elems2 = document.getElementsByClassName(classSliderm2);
 
     if (inputs) {
 
-        if (inputs.getElementsByClassName('choose-color').length==4) {
-            chooseColorLine = inputs.getElementsByClassName('choose-color')[0];
-            chooseColorPoint = inputs.getElementsByClassName('choose-color')[1];
-            chooseColorScale = inputs.getElementsByClassName('choose-color')[2];
-            chooseColorText = inputs.getElementsByClassName('choose-color')[3];
+        if (inputs.getElementsByClassName('chooseColor__item').length==4) {
+            chooseColorLine = inputs.getElementsByClassName('chooseColor__item')[0];
+            chooseColorPoint = inputs.getElementsByClassName('chooseColor__item')[1];
+            chooseColorScale = inputs.getElementsByClassName('chooseColor__item')[2];
+            chooseColorText = inputs.getElementsByClassName('chooseColor__item')[3];
         }
 
         var getInputs = function() {

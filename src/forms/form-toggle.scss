@@ -3,44 +3,6 @@ $color-grey: #747474;
 $color-red: #e75735;
 $color-lightgray: #e5e5e5;
 
-.form-input {
-    display: block;
-    margin: 4px;
-    flex: 1 auto;
-    height: 30px;
-    border-radius: 5px;
-    border: 0px;
-    background-color: $color-lightgray;
-    color: $color-grey;
-    font-weight: normal;
-    font-size: 14px;
-    padding-left: 12px;
-    outline: none;
-}
-.form-textarea {
-    height: auto;
-    padding: 12px;
-    outline: none;
-    resize: none;
-}
-.form-button {
-    display: block;
-    flex: 0 75px;
-    margin: 4px;
-    height: 30px;
-    border-radius: 5px;
-    border: 0px;
-    color: white;
-    font-weight: normal;
-    font-size: 12px;
-    outline: none;
-}
-.form-button-red {
-    background-color: $color-red;    
-}
-.form-button-green {
-    background-color: $color-green;
-}
 .button-arrow {
     position: absolute;
     bottom: 16px;
