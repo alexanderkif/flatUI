@@ -8,70 +8,75 @@
     <link rel="stylesheet" href="style.css">
   <link href="style.css" rel="stylesheet"></head>
   <body>
-    <div class="main-div">
-      <div class="header-top">
-        <div class="inn">Main page</div>
-        <div class="menu"><a href="1.html">Home</a><a href="2.html">News</a><a href="3.html">User</a><a href="4.html">Currency</a><a href="5.html">About</a></div>
+    <div class="main-page">
+      <div class="page-header">
+        <div class="page-header__text">Main page</div>
+        <div class="page-header__menu"><a href="1.html">Home</a><a href="2.html">News</a><a href="3.html">User</a><a href="4.html">Currency</a><a href="5.html">About</a></div>
       </div>
-      <div class="main-page">
-        <div class="main-page-left">
-          <div class="video-block">
+      <div class="main-page__wrapper">
+        <div class="main-page_left">
+          <div class="main-page__video">
             <div class="video">
               <iframe src="https://player.vimeo.com/video/62980495?color=e75735&amp;title=1&amp;byline=1&amp;portrait=0" width="600" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
-            <div class="main-page-video-text">This timelapse features my best work yet. It represents hours and hours of dedication to the art. I'm driven by chasing fleeting moments of damatic light on beautiful landscapes and also capturing the night sky and milky way in all it's glory is a real buzz. Not be mention curling up out under the stars beside all the gear for whole nights at a time catching some sleep here and there between checking the gear and changing batteries and staring up into eternity with spectacular meteors burning up in the cosmic shore out the corner of your eye. Doing this sort of thing has bought me closer and closer to the wilderness. There is something about doing this sort of stuff that just makes you want to keep coming back for more and more. Maybe it's the experience of being out there at one with the incredible beauty of this landscape. Maybe it's the challenge of capturing it in the camera in the way that you witnessed it. Maybe it's the excitement of seeing just what you got when you finally render it all out. Maybe it's the satisfaction you get out of showing this to other people. Most probably it's a combination of all these things.</div>
+            <div class="main-page__video-text">This timelapse features my best work yet. It represents hours and hours of dedication to the art. I'm driven by chasing fleeting moments of damatic light on beautiful landscapes and also capturing the night sky and milky way in all it's glory is a real buzz. Not be mention curling up out under the stars beside all the gear for whole nights at a time catching some sleep here and there between checking the gear and changing batteries and staring up into eternity with spectacular meteors burning up in the cosmic shore out the corner of your eye. Doing this sort of thing has bought me closer and closer to the wilderness. There is something about doing this sort of stuff that just makes you want to keep coming back for more and more. Maybe it's the experience of being out there at one with the incredible beauty of this landscape. Maybe it's the challenge of capturing it in the camera in the way that you witnessed it. Maybe it's the excitement of seeing just what you got when you finally render it all out. Maybe it's the satisfaction you get out of showing this to other people. Most probably it's a combination of all these things.</div>
           </div>
-          <div class="video-block">
+          <div class="main-page__video">
             <div class="video">
               <iframe src="https://player.vimeo.com/video/48165742?color=e75735&amp;title=1&amp;byline=1&amp;portrait=0" width="600" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
-            <div class="main-page-video-text">View in full HD for best quality. A collection of images taken over many years starting on a Pentax medium format 6x7 camera on slide film and digitally scanned and then most recently on a Canon 5D Mark II full frame digital SLR. All these images were captured within the beautiful New Zealand Landscape. Music is by John Stanford, Title: Far Centaurus, Album: Deep Space, visit johnstanfordmusic.com/</div>
+            <div class="main-page__video-text">View in full HD for best quality. A collection of images taken over many years starting on a Pentax medium format 6x7 camera on slide film and digitally scanned and then most recently on a Canon 5D Mark II full frame digital SLR. All these images were captured within the beautiful New Zealand Landscape. Music is by John Stanford, Title: Far Centaurus, Album: Deep Space, visit johnstanfordmusic.com/</div>
           </div>
         </div>
-        <div class="main-page-right">
-          <div class="in-left-block"><a href="2.html">
-              <div class="news-block"><img src="img/velo.png" alt="no img">
-                <div class="news-content">
-                  <div class="news-header">It's all going downhill</div>
-                  <div class="news-date">24 august 2013</div>
-                  <div class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</div>
-                </div>
-              </div></a>
-            <div class="event-block"><img src="img/city.png" alt="no img">
-              <div class="event-content">
-                <div class="big-date">
-                  <div class="event-date">24</div>
-                  <div class="event-month">Aug</div>
-                </div>
-                <div class="event-header">this is the title</div>
-                <div class="event-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                <div class="event-button">
-                  <button class="btn green">add to calendar</button>
+        <div class="main-page_right">
+          <div class="main-page__left-block">
+            <div class="main-page__item">
+              <div class="news"><a href="2.html"><img src="img/velo.png" alt="no img">
+                  <div class="news__content">
+                    <div class="news__header">It's all going downhill</div>
+                    <div class="news__date">24 august 2013</div>
+                    <div class="news__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</div>
+                  </div></a></div>
+            </div>
+            <div class="main-page__item">
+              <div class="event"><img class="event__img" src="img/city.png" alt="no img">
+                <div class="event__content">
+                  <div class="event__date">24</div>
+                  <div class="event__month">Aug</div>
+                  <div class="event__header">this is the title</div>
+                  <div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                  <div class="event__button">
+                    <button class="btn btn_green btn_small">add to calendar</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="in-left-block">
-            <div class="user-card"><img class="user-left" src="img/john.png" alt="no image">
-              <div class="user-right undefined">
-                <div class="romb"></div>
-                <div class="user-name">John Smith</div>
-                <div class="user-prof">ux designer</div>
-                <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+          <div class="main-page__left-block">
+            <div class="main-page__item">
+              <div class="user-card"><img class="user-left" src="img/john.png" alt="no image">
+                <div class="user-right undefined">
+                  <div class="romb"></div>
+                  <div class="user-name">John Smith</div>
+                  <div class="user-prof">ux designer</div>
+                  <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+                </div>
               </div>
             </div>
-            <div class="user-card"><img class="user-left" src="img/sarah.png" alt="no image">
-              <div class="user-right user-green">
-                <div class="romb"></div>
-                <div class="user-name">Sarah Brown</div>
-                <div class="user-prof">developer</div>
-                <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+            <div class="main-page__item">
+              <div class="user-card"><img class="user-left" src="img/sarah.png" alt="no image">
+                <div class="user-right user-green">
+                  <div class="romb"></div>
+                  <div class="user-name">Sarah Brown</div>
+                  <div class="user-prof">developer</div>
+                  <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="main-footer">footer here</div>
+      <div class="footer">footer here</div>
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/lc_switch.min.js"></script>
       <link rel="stylesheet" href="css/lc_switch.css">

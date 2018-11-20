@@ -11,25 +11,25 @@
     <div class="wrapper">
       <header class="header header-buttons">standard buttons</header>
       <div class="content content-buttons">
-        <button class="btn green small">button</button>
-        <button class="btn green">button</button>
-        <button class="btn red">button</button>
-        <button class="btn red small">button</button>
+        <button class="btn btn_green btn_small">button</button>
+        <button class="btn btn_green">button</button>
+        <button class="btn btn_red">button</button>
+        <button class="btn btn_red btn_small">button</button>
       </div>
       <div class="content content-buttons">
-        <button class="btn green small disable">button</button>
-        <button class="btn green disable">button</button>
-        <button class="btn red disable">button</button>
-        <button class="btn red small disable">button</button>
+        <button class="btn btn_green btn_small btn_disable">button</button>
+        <button class="btn btn_green btn_disable">button</button>
+        <button class="btn btn_red btn_disable">button</button>
+        <button class="btn btn_red btn_small btn_disable">button</button>
       </div>
       <header class="header header-arrow-buttons">arrow buttons</header>
       <div class="content content-arrow-buttons">
-        <button class="btn arrow">&lt;</button>
-        <button class="btn arrow">&gt;</button>
-        <button class="btn arrow disable">&lt;</button>
-        <button class="btn arrow disable">&gt;</button>
-        <button class="btn arrow">&lt;</button>
-        <button class="btn arrow">&gt;</button>
+        <button class="btn btn_arrow"> <i class="material-icons">keyboard_arrow_left</i></button>
+        <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_right</i></button>
+        <button class="btn btn_arrow btn_disable"> <i class="material-icons">keyboard_arrow_left</i></button>
+        <button class="btn btn_arrow btn_disable"><i class="material-icons">keyboard_arrow_right</i></button>
+        <button class="btn btn_arrow"> <i class="material-icons">keyboard_arrow_left</i></button>
+        <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_right</i></button>
       </div>
       <header class="header header-percentages">percentages/pie chart</header>
       <div class="content content-percentages">
@@ -107,41 +107,45 @@
       <div class="content content-forms">
         <form action="" method="get">
           <div class="form-left">
-            <div class="form-block">
-              <input class="form-input" type="text" placeholder="Your Name">
-              <input class="form-button form-button-red" type="button" value="ERROR">
-              <div class="button-arrow form-button-red"></div>
+            <div class="form-input">
+              <input class="form-input__text" type="text" placeholder="Your Name">
+              <div class="form-input__button form-input__button_red" type="button">
+                <div class="form-input__button-text">ERROR</div>
+              </div>
             </div>
-            <div class="form-block">
-              <input class="form-input" type="text" placeholder="Your Email">
-              <input class="form-button form-button-green" type="button" value="THANKS!">
-              <div class="button-arrow form-button-green"></div>
+            <div class="form-input">
+              <input class="form-input__text" type="text" placeholder="Your Email">
+              <div class="form-input__button form-input__button_green" type="button">
+                <div class="form-input__button-text">THANKS!</div>
+              </div>
             </div>
-            <div class="form-block">
-              <textarea class="form-input form-textarea" placeholder="Your Message" cols="30" rows="4"></textarea>
-            </div>
-            <div class="form-block">
-              <button class="btn green">submit</button>
+            <div class="form-textarea">
+              <div class="form-textarea__wrapper">
+                <textarea class="form-textarea__text" placeholder="Your Message" cols="30" rows="4"></textarea>
+                <div class="form-textarea__btn">
+                  <button class="btn btn_green">submit</button>
+                </div>
+              </div>
             </div>
           </div>
           <div class="form-right">
-            <div class="form-block center">
-              <div class="header header-informs">toggles</div>
-            </div>
-            <div class="form-block center">               
-              <div class="toggle">
-                <input class="lcs_check" type="checkbox" name="check-1" value="4" autocomplete="off">
-              </div>
-              <div class="toggle">
-                <input class="lcs_check lcs_tt1" type="checkbox" name="check-3" value="6" checked="checked" autocomplete="off">
+            <div class="header toggle-header">toggles</div>
+            <div class="toggle-left">
+              <div class="form-toggle">
+                <input type="checkbox" name="check-1" value="4" autocomplete="off">
               </div>
             </div>
-            <div class="form-block center">
-              <div class="header header-informs">tick boxes</div>
+            <div class="toggle-right">
+              <div class="form-toggle">
+                <input type="checkbox" name="check-3" value="6" checked="checked" autocomplete="off">
+              </div>
             </div>
-            <div class="form-block center">
-              <div class="tick active" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
-              <div class="tick" onclick="this.classList.toggle('active');"><i class="material-icons icons-size">done</i></div>
+            <div class="header tick-header">tick boxes</div>
+            <div class="tick-left">
+              <div class="tick tick_active" onclick="this.classList.toggle('tick_active');"><i class="material-icons icons-size">done</i></div>
+            </div>
+            <div class="tick-right">
+              <div class="tick" onclick="this.classList.toggle('tick_active');"><i class="material-icons icons-size">done</i></div>
             </div>
           </div>
         </form>
@@ -186,26 +190,23 @@
       </div>
       <header class="header header-news">news & events</header>
       <div class="content content-news">
-        <div class="item"><a href="2.html">
-            <div class="news-block"><img src="img/velo.png" alt="no img">
-              <div class="news-content">
-                <div class="news-header">It's all going downhill</div>
-                <div class="news-date">24 august 2013</div>
-                <div class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</div>
-              </div>
-            </div></a>
+        <div class="item">
+          <div class="news"><a href="2.html"><img src="img/velo.png" alt="no img">
+              <div class="news__content">
+                <div class="news__header">It's all going downhill</div>
+                <div class="news__date">24 august 2013</div>
+                <div class="news__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</div>
+              </div></a></div>
         </div>
         <div class="item">
-          <div class="event-block"><img src="img/city.png" alt="no img">
-            <div class="event-content">
-              <div class="big-date">
-                <div class="event-date">24</div>
-                <div class="event-month">Aug</div>
-              </div>
-              <div class="event-header">this is the title</div>
-              <div class="event-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-              <div class="event-button">
-                <button class="btn green">add to calendar</button>
+          <div class="event"><img class="event__img" src="img/city.png" alt="no img">
+            <div class="event__content">
+              <div class="event__date">24</div>
+              <div class="event__month">Aug</div>
+              <div class="event__header">this is the title</div>
+              <div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <div class="event__button">
+                <button class="btn btn_green btn_small">add to calendar</button>
               </div>
             </div>
           </div>
@@ -230,13 +231,13 @@
         <div class="item">
           <div class="header header-calendar">calendar</div>
           <div class="calendar">
-            <div class="date">24</div>
-            <div class="month-carusel">
-              <div class="month-left"><i class="material-icons">keyboard_arrow_left</i></div>
-              <div class="month">september</div>
-              <div class="month-right"><i class="material-icons">keyboard_arrow_right</i></div>
+            <div class="calendar__date">24</div>
+            <div class="calendar__carusel">
+              <div class="calendar__carusel-left"><i class="material-icons">keyboard_arrow_left</i></div>
+              <div class="calendar__carusel-month">september</div>
+              <div class="calendar__carusel-right"><i class="material-icons">keyboard_arrow_right</i></div>
             </div>
-            <div class="week">
+            <div class="calendar__week">
               <div class="days">mon</div>
               <div class="days">tue</div>
               <div class="days">wed</div>
@@ -245,52 +246,52 @@
               <div class="days">sat</div>
               <div class="days">sun</div>
             </div>
-            <div class="calendar-row">
-              <div class="day">29</div>
-              <div class="day">30</div>
-              <div class="day">31</div>
-              <div class="day inn">1</div>
-              <div class="day inn">2</div>
-              <div class="day inn">3</div>
-              <div class="day inn">4</div>
+            <div class="calendar__row">
+              <div class="calendar__day">29</div>
+              <div class="calendar__day">30</div>
+              <div class="calendar__day">31</div>
+              <div class="calendar__day calendar__day_thisMonth">1</div>
+              <div class="calendar__day calendar__day_thisMonth">2</div>
+              <div class="calendar__day calendar__day_thisMonth">3</div>
+              <div class="calendar__day calendar__day_thisMonth">4</div>
             </div>
-            <div class="calendar-row">
-              <div class="day inn">5</div>
-              <div class="day inn">6</div>
-              <div class="day inn">7</div>
-              <div class="day inn">8</div>
-              <div class="day inn">9</div>
-              <div class="day inn">10</div>
-              <div class="day inn">11</div>
+            <div class="calendar__row">
+              <div class="calendar__day calendar__day_thisMonth">5</div>
+              <div class="calendar__day calendar__day_thisMonth">6</div>
+              <div class="calendar__day calendar__day_thisMonth">7</div>
+              <div class="calendar__day calendar__day_thisMonth">8</div>
+              <div class="calendar__day calendar__day_thisMonth">9</div>
+              <div class="calendar__day calendar__day_thisMonth">10</div>
+              <div class="calendar__day calendar__day_thisMonth">11</div>
             </div>
-            <div class="calendar-row">
-              <div class="day inn">12</div>
-              <div class="day inn">13</div>
-              <div class="day inn">14</div>
-              <div class="day inn">15</div>
-              <div class="day inn">16</div>
-              <div class="day inn">17</div>
-              <div class="day inn">18</div>
+            <div class="calendar__row">
+              <div class="calendar__day calendar__day_thisMonth">12</div>
+              <div class="calendar__day calendar__day_thisMonth">13</div>
+              <div class="calendar__day calendar__day_thisMonth">14</div>
+              <div class="calendar__day calendar__day_thisMonth">15</div>
+              <div class="calendar__day calendar__day_thisMonth">16</div>
+              <div class="calendar__day calendar__day_thisMonth">17</div>
+              <div class="calendar__day calendar__day_thisMonth">18</div>
             </div>
-            <div class="calendar-row">
-              <div class="day inn">19</div>
-              <div class="day inn">20</div>
-              <div class="day inn">21</div>
-              <div class="day inn">22</div>
-              <div class="day inn">23</div>
-              <div class="day inn">24</div>
-              <div class="day inn">25</div>
+            <div class="calendar__row">
+              <div class="calendar__day calendar__day_thisMonth">19</div>
+              <div class="calendar__day calendar__day_thisMonth">20</div>
+              <div class="calendar__day calendar__day_thisMonth">21</div>
+              <div class="calendar__day calendar__day_thisMonth">22</div>
+              <div class="calendar__day calendar__day_thisMonth">23</div>
+              <div class="calendar__day calendar__day_thisMonth">24</div>
+              <div class="calendar__day calendar__day_thisMonth">25</div>
             </div>
-            <div class="calendar-row">
-              <div class="day inn">26</div>
-              <div class="day inn">27</div>
-              <div class="day inn">28</div>
-              <div class="day inn">29</div>
-              <div class="day inn">30</div>
-              <div class="day">1</div>
-              <div class="day">2</div>
+            <div class="calendar__row">
+              <div class="calendar__day calendar__day_thisMonth">26</div>
+              <div class="calendar__day calendar__day_thisMonth">27</div>
+              <div class="calendar__day calendar__day_thisMonth">28</div>
+              <div class="calendar__day calendar__day_thisMonth">29</div>
+              <div class="calendar__day calendar__day_thisMonth">30</div>
+              <div class="calendar__day">1</div>
+              <div class="calendar__day">2</div>
             </div>
-            <div class="footer">today</div>
+            <div class="calendar__footer">today</div>
           </div>
         </div>
         <div class="item">
@@ -305,7 +306,7 @@
                 <div class="corner"></div>
               </div>
               <div class="grey-message">Yeah that sounds great. See you then.</div>
-              <button class="btn green">reply</button>
+              <button class="btn btn_green">reply</button>
             </div>
           </div>
         </div>
