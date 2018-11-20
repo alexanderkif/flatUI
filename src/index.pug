@@ -72,18 +72,16 @@ html
             +form-input('Your Name', 'ERROR', 'red')
             +form-input('Your Email', 'THANKS!', 'green')
             +form-textarea("Your Message", "30", "4")
-            .form-block
-              +button('submit', ['green'])
           .form-right
-            .form-block.center
-              .header.header-informs toggles
-            .form-block.center                
-              +toggle("check-1","4","lcs_check",false)
-              +toggle("check-3","6","lcs_check lcs_tt1",true)
-            .form-block.center
-              .header.header-informs tick boxes
-            .form-block.center
-              +tick('active')
+            .header.toggle-header toggles
+            .toggle-left
+              +form-toggle("check-1","4",false)
+            .toggle-right
+              +form-toggle("check-3","6",true)
+            .header.tick-header tick boxes
+            .tick-left
+              +tick('tick_active')
+            .tick-right
               +tick('')
       
       div.content.search-profile

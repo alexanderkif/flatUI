@@ -13,7 +13,7 @@ include ../maps/maps
 include ../calendar/calendar
 include ../messaging/messaging
 include ../video/video
-include ../header/header
+include ../page-header/page-header
 include ../footer/footer
 
 - var page= 'User page'
@@ -27,31 +27,31 @@ html
         link(rel="stylesheet" href="style.css")
         
     body
-        .user-div
-            +header(page)
+        .user-page
+            +page-header(page)
 
             //- = = = = = = Insert page here = = = = = = = = =
-            .user-page
-                .user-page-left
-                    .video-block
+            .user-page__wrapper
+                .user-page_left
+                    .user-page__forms
                         span Send to us your message
                         +form-input('Your Name', 'ERROR', 'red')
                         +form-input('Your Email', 'THANKS!', 'green')
-                        +textarea("Your Message", "30", "4")
-                        .toggles
-                            .toggle-block
-                                +toggle("check-3","6","lcs_check lcs_tt1",true)
+                        +form-textarea("Your Message", "30", "4")
+                        .user-page__toggles
+                            .user-page__toggle-block
+                                +form-toggle("check-3","6",true)
                                 span Switch borders
-                            .toggle-block
-                                +toggle("check-3","6","lcs_check lcs_tt1",true)
+                            .user-page__toggle-block
+                                +form-toggle("check-3","6",true)
                                 span Switch shadows
-                            .toggle-block
-                                +toggle("check-1","4","lcs_check",false)
+                            .user-page__toggle-block
+                                +form-toggle("check-1","4",false)
                                 span Switch to turn off your PC
 
-                        .toggles
+                        .user-page__ticks
                             span Choose options you need
-                            .toggle-block
+                            .user-page__tick-block
                                 +tick('active') 
                                 span A
                                 +tick('') 
@@ -60,20 +60,15 @@ html
                                 span C
                                 +tick('') 
                                 span D
-                        .form-block
-                            +button('submit', 'green')
+                        .user-page__btn
+                            +button('submit', ['green'])
                             
-
-                        //- span Stages to complite your application
-                        //- .stage
-                        //-     +stage(7,2)
-
-                .user-page-right
-                    .in-left-block
+                .user-page_right
+                    .user-page__left-block
                         +search-input('Search', 'red')
                         +dropdown-input('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
       
-                    .in-left-block
+                    .user-page__left-block
                         +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
 
 

@@ -7,25 +7,27 @@ $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
 
-.stat-div {
-    display: block;
+.stat-page {
     width: 95%;
-    min-width: 1024px;
-    max-width: 1280px;
     font-family: 'Conv_Lato';
     font-weight: normal;
     font-size: 16px;
     margin: 0 auto;
-    margin-top: 50px;
     padding-bottom: 50px;
-    .stat-page {
+    height: auto;
+    
+    &__wrapper {
         margin-top: 50px;
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
         justify-content: space-around;
     }
-    
-    .stat-page-center {
+
+    &_center {
+        flex: 1;
+        margin: 0 auto;
+        min-width: 360px;
         width: 73%;
         margin: 0 auto;
         margin-bottom: 50px;
@@ -33,17 +35,25 @@ $color-red-shadow: #bf3e1f;
         box-shadow: 5px 10px 25px $color-shadow;
         border-radius: 5px;
         border: 1px solid $color-border;
-        .block-about {
-            display: flex;
-            flex-wrap: wrap;  
-            justify-content: space-around;
-            width: 90%;
-            margin: 100px auto;
+        text-align: center;
+        max-width: 800px;
+    }
+    
+    &__about {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: space-around;
+        width: 90%;
+        margin: 100px auto;
+        .map {            
+            transition: all 0.2s ease-in-out;
+            @media screen and (max-width: 680px) {
+                transform: scale(0.7);
+            }
         }
     }
     
-    
-    .stat-page-text {
+    &__text {
         display: block;
         width: 600px;
         margin: 0 auto;

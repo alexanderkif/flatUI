@@ -20,7 +20,7 @@
 @import '../html/4';
 @import '../html/5';
 @import '../html/sliderm2page';
-@import '../header/header';
+@import '../page-header/page-header';
 @import '../footer/footer';
 
 
@@ -163,30 +163,54 @@ body {
         }
 
         .form-right {
-            width: 50%;
+            padding: 5px 5%;
+            width: 40%;
             min-width: 150px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 35px 45px 35px 30px;
+            grid-gap: 15px;
+            justify-items: center;
+            align-items: start;
+            grid-template-areas: 
+                "toggle-header toggle-header"
+                "toggle-left toggle-right"
+                "tick-header tick-header" 
+                "tick-left tick-right";
         }
 
-        .form-block {
-            position: relative;
-            display: flex;
-            width: 100%;
-            justify-content: flex-end;
-            margin-top: 2px;
+        .toggle-header {
+            grid-area: toggle-header;
+        }
 
-            .btn {
-                margin-right: 5px;
-            }
+        .toggle-left {
+            grid-area: toggle-left;
+            justify-self: right;
+        }
 
-            &.center {
-                justify-content: center;
-            }
+        .toggle-right {
+            grid-area: toggle-right;
+            justify-self: left;
+        }
+
+        .tick-header {
+            grid-area: tick-header;
+        }
+
+        .tick-left {
+            grid-area: tick-left;
+            justify-self: right;
+        }
+
+        .tick-right {
+            grid-area: tick-right;
+            justify-self: left;
         }
     }
 
     &.search-profile {
         margin-bottom: 30px;
-        margin-top: 35px;
+        margin-top: 25px;
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
@@ -244,6 +268,7 @@ body {
 
 a {
     text-decoration-line: none;
+    color: inherit;
 }
 
 @font-face {

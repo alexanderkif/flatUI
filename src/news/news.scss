@@ -1,15 +1,12 @@
-.news-block {
+.news {
     display: block;
-    // margin-top: 0;
-    // top: 30px;
-    // margin: 5px;
-    // margin-bottom: 30px;
     width: 290px;
     height: 212px;
     background-color: $color-red;
     border-radius: 5px;
     font-weight: normal;
     color: white;
+
     img {
         display: block;
         float: left;
@@ -17,25 +14,29 @@
         height: 100%;
         border-radius: 5px 0px 0px 5px;
     }
-    .news-content {
+
+    &__content {
         display: block;
         margin-left: 110px;
         padding: 10px;
-        .news-header {
-            margin-top: 10px;
-            display: block;
-            font-size: 26px;
-        }
-        .news-date {
-            display: block;
-            margin-top: 5px;
-            font-size: 12px;
-            text-transform: uppercase;        
-        }
-        .news-text {
-            display: block;
-            margin-top: 10px;
-            font-size: 12px;
-        }
+    }
+
+    &__header {
+        margin-top: 10px;
+        display: block;
+        font-size: 26px;
+    }
+
+    &__date {
+        display: block;
+        margin-top: 5px;
+        font-size: 12px;
+        text-transform: uppercase;        
+    }
+    
+    &__text {
+        display: block;
+        margin-top: 10px;
+        font-size: 12px;
     }
 }

@@ -3,20 +3,7 @@ $color-grey: #747474;
 $color-red: #e75735;
 $color-lightgray: #e5e5e5;
 
-.button-arrow {
-    position: absolute;
-    bottom: 16px;
-    right: 76px;
-    width: 6px;
-    height: 6px;
-    transform: rotate(-45deg);
-}
-.header.header-informs {
-    margin: 0;
-}
-.toggle {
-    display: inline-block;
-    margin: 20px 5px 35px 5px;
+.form-toggle {
     .lcs_switch {
         box-shadow: 0 0 0px !important;
         width: 60px !important;

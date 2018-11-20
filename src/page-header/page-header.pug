@@ -1,8 +1,7 @@
-mixin header(page)
-    //- a(href="1.html")
-    .header-top
-        .inn= page
-        .menu
+mixin page-header(page)
+    .page-header
+        .page-header__text= page
+        .page-header__menu
             a(href="1.html")= "Home"
             a(href="2.html")= "News"
             a(href="3.html")= "User"

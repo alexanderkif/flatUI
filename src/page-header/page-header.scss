@@ -1,8 +1,8 @@
 
-.header-top {
+.page-header {
     display: flex;
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     font-weight: bold;
     font-size: 100px;
     text-transform: uppercase;
@@ -10,12 +10,14 @@
     color: $color-green;
     background: linear-gradient($color-red, $color-red, $color-green-l);
     justify-content: center;
-    align-items: flex-end;
+    text-align: center;
     flex-wrap: wrap;
+    align-content: flex-end;
     border-radius: 10px;
     box-shadow: 5px 10px 25px $color-shadow;
     border: 1px solid $color-border;
-    .menu {
+    
+    &__menu {
         width: 100%;
         display: flex;
         justify-content: space-around;

@@ -1,4 +1,4 @@
-include ../header/header
+include ../page-header/page-header
 include ../footer/footer
 include ../video/video
 include ../news/news
@@ -18,13 +18,13 @@ html
         link(rel="stylesheet" href="style.css")
         
     body
-        .news-div
-            +header(page)
+        .news-page
+            +page-header(page)
 
             //- = = = = = = Insert page here = = = = = = = = =
-            .news-page
-                .news-page-left
-                    .video-block
+            .news-page__wrapper
+                .news-page_left
+                    .news-page__content
                         +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
                         +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
                         +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
@@ -38,12 +38,14 @@ html
                         +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
 
 
-                .news-page-right
-                    .in-left-block
+                .news-page_right
+                    .news-page__left-block
                         +calendar(24,'september', 4, 30)
-                    .in-left-block
-                        +user-card('john', 'John Smith', 'ux designer')
-                        +user-card('sarah', 'Sarah Brown', 'developer', 'user-green')
+                    .news-page__left-block
+                        .news-page__item
+                            +user-card('john', 'John Smith', 'ux designer')
+                        .news-page__item
+                            +user-card('sarah', 'Sarah Brown', 'developer', 'user-green')
 
             //- = = = = = = = = end of page = = = = = = = = = =
             +footer

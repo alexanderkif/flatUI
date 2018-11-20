@@ -178,10 +178,10 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     sliderm2body.className = "sliderm2body";
     element.appendChild(sliderm2body); 
     // var sliderm2body = element.querySelector('.sliderm2body');
-    var tickHint = element.getAttribute('data-hint')=='active';
-    var tickScale = element.getAttribute('data-scale')=='active';
-    var tickInterval = element.getAttribute('data-interval')=='active';
-    var tickVertical = element.getAttribute('data-vertical')=='active';
+    var tickHint = element.getAttribute('data-hint')=='tick_active';
+    var tickScale = element.getAttribute('data-scale')=='tick_active';
+    var tickInterval = element.getAttribute('data-interval')=='tick_active';
+    var tickVertical = element.getAttribute('data-vertical')=='tick_active';
     var slidermVerticalSize = element.getAttribute('data-verticalSize');
     var slidermValue2 = element.getAttribute('data-value2');
     var slidermValue1 = element.getAttribute('data-value1');
@@ -197,10 +197,10 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var colorText = element.getAttribute('data-colorText');
 
     var getSliderm2Attributes = function () {
-        tickHint = element.getAttribute('data-hint')=='active';
-        tickScale = element.getAttribute('data-scale')=='active';
-        tickInterval = element.getAttribute('data-interval')=='active';
-        tickVertical = element.getAttribute('data-vertical')=='active';
+        tickHint = element.getAttribute('data-hint')=='tick_active';
+        tickScale = element.getAttribute('data-scale')=='tick_active';
+        tickInterval = element.getAttribute('data-interval')=='tick_active';
+        tickVertical = element.getAttribute('data-vertical')=='tick_active';
         slidermVerticalSize = element.getAttribute('data-verticalSize');
         slidermValue2 = element.getAttribute('data-value2');
         slidermValue1 = element.getAttribute('data-value1');
@@ -255,10 +255,10 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         }
 
         var getInputs = function() {
-            tickHint = inputTickHint.classList.contains('active');
-            tickScale = inputTickScale.classList.contains('active');
-            tickInterval = inputTickInterval.classList.contains('active');
-            tickVertical = inputTickVertical.classList.contains('active');
+            tickHint = inputTickHint.classList.contains('tick_active');
+            tickScale = inputTickScale.classList.contains('tick_active');
+            tickInterval = inputTickInterval.classList.contains('tick_active');
+            tickVertical = inputTickVertical.classList.contains('tick_active');
             slidermVerticalSize = inputSlidermVerticalSize.value || 250;
             slidermValue2 = inputSlidermValue2.value;
             if (inputSlidermValue1.value) slidermValue1 = inputSlidermValue1.value;
@@ -280,10 +280,10 @@ var elems2 = document.getElementsByClassName(classSliderm2);
             inputSlidermStep.value = step;
             inputSlidermIntervals.value = intervals;
             inputSlidermVerticalSize.value = slidermVerticalSize;
-            if (tickHint) inputTickHint.classList.add('active');
-            if (tickScale) inputTickScale.classList.add('active');
-            if (tickInterval) inputTickInterval.classList.add('active');
-            if (tickVertical) inputTickVertical.classList.add('active');
+            if (tickHint) inputTickHint.classList.add('tick_active');
+            if (tickScale) inputTickScale.classList.add('tick_active');
+            if (tickInterval) inputTickInterval.classList.add('tick_active');
+            if (tickVertical) inputTickVertical.classList.add('tick_active');
         };
 
         inputs.addEventListener('change', function() {
@@ -308,13 +308,13 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     };
 
     function setDivSliderm2() {
-        if (tickHint) element.setAttribute('data-hint', 'active');
+        if (tickHint) element.setAttribute('data-hint', 'tick_active');
         else element.setAttribute('data-hint', '');
-        if (tickScale) element.setAttribute('data-scale', 'active');
+        if (tickScale) element.setAttribute('data-scale', 'tick_active');
         else element.setAttribute('data-scale', '');
-        if (tickInterval) element.setAttribute('data-interval', 'active');
+        if (tickInterval) element.setAttribute('data-interval', 'tick_active');
         else element.setAttribute('data-interval', '');
-        if (tickVertical) element.setAttribute('data-vertical', 'active');
+        if (tickVertical) element.setAttribute('data-vertical', 'tick_active');
         else element.setAttribute('data-vertical', '');
         element.setAttribute('data-verticalSize', slidermVerticalSize);
         element.setAttribute('data-value2', range.value2);
@@ -360,7 +360,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         element.setAttribute('data-colorScale', chooseColor2color(chooseColorScale));
         element.setAttribute('data-colorText', chooseColor2color(chooseColorText));
         setColors();
-        inputSlidermResult.value = `<div class="sliderm2" data-min="${slidermMin}" data-max="${slidermMax}" data-value1="${range.value1}" data-value2="${range.value2}" data-step="${step}" data-intervals="${intervals}" data-hint="${tickHint?"active":""}" data-scale="${tickScale?"active":""}" data-interval="${tickInterval?"active":""}" data-vertical="${tickVertical?"active":""}" data-verticalSize="${slidermVerticalSize}" data-lineHeight="15" data-pointSize="30" data-colorLine="${chooseColor2color(chooseColorLine)}" data-colorPoint="${chooseColor2color(chooseColorPoint)}" data-colorScale="${chooseColor2color(chooseColorScale)}" data-colorText="${chooseColor2color(chooseColorText)}"></div><script src="sliderm2.js"></script>`;
+        inputSlidermResult.value = `<div class="sliderm2" data-min="${slidermMin}" data-max="${slidermMax}" data-value1="${range.value1}" data-value2="${range.value2}" data-step="${step}" data-intervals="${intervals}" data-hint="${tickHint?"tick_active":""}" data-scale="${tickScale?"tick_active":""}" data-interval="${tickInterval?"tick_active":""}" data-vertical="${tickVertical?"tick_active":""}" data-verticalSize="${slidermVerticalSize}" data-lineHeight="15" data-pointSize="30" data-colorLine="${chooseColor2color(chooseColorLine)}" data-colorPoint="${chooseColor2color(chooseColorPoint)}" data-colorScale="${chooseColor2color(chooseColorScale)}" data-colorText="${chooseColor2color(chooseColorText)}"></div><script src="sliderm2.js"></script>`;
         
     };
 

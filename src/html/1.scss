@@ -9,35 +9,34 @@ $color-border: #bbbbbb;
 $color-shadow: #bbbbbb;
 
 
-.main-div {
-    display: block;
+.main-page {
     width: 95%;
-    min-width: 1024px;
-    max-width: 1280px;
     font-family: 'Conv_Lato';
     font-weight: normal;
     font-size: 16px;
     margin: 0 auto;
-    margin-top: 50px;
     padding-bottom: 50px;
-    .main-page {
+    height: auto;
+
+    &__wrapper {
         margin-top: 50px;
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
         justify-content: space-around;
     }
-    
-    .main-page-left {
-        flex-grow: 2;
+
+    &_left {
+        flex: 2;
         margin: 0 auto;
     }
     
-    .main-page-right {
-        flex-grow: 1;
+    &_right {
+        flex: 1;
         margin: 0 auto;
     }
     
-    .video-block {
+    &__video {
         width: 660px;
         margin: 0 auto;
         padding-top: 20px;
@@ -47,10 +46,18 @@ $color-shadow: #bbbbbb;
         box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
         border: 1px solid $color-shadow;
-    
+
+        .video {
+            transition: all 0.2s ease-in-out;
+
+            @media screen and (max-width: 600px) {
+                transform: scale(0.7);
+                height: 300px;
+            }    
+        }
     }
     
-    .in-left-block {
+    &__left-block {
         width: 300px;
         margin: 0 auto;
         padding: 25px;
@@ -60,13 +67,22 @@ $color-shadow: #bbbbbb;
         box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
         border: 1px solid $color-shadow;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        padding: 5px 0px;
+        
     }
     
-    .main-page-video-text {
+    &__video-text {
         display: block;
         width: 600px;
         margin: 0 auto;
         margin-top: 20px;
     }
+    
 }
 

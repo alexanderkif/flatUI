@@ -6,30 +6,27 @@ $color-red-l: #e6a192;
 $color-red: #e75735;
 $color-red-shadow: #bf3e1f;
 
-h1 {
-    text-transform: uppercase;
-    font-size: 32px;
-    margin-top: 80px;
-}
-.stat-div {
-    display: block;
+.stat-page {
     width: 95%;
-    min-width: 1024px;
-    max-width: 1280px;
     font-family: 'Conv_Lato';
     font-weight: normal;
     font-size: 16px;
     margin: 0 auto;
-    margin-top: 50px;
     padding-bottom: 50px;
-    .stat-page {
+    height: auto;
+    
+    &__wrapper {
         margin-top: 50px;
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
         justify-content: space-around;
     }
-    
-    .stat-page-center {
+
+    &_center {
+        flex: 1;
+        margin: 0 auto;
+        min-width: 360px;
         width: 73%;
         margin: 0 auto;
         margin-bottom: 50px;
@@ -38,86 +35,77 @@ h1 {
         border-radius: 5px;
         border: 1px solid $color-border;
         text-align: center;
-        .block {
-            display: flex;
-            flex-wrap: wrap;  
-            justify-content: space-around;
-            align-items: center;
-            width: 90%;
-            margin: 30px auto;
-            span {
-                font-size: 14px;
-                margin: 0px;
-            }
-            .row {
-                display: block;
-                margin: 10px;
-                text-align: left;
-                .color {
-                    width: 35px;
-                    height: 15px;
-                    display: inline-block;
-                    margin-right: 20px;
-                    &.color-1 {
-                    background-color: $color-grey;
-                    }
-                    &.color-2 {
-                    background-color: $color-red;
-                    }
-                    &.color-3 {
-                    background-color: $color-green;
-                    }
-                    &.color-4 {
-                    background-color: $color-lightgray;
-                    }
-                }
-                span {
-                    font-size: 24px;
-                }
-            }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: 30px auto;
+
+        &_w300 {
+            width: 300px;
         }
-        .block-btn {
-            display: flex;
-            flex-wrap: wrap;  
-            justify-content: center;
-            width: 100%;
-            margin: 30px auto;
-            span {
-                font-size: 32px;
-                margin: 10px;
-            }
-            .left, .right {
-                margin: 20px;
-            }
+
+        &_left {
+            flex:1;
         }
+
+        &_right {
+            flex:1;
+            align-items: flex-start;
+        }
+    }
+        
+    &__color {
+        width: 35px;
+        height: 15px;
+        display: inline-block;
+        margin-right: 20px;
+        font-size: 24px;
+        &_grey {
+        background-color: $color-grey;
+        }
+        &_red {
+        background-color: $color-red;
+        }
+        &_green {
+        background-color: $color-green;
+        }
+        &_lightgray {
+        background-color: $color-lightgray;
+        }
+    }
+
+    &__colors {
+        text-align: left;
     }
     
     span {
         font-size: 24px;
-        display: inline-block;
-        text-align: left;
-        margin: 5px;
-        margin-right: 40px;
     }
-    
-    .stat-page-text {
-        display: block;
-        width: 600px;
-        margin: 0 auto;
-        margin-top: 20px;
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 32px;
+        margin-top: 80px;
     }
-}
-.block1 {
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-around;
-    font-size: 24px;
-    width: 90%;
-    margin: 10px auto;
-    color: $color-border;
-    margin-bottom: 50px;
-    .sliderm2 {
-        width: 39%;
+
+    &__controls {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: space-around;
+        font-size: 24px;
+        width: 90%;
+        max-width: 600px;
+        margin: 10px auto;
+        color: $color-border;
+        margin-bottom: 50px;
+        .sliderm2 {
+            width: 90%;
+        }
     }
 }
 
