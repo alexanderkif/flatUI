@@ -14,11 +14,11 @@ var Sliderm2DrawLine = function(div, pointHeight, lineHeight, tickVertical, slid
     lineDiv.style.width = '100%';
     lineDiv.style.borderRadius = lineHeight / 2 + 'px';
     lineDiv.style.backgroundColor = colorLine;
-    var sliderm2body = div.getElementsByClassName('sliderm2body')[0];
+    var sliderm2body = div.getElementsByClassName('sliderm2__body')[0];
     sliderm2body.appendChild(lineDiv);    
     sliderm2body.style.position = 'relative';
     sliderm2body.style.display = 'block';
-    sliderm2body.style.margin = '0px auto';
+    // sliderm2body.style.margin = '0px auto';
     sliderm2body.style.userSelect = 'none';
     sliderm2body.style.height = pointHeight/2 + lineHeight/2 + 5 + 'px';
     sliderm2body.style.alignItems = 'center';
@@ -134,9 +134,9 @@ var Sliderm2ClassRemove = function(div, removingClass) {
 };
 
 var Sliderm2createScale = function(div, line, intervals, pointHeight, lineHeight, tickVertical, colorScale) {
-    Sliderm2ClassRemove(div, 'sliderm2scale');
+    Sliderm2ClassRemove(div, 'sliderm2__scale');
     var scaleDiv = document.createElement("div");
-    scaleDiv.className = "sliderm2scale";
+    scaleDiv.className = "sliderm2__scale";
     scaleDiv.style.position = 'absolute';
     scaleDiv.style.display = 'flex';
     scaleDiv.style.left = -pointHeight/2 + 'px';
@@ -175,9 +175,8 @@ var chooseColor2color = function (div) {
 var elems2 = document.getElementsByClassName(classSliderm2);
 [].forEach.call(elems2, function(element) {
     var sliderm2body = document.createElement("div");
-    sliderm2body.className = "sliderm2body";
+    sliderm2body.className = "sliderm2__body";
     element.appendChild(sliderm2body); 
-    // var sliderm2body = element.querySelector('.sliderm2body');
     var tickHint = element.getAttribute('data-hint')=='tick_active';
     var tickScale = element.getAttribute('data-scale')=='tick_active';
     var tickInterval = element.getAttribute('data-interval')=='tick_active';
@@ -228,7 +227,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var inputSlidermMax = sliderm2pageContent.getElementsByClassName('sliderm-max')[0];
     var inputSlidermStep = sliderm2pageContent.getElementsByClassName('sliderm-step')[0];
     var inputSlidermIntervals = sliderm2pageContent.getElementsByClassName('sliderm-intervals')[0];
-    var inputSlidermResult = sliderm2pageContent.getElementsByClassName('result')[0];
+    var inputSlidermResult = sliderm2pageContent.getElementsByClassName('sliderm2page__result')[0];
     
     var line = new Sliderm2Line(slidermMin, slidermMax);
     var range = new Sliderm2Range(slidermValue1, slidermValue2, line);   
@@ -243,7 +242,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var chooseColorScale; 
     var chooseColorText; 
     
-    var inputs = element.parentElement.parentElement.querySelector('.inputs');
+    var inputs = element.parentElement.parentElement.querySelector('.sliderm2page__inputs');
 
     if (inputs) {
 
@@ -367,14 +366,13 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var draw = function() {
         var points = checkRange();
         if(inputs) setInputs();
-        //Renew sliderm2 in dom
         setDivSliderm2();
         drawLine = new Sliderm2DrawLine(element, pointHeight, lineHeight, tickVertical, slidermVerticalSize, colorLine);
         drawRange = new Sliderm2DrawRange(drawLine, range, colorPoint);        
         drawPoints = new Sliderm2DrawPoints(drawLine, points, pointHeight, tickHint, tickVertical, colorPoint, colorText);
         if (tickScale) 
             drawScale = new Sliderm2createScale(sliderm2body, line, intervals, pointHeight, lineHeight, tickVertical, colorScale);
-        else Sliderm2ClassRemove(sliderm2body, 'sliderm2scale');
+        else Sliderm2ClassRemove(sliderm2body, 'sliderm2__scale');
         if (chooseColorLine) setResult();
     };
 

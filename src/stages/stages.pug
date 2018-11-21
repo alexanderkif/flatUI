@@ -1,16 +1,26 @@
-mixin text-in-circle(number)
-    svg.svg-stage(viewbox="0 0 30 30")
-                circle.round(cx="15" cy="15" r="15")
-                text.text(x="15" y="20" text-anchor="middle" font-size="15")= number
+- var viewbox="0 0 30 30"
+- var cx="15" 
+- var cy="15" 
+- var r="15"
+- var x="15" 
+- var y="20" 
+- var text="middle" 
+- var font="15"
 
 mixin stage(stages,stage)
-    div.steps
-        div.first.act
-            +text-in-circle(1)
-        - for (var x = 2; x <= stages; x++)
-            if x <= stage
-                div.step.act
-                    +text-in-circle(x)
+    .stage
+        .stage__step1
+            svg.stage__svg.stage__svg_first(viewbox= viewbox)
+                circle.stage__round_act(cx=cx cy=cy r=r)
+                text.stage__text_act(x=x y=y text-anchor=text font-size=font)= 1
+        - for (var i = 2; i <= stages; i++)
+            if i <= stage
+                .stage__step.stage__step_act
+                    svg.stage__svg(viewbox= viewbox)
+                        circle.stage__round_act(cx=cx cy=cy r=r)
+                        text.stage__text_act(x=x y=y text-anchor=text font-size=font)= i
             else
-                div.step.pas
-                    +text-in-circle(x)
+                .stage__step.stage__step_pas
+                    svg.stage__svg(viewbox= viewbox)
+                        circle.stage__round_pas(cx=cx cy=cy r=r)
+                        text.stage__text_pas(x=x y=y text-anchor=text font-size=font)= i

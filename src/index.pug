@@ -1,5 +1,6 @@
 include /buttons/buttons
 include /percentages/percentages
+include /percentages/percentage4list
 include /sliderm2/sliderm2
 include /stages/stages
 include /forms/form-input
@@ -7,6 +8,7 @@ include /forms/form-textarea
 include /forms/form-toggle
 include /tick/tick
 include /search/search
+include /dropdown/dropdown
 include /user/user
 include /news/news
 include /event/event
@@ -58,8 +60,8 @@ html
       div.content.content-sliders
         //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
         //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
-        +sliderm2(0, 100, 20, 40, 5, 3, 'active', '', '', '', 200, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
-        +sliderm2(0, 100, 0, 75, 1, 4, '', 'active', '', '', 200, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
+        +sliderm2(0, 100, 40, 40, 5, 3, 'tick_active', '', 'tick_active', '', 200, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
+        +sliderm2(0, 100, 0, 75, 1, 4, '', 'tick_active', '', '', 200, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
 
       header.header.header-stages stages
       div.content.content-stages
@@ -85,11 +87,11 @@ html
               +tick('')
       
       div.content.search-profile
-        .search
+        .search-dropdown
           header.header.header-search search/drop down
-          +search-input('Search', 'red')
-          +search-input('I\'ve not found what I\'m looking for...', 'red', 'not-found')
-          +dropdown-input('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
+          +search('Search', 'red')
+          +search('I\'ve not found what I\'m looking for...', 'red', 'not-found')
+          +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
         .profile
           header.header.header-user user profile
           +user-card('john', 'John Smith', 'ux designer')

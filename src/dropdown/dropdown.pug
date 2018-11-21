@@ -1,0 +1,9 @@
+
+mixin dropdown(placeholder, btncolor, options)
+    .dropdown
+        input.dropdown__input(type="text" placeholder=placeholder)
+        .dropdown__button(type="button" class="btn dropdown__button_"+btncolor onclick="this.parentElement.getElementsByClassName('dropdown__menu-1')[0].classList.toggle('visible');")
+            i(class="material-icons icons-size")= 'keyboard_arrow_down'
+        .dropdown__menu-1
+            each option in options
+                a(class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');")= option

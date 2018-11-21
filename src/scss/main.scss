@@ -7,6 +7,7 @@
 @import '../forms/form-toggle';
 @import '../tick/tick';
 @import '../search/search';
+@import '../dropdown/dropdown';
 @import '../user/user';
 @import '../news/news';
 @import '../event/event';
@@ -216,7 +217,7 @@ body {
         flex-wrap: wrap;
         justify-content: space-around;
 
-        .search, .profile {
+        .search-dropdown, .profile {
             width: 50%;
             min-width: 300px;
             padding-bottom: 20px;

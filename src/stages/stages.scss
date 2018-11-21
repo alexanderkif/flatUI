@@ -3,44 +3,56 @@ $color-grey: #747474;
 $color-red: #e75735;
 $color-lightgray: #e5e5e5;
 
-.steps {
+.stage {
     width: 100%;
     display: table;
     font-weight: bold;
-}
-.first {
-    width: 0px;
-    .svg-stage {
-        margin-left: -15px;
+
+    &__step1 {
+        width: 0px;
     }
-}
-.step {
-    display: table-cell;
-    text-align: right;
-    &.act {
-        border-top: 5px solid $color-red;
+
+    &__step {
+        display: table-cell;
+        text-align: right;
+        &_act {
+            border-top: 5px solid $color-red;
+        }
+        &_pas {
+            border-top: 5px solid $color-lightgray;
+        }
     }
-    &.pas {
-        border-top: 5px solid $color-lightgray;
+
+    &__svg {
+        width: 30px;
+        height: auto;
+        margin-right: -15px;
+        margin-top: -18px;
+
+        &_first {
+            margin-left: -15px;
+        }
     }
-}
-.svg-stage {
-    width: 30px;
-    height: auto;
-    margin-right: -15px;
-    margin-top: -18px;
-}
-.act .text {
-    font-weight: bold;
-    fill: white;
-}
-.act .round {
-    fill: $color-red;
-}
-.pas .text {
-    font-weight: bold;
-    fill: $color-grey;
-}
-.pas .round {
-    fill: $color-lightgray;
+
+    &__text {
+        font-weight: bold;
+
+        &_act {
+            fill: white;
+        }
+
+        &pas {
+            fill: $color-grey;
+        }
+    }
+
+    &__round {
+        &_act {
+            fill: $color-red;
+        }
+
+        &_pas {
+            fill: $color-lightgray;
+        }
+    }
 }

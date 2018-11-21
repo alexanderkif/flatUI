@@ -6,6 +6,7 @@ include ../forms/form-textarea
 include ../forms/form-toggle
 include ../tick/tick
 include ../search/search
+include ../dropdown/dropdown
 include ../user/user
 include ../news/news
 include ../event/event
@@ -65,8 +66,8 @@ html
                             
                 .user-page_right
                     .user-page__left-block
-                        +search-input('Search', 'red')
-                        +dropdown-input('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
+                        +search('Search', 'red')
+                        +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
       
                     .user-page__left-block
                         +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')

@@ -1,13 +1,12 @@
 mixin messaging(user, img, message1, message2)
     .messaging
-        .messaging-header= user
-        .hr-green
-            .icons
+        .messaging__header= user
+        .messaging__hr
+            .messaging__icons
                 i.material-icons= "mode_comment"
                 i.material-icons= "local_see"
-        .messaging-body
-            img.user-photo(src="img/"+img+".png", alt="no image")
-            .white-message= message1
-                .corner
-            .grey-message= message2
+        .messaging__body
+            img.messaging__user-photo(src="img/"+img+".png", alt="no image")
+            .messaging__message1= message1
+            textarea(rows="3" cols="27").messaging__message2= message2
             +button('reply', ['green'])

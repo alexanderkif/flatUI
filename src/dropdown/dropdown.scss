@@ -1,10 +1,10 @@
-.search {
+.dropdown {
     position: relative;
     display: flex;
     width: 95%;
     justify-content: flex-end;
     margin: 8px 10px;
-        
+
     &__input {
         display: block;
         margin: 4px 0px;
@@ -18,17 +18,8 @@
         font-size: 14px;
         padding-left: 12px;
         outline: none;
-
-        &_not-found {
-            background-color: $color-red;
-
-            &::placeholder {
-                color: white;
-                opacity: 1;
-            }
-        }
     }
-    
+
     &__button {
         display: block;
         flex: 0 35px;
@@ -44,11 +35,36 @@
         padding-top: 4px;
     }
 
-    &__button-red {
+    &__button_red {
         background-color: $color-red;    
     }
 
-    &__button-green {
+    &__button_green {
         background-color: $color-green;
     }
+    
+    &__menu-1 {
+        position: absolute;
+        visibility: hidden;
+        top: 34px;
+        width: 100%;
+        background-color: $color-green;
+        border-radius: 2px;
+        
+        &.visible {
+            visibility: visible;        
+        }
+    }
+    
+    &__item {
+        flex: 1 auto;
+        margin: 0;
+        text-decoration-line: none;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        padding-top: 7px;
+        height: 23px;
+        z-index: 10000;
+    }
 }
+
