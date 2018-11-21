@@ -68,28 +68,26 @@
         </div>
         <div class="user-page_right">
           <div class="user-page__left-block">
-            <div class="search-block">
-              <input class="search-input" type="text" placeholder="Search">
-              <div class="search-button btn search-button-red"><i class="material-icons icons-size">search</i></div>
+            <div class="search">
+              <input class="search__input search__input_undefined" type="text" placeholder="Search">
+              <div class="search__button btn search__button-red"><i class="material-icons icons-size">search</i></div>
             </div>
-            <div class="search-block">
-              <input class="search-input" type="text" placeholder="Choose An Option">
-              <div class="search-button dropdownclick-1 btn search-button-green" type="button" onclick="this.parentElement.getElementsByClassName('dropdown-menu-1')[0].classList.toggle('visible');"><i class="material-icons icons-size">keyboard_arrow_down</i></div>
-              <div class="dropdown-menu-1"><a class="search-input dropdown-item" href="#">This is option 1</a><a class="search-input dropdown-item" href="#">This is option 2</a><a class="search-input dropdown-item" href="#">This is option 3</a><a class="search-input dropdown-item" href="#">This is option 4</a>
+            <div class="dropdown">
+              <input class="dropdown__input" type="text" placeholder="Choose An Option">
+              <div class="dropdown__button btn dropdown__button_green" type="button" onclick="this.parentElement.getElementsByClassName('dropdown__menu-1')[0].classList.toggle('visible');"><i class="material-icons icons-size">keyboard_arrow_down</i></div>
+              <div class="dropdown__menu-1"><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 1</a><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 2</a><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 3</a><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 4</a>
               </div>
             </div>
           </div>
           <div class="user-page__left-block">
             <div class="messaging">
-              <div class="messaging-header">Sarah Brown</div>
-              <div class="hr-green">
-                <div class="icons"><i class="material-icons">mode_comment</i><i class="material-icons">local_see</i></div>
+              <div class="messaging__header">Sarah Brown</div>
+              <div class="messaging__hr">
+                <div class="messaging__icons"><i class="material-icons">mode_comment</i><i class="material-icons">local_see</i></div>
               </div>
-              <div class="messaging-body"><img class="user-photo" src="img/sarah.png" alt="no image">
-                <div class="white-message">Hey! So are we cool to meet at the art gallery? Say 8pm
-                  <div class="corner"></div>
-                </div>
-                <div class="grey-message">Yeah that sounds great. See you then.</div>
+              <div class="messaging__body"><img class="messaging__user-photo" src="img/sarah.png" alt="no image">
+                <div class="messaging__message1">Hey! So are we cool to meet at the art gallery? Say 8pm</div>
+                <textarea class="messaging__message2" rows="3" cols="27">Yeah that sounds great. See you then.</textarea>
                 <button class="btn btn_green">reply</button>
               </div>
             </div>
