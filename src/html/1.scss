@@ -23,7 +23,6 @@ $color-shadow: #bbbbbb;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        justify-content: space-around;
     }
 
     &_left {
@@ -37,7 +36,7 @@ $color-shadow: #bbbbbb;
     }
     
     &__video {
-        width: 660px;
+        flex: 1;
         margin: 0 auto;
         padding-top: 20px;
         padding-bottom: 30px;
@@ -46,13 +45,17 @@ $color-shadow: #bbbbbb;
         box-shadow: 5px 10px 25px $color-border;
         border-radius: 5px;
         border: 1px solid $color-shadow;
+        justify-content: center;
 
         .video {
+            display: flex;
+            width: 600px;
             transition: all 0.2s ease-in-out;
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 680px) {
                 transform: scale(0.7);
                 height: 300px;
+                width: 450px;
             }    
         }
     }
@@ -73,16 +76,15 @@ $color-shadow: #bbbbbb;
     }
 
     &__item {
-        padding: 5px 0px;
-        
+        padding: 5px 0px;        
     }
     
     &__video-text {
         display: block;
-        width: 600px;
+        width: 90%;
         margin: 0 auto;
         margin-top: 20px;
-    }
-    
+        text-align: justify;
+    }    
 }
 
