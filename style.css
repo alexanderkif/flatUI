@@ -691,8 +691,7 @@ svg {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around; }
+    width: 100%; }
   .main-page_left {
     flex: 2;
     margin: 0 auto; }
@@ -700,7 +699,7 @@ svg {
     flex: 1;
     margin: 0 auto; }
   .main-page__video {
-    width: 660px;
+    flex: 1;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -708,13 +707,17 @@ svg {
     background-color: white;
     box-shadow: 5px 10px 25px #bbbbbb;
     border-radius: 5px;
-    border: 1px solid #bbbbbb; }
+    border: 1px solid #bbbbbb;
+    justify-content: center; }
     .main-page__video .video {
+      display: flex;
+      width: 600px;
       transition: all 0.2s ease-in-out; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 680px) {
         .main-page__video .video {
           transform: scale(0.7);
-          height: 300px; } }
+          height: 300px;
+          width: 450px; } }
   .main-page__left-block {
     width: 300px;
     margin: 0 auto;
@@ -732,9 +735,10 @@ svg {
     padding: 5px 0px; }
   .main-page__video-text {
     display: block;
-    width: 600px;
+    width: 90%;
     margin: 0 auto;
-    margin-top: 20px; }
+    margin-top: 20px;
+    text-align: justify; }
 
 .news-page {
   width: 95%;
@@ -974,11 +978,10 @@ svg {
     display: block;
     width: 600px;
     margin: 0 auto;
-    margin-top: 30px; }
-    .stat-page__text span {
-      font-size: 16px;
-      text-align: justify;
-      width: 100%; }
+    margin-top: 30px;
+    font-size: 16px;
+    text-align: justify;
+    width: 90%; }
 
 .sliderm2page {
   display: block;
