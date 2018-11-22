@@ -1,12 +1,10 @@
 mixin user-card(img, name, prof, color)
     .user-card
-        //- .user-left
-        img.user-left(src="img/"+img+".png", alt="no image")
-        div(class="user-right "+color)
-            .romb
-            .user-name= name
-            .user-prof= prof
-            .socials
+        img.user-card__photo(src=`img/${img}.png` alt="no image")
+        .user-card__panel(class=color?`user-card__panel_${color}`:"")
+            .user-card__name(class=color?`user-card__name_${color}`:"")= name
+            .user-card__prof(class=color?`user-card__prof_${color}`:"")= prof
+            .user-card__socials(class=color?`user-card__socials_${color}`:"")
                 a(href="3.html")
                     i.ion-logo-facebook
                 a(href="3.html")

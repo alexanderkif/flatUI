@@ -27,20 +27,20 @@ html
     
   body
     .wrapper
-      header.header.header-buttons standard buttons
-      div.content.content-buttons
+      header.header.buttons__header standard buttons
+      .content.buttons__content
         +button('button', ['green', 'small'])
         +button('button', ['green'])
         +button('button', ['red'])
         +button('button', ['red', 'small'])
-      div.content.content-buttons
+      .content.buttons__content
         +button('button', ['green', 'small', 'disable'])
         +button('button', ['green', 'disable'])
         +button('button', ['red', 'disable'])
         +button('button', ['red', 'small', 'disable'])
 
-      header.header.header-arrow-buttons arrow buttons
-      div.content.content-arrow-buttons
+      header.header.arrow-buttons__header arrow buttons
+      .content.arrow-buttons__content
         +button('<', ['arrow'])
         +button('>', ['arrow'])
         +button('<', ['arrow', 'disable'])
@@ -48,77 +48,79 @@ html
         +button('<', ['arrow'])
         +button('>', ['arrow'])
 
-      header.header.header-percentages percentages/pie chart
-      div.content.content-percentages
+      header.header.percentages__header percentages/pie chart
+      .content.percentages__content
         +percentage(0)
         +percentage(38)
         +percentage(62)
         +percentage(89)
         +percentage4list(10,25,30,115)
 
-      header.header.header-sliders sliders
-      div.content.content-sliders
+      header.header.sliders__header sliders
+      .content.sliders__content
         //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
         //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
         +sliderm2(0, 100, 40, 40, 5, 3, 'tick_active', '', 'tick_active', '', 200, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
         +sliderm2(0, 100, 0, 75, 1, 4, '', 'tick_active', '', '', 200, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
 
-      header.header.header-stages stages
-      div.content.content-stages
+      header.header.stages__header stages
+      .content.stages__content
         +stage(5,3)
 
-      header.header.header-forms form elements
-      div.content.content-forms
-        form(action="", method="get")
-          .form-left
+      header.header.forms__header form elements
+      .content
+        form.forms__form(action="", method="get")
+          .forms__form_left
             +form-input('Your Name', 'ERROR', 'red')
             +form-input('Your Email', 'THANKS!', 'green')
             +form-textarea("Your Message", "30", "4")
-          .form-right
-            .header.toggle-header toggles
-            .toggle-left
+          .forms__form_right
+            .header.forms__toggle__header toggles
+            .forms__toggle_left
               +form-toggle("check-1","4",false)
-            .toggle-right
+            .forms__toggle_right
               +form-toggle("check-3","6",true)
-            .header.tick-header tick boxes
-            .tick-left
+            .header.forms__tick__header tick boxes
+            .forms__tick_left
               +tick('tick_active')
-            .tick-right
+            .forms__tick_right
               +tick('')
       
-      div.content.search-profile
-        .search-dropdown
-          header.header.header-search search/drop down
+      .content.search-profile
+        .search-profile__dropdown
+          header.header.search-profile__dropdown__header search/drop down
           +search('Search', 'red')
           +search('I\'ve not found what I\'m looking for...', 'red', 'not-found')
           +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
-        .profile
-          header.header.header-user user profile
-          +user-card('john', 'John Smith', 'ux designer')
-          +user-card('sarah', 'Sarah Brown', 'developer', 'user-green')
+        .search-profile__profile
+          header.header.search-profile__profile__header user profile
+          .search-profile__profile__item
+            +user-card('john', 'John Smith', 'ux designer')
+          .search-profile__profile__item
+            +user-card('sarah', 'Sarah Brown', 'developer', 'green')
       
-      header.header.header-news news & events
-      div.content.content-news
-        .item
+      header.header.news-events__header news & events
+      .content.news-events__content
+        .news-events__item
           +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
-        .item
+        .news-events__item
           +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
 
-      header.header.header-location location
-      div.content.content-location
+      header.header.location__header location
+      .content.location__content
         +map(37.791235, -122.414842)
 
-      div.content.calendar-messaging
-        .item
-          .header.header-calendar calendar
+      .calendar-messaging
+        .calendar-messaging__item
+          .header.calendar-messaging__header calendar
           //- calendar(date, month, firstdayinweek, daysinmonth)
           +calendar(24,'september', 4, 30)
-        .item
-          .header.header-messaging messaging
+        .calendar-messaging__item
+          .header.calendar-messaging__header messaging
           +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
 
-      header.header.header-video video
-      div.content.content-video
+      header.header.video__header video
+      .content.video__content
         +video('62980495')
 
     script(src="js/jquery-3.3.1.min.js")

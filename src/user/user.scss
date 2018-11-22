@@ -1,68 +1,88 @@
 .user-card {
     display: block;
-    width: 265px;
-    height: 90px;
-    margin: 30px;
-}
-.user-left {
-    display: block;
-    float: left;
-    border-radius: 50%;
-    border: 3px solid $color-lightgray;
-    margin: 0px;
-}
-.user-right {
-    display: block;
-    float: right;
-    width: 165px;
-    height: 90px;
-    background-color: $color-lightgray;
-    border-radius: 5px;
-    position: relative;
-    text-align: center;
-    .romb {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: $color-lightgray;
-        transform: rotate(45deg);
-        top: 41px;
-        left: -4px;
+    width: 270px;
+    height: 95px;
+    
+    &__photo {
+        display: block;
+        float: left;
+        border-radius: 50%;
+        border: 5px solid $color-lightgray;
+        margin: 0px;
     }
-    .user-name {
+
+    &__panel {
+        display: block;
+        float: right;
+        width: 165px;
+        height: 95px;
+        background-color: $color-lightgray;
+        border-radius: 5px;
+        position: relative;
+        text-align: center;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: $color-lightgray;
+            transform: rotate(45deg);
+            top: 41px;
+            left: -4px;
+        }
+
+        &_green {
+            background-color: $color-green;
+            color: white;
+
+            &::before {
+                background-color: $color-green;
+            }
+        }
+    }
+
+    &__name {
         font-weight: normal;
         margin: 0;
         margin-top: 10px;
         color: $color-red;
         font-size: 18px
     }
-    .user-prof {
+
+    &__prof {
         margin: 0;
         text-transform: uppercase;
         color: $color-grey;
         font-size: 10px;
         letter-spacing: 1px;
     }
-    .socials {
-        margin: 5px auto;
+
+    &__socials {
+        margin: 10px auto;
         i {
             font-size: 28px;
             letter-spacing: 10px;
             margin-left: 8px;
             color: $color-grey;
+            
             &.ion-logo-twitter {
                 color: $color-red;                
             }
         }
-    }
-    &.user-green {
-        background-color: $color-green;
+    }    
+
+    &__name_green,
+    &__prof_green,
+    &__socials_green {
         color: white;
-        .romb {
-            background-color: $color-green;
-        }
-        .user-name, .user-prof, i, i.ion-logo-twitter {
-            color: white;
+
+        i {
+            color: inherit;
+
+            &.ion-logo-twitter {
+                color: inherit;               
+            }
         }
     }
 }

@@ -44,93 +44,57 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    // background: #ccf;
-
-    &.header-buttons{
-        margin-top: 83px;
-        margin-bottom: 67px;
-    }
-
-    &.header-arrow-buttons {
-        margin-top: 110px;
-        margin-bottom: 33px;
-    }
-
-    &.header-percentages {
-        margin-top: 45px;
-        margin-bottom: 0px;
-    }
-
-    &.header-sliders {
-        margin-top: 30px;
-        margin-bottom: 40px;
-    }
-
-    &.header-stages {
-        margin-top: 27px;
-        margin-bottom: 37px;
-    }
-
-    &.header-forms {
-        margin-top: 50px;
-        margin-bottom: 40px;
-    }
-
-    &.header-search {
-        margin: 0px;
-        margin-bottom: 13px;
-        letter-spacing: 0px;
-    }
-
-    &.header-user {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        letter-spacing: 0px;
-    }
-
-    &.header-news {
-        margin-top: 45px;
-        margin-bottom: 10px;
-    }
-
-    &.header-location {
-        margin-top: 15px;
-        margin-bottom: 30px;
-    }
-
-    &.header-calendar, &.header-messaging {
-        margin: 0px;
-        margin-top: 25px;
-        margin-bottom: 20px;
-        letter-spacing: 0px;
-    }
-
-    &.header-video {
-        margin-top: 50px;
-        margin-bottom: 10px;
-    }
 }
+
 .content {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     margin: 25px auto;
     // background: #cfc;
+}
 
-    &.content-buttons{
+.buttons{
+    &__header {
+        margin-top: 83px;
+        margin-bottom: 67px;
+    }
+
+    &__content {
         max-width: 490px;
     }
+}
 
-    &.content-arrow-buttons {
-        max-width: 450px;
+.arrow-buttons {
+    &__header {
+        margin-top: 110px;
+        margin-bottom: 33px;
     }
 
-    &.content-percentages {
+    &__content {
+        max-width: 450px;
+    }
+}
+
+.percentages {
+    &__header {
+        margin-top: 45px;
+        margin-bottom: 0px;
+    }
+
+    &__content {
         margin-top: 10px;
         margin-left: -10px;
     }
+}
 
-    &.content-sliders {
+.sliders {
+    &__header {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    &__content {
         margin-bottom: 35px;
         max-width: 590px;
         align-items: flex-start;
@@ -140,30 +104,42 @@ body {
             width: 45%;
         }
     }
+}
 
-    &.content-stages {
+.stages {
+    &__header {
+        margin-top: 27px;
+        margin-bottom: 33px;
+    }
+
+    &__content {
         max-width: 565px;
         margin-bottom: 40px;
         padding-left: 10px;
         padding-right: 10px;
     }
+}
 
-    &.content-forms {
-        form {
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+.forms {
+    &__header {
+        margin-top: 55px;
+        margin-bottom: 40px;
+    }
 
-        .form-left {
-            width: 50%;
+    &__form {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &_left {
+            // width: 50%;
             min-width: 300px;
             padding-bottom: 20px;
         }
 
-        .form-right {
+        &_right {
             padding: 5px 5%;
             width: 40%;
             min-width: 150px;
@@ -179,84 +155,144 @@ body {
                 "tick-header tick-header" 
                 "tick-left tick-right";
         }
+    }
 
-        .toggle-header {
+    &__toggle {
+        &__header {
             grid-area: toggle-header;
         }
 
-        .toggle-left {
+        &_left {
             grid-area: toggle-left;
             justify-self: right;
         }
 
-        .toggle-right {
+        &_right {
             grid-area: toggle-right;
             justify-self: left;
         }
+    }
 
-        .tick-header {
+    &__tick {
+        &__header {
             grid-area: tick-header;
         }
 
-        .tick-left {
+        &_left {
             grid-area: tick-left;
             justify-self: right;
         }
 
-        .tick-right {
+        &_right {
             grid-area: tick-right;
             justify-self: left;
         }
     }
+}
 
-    &.search-profile {
-        margin-bottom: 30px;
-        margin-top: 25px;
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
+.search-profile {
+    margin-bottom: 30px;
+    margin-top: 25px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
-        .search-dropdown, .profile {
-            width: 50%;
-            min-width: 300px;
-            padding-bottom: 20px;
+    &__dropdown {
+        width: 50%;
+        min-width: 300px;
+        padding-bottom: 20px;
+
+        &__header {
+            margin: 0px;
+            margin-bottom: 13px;
+            letter-spacing: 0px;
         }
     }
 
-    &.content-news {
+    &__profile {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 50%;
+        min-width: 300px;
+        padding-bottom: 20px;
+        align-items: center;
+
+        &__item {
+            margin: 13px;
+            margin-left: 29px;
+        }
+
+        &__header {
+            margin-top: 0px;
+            margin-bottom: 15px;
+            letter-spacing: 0px;
+        }
+    }
+}
+
+.news-events {
+    &__header {
+        margin-top: 60px;
+        margin-bottom: 10px;
+    }
+
+    &__content {
         margin-top: 30px;
         margin-bottom: 35px;
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
         justify-content: space-around;
-
-        .item {
-            padding-bottom: 15px;
-        }
     }
 
-    &.content-location {
+    &__item {
+        padding-bottom: 15px;
+    }
+}
+
+.location {
+    &__header {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    &__content {
         display: flex;
         margin-top: 20px;
         transition: all 0.2s ease-in-out;
+
         @media screen and (max-width: 600px) {
             transform: scale(0.7);
             height: 190px;
         }
     }
+}
 
-    &.calendar-messaging {
-        margin-top: 15px;
-        margin-bottom: 30px;
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
+.calendar-messaging {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &__header {
+        margin: 0px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        letter-spacing: 0px;
+    }
+}
+
+.video {
+    &__header {
+        margin-top: 50px;
+        margin-bottom: 10px;
     }
 
-    &.content-video {
+    &__content {
         margin-top: 0px;
         margin-bottom: 100px;
         transition: all 0.2s ease-in-out;

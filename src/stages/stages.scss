@@ -15,9 +15,11 @@ $color-lightgray: #e5e5e5;
     &__step {
         display: table-cell;
         text-align: right;
+
         &_act {
             border-top: 5px solid $color-red;
         }
+        
         &_pas {
             border-top: 5px solid $color-lightgray;
         }
@@ -41,7 +43,7 @@ $color-lightgray: #e5e5e5;
             fill: white;
         }
 
-        &pas {
+        &_pas {
             fill: $color-grey;
         }
     }
