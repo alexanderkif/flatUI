@@ -9,21 +9,21 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header header-buttons">standard buttons</header>
-      <div class="content content-buttons">
+      <header class="header buttons__header">standard buttons</header>
+      <div class="content buttons__content">
         <button class="btn btn_green btn_small">button</button>
         <button class="btn btn_green">button</button>
         <button class="btn btn_red">button</button>
         <button class="btn btn_red btn_small">button</button>
       </div>
-      <div class="content content-buttons">
+      <div class="content buttons__content">
         <button class="btn btn_green btn_small btn_disable">button</button>
         <button class="btn btn_green btn_disable">button</button>
         <button class="btn btn_red btn_disable">button</button>
         <button class="btn btn_red btn_small btn_disable">button</button>
       </div>
-      <header class="header header-arrow-buttons">arrow buttons</header>
-      <div class="content content-arrow-buttons">
+      <header class="header arrow-buttons__header">arrow buttons</header>
+      <div class="content arrow-buttons__content">
         <button class="btn btn_arrow"> <i class="material-icons">keyboard_arrow_left</i></button>
         <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_right</i></button>
         <button class="btn btn_arrow btn_disable"> <i class="material-icons">keyboard_arrow_left</i></button>
@@ -31,8 +31,8 @@
         <button class="btn btn_arrow"> <i class="material-icons">keyboard_arrow_left</i></button>
         <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_right</i></button>
       </div>
-      <header class="header header-percentages">percentages/pie chart</header>
-      <div class="content content-percentages">
+      <header class="header percentages__header">percentages/pie chart</header>
+      <div class="content percentages__content">
         <div class="percentage">
           <svg class="percentage__svg" viewbox="0 0 10 10" style="width:115px;">
             <defs>
@@ -71,13 +71,13 @@
         </div>
         <canvas class="percentage4list" id="cnvs" width="115px" height="115px" r="57.5" p1="10" p2="25" p3="30" style="width:115px;height:115px;"></canvas>
       </div>
-      <header class="header header-sliders">sliders</header>
-      <div class="content content-sliders">
+      <header class="header sliders__header">sliders</header>
+      <div class="content sliders__content">
         <div class="sliderm2" data-min="0" data-max="100" data-value1="40" data-value2="40" data-step="5" data-intervals="3" data-hint="tick_active" data-scale="" data-interval="tick_active" data-vertical="" data-verticalSize="200" data-lineHeight="5" data-pointSize="20" data-colorLine="#e6e6e6" data-colorPoint="#e75735" data-colorScale="lightgrey" data-colorText="white"></div>
         <div class="sliderm2" data-min="0" data-max="100" data-value1="0" data-value2="75" data-step="1" data-intervals="4" data-hint="" data-scale="tick_active" data-interval="" data-vertical="" data-verticalSize="200" data-lineHeight="5" data-pointSize="20" data-colorLine="#e6e6e6" data-colorPoint="#4eb7a8" data-colorScale="lightgrey" data-colorText="white"></div>
       </div>
-      <header class="header header-stages">stages</header>
-      <div class="content content-stages">
+      <header class="header stages__header">stages</header>
+      <div class="content stages__content">
         <div class="stage">
           <div class="stage__step1">
             <svg class="stage__svg stage__svg_first" viewbox="0 0 30 30">
@@ -111,10 +111,10 @@
           </div>
         </div>
       </div>
-      <header class="header header-forms">form elements</header>
-      <div class="content content-forms">
-        <form action="" method="get">
-          <div class="form-left">
+      <header class="header forms__header">form elements</header>
+      <div class="content">
+        <form class="forms__form" action="" method="get">
+          <div class="forms__form_left">
             <div class="form-input">
               <input class="form-input__text" type="text" placeholder="Your Name">
               <div class="form-input__button form-input__button_red" type="button">
@@ -136,31 +136,31 @@
               </div>
             </div>
           </div>
-          <div class="form-right">
-            <div class="header toggle-header">toggles</div>
-            <div class="toggle-left">
+          <div class="forms__form_right">
+            <div class="header forms__toggle__header">toggles</div>
+            <div class="forms__toggle_left">
               <div class="form-toggle">
                 <input type="checkbox" name="check-1" value="4" autocomplete="off">
               </div>
             </div>
-            <div class="toggle-right">
+            <div class="forms__toggle_right">
               <div class="form-toggle">
                 <input type="checkbox" name="check-3" value="6" checked="checked" autocomplete="off">
               </div>
             </div>
-            <div class="header tick-header">tick boxes</div>
-            <div class="tick-left">
+            <div class="header forms__tick__header">tick boxes</div>
+            <div class="forms__tick_left">
               <div class="tick tick_active" onclick="this.classList.toggle('tick_active');"><i class="material-icons icons-size">done</i></div>
             </div>
-            <div class="tick-right">
+            <div class="forms__tick_right">
               <div class="tick" onclick="this.classList.toggle('tick_active');"><i class="material-icons icons-size">done</i></div>
             </div>
           </div>
         </form>
       </div>
       <div class="content search-profile">
-        <div class="search-dropdown">
-          <header class="header header-search">search/drop down</header>
+        <div class="search-profile__dropdown">
+          <header class="header search-profile__dropdown__header">search/drop down</header>
           <div class="search">
             <input class="search__input search__input_undefined" type="text" placeholder="Search">
             <div class="search__button btn search__button-red"><i class="material-icons icons-size">search</i></div>
@@ -176,29 +176,31 @@
             </div>
           </div>
         </div>
-        <div class="profile">
-          <header class="header header-user">user profile</header>
-          <div class="user-card"><img class="user-left" src="img/john.png" alt="no image">
-            <div class="user-right undefined">
-              <div class="romb"></div>
-              <div class="user-name">John Smith</div>
-              <div class="user-prof">ux designer</div>
-              <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+        <div class="search-profile__profile">
+          <header class="header search-profile__profile__header">user profile</header>
+          <div class="search-profile__profile__item">
+            <div class="user-card"><img class="user-card__photo" src="img/john.png" alt="no image">
+              <div class="user-card__panel">
+                <div class="user-card__name">John Smith</div>
+                <div class="user-card__prof">ux designer</div>
+                <div class="user-card__socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+              </div>
             </div>
           </div>
-          <div class="user-card"><img class="user-left" src="img/sarah.png" alt="no image">
-            <div class="user-right user-green">
-              <div class="romb"></div>
-              <div class="user-name">Sarah Brown</div>
-              <div class="user-prof">developer</div>
-              <div class="socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+          <div class="search-profile__profile__item">
+            <div class="user-card"><img class="user-card__photo" src="img/sarah.png" alt="no image">
+              <div class="user-card__panel user-card__panel_green">
+                <div class="user-card__name user-card__name_green">Sarah Brown</div>
+                <div class="user-card__prof user-card__prof_green">developer</div>
+                <div class="user-card__socials user-card__socials_green"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <header class="header header-news">news & events</header>
-      <div class="content content-news">
-        <div class="item">
+      <header class="header news-events__header">news & events</header>
+      <div class="content news-events__content">
+        <div class="news-events__item">
           <div class="news"><a href="2.html"><img class="news__img" src="img/velo.png" alt="no img">
               <div class="news__content">
                 <div class="news__header">It's all going downhill</div>
@@ -206,7 +208,7 @@
                 <div class="news__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</div>
               </div></a></div>
         </div>
-        <div class="item">
+        <div class="news-events__item">
           <div class="event"><img class="event__img" src="img/city.png" alt="no img">
             <div class="event__content">
               <div class="event__date">24</div>
@@ -220,8 +222,8 @@
           </div>
         </div>
       </div>
-      <header class="header header-location">location</header>
-      <div class="content content-location">
+      <header class="header location__header">location</header>
+      <div class="content location__content">
         <div class="map">
           <iframe src="https://maps.google.com/maps?q=37.791235, -122.414842&amp;z=15&amp;output=embed" width="590" height="200" frameborder="0" style="border:0"></iframe>
           <div class="map__bottom">
@@ -235,9 +237,9 @@
           </div>
         </div>
       </div>
-      <div class="content calendar-messaging">
-        <div class="item">
-          <div class="header header-calendar">calendar</div>
+      <div class="calendar-messaging">
+        <div class="calendar-messaging__item">
+          <div class="header calendar-messaging__header">calendar</div>
           <div class="calendar">
             <div class="calendar__date">24</div>
             <div class="calendar__carusel">
@@ -302,8 +304,8 @@
             <div class="calendar__footer">today</div>
           </div>
         </div>
-        <div class="item">
-          <div class="header header-messaging">messaging</div>
+        <div class="calendar-messaging__item">
+          <div class="header calendar-messaging__header">messaging</div>
           <div class="messaging">
             <div class="messaging__header">Sarah Brown</div>
             <div class="messaging__hr">
@@ -317,8 +319,8 @@
           </div>
         </div>
       </div>
-      <header class="header header-video">video</header>
-      <div class="content content-video">
+      <header class="header video__header">video</header>
+      <div class="content video__content">
         <div class="video">
           <iframe src="https://player.vimeo.com/video/62980495?color=e75735&amp;title=1&amp;byline=1&amp;portrait=0" width="600" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
