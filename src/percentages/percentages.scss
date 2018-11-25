@@ -4,10 +4,11 @@ $color-red: #e75735;
 $color-lightgray: #e5e5e5;
 
 .percentage {
-    &__svg {
+    &__circle {
         font-weight: normal;
         height: auto;
     }
+    
     &__text {
         fill: $color-grey;
     }

@@ -85,14 +85,12 @@ var Sliderm2DrawHint = function(div, point, pointHeight, tickVertical, colorText
     var hintDiv = document.createElement("div");
     hintDiv.className = "sliderm2hint";
     hintDiv.style.position = 'absolute';
-    hintDiv.style.display = 'table-cell';
-    hintDiv.style.verticalAlign = 'middle';
+    hintDiv.style.display = 'flex';
+    hintDiv.style.alignItems = 'center';
     hintDiv.style.width = 'auto';
     hintDiv.style.padding = '2px 8px';
     hintDiv.style.borderRadius = '4px';
-    hintDiv.style.textAlign = 'center';
     hintDiv.style.height = pointHeight + 'px';
-    hintDiv.style.fontSize = pointHeight*0.9;
     hintDiv.style.backgroundColor = 'inherit';
     hintDiv.style.color = colorText;
     hintDiv.innerHTML = Math.round(point.inValue * 100) / 100;
@@ -139,13 +137,13 @@ var Sliderm2createScale = function(div, line, intervals, pointHeight, lineHeight
     scaleDiv.className = "sliderm2__scale";
     scaleDiv.style.position = 'absolute';
     scaleDiv.style.display = 'flex';
-    scaleDiv.style.left = -pointHeight/2 + 'px';
-    scaleDiv.style.fontSize = pointHeight * 3 / 5 + 'px';
+    // scaleDiv.style.left = -pointHeight/2 + 'px';
+    scaleDiv.style.fontSize = pointHeight * 3 / 6 + 'px';
     scaleDiv.style.justifyContent = 'space-between';
     scaleDiv.style.top = pointHeight/2 + lineHeight/2 + 5 + 'px';
     scaleDiv.style.color = colorScale;
     div.appendChild(scaleDiv);
-    scaleDiv.style.width = 'calc(100% + '+ pointHeight +'px)';
+    scaleDiv.style.width = 'calc(100% + '+ pointHeight/2 +'px)';
     var digit;
     for(var i = 0; i <= intervals; i++) {
         digit = document.createElement('div');

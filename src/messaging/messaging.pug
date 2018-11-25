@@ -1,4 +1,4 @@
-mixin messaging(user, img, message1, message2)
+mixin messaging(user, img, message, placeholder)
     .messaging
         .messaging__header= user
         .messaging__hr
@@ -7,6 +7,6 @@ mixin messaging(user, img, message1, message2)
                 i.material-icons= "local_see"
         .messaging__body
             img.messaging__user-photo(src="img/"+img+".png", alt="no image")
-            .messaging__message1= message1
-            textarea(rows="3" cols="27").messaging__message2= message2
+            .messaging__message= message
+            textarea(rows="3" cols="27").messaging__input= placeholder
             +button('reply', ['green'])

@@ -1,6 +1,6 @@
 include /buttons/buttons
 include /percentages/percentages
-include /percentages/percentage4list
+include /percentages/sectors
 include /sliderm2/sliderm2
 include /stages/stages
 include /forms/form-input
@@ -9,7 +9,7 @@ include /forms/form-toggle
 include /tick/tick
 include /search/search
 include /dropdown/dropdown
-include /user/user
+include /user-card/user-card
 include /news/news
 include /event/event
 include /maps/maps
@@ -27,101 +27,115 @@ html
     
   body
     .wrapper
-      header.header.buttons__header standard buttons
-      .content.buttons__content
-        +button('button', ['green', 'small'])
-        +button('button', ['green'])
-        +button('button', ['red'])
-        +button('button', ['red', 'small'])
-      .content.buttons__content
-        +button('button', ['green', 'small', 'disable'])
-        +button('button', ['green', 'disable'])
-        +button('button', ['red', 'disable'])
-        +button('button', ['red', 'small', 'disable'])
+      .buttons
+        header.header.buttons__header standard buttons
+        .content.buttons__content
+          +button('button', ['green', 'small'])
+          +button('button', ['green'])
+          +button('button', ['red'])
+          +button('button', ['red', 'small'])
+        .content.buttons__content
+          +button('button', ['green', 'small', 'disabled'])
+          +button('button', ['green', 'disabled'])
+          +button('button', ['red', 'disabled'])
+          +button('button', ['red', 'small', 'disabled'])
 
-      header.header.arrow-buttons__header arrow buttons
-      .content.arrow-buttons__content
-        +button('<', ['arrow'])
-        +button('>', ['arrow'])
-        +button('<', ['arrow', 'disable'])
-        +button('>', ['arrow', 'disable'])
-        +button('<', ['arrow'])
-        +button('>', ['arrow'])
+      .arrow-buttons
+        header.header.arrow-buttons__header arrow buttons
+        .content.arrow-buttons__content
+          +button('<', ['arrow'])
+          +button('>', ['arrow'])
+          +button('<', ['arrow', 'disabled'])
+          +button('>', ['arrow', 'disabled'])
+          +button('<', ['arrow'])
+          +button('>', ['arrow'])
 
-      header.header.percentages__header percentages/pie chart
-      .content.percentages__content
-        +percentage(0)
-        +percentage(38)
-        +percentage(62)
-        +percentage(89)
-        +percentage4list(10,25,30,115)
+      .percentages
+        header.header.percentages__header percentages / pie chart
+        .content.percentages__content
+          +percentage(0)
+          +percentage(38)
+          +percentage(62)
+          +percentage(89)
+          +sectors(10,25,30,115)
 
-      header.header.sliders__header sliders
-      .content.sliders__content
-        //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
-        //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
-        +sliderm2(0, 100, 40, 40, 5, 3, 'tick_active', '', 'tick_active', '', 200, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
-        +sliderm2(0, 100, 0, 75, 1, 4, '', 'tick_active', '', '', 200, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
+      .sliders
+        header.header.sliders__header sliders
+        .content.sliders__content
+          //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
+          //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
+          +sliderm2(0, 100, 40, 40, 5, 3, 'tick_active', '', 'tick_active', '', 200, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
+          +sliderm2(0, 100, 0, 75, 1, 4, '', 'tick_active', '', '', 200, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
+    
+      .stages
+        header.header.stages__header stages
+        .content.stages__content
+          +stage(5,3)
 
-      header.header.stages__header stages
-      .content.stages__content
-        +stage(5,3)
-
-      header.header.forms__header form elements
-      .content
-        form.forms__form(action="", method="get")
-          .forms__form_left
-            +form-input('Your Name', 'ERROR', 'red')
-            +form-input('Your Email', 'THANKS!', 'green')
-            +form-textarea("Your Message", "30", "4")
-          .forms__form_right
-            .header.forms__toggle__header toggles
-            .forms__toggle_left
-              +form-toggle("check-1","4",false)
-            .forms__toggle_right
-              +form-toggle("check-3","6",true)
-            .header.forms__tick__header tick boxes
-            .forms__tick_left
-              +tick('tick_active')
-            .forms__tick_right
-              +tick('')
+      .forms
+        header.header.forms__header form elements
+        .content
+          form.forms__form(action="", method="get")
+            .forms__form_left
+              +form-input('Your Name', 'ERROR', 'red')
+              +form-input('Your Email', 'THANKS!', 'green')
+              +form-textarea("Your Message", "30", "4")
+            .forms__form_right
+              .toggles
+                .header.toggles__header toggles
+                .toggles_left
+                  +form-toggle("check-1","4",false)
+                .toggles_right
+                  +form-toggle("check-3","6",true)
+              .ticks
+                .header.ticks__header tick boxes
+                .ticks_left
+                  +tick('tick_active')
+                .ticks_right
+                  +tick('')
       
-      .content.search-profile
-        .search-profile__dropdown
-          header.header.search-profile__dropdown__header search/drop down
-          +search('Search', 'red')
-          +search('I\'ve not found what I\'m looking for...', 'red', 'not-found')
-          +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
-        .search-profile__profile
-          header.header.search-profile__profile__header user profile
-          .search-profile__profile__item
-            +user-card('john', 'John Smith', 'ux designer')
-          .search-profile__profile__item
-            +user-card('sarah', 'Sarah Brown', 'developer', 'green')
+      .search-profile-row
+        .searches
+          header.header.searches__header search / drop down
+          .searches__content
+            +search('Search', 'red')
+          .searches__content
+            +search('I\'ve not found what I\'m looking for...', 'red', 'not-found')
+          .searches__content
+            +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
+        .profiles
+          header.header.profiles__header user profile
+          .profiles__item
+            +user-card('john', 'John Smith', 'ux designer',"","3.html","3.html","3.html")
+          .profiles__item
+            +user-card('sarah', 'Sarah Brown', 'developer', 'green',"3.html","3.html","3.html")
       
-      header.header.news-events__header news & events
-      .content.news-events__content
-        .news-events__item
-          +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
-        .news-events__item
-          +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
+      .news-events-row
+        header.header.news-events-row__header news & events
+        .news-events-row__content
+          .news-events-row__item
+            +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
+          .news-events-row__item
+            +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
 
-      header.header.location__header location
-      .content.location__content
-        +map(37.791235, -122.414842)
+      .location
+        header.header.location__header location
+        .content.location__content
+          +map(37.791235, -122.414842)
 
-      .calendar-messaging
-        .calendar-messaging__item
-          .header.calendar-messaging__header calendar
+      .calendar-messaging-row
+        .calendar-messaging-row__calendar
+          header.header.calendar-messaging-row__header calendar
           //- calendar(date, month, firstdayinweek, daysinmonth)
           +calendar(24,'september', 4, 30)
-        .calendar-messaging__item
-          .header.calendar-messaging__header messaging
+        .calendar-messaging-row__messaging
+          header.header.calendar-messaging-row__header messaging
           +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
 
-      header.header.video__header video
-      .content.video__content
-        +video('62980495')
+      .video-row
+        header.header.video-row__header video
+        .content.video-row__content
+          +video('62980495')
 
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/lc_switch.min.js")

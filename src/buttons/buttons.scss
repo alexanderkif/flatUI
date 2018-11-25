@@ -80,7 +80,7 @@ $color-red-shadow: #bf3e1f;
         }
     }
 
-    &_disable {
+    &_disabled {
         cursor: default; 
         border: 0px;
         color: lightgray;
@@ -111,10 +111,10 @@ $color-red-shadow: #bf3e1f;
 
     &:active {
         transform: translateY(3px);
-        &:not(.btn_disable) {
+        &:not(.btn_disabled) {
             box-shadow: 0px 0px;
         }
-        &.btn_disable {
+        &.btn_disabled {
             transform: translateY(0px);
         }
     }

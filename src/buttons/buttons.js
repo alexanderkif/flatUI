@@ -9,7 +9,7 @@ $(".btn").click(function (e) {
         buttonWidth = $(this).width(),
         buttonHeight =  $(this).height();
     
-    if (!$(this).hasClass('btn_disable')){
+    if (!$(this).hasClass('btn_disabled')){
       // Add the element
       $(this).prepend("<span class='ripple'></span>");
     }

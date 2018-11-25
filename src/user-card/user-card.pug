@@ -1,14 +1,14 @@
-mixin user-card(img, name, prof, color)
+mixin user-card(img, name, prof, color, a1, a2, a3)
     .user-card
         img.user-card__photo(src=`img/${img}.png` alt="no image")
         .user-card__panel(class=color?`user-card__panel_${color}`:"")
             .user-card__name(class=color?`user-card__name_${color}`:"")= name
             .user-card__prof(class=color?`user-card__prof_${color}`:"")= prof
             .user-card__socials(class=color?`user-card__socials_${color}`:"")
-                a(href="3.html")
+                a(href=a1)
                     i.ion-logo-facebook
-                a(href="3.html")
+                a(href=a2)
                     i.ion-logo-twitter
-                a(href="3.html")
+                a(href=a3)
                     i.ion-logo-dribbble
             
