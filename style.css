@@ -11,23 +11,23 @@
   text-transform: uppercase;
   cursor: pointer;
   outline: none; }
-  .btn_red {
+  .btn_theme_red {
     color: #e75735;
     border: 1px solid #bf3e1f;
     box-shadow: 0px 3px #bf3e1f; }
-    .btn_red.btn_small {
+    .btn_theme_red.btn_small {
       box-shadow: 0px 2px #bf3e1f; }
-    .btn_red:hover {
+    .btn_theme_red:hover {
       color: white;
       box-shadow: 0px 3px #bf3e1f;
       background-color: #e75735; }
-  .btn_green {
+  .btn_theme_green {
     color: #4eb7a8;
     border: 1px solid #28a290;
     box-shadow: 0px 3px #28a290; }
-    .btn_green.btn_small {
+    .btn_theme_green.btn_small {
       box-shadow: 0px 2px #28a290; }
-    .btn_green:hover {
+    .btn_theme_green:hover {
       color: white;
       box-shadow: 0px 3px #28a290;
       background-color: #4eb7a8; }
@@ -185,7 +185,10 @@
       transform: rotate(-45deg); }
 
 .form-textarea__wrapper {
-  padding: 5px; }
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; }
 
 .form-textarea__text {
   height: auto;
@@ -202,8 +205,10 @@
   width: 100%; }
 
 .form-textarea__btn {
-  text-align: right;
-  margin-top: 8px; }
+  align-self: flex-end;
+  justify-self: right;
+  margin-top: 7px;
+  height: 32px; }
 
 .form-toggle .lcs_switch {
   box-shadow: 0 0 0px !important;
@@ -343,7 +348,8 @@
     color: white;
     padding-top: 7px;
     height: 23px;
-    z-index: 10000; }
+    z-index: 10000;
+    cursor: pointer; }
 
 .user-card {
   display: block;
@@ -472,13 +478,12 @@
     display: block;
     margin-top: 5px;
     font-size: 12px; }
-  .event__button {
+  .event__btn {
     margin-top: 13px;
-    margin-left: 12px; }
-    .event__button .btn {
-      width: 130px;
-      height: 23px;
-      letter-spacing: 1px; }
+    margin-left: 12px;
+    width: 130px;
+    height: 23px;
+    letter-spacing: 1px; }
 
 .map {
   width: 590px;
@@ -494,7 +499,7 @@
     user-select: none; }
     .map__bottom:hover {
       cursor: default; }
-  .map__slog {
+  .map__slogan {
     display: table-cell;
     vertical-align: middle;
     font-weight: normal;
@@ -617,7 +622,7 @@
     color: white;
     padding-top: 20px;
     border-radius: 5px 5px 0px 0px; }
-  .messaging__hr {
+  .messaging__line {
     width: 100%;
     height: 35px;
     background-color: #28a290; }
@@ -666,9 +671,9 @@
     padding: 15px;
     cursor: text;
     resize: none; }
-  .messaging .btn {
-    width: 240px;
-    height: 33px;
+  .messaging__btn {
+    width: 244px;
+    height: 35px;
     font-family: 'Conv_Lato';
     font-weight: bold;
     font-size: 12px;
@@ -1135,7 +1140,7 @@ body {
   .arrow-buttons__header {
     margin-bottom: 33px; }
   .arrow-buttons__content {
-    max-width: 450px; }
+    max-width: 445px; }
 
 .percentages {
   min-height: 156px;

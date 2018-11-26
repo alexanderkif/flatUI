@@ -12,16 +12,16 @@
       <div class="buttons">
         <header class="header buttons__header">standard buttons</header>
         <div class="content buttons__content">
-          <button class="btn btn_green btn_small">button</button>
-          <button class="btn btn_green">button</button>
-          <button class="btn btn_red">button</button>
-          <button class="btn btn_red btn_small">button</button>
+          <button class="btn btn_theme_green btn_small">button</button>
+          <button class="btn btn_theme_green">button</button>
+          <button class="btn btn_theme_red">button</button>
+          <button class="btn btn_theme_red btn_small">button</button>
         </div>
         <div class="content buttons__content">
-          <button class="btn btn_green btn_small btn_disabled">button</button>
-          <button class="btn btn_green btn_disabled">button</button>
-          <button class="btn btn_red btn_disabled">button</button>
-          <button class="btn btn_red btn_small btn_disabled">button</button>
+          <button class="btn btn_theme_green btn_small btn_disabled">button</button>
+          <button class="btn btn_theme_green btn_disabled">button</button>
+          <button class="btn btn_theme_red btn_disabled">button</button>
+          <button class="btn btn_theme_red btn_small btn_disabled">button</button>
         </div>
       </div>
       <div class="arrow-buttons">
@@ -141,9 +141,7 @@
               <div class="form-textarea">
                 <div class="form-textarea__wrapper">
                   <textarea class="form-textarea__text" placeholder="Your Message" cols="30" rows="4"></textarea>
-                  <div class="form-textarea__btn">
-                    <button class="btn btn_green">submit</button>
-                  </div>
+                  <button class="btn btn_theme_green form-textarea__btn">submit</button>
                 </div>
               </div>
             </div>
@@ -190,10 +188,10 @@
             </div>
           </div>
           <div class="searches__content">
-            <div class="dropdown">
+            <div class="dropdown" onclick="dropdownOpen()">
               <input class="dropdown__input" type="text" placeholder="Choose An Option">
-              <div class="dropdown__button btn dropdown__button_green" type="button" onclick="this.parentElement.getElementsByClassName('dropdown__menu-1')[0].classList.toggle('visible');"><i class="material-icons icons-size">keyboard_arrow_down</i></div>
-              <div class="dropdown__menu-1"><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 1</a><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 2</a><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 3</a><a class="dropdown__input dropdown__item" onclick="this.parentElement.classList.toggle('visible');">This is option 4</a>
+              <div class="dropdown__button btn dropdown__button_green" type="button"><i class="material-icons icons-size">keyboard_arrow_down</i></div>
+              <div class="dropdown__menu-1"><a class="dropdown__input dropdown__item">This is option 1</a><a class="dropdown__input dropdown__item">This is option 2</a><a class="dropdown__input dropdown__item">This is option 3</a><a class="dropdown__input dropdown__item">This is option 4</a>
               </div>
             </div>
           </div>
@@ -238,9 +236,7 @@
                 <div class="event__month">Aug</div>
                 <div class="event__header">this is the title</div>
                 <div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                <div class="event__button">
-                  <button class="btn btn_green btn_small">add to calendar</button>
-                </div>
+                <button class="btn btn_theme_green btn_small event__btn">add to calendar</button>
               </div>
             </div>
           </div>
@@ -252,7 +248,7 @@
           <div class="map">
             <iframe src="https://maps.google.com/maps?q=37.791235, -122.414842&amp;z=15&amp;output=embed" width="590" height="200" frameborder="0" style="border:0"></iframe>
             <div class="map__bottom">
-              <div class="map__slog">Meet us!</div>
+              <div class="map__slogan">Meet us!</div>
               <div class="map__address">
                 <div class="map__address1">1259 california st</div>
                 <div class="map__address2">san francisco, ca</div>
@@ -334,13 +330,13 @@
           <header class="header calendar-messaging-row__header">messaging</header>
           <div class="messaging">
             <div class="messaging__header">Sarah Brown</div>
-            <div class="messaging__hr">
+            <div class="messaging__line">
               <div class="messaging__icons"><i class="material-icons">mode_comment</i><i class="material-icons">local_see</i></div>
             </div>
             <div class="messaging__body"><img class="messaging__user-photo" src="img/sarah.png" alt="no image">
               <div class="messaging__message">Hey! So are we cool to meet at the art gallery? Say 8pm</div>
               <textarea class="messaging__input" rows="3" cols="27">Yeah that sounds great. See you then.</textarea>
-              <button class="btn btn_green">reply</button>
+              <button class="btn btn_theme_green messaging__btn">reply</button>
             </div>
           </div>
         </div>

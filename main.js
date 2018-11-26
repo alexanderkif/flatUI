@@ -97,14 +97,25 @@ eval("$(\".btn\").click(function (e) {\n\n  // Remove any old one\n  $(\".ripple
 
 /***/ }),
 
-/***/ "./src/forms/toggle.js":
-/*!*****************************!*\
-  !*** ./src/forms/toggle.js ***!
-  \*****************************/
+/***/ "./src/dropdown/dropdown.js":
+/*!**********************************!*\
+  !*** ./src/dropdown/dropdown.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n});\n\n//# sourceURL=webpack:///./src/forms/toggle.js?");
+eval("dropdownOpen = function () {\n    var dropdown = event.currentTarget.getElementsByClassName('dropdown__menu-1')[0];\n    dropdown.classList.toggle('visible');\n    event.stopPropagation();\n};\n\nwindow.addEventListener('click', function () {\n    var dropdowns = document.getElementsByClassName(\"dropdown__menu-1\");\n    for (var i = 0; i < dropdowns.length; i++) {\n        dropdowns[i].classList.remove('visible');\n    }\n});\n\n//# sourceURL=webpack:///./src/dropdown/dropdown.js?");
+
+/***/ }),
+
+/***/ "./src/form-toggle/form-toggle.js":
+/*!****************************************!*\
+  !*** ./src/form-toggle/form-toggle.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n});\n\n//# sourceURL=webpack:///./src/form-toggle/form-toggle.js?");
 
 /***/ }),
 
@@ -116,18 +127,7 @@ eval("\n$(document).ready(function (e) {\n\t$('input').lc_switch();\n});\n\n//# 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _buttons_buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buttons/buttons */ \"./src/buttons/buttons.js\");\n/* harmony import */ var _buttons_buttons__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_buttons_buttons__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _percentages_sectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./percentages/sectors */ \"./src/percentages/sectors.js\");\n/* harmony import */ var _percentages_sectors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_percentages_sectors__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _sliderm2_sliderm2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sliderm2/sliderm2 */ \"./src/sliderm2/sliderm2.js\");\n/* harmony import */ var _sliderm2_sliderm2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sliderm2_sliderm2__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _forms_toggle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./forms/toggle */ \"./src/forms/toggle.js\");\n/* harmony import */ var _forms_toggle__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_forms_toggle__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\nconsole.log(\"Run flatUI...\");\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/percentages/sectors.js":
-/*!************************************!*\
-  !*** ./src/percentages/sectors.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("$(document).ready(function () {\n        if (document.getElementById('cnvs')) {\n                var canvas = document.getElementById('cnvs');\n                var ctx = canvas.getContext('2d');\n                var p1 = canvas.getAttribute(\"p1\");\n                var p2 = canvas.getAttribute(\"p2\");\n                var p3 = canvas.getAttribute(\"p3\");\n                var r = canvas.getAttribute(\"r\");\n                var a1 = 4.71 + p1 * 2 * Math.PI / 100;\n                var a2 = a1 + p2 * 2 * Math.PI / 100;\n                var a3 = a2 + p3 * 2 * Math.PI / 100;\n\n                ctx.lineWidth = r * 0.33; // толщина линии\n\n                ctx.strokeStyle = \"#747474\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, 4.71, a1, false);\n                ctx.stroke();\n\n                ctx.strokeStyle = \"#e75735\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, a1, a2, false);\n                ctx.stroke();\n\n                ctx.strokeStyle = \"#4eb7a8\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, a2, a3, false);\n                ctx.stroke();\n\n                ctx.strokeStyle = \"#e5e5e5\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, a3, 4.71, false);\n                ctx.stroke();\n        }\n});\n\n//# sourceURL=webpack:///./src/percentages/sectors.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _buttons_buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buttons/buttons */ \"./src/buttons/buttons.js\");\n/* harmony import */ var _buttons_buttons__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_buttons_buttons__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _dropdown_dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dropdown/dropdown */ \"./src/dropdown/dropdown.js\");\n/* harmony import */ var _dropdown_dropdown__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_dropdown_dropdown__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _sectors_sectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sectors/sectors */ \"./src/sectors/sectors.js\");\n/* harmony import */ var _sectors_sectors__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sectors_sectors__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _sliderm2_sliderm2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sliderm2/sliderm2 */ \"./src/sliderm2/sliderm2.js\");\n/* harmony import */ var _sliderm2_sliderm2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sliderm2_sliderm2__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _form_toggle_form_toggle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./form-toggle/form-toggle */ \"./src/form-toggle/form-toggle.js\");\n/* harmony import */ var _form_toggle_form_toggle__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_form_toggle_form_toggle__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\nconsole.log(\"Run flatUI...\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -139,6 +139,17 @@ eval("$(document).ready(function () {\n        if (document.getElementById('cnvs
 /***/ (function(module, exports) {
 
 eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/scss/main.scss?");
+
+/***/ }),
+
+/***/ "./src/sectors/sectors.js":
+/*!********************************!*\
+  !*** ./src/sectors/sectors.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("$(document).ready(function () {\n        if (document.getElementById('cnvs')) {\n                var canvas = document.getElementById('cnvs');\n                var ctx = canvas.getContext('2d');\n                var p1 = canvas.getAttribute(\"p1\");\n                var p2 = canvas.getAttribute(\"p2\");\n                var p3 = canvas.getAttribute(\"p3\");\n                var r = canvas.getAttribute(\"r\");\n                var a1 = 4.71 + p1 * 2 * Math.PI / 100;\n                var a2 = a1 + p2 * 2 * Math.PI / 100;\n                var a3 = a2 + p3 * 2 * Math.PI / 100;\n\n                ctx.lineWidth = r * 0.33; // толщина линии\n\n                ctx.strokeStyle = \"#747474\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, 4.71, a1, false);\n                ctx.stroke();\n\n                ctx.strokeStyle = \"#e75735\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, a1, a2, false);\n                ctx.stroke();\n\n                ctx.strokeStyle = \"#4eb7a8\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, a2, a3, false);\n                ctx.stroke();\n\n                ctx.strokeStyle = \"#e5e5e5\";\n                ctx.beginPath();\n                ctx.arc(r, r, r * 0.7, a3, 4.71, false);\n                ctx.stroke();\n        }\n});\n\n//# sourceURL=webpack:///./src/sectors/sectors.js?");
 
 /***/ }),
 
