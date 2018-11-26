@@ -1,7 +1,7 @@
 mixin messaging(user, img, message, placeholder)
     .messaging
         .messaging__header= user
-        .messaging__hr
+        .messaging__line
             .messaging__icons
                 i.material-icons= "mode_comment"
                 i.material-icons= "local_see"
@@ -9,4 +9,4 @@ mixin messaging(user, img, message, placeholder)
             img.messaging__user-photo(src="img/"+img+".png", alt="no image")
             .messaging__message= message
             textarea(rows="3" cols="27").messaging__input= placeholder
-            +button('reply', ['green'])
+            +button('reply', ['theme_green'])(class="messaging__btn")

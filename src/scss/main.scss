@@ -2,9 +2,9 @@
 @import '../percentages/percentages';
 @import '../sliderm2/sliderm2';
 @import '../stages/stages';
-@import '../forms/form-input';
-@import '../forms/form-textarea';
-@import '../forms/form-toggle';
+@import '../form-input/form-input';
+@import '../form-textarea/form-textarea';
+@import '../form-toggle/form-toggle';
 @import '../tick/tick';
 @import '../search/search';
 @import '../dropdown/dropdown';
@@ -77,7 +77,7 @@ body {
     }
 
     &__content {
-        max-width: 450px;
+        max-width: 445px;
     }
 }
 

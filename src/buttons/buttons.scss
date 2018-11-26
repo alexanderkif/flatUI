@@ -16,7 +16,7 @@ $color-red-shadow: #bf3e1f;
     cursor: pointer;
     outline: none;
 
-    &_red {
+    &_theme_red {
         color: $color-red;
         border: 1px solid $color-red-shadow;
         box-shadow: 0px 3px $color-red-shadow;
@@ -32,7 +32,7 @@ $color-red-shadow: #bf3e1f;
         }
     }
 
-    &_green {
+    &_theme_green {
         color: $color-green;
         border: 1px solid $color-green-shadow;
         box-shadow: 0px 3px $color-green-shadow;
@@ -111,9 +111,11 @@ $color-red-shadow: #bf3e1f;
 
     &:active {
         transform: translateY(3px);
+
         &:not(.btn_disabled) {
             box-shadow: 0px 0px;
         }
+        
         &.btn_disabled {
             transform: translateY(0px);
         }

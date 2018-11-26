@@ -44,15 +44,12 @@
         margin-top: 5px;
         font-size: 12px;
     }
-
-    &__button {
+        
+    &__btn {
         margin-top: 13px;
         margin-left: 12px;
-        
-        .btn {
-            width: 130px;
-            height: 23px;
-            letter-spacing: 1px;
-        }
+        width: 130px;
+        height: 23px;
+        letter-spacing: 1px;
     }
 }

@@ -6,6 +6,9 @@ $color-lightgray: #e5e5e5;
 .form-textarea {
     &__wrapper {
         padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     &__text {
@@ -24,7 +27,9 @@ $color-lightgray: #e5e5e5;
     }
 
     &__btn {
-        text-align: right;
-        margin-top: 8px;
+        align-self: flex-end;
+        justify-self: right;
+        margin-top: 7px;
+        height: 32px;
     }
 }

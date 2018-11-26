@@ -1,10 +1,12 @@
 
-//- btnclass can be small red|green disable
+//- btnclass can be small theme_red|theme_green disabled
 
 mixin button(btnlabel, btnclasses)
     - var btnClassString = `btn`
     each btnclass in btnclasses
         - btnClassString = `${btnClassString} btn_${btnclass}`
+    if (attributes.class)
+        - btnClassString=`${btnClassString} ${attributes.class}`
     if (btnlabel=='<')
         button(class=btnClassString) 
             i.material-icons= "keyboard_arrow_left"

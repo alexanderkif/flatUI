@@ -1,7 +1,8 @@
 import "./scss/main.scss";
 import "./buttons/buttons";
-import "./percentages/sectors";
+import "./dropdown/dropdown";
+import "./sectors/sectors";
 import "./sliderm2/sliderm2";
-import "./forms/toggle";
+import "./form-toggle/form-toggle";
 
 console.log("Run flatUI...");

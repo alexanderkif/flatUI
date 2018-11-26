@@ -22,7 +22,7 @@ $color-grey-light: #f2f2f2;
         border-radius: 5px 5px 0px 0px;
     }
 
-    &__hr {
+    &__line {
         width: 100%;
         height: 35px;
         background-color: $color-green-shadow;
@@ -85,9 +85,9 @@ $color-grey-light: #f2f2f2;
         resize: none;
     }
 
-    .btn {
-        width: 240px;
-        height: 33px;
+    &__btn {
+        width: 244px;
+        height: 35px;
         font-family: 'Conv_Lato';
         font-weight: bold;
         font-size: 12px;

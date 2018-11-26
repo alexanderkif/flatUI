@@ -1,11 +1,11 @@
 include /buttons/buttons
 include /percentages/percentages
-include /percentages/sectors
+include /sectors/sectors
 include /sliderm2/sliderm2
 include /stages/stages
-include /forms/form-input
-include /forms/form-textarea
-include /forms/form-toggle
+include /form-input/form-input
+include /form-textarea/form-textarea
+include /form-toggle/form-toggle
 include /tick/tick
 include /search/search
 include /dropdown/dropdown
@@ -30,15 +30,15 @@ html
       .buttons
         header.header.buttons__header standard buttons
         .content.buttons__content
-          +button('button', ['green', 'small'])
-          +button('button', ['green'])
-          +button('button', ['red'])
-          +button('button', ['red', 'small'])
+          +button('button', ['theme_green', 'small'])
+          +button('button', ['theme_green'])
+          +button('button', ['theme_red'])
+          +button('button', ['theme_red', 'small'])
         .content.buttons__content
-          +button('button', ['green', 'small', 'disabled'])
-          +button('button', ['green', 'disabled'])
-          +button('button', ['red', 'disabled'])
-          +button('button', ['red', 'small', 'disabled'])
+          +button('button', ['theme_green', 'small', 'disabled'])
+          +button('button', ['theme_green', 'disabled'])
+          +button('button', ['theme_red', 'disabled'])
+          +button('button', ['theme_red', 'small', 'disabled'])
 
       .arrow-buttons
         header.header.arrow-buttons__header arrow buttons
