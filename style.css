@@ -1022,6 +1022,10 @@
     margin-top: 50px; }
   .sliderm2page__slider {
     width: 30%; }
+    .sliderm2page__slider_1st {
+      font-size: 24px; }
+    .sliderm2page__slider_2nd {
+      font-size: 12px; }
   .sliderm2page__inputs {
     width: 39%;
     text-align: center; }
