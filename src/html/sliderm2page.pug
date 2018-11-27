@@ -16,81 +16,85 @@ html
         .sliderm2page
             .sliderm2page__header sliderm2
             .sliderm2page__content
-                .sliderm2page__slider
+                .sliderm2page__slider.sliderm2page__slider_1st
                     //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
                     //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText) rgb(250, 235, 215, 0.5)
                     +sliderm2(20, 120, 40, 60, 2, 3, 'tick_active', '', '', 'tick_active', 220, 15, 30, '#e6e6e6', 'rgb(231, 87, 53)', 'lightgrey', 'white')
                 .sliderm2page__inputs
-                    .sliderm2page__label ScaleMin
-                    input.sliderm2page__input.sliderm-min(value= min)
-                    br
-                    .sliderm2page__label ScaleMax
-                    input.sliderm2page__input.sliderm-max(value= max)
-                    br
-                    .sliderm2page__label Value1
-                    input.sliderm2page__input.sliderm-value1(value= value1)
-                    br
-                    .sliderm2page__label Value2
-                    input.sliderm2page__input.sliderm-value2(value= value2)
-                    br
-                    .sliderm2page__label Step
-                    input.sliderm2page__input.sliderm-step(value= step)
-                    br
-                    .sliderm2page__label Scale Intervals
-                    input.sliderm2page__input.sliderm-intervals(value= intervals)
-                    br
-                    .sliderm2page__label.sliderm2page__label_shot Hint
-                    +tick('tick-hint ' + hint)
-                    .sliderm2page__label.sliderm2page__label_shot Interval
-                    +tick('tick-interval ' + interval)
-                    br
-                    .sliderm2page__label.sliderm2page__label_shot Scale
-                    +tick('tick-scale ' + scale)
-                    .sliderm2page__label.sliderm2page__label_shot Vertical
-                    +tick('tick-vertical ' + vertical)
-                    br
-                    .sliderm2page__label Vertical size
-                    input.sliderm2page__input.sliderm-vertical-size(value= verticalSize)
-                    +chooseColor(231, 87, 53, 255)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label ScaleMin
+                        input.sliderm2page__input.sliderm-min(value= min)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label ScaleMax
+                        input.sliderm2page__input.sliderm-max(value= max)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Value1
+                        input.sliderm2page__input.sliderm-value1(value= value1)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Value2
+                        input.sliderm2page__input.sliderm-value2(value= value2)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Step
+                        input.sliderm2page__input.sliderm-step(value= step)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Scale Intervals
+                        input.sliderm2page__input.sliderm-intervals(value= intervals)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label.sliderm2page__label_shot Hint
+                        +tick('tick-hint ' + hint)
+                        .sliderm2page__label.sliderm2page__label_shot Interval
+                        +tick('tick-interval ' + interval)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label.sliderm2page__label_shot Scale
+                        +tick('tick-scale ' + scale)
+                        .sliderm2page__label.sliderm2page__label_shot Vertical
+                        +tick('tick-vertical ' + vertical)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Vertical size
+                        input.sliderm2page__input.sliderm-vertical-size(value= verticalSize)
+                    .sliderm2page__inputs-item
+                        +chooseColor(231, 87, 53, 255)
                 textarea(rows="5").sliderm2page__result
             hr
             .sliderm2page__content
-                .sliderm2page__slider
+                .sliderm2page__slider.sliderm2page__slider_2nd
                     //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
                     //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
                     +sliderm2(70, 120, 80, 100, 0.5, 6, '', 'tick_active', '', '', 250, 8, 16, '#e6e6e6', 'rgba(200, 100, 200, 1)', 'lightgrey', 'black')
                 .sliderm2page__inputs
-                    .sliderm2page__label ScaleMin
-                    input.sliderm2page__input.sliderm-min(value= min)
-                    br
-                    .sliderm2page__label ScaleMax
-                    input.sliderm2page__input.sliderm-max(value= max)
-                    br
-                    .sliderm2page__label Value1
-                    input.sliderm2page__input.sliderm-value1(value= value1)
-                    br
-                    .sliderm2page__label Value2
-                    input.sliderm2page__input.sliderm-value2(value= value2)
-                    br
-                    .sliderm2page__label Step
-                    input.sliderm2page__input.sliderm-step(value= step)
-                    br
-                    .sliderm2page__label Scale Intervals
-                    input.sliderm2page__input.sliderm-intervals(value= intervals)
-                    br
-                    .sliderm2page__label.sliderm2page__label_shot Hint
-                    +tick('tick-hint ' + hint)
-                    .sliderm2page__label.sliderm2page__label_shot Interval
-                    +tick('tick-interval ' + interval)
-                    br
-                    .sliderm2page__label.sliderm2page__label_shot Scale
-                    +tick('tick-scale ' + scale)
-                    .sliderm2page__label.sliderm2page__label_shot Vertical
-                    +tick('tick-vertical ' + vertical)
-                    br
-                    .sliderm2page__label Vertical size
-                    input.sliderm2page__input.sliderm-vertical-size(value= verticalSize)
-                    +chooseColor(200, 100, 200, 255)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label ScaleMin
+                        input.sliderm2page__input.sliderm-min(value= min)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label ScaleMax
+                        input.sliderm2page__input.sliderm-max(value= max)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Value1
+                        input.sliderm2page__input.sliderm-value1(value= value1)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Value2
+                        input.sliderm2page__input.sliderm-value2(value= value2)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Step
+                        input.sliderm2page__input.sliderm-step(value= step)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Scale Intervals
+                        input.sliderm2page__input.sliderm-intervals(value= intervals)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label.sliderm2page__label_shot Hint
+                        +tick('tick-hint ' + hint)
+                        .sliderm2page__label.sliderm2page__label_shot Interval
+                        +tick('tick-interval ' + interval)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label.sliderm2page__label_shot Scale
+                        +tick('tick-scale ' + scale)
+                        .sliderm2page__label.sliderm2page__label_shot Vertical
+                        +tick('tick-vertical ' + vertical)
+                    .sliderm2page__inputs-item
+                        .sliderm2page__label Vertical size
+                        input.sliderm2page__input.sliderm-vertical-size(value= verticalSize)
+                    .sliderm2page__inputs-item
+                        +chooseColor(200, 100, 200, 255)
                 textarea(rows="5").sliderm2page__result
                 
         script(src="js/jquery-3.3.1.min.js")
