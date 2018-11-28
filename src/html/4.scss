@@ -58,6 +58,10 @@ $color-red-shadow: #bf3e1f;
             align-items: flex-start;
         }
     }
+
+    &__header {
+        padding-bottom: 50px;
+    }
         
     &__color {
         width: 35px;
@@ -103,6 +107,7 @@ $color-red-shadow: #bf3e1f;
         margin: 10px auto;
         color: $color-border;
         margin-bottom: 50px;
+        font-size: 16px;
         .sliderm2 {
             width: 90%;
         }

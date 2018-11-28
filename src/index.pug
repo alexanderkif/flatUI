@@ -64,8 +64,8 @@ html
         .content.sliders__content
           //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
           //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
-          +sliderm2(0, 100, 40, 40, 5, 3, 'tick_active', '', 'tick_active', '', 200, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
-          +sliderm2(0, 100, 0, 75, 1, 4, '', 'tick_active', '', '', 200, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
+          +sliderm2(0, 100, 40, 40, 5, 3, 'true', '', 'true', '', 260, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
+          +sliderm2(0, 100, 0, 75, 1, 4, '', 'true', '', '', 260, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
     
       .stages
         header.header.stages__header stages
@@ -90,7 +90,7 @@ html
               .ticks
                 .header.ticks__header tick boxes
                 .ticks_left
-                  +tick('tick_active')
+                  +tick('true')
                 .ticks_right
                   +tick('')
       

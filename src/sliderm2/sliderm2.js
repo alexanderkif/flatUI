@@ -6,7 +6,7 @@ var Sliderm2Line = function(min, max) {
     this.range = max - min;
 };
 
-var Sliderm2DrawLine = function(div, pointHeight, lineHeight, tickVertical, slidermVerticalSize, colorLine) {
+var Sliderm2DrawLine = function(div, pointSize, lineHeight, tickVertical, slidermLength, colorLine) {
     Sliderm2ClassRemove(div, 'sliderm2line');
     var lineDiv = document.createElement("div");
     lineDiv.className = "sliderm2line";
@@ -18,18 +18,17 @@ var Sliderm2DrawLine = function(div, pointHeight, lineHeight, tickVertical, slid
     sliderm2body.appendChild(lineDiv);    
     sliderm2body.style.position = 'relative';
     sliderm2body.style.display = 'block';
-    // sliderm2body.style.margin = '0px auto';
     sliderm2body.style.userSelect = 'none';
-    sliderm2body.style.height = pointHeight/2 + lineHeight/2 + 5 + 'px';
+    sliderm2body.style.height = pointSize/2 + lineHeight/2 + 5 + 'px';
     sliderm2body.style.alignItems = 'center';
+    sliderm2body.parentElement.style.width = slidermLength;
+    sliderm2body.parentElement.style.height = lineHeight;
     if (tickVertical) {
-        sliderm2body.style.width = slidermVerticalSize+'px';
-        sliderm2body.style.transform = 'rotate(-90deg) translateX('+ -slidermVerticalSize/2+'px)';
-        sliderm2body.style.marginBottom = slidermVerticalSize+'px';
+        sliderm2body.style.width = slidermLength+'px';
+        sliderm2body.parentElement.style.transform = 'rotate(-90deg) translateX('+ -slidermLength/2+'px)';
     } else {
         sliderm2body.style.width = '100%';
-        sliderm2body.style.transform = 'rotate(0deg)';
-        sliderm2body.style.marginBottom = '0px';
+        sliderm2body.parentElement.style.transform = 'rotate(0deg)';
     }
     return lineDiv;
 };
@@ -61,26 +60,26 @@ var Sliderm2Point = function(value, line) {
     this.value = (value - line.min) / line.range * 100;
 };
 
-var Sliderm2DrawPoints = function(div, points, pointHeight, tickHint, tickVertical, colorPoint, colorText) {
+var Sliderm2DrawPoints = function(div, points, pointSize, tickHint, tickVertical, colorPoint, colorText) {
     Sliderm2ClassRemove(div, 'sliderm2point');
     var pointDivs = points.map(function(point) {
         var pointDiv = document.createElement("div");
         pointDiv.className = "sliderm2point";
         pointDiv.style.position = 'absolute';
-        pointDiv.style.height = pointDiv.style.width = pointHeight + 'px';
+        pointDiv.style.height = pointDiv.style.width = pointSize + 'px';
         pointDiv.style.borderRadius = '50%';
-        pointDiv.style.top = div.offsetHeight/2 - pointHeight/2 + 'px';
-        pointDiv.style.left = 'calc(' + point.value + '% - '+ pointHeight/2 +'px)';
+        pointDiv.style.top = div.offsetHeight/2 - pointSize/2 + 'px';
+        pointDiv.style.left = 'calc(' + point.value + '% - '+ pointSize/2 +'px)';
         pointDiv.style.backgroundColor = colorPoint;
         div.appendChild(pointDiv);
         if (tickHint) 
-            pointDiv.drawHint = new Sliderm2DrawHint(pointDiv, point, pointHeight, tickVertical, colorText);
+            pointDiv.drawHint = new Sliderm2DrawHint(pointDiv, point, pointSize, tickVertical, colorText);
         return pointDiv;
     });
     return pointDivs;
 };
 
-var Sliderm2DrawHint = function(div, point, pointHeight, tickVertical, colorText) {
+var Sliderm2DrawHint = function(div, point, pointSize, tickVertical, colorText) {
     Sliderm2ClassRemove(div, 'sliderm2hint');
     var hintDiv = document.createElement("div");
     hintDiv.className = "sliderm2hint";
@@ -90,7 +89,7 @@ var Sliderm2DrawHint = function(div, point, pointHeight, tickVertical, colorText
     hintDiv.style.width = 'auto';
     hintDiv.style.padding = '2px 8px';
     hintDiv.style.borderRadius = '4px';
-    hintDiv.style.height = pointHeight + 'px';
+    hintDiv.style.height = pointSize + 'px';
     hintDiv.style.backgroundColor = 'inherit';
     hintDiv.style.color = colorText;
     hintDiv.innerHTML = Math.round(point.inValue * 100) / 100;
@@ -102,21 +101,21 @@ var Sliderm2DrawHint = function(div, point, pointHeight, tickVertical, colorText
     arrowDiv.style.content = '';
     arrowDiv.style.transform = 'rotate(-45deg)';
     arrowDiv.style.zIndex = '-1';
-    arrowDiv.style.height = pointHeight/3 + 'px';
-    arrowDiv.style.width = pointHeight/3 + 'px';
+    arrowDiv.style.height = pointSize/3 + 'px';
+    arrowDiv.style.width = pointSize/3 + 'px';
     arrowDiv.style.backgroundColor = 'inherit';
     hintDiv.appendChild(arrowDiv);
 
     if (tickVertical) {
         hintDiv.style.transform = 'rotate(90deg) translateX('+ 0+'px)';
-        hintDiv.style.top = - pointHeight - hintDiv.offsetWidth/2 + 'px';
-        hintDiv.style.left = pointHeight/2 - hintDiv.offsetWidth/2 + 'px';
+        hintDiv.style.top = - pointSize - hintDiv.offsetWidth/2 + 'px';
+        hintDiv.style.left = pointSize/2 - hintDiv.offsetWidth/2 + 'px';
         arrowDiv.style.top = hintDiv.offsetHeight/2 - arrowDiv.offsetHeight/2 + 'px';
         arrowDiv.style.left = hintDiv.offsetWidth - arrowDiv.offsetWidth/2 - 1 + 'px';
     } else {
         hintDiv.style.transform = 'rotate(0deg)';
-        hintDiv.style.top = - pointHeight*3/2 + 'px';
-        hintDiv.style.left = pointHeight/2 - hintDiv.offsetWidth/2 + 'px';
+        hintDiv.style.top = - pointSize*3/2 + 'px';
+        hintDiv.style.left = pointSize/2 - hintDiv.offsetWidth/2 + 'px';
         arrowDiv.style.top = hintDiv.offsetHeight - arrowDiv.offsetHeight/2 + 'px';
         arrowDiv.style.left = hintDiv.offsetWidth/2 - arrowDiv.offsetWidth/2 + 'px';
     }
@@ -131,19 +130,19 @@ var Sliderm2ClassRemove = function(div, removingClass) {
     }
 };
 
-var Sliderm2createScale = function(div, line, intervals, pointHeight, lineHeight, tickVertical, colorScale) {
+var Sliderm2createScale = function(div, line, intervals, pointSize, lineHeight, tickVertical, colorScale) {
     Sliderm2ClassRemove(div, 'sliderm2__scale');
     var scaleDiv = document.createElement("div");
     scaleDiv.className = "sliderm2__scale";
     scaleDiv.style.position = 'absolute';
     scaleDiv.style.display = 'flex';
-    // scaleDiv.style.left = -pointHeight/2 + 'px';
-    scaleDiv.style.fontSize = pointHeight * 3 / 6 + 'px';
+    // scaleDiv.style.left = -pointSize/2 + 'px';
+    scaleDiv.style.fontSize = pointSize * 3 / 6 + 'px';
     scaleDiv.style.justifyContent = 'space-between';
-    scaleDiv.style.top = pointHeight/2 + lineHeight/2 + 5 + 'px';
+    scaleDiv.style.top = pointSize/2 + lineHeight/2 + 5 + 'px';
     scaleDiv.style.color = colorScale;
     div.appendChild(scaleDiv);
-    scaleDiv.style.width = 'calc(100% + '+ pointHeight/2 +'px)';
+    scaleDiv.style.width = 'calc(100% + '+ pointSize/2 +'px)';
     var digit;
     for(var i = 0; i <= intervals; i++) {
         digit = document.createElement('div');
@@ -152,7 +151,7 @@ var Sliderm2createScale = function(div, line, intervals, pointHeight, lineHeight
         digit.style.transform = 'rotate(90deg)';
         scaleDiv.appendChild(digit);
     }
-    div.style.height = digit.offsetHeight + pointHeight/2 + lineHeight/2 + 5 + 'px';
+    div.style.height = digit.offsetHeight + pointSize/2 + lineHeight/2 + 5 + 'px';
     return scaleDiv;
 };
 
@@ -175,50 +174,13 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var sliderm2body = document.createElement("div");
     sliderm2body.className = "sliderm2__body";
     element.appendChild(sliderm2body); 
-    var tickHint = element.getAttribute('data-hint')=='tick_active';
-    var tickScale = element.getAttribute('data-scale')=='tick_active';
-    var tickInterval = element.getAttribute('data-interval')=='tick_active';
-    var tickVertical = element.getAttribute('data-vertical')=='tick_active';
-    var slidermVerticalSize = element.getAttribute('data-verticalSize');
-    var slidermValue2 = element.getAttribute('data-value2');
-    var slidermValue1 = element.getAttribute('data-value1');
-    var slidermMin = element.getAttribute('data-min');
-    var slidermMax = element.getAttribute('data-max');
-    var pointHeight = element.getAttribute('data-pointSize');
-    var lineHeight = element.getAttribute('data-lineHeight');
-    var step = element.getAttribute('data-step');
-    var intervals = element.getAttribute('data-intervals');
-    var colorLine = element.getAttribute('data-colorLine');
-    var colorPoint = element.getAttribute('data-colorPoint');
-    var colorScale = element.getAttribute('data-colorScale');
-    var colorText = element.getAttribute('data-colorText');
-
-    var getSliderm2Attributes = function () {
-        tickHint = element.getAttribute('data-hint')=='tick_active';
-        tickScale = element.getAttribute('data-scale')=='tick_active';
-        tickInterval = element.getAttribute('data-interval')=='tick_active';
-        tickVertical = element.getAttribute('data-vertical')=='tick_active';
-        slidermVerticalSize = element.getAttribute('data-verticalSize');
-        slidermValue2 = element.getAttribute('data-value2');
-        slidermValue1 = element.getAttribute('data-value1');
-        slidermMin = element.getAttribute('data-min');
-        slidermMax = element.getAttribute('data-max');
-        pointHeight = element.getAttribute('data-pointSize');
-        lineHeight = element.getAttribute('data-lineHeight');
-        step = element.getAttribute('data-step');
-        intervals = element.getAttribute('data-intervals');
-        colorLine = element.getAttribute('data-colorLine');
-        colorPoint = element.getAttribute('data-colorPoint');
-        colorScale = element.getAttribute('data-colorScale');
-        colorText = element.getAttribute('data-colorText');
-    };
 
     var sliderm2pageContent = element.parentElement.parentElement;
     var inputTickHint = sliderm2pageContent.getElementsByClassName('tick-hint')[0];
     var inputTickScale = sliderm2pageContent.getElementsByClassName('tick-scale')[0];
     var inputTickInterval = sliderm2pageContent.getElementsByClassName('tick-interval')[0];
     var inputTickVertical = sliderm2pageContent.getElementsByClassName('tick-vertical')[0];
-    var inputSlidermVerticalSize = sliderm2pageContent.getElementsByClassName('sliderm-vertical-size')[0];
+    var inputSlidermLength = sliderm2pageContent.getElementsByClassName('sliderm-length')[0];
     var inputSlidermValue2 = sliderm2pageContent.getElementsByClassName('sliderm-value2')[0];
     var inputSlidermValue1 = sliderm2pageContent.getElementsByClassName('sliderm-value1')[0];
     var inputSlidermMin = sliderm2pageContent.getElementsByClassName('sliderm-min')[0];
@@ -227,8 +189,8 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     var inputSlidermIntervals = sliderm2pageContent.getElementsByClassName('sliderm-intervals')[0];
     var inputSlidermResult = sliderm2pageContent.getElementsByClassName('sliderm2page__result')[0];
     
-    var line = new Sliderm2Line(slidermMin, slidermMax);
-    var range = new Sliderm2Range(slidermValue1, slidermValue2, line);   
+    var line = new Sliderm2Line(element.dataset.min, element.dataset.max);
+    var range = new Sliderm2Range(element.dataset.value1, element.dataset.value2, line);   
 
     var drawLine;
     var drawRange;
@@ -252,35 +214,35 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         }
 
         var getInputs = function() {
-            tickHint = inputTickHint.classList.contains('tick_active');
-            tickScale = inputTickScale.classList.contains('tick_active');
-            tickInterval = inputTickInterval.classList.contains('tick_active');
-            tickVertical = inputTickVertical.classList.contains('tick_active');
-            slidermVerticalSize = inputSlidermVerticalSize.value || 250;
-            slidermValue2 = inputSlidermValue2.value;
-            if (inputSlidermValue1.value) slidermValue1 = inputSlidermValue1.value;
-            slidermMin = inputSlidermMin.value;
-            slidermMax = inputSlidermMax.value;
-            step = inputSlidermStep.value;
-            intervals = inputSlidermIntervals.value;
+            element.dataset.hint = inputTickHint.classList.contains('true')?'true':'';
+            element.dataset.scale = inputTickScale.classList.contains('true')?'true':'';
+            element.dataset.interval = inputTickInterval.classList.contains('true')?'true':'';
+            element.dataset.vertical = inputTickVertical.classList.contains('true')?'true':'';
+            element.dataset.length = inputSlidermLength.value || "100%";
+            element.dataset.value2 = inputSlidermValue2.value;
+            if (inputSlidermValue1.value) element.dataset.value1 = inputSlidermValue1.value;
+            element.dataset.min = inputSlidermMin.value;
+            element.dataset.max = inputSlidermMax.value;
+            element.dataset.step = inputSlidermStep.value;
+            element.dataset.intervals = inputSlidermIntervals.value;
         
-            line = new Sliderm2Line(slidermMin, slidermMax);
-            range = new Sliderm2Range(slidermValue1, slidermValue2, line);
+            line = new Sliderm2Line(element.dataset.min, element.dataset.max);
+            range = new Sliderm2Range(element.dataset.value1, element.dataset.value2, line);
         };
     
         var setInputs = function() {
-            if (tickInterval) 
+            if (element.dataset.interval) 
                 inputSlidermValue1.value = Math.round(range.value1 * 100) / 100;
             inputSlidermValue2.value = Math.round(range.value2 * 100) / 100;
             inputSlidermMin.value = line.min;
             inputSlidermMax.value = line.max;
-            inputSlidermStep.value = step;
-            inputSlidermIntervals.value = intervals;
-            inputSlidermVerticalSize.value = slidermVerticalSize;
-            if (tickHint) inputTickHint.classList.add('tick_active');
-            if (tickScale) inputTickScale.classList.add('tick_active');
-            if (tickInterval) inputTickInterval.classList.add('tick_active');
-            if (tickVertical) inputTickVertical.classList.add('tick_active');
+            inputSlidermStep.value = element.dataset.step;
+            inputSlidermIntervals.value = element.dataset.intervals;
+            inputSlidermLength.value = element.dataset.length;
+            if (element.dataset.hint) inputTickHint.classList.add('true');
+            if (element.dataset.scale) inputTickScale.classList.add('true');
+            if (element.dataset.interval) inputTickInterval.classList.add('true');
+            if (element.dataset.vertical) inputTickVertical.classList.add('true');
         };
 
         inputs.addEventListener('change', function() {
@@ -290,7 +252,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
 
         inputs.addEventListener('click', function() {
             getInputs();
-            if (tickInterval) 
+            if (element.dataset.interval) 
                 range.value1 = range.value1 < +range.value2 ? range.value1 : range.value2;
             draw();
         });
@@ -303,28 +265,6 @@ var elems2 = document.getElementsByClassName(classSliderm2);
     sliderm2body.ondragstart = function() {
         return false;
     };
-
-    function setDivSliderm2() {
-        if (tickHint) element.setAttribute('data-hint', 'tick_active');
-        else element.setAttribute('data-hint', '');
-        if (tickScale) element.setAttribute('data-scale', 'tick_active');
-        else element.setAttribute('data-scale', '');
-        if (tickInterval) element.setAttribute('data-interval', 'tick_active');
-        else element.setAttribute('data-interval', '');
-        if (tickVertical) element.setAttribute('data-vertical', 'tick_active');
-        else element.setAttribute('data-vertical', '');
-        element.setAttribute('data-verticalSize', slidermVerticalSize);
-        element.setAttribute('data-value2', range.value2);
-        if (slidermValue1) element.setAttribute('data-value1', range.value1);
-        element.setAttribute('data-min', line.min);
-        element.setAttribute('data-max', line.max);
-        element.setAttribute('data-pointSize', pointHeight);
-        element.setAttribute('data-lineHeight', lineHeight);
-        element.setAttribute('data-step', step);
-        element.setAttribute('data-intervals', intervals);
-        
-        getSliderm2Attributes();
-    }
 
     if (chooseColorLine) {
         chooseColorLine.parentElement.addEventListener('mousedown', function() {
@@ -340,36 +280,37 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         drawRange.style.backgroundColor = chooseColor2color(chooseColorPoint);
         drawPoints[0].style.backgroundColor = chooseColor2color(chooseColorPoint);
         if (drawPoints[1]) drawPoints[1].style.backgroundColor = chooseColor2color(chooseColorPoint);
-        if (tickHint) {
+        if (element.dataset.hint) {
             drawPoints[0].drawHint.style.backgroundColor = chooseColor2color(chooseColorPoint);
             drawPoints[0].drawHint.style.color = chooseColor2color(chooseColorText);
         }
-        if (tickHint && drawPoints[1]) {
+        if (element.dataset.hint && drawPoints[1]) {
             drawPoints[1].drawHint.style.backgroundColor = chooseColor2color(chooseColorPoint);
             drawPoints[1].drawHint.style.color = chooseColor2color(chooseColorText);
         }
-        if (tickScale) drawScale.style.color = chooseColor2color(chooseColorScale);
+        if (element.dataset.scale) drawScale.style.color = chooseColor2color(chooseColorScale);
     };
 
-    var setResult = function() {        
-        element.setAttribute('data-colorLine', chooseColor2color(chooseColorLine));
-        element.setAttribute('data-colorPoint', chooseColor2color(chooseColorPoint));
-        element.setAttribute('data-colorScale', chooseColor2color(chooseColorScale));
-        element.setAttribute('data-colorText', chooseColor2color(chooseColorText));
+    var setResult = function() {
+        element.dataset.colorLine = chooseColor2color(chooseColorLine);
+        element.dataset.colorPoint = chooseColor2color(chooseColorPoint);
+        element.dataset.colorScale = chooseColor2color(chooseColorScale);
+        element.dataset.colorText = chooseColor2color(chooseColorText);
         setColors();
-        inputSlidermResult.value = `<div class="sliderm2" data-min="${slidermMin}" data-max="${slidermMax}" data-value1="${range.value1}" data-value2="${range.value2}" data-step="${step}" data-intervals="${intervals}" data-hint="${tickHint?"tick_active":""}" data-scale="${tickScale?"tick_active":""}" data-interval="${tickInterval?"tick_active":""}" data-vertical="${tickVertical?"tick_active":""}" data-verticalSize="${slidermVerticalSize}" data-lineHeight="15" data-pointSize="30" data-colorLine="${chooseColor2color(chooseColorLine)}" data-colorPoint="${chooseColor2color(chooseColorPoint)}" data-colorScale="${chooseColor2color(chooseColorScale)}" data-colorText="${chooseColor2color(chooseColorText)}"></div><script src="sliderm2.js"></script>`;
+        inputSlidermResult.value = `<div class="sliderm2" data-min="${element.dataset.min}" data-max="${element.dataset.max}" data-value1="${range.value1}" data-value2="${range.value2}" data-step="${element.dataset.step}" data-intervals="${element.dataset.intervals}" data-hint="${element.dataset.hint}" data-scale="${element.dataset.scale}" data-interval="${element.dataset.interval}" data-vertical="${element.dataset.vertical}" data-length="${element.dataset.length}" data-line-height="15" data-pointSize="30" data-color-line="${chooseColor2color(chooseColorLine)}" data-color-point="${chooseColor2color(chooseColorPoint)}" data-color-scale="${chooseColor2color(chooseColorScale)}" data-color-text="${chooseColor2color(chooseColorText)}"></div><script src="sliderm2.js"></script>`;
         
     };
 
     var draw = function() {
         var points = checkRange();
-        if(inputs) setInputs();
-        setDivSliderm2();
-        drawLine = new Sliderm2DrawLine(element, pointHeight, lineHeight, tickVertical, slidermVerticalSize, colorLine);
-        drawRange = new Sliderm2DrawRange(drawLine, range, colorPoint);        
-        drawPoints = new Sliderm2DrawPoints(drawLine, points, pointHeight, tickHint, tickVertical, colorPoint, colorText);
-        if (tickScale) 
-            drawScale = new Sliderm2createScale(sliderm2body, line, intervals, pointHeight, lineHeight, tickVertical, colorScale);
+        if(inputs) setInputs();        
+        element.dataset.value2 = range.value2;
+        if (element.dataset.interval) element.dataset.value1 = range.value1;
+        drawLine = new Sliderm2DrawLine(element, element.dataset.pointSize, element.dataset.lineHeight, element.dataset.vertical, element.dataset.length, element.dataset.colorLine);
+        drawRange = new Sliderm2DrawRange(drawLine, range, element.dataset.colorPoint);        
+        drawPoints = new Sliderm2DrawPoints(drawLine, points, element.dataset.pointSize, element.dataset.hint, element.dataset.vertical, element.dataset.colorPoint, element.dataset.colorText);
+        if (element.dataset.scale) 
+            drawScale = new Sliderm2createScale(sliderm2body, line, element.dataset.intervals, element.dataset.pointSize, element.dataset.lineHeight, element.dataset.vertical, element.dataset.colorScale);
         else Sliderm2ClassRemove(sliderm2body, 'sliderm2__scale');
         if (chooseColorLine) setResult();
     };
@@ -379,7 +320,7 @@ var elems2 = document.getElementsByClassName(classSliderm2);
         if (+range.value2 < +line.min) range.value2 = line.min;
         if (+range.value1 < +line.min) range.value1 = line.min;
         var points = [];
-        if (tickInterval) {
+        if (element.dataset.interval) {
             range = new Sliderm2Range(range.value1, range.value2, line);
             points = [range.point1, range.point2];
         } else {            
@@ -391,8 +332,8 @@ var elems2 = document.getElementsByClassName(classSliderm2);
 
     sliderm2body.addEventListener('mousedown', function(e) {
         drawLine = e.currentTarget.firstChild;
-        if (tickInterval && 
-                getProcent(e) < (range.value2 - line.max * pointHeight/drawLine.clientWidth/2)) {
+        if (element.dataset.interval && 
+                getProcent(e) < (range.value2 - line.max * element.dataset.pointSize/drawLine.clientWidth/2)) {
             range.value1 = getProcent(e);
             if (+range.value1 >= +range.value2) range.value1 = range.value2;
             draw();
@@ -403,12 +344,12 @@ var elems2 = document.getElementsByClassName(classSliderm2);
             };
         } else {            
             range.value2 = getProcent(e);
-            if (+range.value2 <= +range.value1 && tickInterval) 
+            if (+range.value2 <= +range.value1 && element.dataset.interval) 
                 range.value2 = range.value1;
             draw();
             document.onmousemove = function(e) {
                 range.value2 = getProcent(e);                
-                if (+range.value2 <= +range.value1 && tickInterval) 
+                if (+range.value2 <= +range.value1 && element.dataset.interval) 
                     range.value2 = range.value1;
                 draw();
             };
@@ -421,10 +362,10 @@ var elems2 = document.getElementsByClassName(classSliderm2);
 
     function getProcent(e) {
         var lineCoords = getCoords(drawLine);
-        if (tickVertical)
-            return step * Math.round(( + line.min + (lineCoords.top + drawLine.clientWidth - e.pageY) / drawLine.clientWidth * line.range) / step);
+        if (element.dataset.vertical)
+            return element.dataset.step * Math.round(( + line.min + (lineCoords.top + drawLine.clientWidth - e.pageY) / drawLine.clientWidth * line.range) / element.dataset.step);
         else
-            return step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / step);
+            return element.dataset.step * Math.round(( + line.min + (e.pageX - lineCoords.left) / drawLine.clientWidth * line.range) / element.dataset.step);
     }
 
     function getCoords(elem) {
