@@ -251,7 +251,7 @@
   .tick i {
     font-size: 18px;
     margin-top: 3px; }
-  .tick_active {
+  .tick.true {
     background-color: #4eb7a8;
     color: white; }
 
@@ -913,6 +913,8 @@
     .stat-page__row_right {
       flex: 1;
       align-items: flex-start; }
+  .stat-page__header {
+    padding-bottom: 50px; }
   .stat-page__color {
     width: 35px;
     height: 15px;
@@ -944,7 +946,8 @@
     max-width: 600px;
     margin: 10px auto;
     color: #bbbbbb;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    font-size: 16px; }
     .stat-page__controls .sliderm2 {
       width: 90%; }
 
@@ -1021,7 +1024,9 @@
     justify-content: space-around;
     margin-top: 50px; }
   .sliderm2page__slider {
-    width: 30%; }
+    width: 30%;
+    display: flex;
+    justify-content: center; }
     .sliderm2page__slider_1st {
       font-size: 24px; }
     .sliderm2page__slider_2nd {
@@ -1166,7 +1171,6 @@ body {
     align-items: flex-start;
     justify-content: space-between; }
     .sliders__content .sliderm2 {
-      width: 45%;
       font-size: 14px; }
 
 .stages {
