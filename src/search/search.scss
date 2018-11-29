@@ -14,7 +14,7 @@
         background-color: $color-lightgray;
         color: $color-grey;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 13px;
         padding-left: 12px;
         outline: none;
 
@@ -30,9 +30,9 @@
     
     &__button {
         display: block;
-        flex: 0 35px;
+        flex: 0 33px;
         margin: 4px 0px;
-        height: 24px;
+        height: 22px;
         border-radius: 0px 3px 3px 0px;
         border: 0px;
         color: white;
@@ -40,7 +40,11 @@
         font-size: 12px;
         outline: none;
         text-align: center;
-        padding-top: 4px;
+        padding-top: 6px;
+    }
+
+    &__icon {
+        font-size: 18px;
     }
 
     &__button-red {

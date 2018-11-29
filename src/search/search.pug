@@ -2,4 +2,4 @@ mixin search(placeholder, btncolor, status)
     .search
         input.search__input(type="text" placeholder=placeholder, class=`search__input_${status}`)
         .search__button(class="btn search__button-"+btncolor)
-            i(class="material-icons icons-size")= 'search'
+            i(class="material-icons icons-size search__icon")= 'search'

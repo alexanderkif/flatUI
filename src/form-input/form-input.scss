@@ -2,9 +2,11 @@ $color-green: #4eb7a8;
 $color-grey: #747474;
 $color-red: #e75735;
 $color-lightgray: #e5e5e5;
+
 .form-input {
     display: flex;
     position: relative;
+
     &__text {
         flex: 8;
         margin: 5px;
@@ -18,6 +20,7 @@ $color-lightgray: #e5e5e5;
         font-size: 14px;
         padding-left: 12px;
     }
+
     &__button {
         position: relative;
         flex: 3;
@@ -28,7 +31,8 @@ $color-lightgray: #e5e5e5;
         color: white;
         font-family: inherit;
         font-weight: normal;
-        font-size: 12px;
+        font-size: 10px;
+        letter-spacing: 1px;
         display: flex;
         align-items: center;
         justify-content: center;
