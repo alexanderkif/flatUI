@@ -166,7 +166,8 @@
     color: white;
     font-family: inherit;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -217,7 +218,7 @@
 
 .form-toggle .lcs_label {
   font-family: 'Conv_Lato' !important;
-  font-weight: bold !important;
+  font-weight: normal !important;
   font-size: 12px !important; }
 
 .form-toggle .lcs_cursor {
@@ -270,7 +271,7 @@
     background-color: #e5e5e5;
     color: #747474;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 13px;
     padding-left: 12px;
     outline: none; }
     .search__input_not-found {
@@ -280,9 +281,9 @@
         opacity: 1; }
   .search__button {
     display: block;
-    flex: 0 35px;
+    flex: 0 33px;
     margin: 4px 0px;
-    height: 24px;
+    height: 22px;
     border-radius: 0px 3px 3px 0px;
     border: 0px;
     color: white;
@@ -290,7 +291,9 @@
     font-size: 12px;
     outline: none;
     text-align: center;
-    padding-top: 4px; }
+    padding-top: 6px; }
+  .search__icon {
+    font-size: 18px; }
   .search__button-red {
     background-color: #e75735; }
   .search__button-green {
@@ -311,7 +314,7 @@
     background-color: #e5e5e5;
     color: #747474;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 13px;
     padding-left: 12px;
     outline: none; }
   .dropdown__button {
@@ -506,7 +509,7 @@
   .map__slogan {
     display: table-cell;
     vertical-align: middle;
-    font-weight: normal;
+    font-weight: lighter;
     font-size: 28px;
     text-align: center;
     width: 160px; }
@@ -1175,7 +1178,8 @@ body {
     align-items: flex-start;
     justify-content: space-between; }
     .sliders__content .sliderm2 {
-      font-size: 14px; }
+      font-size: 13px;
+      font-weight: normal; }
 
 .stages {
   height: 110px;
@@ -1264,7 +1268,7 @@ body {
     margin-bottom: 14px;
     letter-spacing: 1px; }
   .searches__content {
-    margin: 8px 10px; }
+    margin: 9px 10px; }
 
 .profiles {
   display: flex;
@@ -1345,6 +1349,13 @@ a {
   font-family: 'Conv_Lato';
   src: url(fonts/Lato-Black.eot);
   src: local("\263A"), url(fonts/Lato-Black.woff) format("woff"), url(fonts/Lato-Black.ttf) format("truetype"), url(fonts/Lato-Black.svg) format("svg");
+  font-weight: black;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Conv_Lato';
+  src: url(fonts/Lato-Bold.eot);
+  src: local("\263A"), url(fonts/Lato-Bold.woff) format("woff"), url(fonts/Lato-Bold.ttf) format("truetype"), url(fonts/Lato-Bold.svg) format("svg");
   font-weight: bold;
   font-style: normal; }
 
@@ -1353,4 +1364,11 @@ a {
   src: url(fonts/Lato-Regular.eot);
   src: local("\263A"), url(fonts/Lato-Regular.woff) format("woff"), url(fonts/Lato-Regular.ttf) format("truetype"), url(fonts/Lato-Regular.svg) format("svg");
   font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Conv_Lato-Light';
+  src: url(fonts/Lato-Light.eot);
+  src: local("\263A"), url(fonts/Lato-Light.woff) format("woff"), url(fonts/Lato-Light.ttf) format("truetype"), url(fonts/Lato-Light.svg) format("svg");
+  font-weight: lighter;
   font-style: normal; }
