@@ -1,3 +1,4 @@
+include /header/header
 include /buttons/buttons
 include /percentages/percentages
 include /sectors/sectors
@@ -28,21 +29,23 @@ html
   body
     .wrapper
       .buttons
-        header.header.buttons__header standard buttons
-        .content.buttons__content
+        .buttons__header 
+          +header("standard buttons")
+        .buttons__content
           +button('button', ['theme_green', 'small'])
           +button('button', ['theme_green'])
           +button('button', ['theme_red'])
           +button('button', ['theme_red', 'small'])
-        .content.buttons__content
+        .buttons__content
           +button('button', ['theme_green', 'small', 'disabled'])
           +button('button', ['theme_green', 'disabled'])
           +button('button', ['theme_red', 'disabled'])
           +button('button', ['theme_red', 'small', 'disabled'])
 
       .arrow-buttons
-        header.header.arrow-buttons__header arrow buttons
-        .content.arrow-buttons__content
+        .arrow-buttons__header 
+          +header("arrow buttons")
+        .arrow-buttons__content
           +button('<', ['arrow'])
           +button('>', ['arrow'])
           +button('<', ['arrow', 'disabled'])
@@ -51,8 +54,9 @@ html
           +button('>', ['arrow'])
 
       .percentages
-        header.header.percentages__header percentages / pie chart
-        .content.percentages__content
+        .percentages__header 
+          +header("percentages / pie chart")
+        .percentages__content
           +percentage(0)
           +percentage(38)
           +percentage(62)
@@ -60,20 +64,23 @@ html
           +sectors(10,25,30,115)
 
       .sliders
-        header.header.sliders__header sliders
-        .content.sliders__content
+        .sliders__header 
+          +header("sliders")
+        .sliders__content
           //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
           //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
           +sliderm2(0, 100, 40, 40, 5, 3, 'true', '', 'true', '', 260, 5, 20, '#e6e6e6', '#e75735', 'lightgrey', 'white')
           +sliderm2(0, 100, 0, 75, 1, 4, '', 'true', '', '', 260, 5, 20, '#e6e6e6', '#4eb7a8', 'lightgrey', 'white')
     
       .stages
-        header.header.stages__header stages
-        .content.stages__content
+        .stages__header 
+          +header("stages")
+        .stages__content
           +stage(5,3)
 
       .forms
-        header.header.forms__header form elements
+        .forms__header 
+          +header("form elements")
         .content
           form.forms__form(action="", method="get")
             .forms__form_left
@@ -82,13 +89,15 @@ html
               +form-textarea("Your Message", "30", "4")
             .forms__form_right
               .toggles
-                .header.toggles__header toggles
+                .toggles__header 
+                  +header("toggles")
                 .toggles_left
                   +form-toggle("check-1","4",false)
                 .toggles_right
                   +form-toggle("check-3","6",true)
               .ticks
-                .header.ticks__header tick boxes
+                .ticks__header 
+                  +header("tick boxes")
                 .ticks_left
                   +tick('true')
                 .ticks_right
@@ -96,7 +105,8 @@ html
       
       .search-profile-row
         .searches
-          header.header.searches__header search / drop down
+          .searches__header 
+            +header("search / drop down")
           .searches__content
             +search('Search', 'red')
           .searches__content
@@ -104,14 +114,16 @@ html
           .searches__content
             +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
         .profiles
-          header.header.profiles__header user profile
+          .profiles__header 
+            +header("user profile")
           .profiles__item
             +user-card('john', 'John Smith', 'ux designer',"","3.html","3.html","3.html")
           .profiles__item
             +user-card('sarah', 'Sarah Brown', 'developer', 'green',"3.html","3.html","3.html")
       
       .news-events-row
-        header.header.news-events-row__header news & events
+        .news-events-row__header 
+          +header("news & events")
         .news-events-row__content
           .news-events-row__item
             +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
@@ -119,22 +131,26 @@ html
             +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
 
       .location
-        header.header.location__header location
-        .content.location__content
+        .location__header 
+          +header("location")
+        .location__content
           +map(37.791235, -122.414842)
 
       .calendar-messaging-row
         .calendar-messaging-row__calendar
-          header.header.calendar-messaging-row__header calendar
+          .calendar-messaging-row__header 
+            +header("calendar")
           //- calendar(date, month, firstdayinweek, daysinmonth)
           +calendar(24,'september', 4, 30)
         .calendar-messaging-row__messaging
-          header.header.calendar-messaging-row__header messaging
+          .calendar-messaging-row__header 
+            +header("messaging")
           +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
 
       .video-row
-        header.header.video-row__header video
-        .content.video-row__content
+        .video-row__header 
+          +header("video")
+        .video-row__content
           +video('62980495')
 
     script(src="js/jquery-3.3.1.min.js")

@@ -1,3 +1,4 @@
+@import '../header/header';
 @import '../buttons/buttons';
 @import '../percentages/percentages';
 @import '../sliderm2/sliderm2';
@@ -38,16 +39,7 @@ body {
     padding-top: 55px;
 }
 
-.header {
-    display: block;
-    font-size: 18px;
-    color: #797979;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.content {
+%content {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -63,6 +55,7 @@ body {
     }
 
     &__content {
+        @extend %content;
         margin-top: 22px;
         max-width: 490px;
     }
@@ -77,6 +70,7 @@ body {
     }
 
     &__content {
+        @extend %content;
         max-width: 445px;
     }
 }
@@ -90,8 +84,8 @@ body {
     }
 
     &__content {
+        @extend %content;
         margin-left: -10px;
-        display: flex;
         flex-wrap: wrap;
     }
 }
@@ -105,6 +99,7 @@ body {
     }
 
     &__content {
+        @extend %content;
         max-width: 590px;
         align-items: flex-start;
         justify-content: space-between;
@@ -125,6 +120,7 @@ body {
     }
 
     &__content {
+        @extend %content;
         max-width: 565px;
         padding-left: 10px;
         padding-right: 10px;
@@ -220,7 +216,7 @@ body {
 
 .search-profile-row {
     min-height: 338px;
-    padding-top: 20px;
+    padding-top: 5px;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -239,6 +235,7 @@ body {
     }
 
     &__content {
+        @extend %content;
         margin: 9px 10px;
     }
 }
@@ -292,6 +289,10 @@ body {
         margin-bottom: 30px;
     }
 
+    &__content {
+        @extend %content;
+    }
+
     transition: all 0.2s ease-in-out;
 
     @media screen and (max-width: 600px) {
@@ -333,6 +334,10 @@ body {
 
     &__header {
         margin-bottom: 10px;
+    }
+
+    &__content {
+        @extend %content;
     }
 
     transition: all 0.2s ease-in-out;
