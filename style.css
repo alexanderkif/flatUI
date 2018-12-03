@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.header {
+  display: block;
+  font-size: 18px;
+  color: #797979;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
 .btn {
   position: relative;
   width: 120px;
@@ -1127,15 +1135,7 @@ body {
   margin: 0 auto;
   padding-top: 55px; }
 
-.header {
-  display: block;
-  font-size: 18px;
-  color: #797979;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px; }
-
-.content {
+.buttons__content, .arrow-buttons__content, .percentages__content, .sliders__content, .stages__content, .searches__content, .location__content, .video-row__content {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -1165,7 +1165,6 @@ body {
     margin-bottom: 15px; }
   .percentages__content {
     margin-left: -10px;
-    display: flex;
     flex-wrap: wrap; }
 
 .sliders {
@@ -1253,7 +1252,7 @@ body {
 
 .search-profile-row {
   min-height: 338px;
-  padding-top: 20px;
+  padding-top: 5px;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
