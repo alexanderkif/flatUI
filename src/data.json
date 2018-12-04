@@ -6,7 +6,122 @@
     },
     "sliders" : {
         "header" : "sliders",
-        "slider1" : [0, 100, 40, 40, 5, 3, "true", "", "true", "", 260, 5, 20, "#e6e6e6", "#e75735", "lightgrey", "white"],
-        "slider2" : [0, 100, 0, 75, 1, 4, "", "true", "", "", 260, 5, 20, "#e6e6e6", "#4eb7a8", "lightgrey", "white"]
+        "sliders" : [
+            {
+                "min" : 0, 
+                "max" : 100, 
+                "value1" : 40, 
+                "value2" : 40, 
+                "step" : 5, 
+                "intervals" : 3, 
+                "hint" : "true", 
+                "scale" : "", 
+                "interval" : "true", 
+                "vertical" : "", 
+                "length" : 260, 
+                "lineHeight" : 5, 
+                "pointSize" : 20, 
+                "colorLine" : "#e6e6e6", 
+                "colorPoint" : "#e75735", 
+                "colorScale" : "lightgrey", 
+                "colorText" : "white"
+            },
+            {
+                "min" : 0, 
+                "max" : 100, 
+                "value1" : 0, 
+                "value2" : 75, 
+                "step" : 1, 
+                "intervals" : 4, 
+                "hint" : "", 
+                "scale" : "true", 
+                "interval" : "", 
+                "vertical" : "", 
+                "length" : 260, 
+                "lineHeight" : 5, 
+                "pointSize" : 20, 
+                "colorLine" : "#e6e6e6", 
+                "colorPoint" : "#4eb7a8", 
+                "colorScale" : "lightgrey", 
+                "colorText" : "white"
+            }
+        ]
+    },
+    "stages" : {
+        "header" : "stages",
+        "steps" : 5,
+        "passed" : 3
+    },
+    "forms" : {
+        "header" : "form elements",
+        "inputs" : [
+            {
+                "placeholder" : "Your Name", 
+                "textbutton" : "ERROR", 
+                "style" : "red"
+            },
+            {
+                "placeholder" : "Your Email",
+                "textbutton" : "THANKS!", 
+                "style" : "green"
+            }
+        ],
+        "textarea" : {
+            "placeholder" : "Your Message",
+            "cols" : "30",
+            "rows" : "4"
+        },
+        "toggles" : {
+            "header" : "toggles",
+            "left" : false,
+            "right" : true
+        },
+        "ticks" : {
+            "header" : "tick boxes",
+            "left" : "true",
+            "right" : ""
+        }
+    },
+    "searches" : {
+        "header" : "search / drop down",
+        "searches" : [
+            {
+                "placeholder" : "Search",
+                "btncolor" : "red"
+            },
+            {
+                "placeholder" : "I've not found what I'm looking for...",
+                "btncolor" : "red",
+                "status" : "not-found"
+            }
+        ],
+        "dropdown" : {
+            "placeholder" : "Choose An Option",
+            "btncolor" : "green",
+            "options" : ["This is option 1","This is option 2","This is option 3","This is option 4"]
+        }
+    },
+    "profiles" : {
+        "header" : "user profile",
+        "cards" : [
+            {
+                "img" : "john",
+                "name" : "John Smith",
+                "prof" : "ux designer",
+                "color" : "",
+                "a1" : "3.html",
+                "a2" : "3.html",
+                "a3" : "3.html"
+            },
+            {
+                "img" : "sarah",
+                "name" : "Sarah Brown",
+                "prof" : "developer",
+                "color" : "green",
+                "a1" : "3.html",
+                "a2" : "3.html",
+                "a3" : "3.html"
+            }
+        ]
     }
 }

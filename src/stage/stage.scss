@@ -1,0 +1,60 @@
+$color-green: #4eb7a8;
+$color-grey: #747474;
+$color-red: #e75735;
+$color-lightgray: #e5e5e5;
+
+.stage {
+    width: 100%;
+    display: table;
+    font-weight: bold;
+
+    &__noline {
+        width: 0px;
+    }
+
+    &__line {
+        display: table-cell;
+        text-align: right;
+
+        &_act {
+            border-top: 5px solid $color-red;
+        }
+        
+        &_pas {
+            border-top: 5px solid $color-lightgray;
+        }
+    }
+
+    &__step {
+        width: 30px;
+        height: auto;
+        margin-right: -15px;
+        margin-top: -18px;
+
+        &_first {
+            margin-left: -15px;
+        }
+    }
+
+    &__text {
+        font-weight: bold;
+
+        &_act {
+            fill: white;
+        }
+
+        &_pas {
+            fill: $color-grey;
+        }
+    }
+
+    &__round {
+        &_act {
+            fill: $color-red;
+        }
+
+        &_pas {
+            fill: $color-lightgray;
+        }
+    }
+}

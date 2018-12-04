@@ -1,7 +1,7 @@
 
-mixin form-toggle(name, value, checked)
+mixin form-toggle(checked)
     .form-toggle
         if checked
-            input(type="checkbox", name=name, value=value, checked="checked", autocomplete="off")
+            input(type="checkbox" checked="checked")
         else
-            input(type="checkbox", name=name, value=value, autocomplete="off")
+            input(type="checkbox")

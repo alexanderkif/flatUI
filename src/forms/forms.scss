@@ -1,0 +1,93 @@
+
+@import '../form-input/form-input';
+@import '../form-textarea/form-textarea';
+@import '../form-toggle/form-toggle';
+@import '../tick/tick';
+
+
+.forms {
+    min-height: 328px;
+    padding-top: 20px;
+
+    &__header {
+        margin-bottom: 42px;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &_left {
+            min-width: 300px;
+            padding-bottom: 20px;
+        }
+
+        &_right {
+            padding: 4px 5%;
+            width: 230px;
+            min-width: 100px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 98px 80px;
+            grid-gap: 15px;
+            justify-items: center;
+            align-items: start;
+        }
+    }
+}
+
+.toggles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35px 45px;
+    grid-gap: 15px;
+    justify-items: center;
+    align-items: start;
+    grid-template-areas: 
+        "toggle-header toggle-header"
+        "toggle-left toggle-right";
+
+    &__header {
+        grid-area: toggle-header;
+    }
+
+    &_left {
+        grid-area: toggle-left;
+        justify-self: right;
+    }
+
+    &_right {
+        grid-area: toggle-right;
+        justify-self: left;
+    }
+}
+
+.ticks { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35px 30px;
+    grid-gap: 15px;
+    grid-column-gap: 20px;
+    justify-items: center;
+    align-items: start;
+    grid-template-areas: 
+        "tick-header tick-header" 
+        "tick-left tick-right";
+
+    &__header {
+        grid-area: tick-header;
+    }
+
+    &_left {
+        grid-area: tick-left;
+        justify-self: right;
+    }
+
+    &_right {
+        grid-area: tick-right;
+        justify-self: left;
+    }
+}

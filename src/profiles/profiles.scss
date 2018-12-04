@@ -1,0 +1,22 @@
+
+@import '../user-card/user-card';
+
+.profiles {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 50%;
+    min-width: 300px;
+    align-items: center;
+
+    &__item {
+        margin: 13px;
+        margin-left: 29px;
+    }
+
+    &__header {
+        margin-top: 0px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+}

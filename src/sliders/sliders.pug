@@ -1,12 +1,10 @@
 include ../header/header
 include ../sliderm2/sliderm2
 
-mixin sliders({header, slider1, slider2})
+mixin sliders({header, sliders})
     .sliders
         .sliders__header 
             +header(header)
         .sliders__content
-            //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
-            //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText)
-            +sliderm2(slider1)
-            +sliderm2(slider2)
+            each s in sliders
+                +sliderm2(s.min, s.max, s.value1, s.value2, s.step, s.intervals, s.hint, s.scale, s.interval, s.vertical, s.length, s.lineHeight, s.pointSize, s.colorLine, s.colorPoint, s.colorScale, s.colorText)

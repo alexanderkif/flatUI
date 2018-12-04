@@ -3,13 +3,9 @@ include ../buttons/buttons
 include ../percentages/percentages
 include ../sliders/sliders
 include ../stages/stages
-include ../form-input/form-input
-include ../form-textarea/form-textarea
-include ../form-toggle/form-toggle
-include ../tick/tick
-include ../search/search
-include ../dropdown/dropdown
-include ../user-card/user-card
+include ../forms/forms
+include ../searches/searches
+include ../profiles/profiles
 include ../news/news
 include ../event/event
 include ../maps/maps
@@ -17,7 +13,7 @@ include ../calendar/calendar
 include ../messaging/messaging
 include ../video/video
 
-mixin flatUI({percentages,sliders})
+mixin flatUI({percentages,sliders,stages,forms,searches,profiles})
     .flatUI
         .buttons
             .buttons__header 
@@ -48,54 +44,13 @@ mixin flatUI({percentages,sliders})
 
         +sliders(sliders)
 
-        .stages
-            .stages__header 
-                +header("stages")
-            .stages__content
-                +stage(5,3)
+        +stages(stages)
 
-        .forms
-            .forms__header 
-                +header("form elements")
-            .content
-                form.forms__form(action="", method="get")
-                    .forms__form_left
-                        +form-input('Your Name', 'ERROR', 'red')
-                        +form-input('Your Email', 'THANKS!', 'green')
-                        +form-textarea("Your Message", "30", "4")
-                    .forms__form_right
-                        .toggles
-                            .toggles__header 
-                                +header("toggles")
-                            .toggles_left
-                                +form-toggle("check-1","4",false)
-                            .toggles_right
-                                +form-toggle("check-3","6",true)
-                        .ticks
-                            .ticks__header 
-                                +header("tick boxes")
-                            .ticks_left
-                                +tick('true')
-                            .ticks_right
-                                +tick('')
+        +forms(forms)
             
         .search-profile-row
-            .searches
-                .searches__header 
-                    +header("search / drop down")
-                .searches__content
-                    +search('Search', 'red')
-                .searches__content
-                    +search('I\'ve not found what I\'m looking for...', 'red', 'not-found')
-                .searches__content
-                    +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
-            .profiles
-                .profiles__header 
-                    +header("user profile")
-                .profiles__item
-                    +user-card('john', 'John Smith', 'ux designer',"","3.html","3.html","3.html")
-                .profiles__item
-                    +user-card('sarah', 'Sarah Brown', 'developer', 'green',"3.html","3.html","3.html")
+            +searches(searches)
+            +profiles(profiles)
         
         .news-events-row
             .news-events-row__header 

@@ -1,26 +1,9 @@
-- var viewbox="0 0 30 30"
-- var cx="15" 
-- var cy="15" 
-- var r="14"
-- var x="15" 
-- var y="20" 
-- var text="middle" 
-- var font="15"
+include ../header/header
+include ../stage/stage
 
-mixin stage(stages,stage)
-    .stage
-        .stage__noline
-            svg.stage__step.stage__step_first(viewbox= viewbox)
-                circle.stage__round_act(cx=cx cy=cy r=r)
-                text.stage__text_act(x=x y=y text-anchor=text font-size=font)= 1
-        - for (var i = 2; i <= stages; i++)
-            if i <= stage
-                .stage__line.stage__line_act
-                    svg.stage__step(viewbox= viewbox)
-                        circle.stage__round_act(cx=cx cy=cy r=r)
-                        text.stage__text_act(x=x y=y text-anchor=text font-size=font)= i
-            else
-                .stage__line.stage__line_pas
-                    svg.stage__step(viewbox= viewbox)
-                        circle.stage__round_pas(cx=cx cy=cy r=r)
-                        text.stage__text_pas(x=x y=y text-anchor=text font-size=font)= i
+mixin stages({header,steps,passed})
+    .stages
+        .stages__header 
+            +header(header)
+        .stages__content
+            +stage(steps,passed)
