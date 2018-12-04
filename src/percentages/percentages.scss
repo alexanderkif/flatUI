@@ -1,15 +1,19 @@
-$color-green: #4eb7a8;
-$color-grey: #747474;
-$color-red: #e75735;
-$color-lightgray: #e5e5e5;
+@import '../percentage/percentage';
 
-.percentage {
-    &__circle {
-        font-weight: normal;
-        height: auto;
+.percentages {
+    min-height: 156px;
+    padding-top: 20px;
+
+    &__header {
+        margin-bottom: 15px;
     }
-    
-    &__text {
-        fill: $color-grey;
+
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin: 0px auto;
+        margin-left: -10px;
+        flex-wrap: wrap;
     }
 }

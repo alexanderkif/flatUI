@@ -1,0 +1,18 @@
+
+mixin percentage(percent)
+    - var cx= 5
+    - var cy= 5
+    - var r= 4
+    - var width= 0.5
+    - var l= 2 * 3.14 * r / 4
+    - var angle1= 4 * l * percent / 100 - l
+    if angle1 < 0 
+       - angle1= 0
+    - var angle2= 3 * l - angle1
+    - var angle3= 4 * l * percent / 100
+    .percentage
+        svg(viewbox="0 0 10 10" style={width: '115px'} class="percentage__circle")
+            defs
+                circle(id="circle" cx=cx cy=cy r=r stroke-width=width fill="transparent")
+            use(xlink:href="#circle" stroke="#e75735" stroke-dasharray=`0,0,${angle1},${angle2},${angle3},0`)
+            text.percentage__text(x="5" y="6.5" text-anchor="middle" font-size="3.5")= percent

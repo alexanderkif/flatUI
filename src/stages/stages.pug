@@ -9,18 +9,18 @@
 
 mixin stage(stages,stage)
     .stage
-        .stage__step1
-            svg.stage__svg.stage__svg_first(viewbox= viewbox)
+        .stage__noline
+            svg.stage__step.stage__step_first(viewbox= viewbox)
                 circle.stage__round_act(cx=cx cy=cy r=r)
                 text.stage__text_act(x=x y=y text-anchor=text font-size=font)= 1
         - for (var i = 2; i <= stages; i++)
             if i <= stage
-                .stage__step.stage__step_act
-                    svg.stage__svg(viewbox= viewbox)
+                .stage__line.stage__line_act
+                    svg.stage__step(viewbox= viewbox)
                         circle.stage__round_act(cx=cx cy=cy r=r)
                         text.stage__text_act(x=x y=y text-anchor=text font-size=font)= i
             else
-                .stage__step.stage__step_pas
-                    svg.stage__svg(viewbox= viewbox)
+                .stage__line.stage__line_pas
+                    svg.stage__step(viewbox= viewbox)
                         circle.stage__round_pas(cx=cx cy=cy r=r)
                         text.stage__text_pas(x=x y=y text-anchor=text font-size=font)= i

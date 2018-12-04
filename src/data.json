@@ -1,0 +1,12 @@
+{
+    "percentages" : {
+        "header" : "percentages / pie chart",
+        "values" : [0,38,62,89],
+        "sectors" : [10,25,30,115]
+    },
+    "sliders" : {
+        "header" : "sliders",
+        "slider1" : [0, 100, 40, 40, 5, 3, "true", "", "true", "", 260, 5, 20, "#e6e6e6", "#e75735", "lightgrey", "white"],
+        "slider2" : [0, 100, 0, 75, 1, 4, "", "true", "", "", 260, 5, 20, "#e6e6e6", "#4eb7a8", "lightgrey", "white"]
+    }
+}

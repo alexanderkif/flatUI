@@ -1,0 +1,15 @@
+$color-green: #4eb7a8;
+$color-grey: #747474;
+$color-red: #e75735;
+$color-lightgray: #e5e5e5;
+
+.percentage {
+    &__circle {
+        font-weight: normal;
+        height: auto;
+    }
+    
+    &__text {
+        fill: $color-grey;
+    }
+}
