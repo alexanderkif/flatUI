@@ -114,6 +114,19 @@
 .percentage__text {
   fill: #747474; }
 
+.percentages {
+  min-height: 156px;
+  padding-top: 20px; }
+  .percentages__header {
+    margin-bottom: 15px; }
+  .percentages__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 0px auto;
+    margin-left: -10px;
+    flex-wrap: wrap; }
+
 .sliderm2 {
   width: 100%;
   font-weight: bold; }
@@ -122,21 +135,21 @@
   width: 100%;
   display: table;
   font-weight: bold; }
-  .stage__step1 {
+  .stage__noline {
     width: 0px; }
-  .stage__step {
+  .stage__line {
     display: table-cell;
     text-align: right; }
-    .stage__step_act {
+    .stage__line_act {
       border-top: 5px solid #e75735; }
-    .stage__step_pas {
+    .stage__line_pas {
       border-top: 5px solid #e5e5e5; }
-  .stage__svg {
+  .stage__step {
     width: 30px;
     height: auto;
     margin-right: -15px;
     margin-top: -18px; }
-    .stage__svg_first {
+    .stage__step_first {
       margin-left: -15px; }
   .stage__text {
     font-weight: bold; }
@@ -1124,18 +1137,13 @@
   box-shadow: 5px 10px 25px #bbbbbb;
   border: 1px solid #bbbbbb; }
 
-body {
-  font-family: 'Conv_Lato';
-  font-weight: bold;
-  color: #797979; }
-
-.wrapper {
+.flatUI {
   display: block;
   max-width: 620px;
   margin: 0 auto;
   padding-top: 55px; }
 
-.buttons__content, .arrow-buttons__content, .percentages__content, .sliders__content, .stages__content, .searches__content, .location__content, .video-row__content {
+.buttons__content, .arrow-buttons__content, .sliders__content, .stages__content, .searches__content, .location__content, .video-row__content {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -1157,15 +1165,6 @@ body {
     margin-bottom: 33px; }
   .arrow-buttons__content {
     max-width: 445px; }
-
-.percentages {
-  min-height: 156px;
-  padding-top: 20px; }
-  .percentages__header {
-    margin-bottom: 15px; }
-  .percentages__content {
-    margin-left: -10px;
-    flex-wrap: wrap; }
 
 .sliders {
   height: 112px;
@@ -1343,6 +1342,11 @@ body {
 a {
   text-decoration-line: none;
   color: inherit; }
+
+body {
+  font-family: 'Conv_Lato';
+  font-weight: bold;
+  color: #797979; }
 
 @font-face {
   font-family: 'Conv_Lato';
