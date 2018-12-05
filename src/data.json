@@ -123,5 +123,113 @@
                 "a3" : "3.html"
             }
         ]
+    },
+    "newsEventsRow" : {
+        "header" : "news & events",
+        "news" : {
+            "header" : "It's all going downhill",
+            "date" : "24 august 2013",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.",
+            "img" : "velo",
+            "href" : "2.html"
+        },
+        "event" : {
+            "header" : "this is the title",
+            "date" : "24",
+            "month" : "Aug",
+            "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "img" : "city"
+        }
+    },
+    "location" : {
+        "header" : "location",
+        "lat" : 37.791235,
+        "lng" : -122.414842
+    },
+    "calendarMessagingRow" : {
+        "calendar" : {
+            "header" : "calendar",
+            "date" : 24,
+            "month" : "september",
+            "firstdayinweek" : 4,
+            "daysinmonth" : 30
+        },
+        "messaging" : {
+            "header" : "messaging",
+            "user" : "Sarah Brown",
+            "img" : "sarah",
+            "message" : "Hey! So are we cool to meet at the art gallery? Say 8pm",
+            "placeholder" : "Yeah that sounds great. See you then."
+        }
+    },
+    "videoRow" : {
+        "header" : "video",
+        "video" : "62980495"
+    },
+    "arrowButtons" : {
+        "header" : "arrow buttons",
+        "buttons" : [
+            {
+                "label" : "keyboard_arrow_left",
+                "view" : ["arrow"]
+            },
+            {
+                "label" : "keyboard_arrow_right",
+                "view" : ["arrow"]
+            },
+            {
+                "label" : "keyboard_arrow_left",
+                "view" : ["arrow", "disabled"]
+            },
+            {
+                "label" : "keyboard_arrow_right",
+                "view" : ["arrow", "disabled"]
+            },
+            {
+                "label" : "keyboard_arrow_left",
+                "view" : ["arrow"]
+            },
+            {
+                "label" : "keyboard_arrow_right",
+                "view" : ["arrow"]
+            }
+        ]
+    },
+    "buttons" : {
+        "header" : "standard buttons",
+        "buttons" : [
+            {
+                "label" : "button",
+                "view" : ["theme_green", "small"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_green"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_red"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_red", "small"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_green", "small", "disabled"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_green", "disabled"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_red", "disabled"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_red", "small", "disabled"]
+            }
+        ]
     }
 }

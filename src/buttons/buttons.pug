@@ -1,17 +1,12 @@
 
-//- btnclass can be small theme_red|theme_green disabled
 
-mixin button(btnlabel, btnclasses)
-    - var btnClassString = `btn`
-    each btnclass in btnclasses
-        - btnClassString = `${btnClassString} btn_${btnclass}`
-    if (attributes.class)
-        - btnClassString=`${btnClassString} ${attributes.class}`
-    if (btnlabel=='<')
-        button(class=btnClassString) 
-            i.material-icons= "keyboard_arrow_left"
-    if (btnlabel=='>')
-        button(class=btnClassString)
-            i.material-icons= "keyboard_arrow_right"
-    if (btnlabel!='>' && btnlabel!='<')
-        button(class=btnClassString)= btnlabel
+mixin buttons({header,buttons})
+    .buttons
+        .buttons__header 
+            +header(header)
+        .buttons__content
+            - for(var i = 0; i < 4; i++)
+                +button(buttons[i].label, buttons[i].view)
+        .buttons__content
+            - for(var i = 4; i < 8; i++)
+                +button(buttons[i].label, buttons[i].view)

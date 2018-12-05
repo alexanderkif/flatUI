@@ -1,5 +1,5 @@
 import "./scss/main.scss";
-import "./buttons/buttons";
+import "./button/button";
 import "./dropdown/dropdown";
 import "./sectors/sectors";
 import "./sliderm2/sliderm2";

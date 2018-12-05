@@ -1,0 +1,28 @@
+@import '../map/map';
+
+.location {
+    height: 353px;
+    padding-top: 20px;
+
+    &__header {
+        margin-bottom: 30px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin: 0px auto;
+    }
+
+    transition: all 0.2s ease-in-out;
+
+    @media screen and (max-width: 600px) {
+        &__content {
+            transform: scale(0.6);
+            height: 190px;
+        }
+
+        height: 220px;
+    }
+}

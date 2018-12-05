@@ -1,85 +1,30 @@
 include ../header/header
+include ../button/button
 include ../buttons/buttons
+include ../arrow-buttons/arrow-buttons
 include ../percentages/percentages
 include ../sliders/sliders
 include ../stages/stages
 include ../forms/forms
 include ../searches/searches
 include ../profiles/profiles
-include ../news/news
-include ../event/event
-include ../maps/maps
-include ../calendar/calendar
-include ../messaging/messaging
-include ../video/video
+include ../news-events-row/news-events-row
+include ../location/location
+include ../calendar-messaging-row/calendar-messaging-row
+include ../video-row/video-row
 
-mixin flatUI({percentages,sliders,stages,forms,searches,profiles})
-    .flatUI
-        .buttons
-            .buttons__header 
-                +header("standard buttons")
-            .buttons__content
-                +button('button', ['theme_green', 'small'])
-                +button('button', ['theme_green'])
-                +button('button', ['theme_red'])
-                +button('button', ['theme_red', 'small'])
-            .buttons__content
-                +button('button', ['theme_green', 'small', 'disabled'])
-                +button('button', ['theme_green', 'disabled'])
-                +button('button', ['theme_red', 'disabled'])
-                +button('button', ['theme_red', 'small', 'disabled'])
-
-        .arrow-buttons
-            .arrow-buttons__header 
-                +header("arrow buttons")
-            .arrow-buttons__content
-                +button('<', ['arrow'])
-                +button('>', ['arrow'])
-                +button('<', ['arrow', 'disabled'])
-                +button('>', ['arrow', 'disabled'])
-                +button('<', ['arrow'])
-                +button('>', ['arrow'])
-
+mixin flatUI({buttons,arrowButtons,percentages,sliders,stages,forms,searches,profiles,newsEventsRow,location,calendarMessagingRow,videoRow})
+    .flatUI        
+        +buttons(buttons)
+        +arrow-buttons(arrowButtons)
         +percentages(percentages)
-
         +sliders(sliders)
-
         +stages(stages)
-
-        +forms(forms)
-            
+        +forms(forms)            
         .search-profile-row
             +searches(searches)
-            +profiles(profiles)
-        
-        .news-events-row
-            .news-events-row__header 
-                +header("news & events")
-            .news-events-row__content
-                .news-events-row__item
-                    +news("It's all going downhill", "24 august 2013", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.", "velo", "2.html")
-                .news-events-row__item
-                    +event("this is the title", "24", "Aug", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "city")
-
-        .location
-            .location__header 
-                +header("location")
-            .location__content
-                +map(37.791235, -122.414842)
-
-        .calendar-messaging-row
-            .calendar-messaging-row__calendar
-                .calendar-messaging-row__header 
-                    +header("calendar")
-                //- calendar(date, month, firstdayinweek, daysinmonth)
-                +calendar(24,'september', 4, 30)
-            .calendar-messaging-row__messaging
-                .calendar-messaging-row__header 
-                    +header("messaging")
-                +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
-
-        .video-row
-            .video-row__header 
-                +header("video")
-            .video-row__content
-                +video('62980495')
+            +profiles(profiles)        
+        +news-events-row(newsEventsRow)        
+        +location(location)
+        +calendar-messaging-row(calendarMessagingRow)
+        +video-row(videoRow)

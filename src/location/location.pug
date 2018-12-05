@@ -1,0 +1,8 @@
+include ../map/map
+
+mixin location({header, lat, lng})
+    .location
+        .location__header 
+            +header(header)
+        .location__content
+            +map(lat, lng)

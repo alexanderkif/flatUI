@@ -1,0 +1,9 @@
+
+include ../video/video
+
+mixin video-row({header,video})
+    .video-row
+        .video-row__header 
+            +header(header)
+        .video-row__content
+            +video(video)

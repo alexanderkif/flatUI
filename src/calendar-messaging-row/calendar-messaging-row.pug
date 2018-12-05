@@ -1,0 +1,14 @@
+
+include ../calendar/calendar
+include ../messaging/messaging
+
+mixin calendar-messaging-row({calendar,messaging})
+    .calendar-messaging-row
+        .calendar-messaging-row__calendar
+            .calendar-messaging-row__header 
+                +header(calendar.header)
+            +calendar(calendar.date, calendar.month, calendar.firstdayinweek, calendar.daysinmonth)
+        .calendar-messaging-row__messaging
+            .calendar-messaging-row__header 
+                +header(messaging.header)
+            +messaging(messaging.user, messaging.img, messaging.message, messaging.placeholder)

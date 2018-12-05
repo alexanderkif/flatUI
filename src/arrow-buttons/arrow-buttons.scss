@@ -1,11 +1,11 @@
 @import '../button/button';
 
-.buttons{
-    height: 268px;
+.arrow-buttons {
+    height: 131px;
     padding-top: 20px;
 
     &__header {
-        margin-bottom: 70px;
+        margin-bottom: 33px;
     }
 
     &__content {
@@ -13,7 +13,6 @@
         justify-content: space-around;
         align-items: flex-end;
         margin: 0px auto;
-        margin-top: 22px;
-        max-width: 490px;
+        max-width: 445px;
     }
 }

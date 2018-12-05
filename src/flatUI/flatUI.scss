@@ -1,17 +1,16 @@
 @import '../header/header';
 @import '../buttons/buttons';
+@import '../arrow-buttons/arrow-buttons';
 @import '../percentages/percentages';
 @import '../sliders/sliders';
 @import '../stages/stages';
 @import '../forms/forms';
 @import '../searches/searches';
 @import '../profiles/profiles';
-@import '../news/news';
-@import '../event/event';
-@import '../maps/maps';
-@import '../calendar/calendar';
-@import '../messaging/messaging';
-@import '../video/video';
+@import '../news-events-row/news-events-row';
+@import '../location/location';
+@import '../calendar-messaging-row/calendar-messaging-row';
+@import '../video-row/video-row';
 @import '../html/1';
 @import '../html/2';
 @import '../html/3';
@@ -29,42 +28,6 @@
     padding-top: 55px;
 }
 
-%content {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    margin: 0px auto;
-}
-
-.buttons{
-    height: 268px;
-    padding-top: 20px;
-
-    &__header {
-        margin-bottom: 70px;
-    }
-
-    &__content {
-        @extend %content;
-        margin-top: 22px;
-        max-width: 490px;
-    }
-}
-
-.arrow-buttons {
-    height: 131px;
-    padding-top: 20px;
-
-    &__header {
-        margin-bottom: 33px;
-    }
-
-    &__content {
-        @extend %content;
-        max-width: 445px;
-    }
-}
-
 .search-profile-row {
     min-height: 338px;
     padding-top: 5px;
@@ -72,98 +35,6 @@
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.news-events-row {
-    min-height: 295px;
-    padding-top: 20px;
-
-    &__header {
-        margin-bottom: 20px;
-        letter-spacing: 1px;
-    }
-
-    &__content {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    &__item {
-        padding: 10px;
-    }
-}
-
-.location {
-    height: 353px;
-    padding-top: 20px;
-
-    &__header {
-        margin-bottom: 30px;
-    }
-
-    &__content {
-        @extend %content;
-    }
-
-    transition: all 0.2s ease-in-out;
-
-    @media screen and (max-width: 600px) {
-        &__content {
-            transform: scale(0.6);
-            height: 190px;
-        }
-
-        height: 220px;
-    }
-}
-
-.calendar-messaging-row {
-    min-height: 529px;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    &__header {
-        padding-top: 20px;
-        margin: 0px;
-        margin-bottom: 23px;
-        letter-spacing: 1px;
-    }
-
-    &__calendar {
-        max-width: 280px;
-    }
-
-    &__messaging {
-        max-width: 290px;
-    }
-}
-
-.video-row {
-    height: 450px;
-    padding-top: 20px;
-
-    &__header {
-        margin-bottom: 10px;
-    }
-
-    &__content {
-        @extend %content;
-    }
-
-    transition: all 0.2s ease-in-out;
-
-    @media screen and (max-width: 600px) {
-        &__content {
-            transform: scale(0.6);
-            height: 270px;
-        }
-
-        height: 300px;
-    }
 }
 
 a {

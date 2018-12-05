@@ -1,0 +1,26 @@
+
+@import '../calendar/calendar';
+@import '../messaging/messaging';
+
+.calendar-messaging-row {
+    min-height: 529px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &__header {
+        padding-top: 20px;
+        margin: 0px;
+        margin-bottom: 23px;
+        letter-spacing: 1px;
+    }
+
+    &__calendar {
+        max-width: 280px;
+    }
+
+    &__messaging {
+        max-width: 290px;
+    }
+}
