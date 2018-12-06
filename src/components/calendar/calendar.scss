@@ -7,16 +7,18 @@ $color-red-carusel: #d54c2c;
     color: white;
     border-radius: 5px;
     user-select: none;
+
     &__date {
         width: 100%;
         height: 90px;
         background-color: $color-red;
-        font-weight: normal;
+        font-weight: 300;
         font-size: 78px;
         text-align: center;
         padding-top: 20px;
         border-radius: 5px 5px 0px 0px;
     }
+
     &__carusel {
         display: flex;
         width: 100%;
@@ -26,18 +28,23 @@ $color-red-carusel: #d54c2c;
         align-items: center;
         font-weight: normal;
         font-size: 24px;
+
         &-left, &-right {
             flex: 1;
+
             i {
                 font-size: 32px;
                 cursor: pointer;
             }
         }
+
         &-month {
             flex: 4;
             text-transform: capitalize;
+            font-weight: 300;
         }
     }
+
     &__week {
         width: 100%;
         height: 29px;
@@ -51,6 +58,7 @@ $color-red-carusel: #d54c2c;
         align-items: center;
         border-bottom: 1px solid white;
     }
+
     &__row {
         width: 280px;
         height: 40px;
@@ -62,6 +70,7 @@ $color-red-carusel: #d54c2c;
         display: flex;
         justify-content: space-between;
     }
+
     &__day {
         width: 39px;
         height: 29px;
@@ -79,6 +88,7 @@ $color-red-carusel: #d54c2c;
             }
         }
     }
+
     &__footer {
         display: block;
         width: 258px;
