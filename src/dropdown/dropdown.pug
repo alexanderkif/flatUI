@@ -2,7 +2,7 @@
 mixin dropdown(placeholder, btncolor, options)
     .dropdown( onclick="dropdownOpen()")
         input.dropdown__input(type="text" placeholder=placeholder)
-        .dropdown__button(type="button" class="btn dropdown__button_"+btncolor)
+        .dropdown__button(type="button" class=`btn dropdown__button_${btncolor}`)
             i(class="material-icons icons-size")= 'keyboard_arrow_down'
         .dropdown__menu-1
             each option in options

@@ -1,4 +1,4 @@
-include ../header/header
+
 include ../button/button
 include ../buttons/buttons
 include ../arrow-buttons/arrow-buttons
@@ -14,17 +14,17 @@ include ../calendar-messaging-row/calendar-messaging-row
 include ../video-row/video-row
 
 mixin flatUI({buttons,arrowButtons,percentages,sliders,stages,forms,searches,profiles,newsEventsRow,location,calendarMessagingRow,videoRow})
-    .flatUI        
+    .flatUI
         +buttons(buttons)
         +arrow-buttons(arrowButtons)
         +percentages(percentages)
         +sliders(sliders)
         +stages(stages)
-        +forms(forms)            
+        +forms(forms)
         .search-profile-row
             +searches(searches)
-            +profiles(profiles)        
-        +news-events-row(newsEventsRow)        
+            +profiles(profiles)
+        +news-events-row(newsEventsRow)
         +location(location)
         +calendar-messaging-row(calendarMessagingRow)
         +video-row(videoRow)
