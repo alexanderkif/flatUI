@@ -4,6 +4,6 @@ mixin dropdown(placeholder, btncolor, options)
         input.dropdown__input(type="text" placeholder=placeholder)
         .dropdown__button(type="button" class=`btn dropdown__button_${btncolor}`)
             i(class="material-icons icons-size")= 'keyboard_arrow_down'
-        .dropdown__menu-1
+        .dropdown__menu
             each option in options
                 a(class="dropdown__item")= option

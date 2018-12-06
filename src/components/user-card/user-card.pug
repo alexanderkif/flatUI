@@ -5,10 +5,10 @@ mixin user-card(img, name, prof, color, a1, a2, a3)
             .user-card__name(class=color?`user-card__name_${color}`:"")= name
             .user-card__prof(class=color?`user-card__prof_${color}`:"")= prof
             .user-card__socials(class=color?`user-card__socials_${color}`:"")
-                a(href=a1)
+                a(href=a1 class='user-card__link')
                     i.ion-logo-facebook
-                a(href=a2)
+                a(href=a2 class='user-card__link')
                     i.ion-logo-twitter
-                a(href=a3)
+                a(href=a3 class='user-card__link')
                     i.ion-logo-dribbble
             

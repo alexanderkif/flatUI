@@ -2,9 +2,9 @@
 //- btnclass can be small theme_red|theme_green disabled
 
 mixin arrow-button(btnlabel, btnclasses)
-    - var btnClassString = `btn`
+    - var btnClassString = `arrow-button`
     each btnclass in btnclasses
-        - btnClassString = `${btnClassString} btn_${btnclass}`
+        - btnClassString = `${btnClassString} arrow-button_${btnclass}`
     if (attributes.class)
         - btnClassString=`${btnClassString} ${attributes.class}`
     

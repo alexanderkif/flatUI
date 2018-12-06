@@ -171,27 +171,27 @@
         "buttons" : [
             {
                 "label" : "keyboard_arrow_left",
-                "view" : ["arrow"]
+                "view" : []
             },
             {
                 "label" : "keyboard_arrow_right",
-                "view" : ["arrow"]
+                "view" : []
             },
             {
                 "label" : "keyboard_arrow_left",
-                "view" : ["arrow", "disabled"]
+                "view" : ["disabled"]
             },
             {
                 "label" : "keyboard_arrow_right",
-                "view" : ["arrow", "disabled"]
+                "view" : ["disabled"]
             },
             {
                 "label" : "keyboard_arrow_left",
-                "view" : ["arrow"]
+                "view" : []
             },
             {
                 "label" : "keyboard_arrow_right",
-                "view" : ["arrow"]
+                "view" : []
             }
         ]
     },

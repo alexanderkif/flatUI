@@ -55,31 +55,6 @@ $color-red-shadow: #bf3e1f;
         border-radius: 3px;        
     }
     
-    &_arrow {
-        width: 50px;
-        height: 50px;
-        font-size: 32px;
-        border-radius: 50%;
-        border: 3px solid $color-green;
-        color: $color-green;
-        background-color: white;
-        transform: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .material-icons {
-            font-size: 42px;
-            align-self: center;
-            vertical-align: middle;
-        }
-
-        &:hover {
-            background-color: $color-green;
-            color: white;
-        }
-    }
-
     &_disabled {
         cursor: default; 
         border: 0px;
@@ -100,12 +75,6 @@ $color-red-shadow: #bf3e1f;
             &:hover {
                 box-shadow: 0 2px lightgray;
             }
-        }
-
-        &.btn_arrow {
-            box-shadow: 0px 0px;
-            color: white;
-            background-color: #e5e5e5;
         }
     }
 

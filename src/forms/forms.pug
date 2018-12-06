@@ -1,31 +1,30 @@
-include ../header/header
-include ../form-input/form-input
-include ../form-textarea/form-textarea
-include ../form-toggle/form-toggle
-include ../tick/tick
+include ../components/header/header
+include ../components/form-input/form-input
+include ../components/form-textarea/form-textarea
+include ../components/form-toggle/form-toggle
+include ../components/tick/tick
 
 mixin forms({header,inputs,textarea,toggles,ticks})
     .forms
         .forms__header 
             +header(header)
-        .content
-            form.forms__form(action="" method="get")
-                .forms__form_left
-                    each i in inputs
-                        +form-input(i.placeholder, i.textbutton, i.style)
-                    +form-textarea(textarea.placeholder, textarea.cols, textarea.rows)
-                .forms__form_right
-                    .toggles
-                        .toggles__header 
-                            +header(toggles.header)
-                        .toggles_left
-                            +form-toggle(toggles.left)
-                        .toggles_right
-                            +form-toggle(toggles.right)
-                    .ticks
-                        .ticks__header 
-                            +header(ticks.header)
-                        .ticks_left
-                            +tick(ticks.left)
-                        .ticks_right
-                            +tick(ticks.right)
+        form.forms__form(action="" method="get")
+            .forms__form_left
+                each i in inputs
+                    +form-input(i.placeholder, i.textbutton, i.style)
+                +form-textarea(textarea.placeholder, textarea.cols, textarea.rows)
+            .forms__form_right
+                .toggles
+                    .toggles__header 
+                        +header(toggles.header)
+                    .toggles_left
+                        +form-toggle(toggles.left)
+                    .toggles_right
+                        +form-toggle(toggles.right)
+                .ticks
+                    .ticks__header 
+                        +header(ticks.header)
+                    .ticks_left
+                        +tick(ticks.left)
+                    .ticks_right
+                        +tick(ticks.right)
