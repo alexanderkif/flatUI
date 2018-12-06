@@ -44,25 +44,6 @@
     height: 22px;
     font-size: 10px;
     border-radius: 3px; }
-  .btn_arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 32px;
-    border-radius: 50%;
-    border: 3px solid #4eb7a8;
-    color: #4eb7a8;
-    background-color: white;
-    transform: none;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .btn_arrow .material-icons {
-      font-size: 42px;
-      align-self: center;
-      vertical-align: middle; }
-    .btn_arrow:hover {
-      background-color: #4eb7a8;
-      color: white; }
   .btn_disabled {
     cursor: default;
     border: 0px;
@@ -78,10 +59,6 @@
       box-shadow: 0 2px lightgray; }
       .btn_disabled.btn_small:hover {
         box-shadow: 0 2px lightgray; }
-    .btn_disabled.btn_arrow {
-      box-shadow: 0px 0px;
-      color: white;
-      background-color: #e5e5e5; }
   .btn:active {
     transform: translateY(3px); }
     .btn:active:not(.btn_disabled) {
@@ -120,105 +97,33 @@
     margin-top: 22px;
     max-width: 490px; }
 
-.btn {
-  position: relative;
-  width: 120px;
-  height: 30px;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  background-color: white;
-  text-transform: uppercase;
+.arrow-button {
   cursor: pointer;
-  outline: none; }
-  .btn_theme_red {
-    color: #e75735;
-    border: 1px solid #bf3e1f;
-    box-shadow: 0px 3px #bf3e1f; }
-    .btn_theme_red.btn_small {
-      box-shadow: 0px 2px #bf3e1f; }
-    .btn_theme_red:hover {
-      color: white;
-      box-shadow: 0px 3px #bf3e1f;
-      background-color: #e75735; }
-  .btn_theme_green {
-    color: #4eb7a8;
-    border: 1px solid #28a290;
-    box-shadow: 0px 3px #28a290; }
-    .btn_theme_green.btn_small {
-      box-shadow: 0px 2px #28a290; }
-    .btn_theme_green:hover {
-      color: white;
-      box-shadow: 0px 3px #28a290;
-      background-color: #4eb7a8; }
-  .btn_small {
-    width: 80px;
-    height: 22px;
-    font-size: 10px;
-    border-radius: 3px; }
-  .btn_arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 32px;
-    border-radius: 50%;
-    border: 3px solid #4eb7a8;
-    color: #4eb7a8;
-    background-color: white;
-    transform: none;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .btn_arrow .material-icons {
-      font-size: 42px;
-      align-self: center;
-      vertical-align: middle; }
-    .btn_arrow:hover {
-      background-color: #4eb7a8;
-      color: white; }
-  .btn_disabled {
+  outline: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #4eb7a8;
+  color: #4eb7a8;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .arrow-button .material-icons {
+    font-size: 42px;
+    align-self: center;
+    vertical-align: middle; }
+  .arrow-button:hover {
+    background-color: #4eb7a8;
+    color: white; }
+  .arrow-button_disabled {
     cursor: default;
     border: 0px;
     color: lightgray;
-    border: 1px solid lightgray;
-    box-shadow: 0 3px lightgray; }
-    .btn_disabled:hover {
-      transform: none;
-      background-color: #e5e5e5;
-      color: white;
-      box-shadow: 0 3px lightgray; }
-    .btn_disabled.btn_small {
-      box-shadow: 0 2px lightgray; }
-      .btn_disabled.btn_small:hover {
-        box-shadow: 0 2px lightgray; }
-    .btn_disabled.btn_arrow {
-      box-shadow: 0px 0px;
-      color: white;
-      background-color: #e5e5e5; }
-  .btn:active {
-    transform: translateY(3px); }
-    .btn:active:not(.btn_disabled) {
-      box-shadow: 0px 0px; }
-    .btn:active.btn_disabled {
-      transform: translateY(0px); }
-
-/*  Ripple */
-.ripple {
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
-  position: absolute;
-  opacity: 1; }
-
-.rippleEffect {
-  animation: rippleDrop .6s linear; }
-
-@keyframes rippleDrop {
-  100% {
-    transform: scale(2);
-    opacity: 0; } }
+    border: 3px solid lightgray; }
+    .arrow-button_disabled:hover {
+      background-color: lightgray;
+      color: white; }
 
 .arrow-buttons {
   height: 131px;
@@ -569,14 +474,14 @@
     background-color: #e75735; }
   .dropdown__button_green {
     background-color: #4eb7a8; }
-  .dropdown__menu-1 {
+  .dropdown__menu {
     position: absolute;
     visibility: hidden;
     top: 34px;
     width: 100%;
     background-color: #4eb7a8;
     border-radius: 2px; }
-    .dropdown__menu-1.visible {
+    .dropdown__menu.visible {
       visibility: visible; }
   .dropdown__item {
     display: block;

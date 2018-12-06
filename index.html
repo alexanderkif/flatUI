@@ -31,12 +31,12 @@
           <div class="header">arrow buttons</div>
         </div>
         <div class="arrow-buttons__content">
-          <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_left</i></button>
-          <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_right</i></button>
-          <button class="btn btn_arrow btn_disabled"><i class="material-icons">keyboard_arrow_left</i></button>
-          <button class="btn btn_arrow btn_disabled"><i class="material-icons">keyboard_arrow_right</i></button>
-          <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_left</i></button>
-          <button class="btn btn_arrow"><i class="material-icons">keyboard_arrow_right</i></button>
+          <button class="arrow-button"><i class="material-icons">keyboard_arrow_left</i></button>
+          <button class="arrow-button"><i class="material-icons">keyboard_arrow_right</i></button>
+          <button class="arrow-button arrow-button_disabled"><i class="material-icons">keyboard_arrow_left</i></button>
+          <button class="arrow-button arrow-button_disabled"><i class="material-icons">keyboard_arrow_right</i></button>
+          <button class="arrow-button"><i class="material-icons">keyboard_arrow_left</i></button>
+          <button class="arrow-button"><i class="material-icons">keyboard_arrow_right</i></button>
         </div>
       </div>
       <div class="percentages">
@@ -135,58 +135,56 @@
         <div class="forms__header"> 
           <div class="header">form elements</div>
         </div>
-        <div class="content">
-          <form class="forms__form" action="" method="get">
-            <div class="forms__form_left">
-              <div class="form-input">
-                <input class="form-input__text" type="text" placeholder="Your Name">
-                <div class="form-input__button form-input__button_red" type="button">
-                  <div class="form-input__button-text">ERROR</div>
+        <form class="forms__form" action="" method="get">
+          <div class="forms__form_left">
+            <div class="form-input">
+              <input class="form-input__text" type="text" placeholder="Your Name">
+              <div class="form-input__button form-input__button_red" type="button">
+                <div class="form-input__button-text">ERROR</div>
+              </div>
+            </div>
+            <div class="form-input">
+              <input class="form-input__text" type="text" placeholder="Your Email">
+              <div class="form-input__button form-input__button_green" type="button">
+                <div class="form-input__button-text">THANKS!</div>
+              </div>
+            </div>
+            <div class="form-textarea">
+              <div class="form-textarea__wrapper">
+                <textarea class="form-textarea__text" placeholder="Your Message" cols="30" rows="4"></textarea>
+                <button class="btn btn_theme_green form-textarea__btn">submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="forms__form_right">
+            <div class="toggles">
+              <div class="toggles__header"> 
+                <div class="header">toggles</div>
+              </div>
+              <div class="toggles_left">
+                <div class="form-toggle">
+                  <input type="checkbox">
                 </div>
               </div>
-              <div class="form-input">
-                <input class="form-input__text" type="text" placeholder="Your Email">
-                <div class="form-input__button form-input__button_green" type="button">
-                  <div class="form-input__button-text">THANKS!</div>
-                </div>
-              </div>
-              <div class="form-textarea">
-                <div class="form-textarea__wrapper">
-                  <textarea class="form-textarea__text" placeholder="Your Message" cols="30" rows="4"></textarea>
-                  <button class="btn btn_theme_green form-textarea__btn">submit</button>
+              <div class="toggles_right">
+                <div class="form-toggle">
+                  <input type="checkbox" checked="checked">
                 </div>
               </div>
             </div>
-            <div class="forms__form_right">
-              <div class="toggles">
-                <div class="toggles__header"> 
-                  <div class="header">toggles</div>
-                </div>
-                <div class="toggles_left">
-                  <div class="form-toggle">
-                    <input type="checkbox">
-                  </div>
-                </div>
-                <div class="toggles_right">
-                  <div class="form-toggle">
-                    <input type="checkbox" checked="checked">
-                  </div>
-                </div>
+            <div class="ticks">
+              <div class="ticks__header"> 
+                <div class="header">tick boxes</div>
               </div>
-              <div class="ticks">
-                <div class="ticks__header"> 
-                  <div class="header">tick boxes</div>
-                </div>
-                <div class="ticks_left">
-                  <div class="tick true" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-                </div>
-                <div class="ticks_right">
-                  <div class="tick" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-                </div>
+              <div class="ticks_left">
+                <div class="tick true" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
+              </div>
+              <div class="ticks_right">
+                <div class="tick" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
       <div class="search-profile-row">
         <div class="searches">
@@ -209,7 +207,7 @@
             <div class="dropdown" onclick="dropdownOpen()">
               <input class="dropdown__input" type="text" placeholder="Choose An Option">
               <div class="dropdown__button btn dropdown__button_green" type="button"><i class="material-icons icons-size">keyboard_arrow_down</i></div>
-              <div class="dropdown__menu-1"><a class="dropdown__item">This is option 1</a><a class="dropdown__item">This is option 2</a><a class="dropdown__item">This is option 3</a><a class="dropdown__item">This is option 4</a>
+              <div class="dropdown__menu"><a class="dropdown__item">This is option 1</a><a class="dropdown__item">This is option 2</a><a class="dropdown__item">This is option 3</a><a class="dropdown__item">This is option 4</a>
               </div>
             </div>
           </div>
@@ -223,7 +221,7 @@
               <div class="user-card__panel">
                 <div class="user-card__name">John Smith</div>
                 <div class="user-card__prof">ux designer</div>
-                <div class="user-card__socials"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+                <div class="user-card__socials"><a class="user-card__link" href="3.html"><i class="ion-logo-facebook"></i></a><a class="user-card__link" href="3.html"><i class="ion-logo-twitter"></i></a><a class="user-card__link" href="3.html"><i class="ion-logo-dribbble"></i></a></div>
               </div>
             </div>
           </div>
@@ -232,7 +230,7 @@
               <div class="user-card__panel user-card__panel_green">
                 <div class="user-card__name user-card__name_green">Sarah Brown</div>
                 <div class="user-card__prof user-card__prof_green">developer</div>
-                <div class="user-card__socials user-card__socials_green"><a href="3.html"><i class="ion-logo-facebook"></i></a><a href="3.html"><i class="ion-logo-twitter"></i></a><a href="3.html"><i class="ion-logo-dribbble"></i></a></div>
+                <div class="user-card__socials user-card__socials_green"><a class="user-card__link" href="3.html"><i class="ion-logo-facebook"></i></a><a class="user-card__link" href="3.html"><i class="ion-logo-twitter"></i></a><a class="user-card__link" href="3.html"><i class="ion-logo-dribbble"></i></a></div>
               </div>
             </div>
           </div>
