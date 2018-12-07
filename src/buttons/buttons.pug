@@ -4,9 +4,7 @@ mixin buttons({header,buttons})
     .buttons
         .buttons__header 
             +header(header)
-        .buttons__content
-            - for(var i = 0; i < 4; i++)
-                +button(buttons[i].label, buttons[i].view)
-        .buttons__content
-            - for(var i = 4; i < 8; i++)
-                +button(buttons[i].label, buttons[i].view)
+        - for(var row = 0; row < buttons.length; row=row+4)
+            .buttons__content
+                - for(var i = row; i < row+4; i++)
+                    +button(buttons[i].label, buttons[i].view)

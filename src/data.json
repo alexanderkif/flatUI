@@ -216,6 +216,22 @@
             },
             {
                 "label" : "button",
+                "view" : ["theme_green", "small"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_green"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_red"]
+            },
+            {
+                "label" : "button",
+                "view" : ["theme_red", "small"]
+            },
+            {
+                "label" : "button",
                 "view" : ["theme_green", "small", "disabled"]
             },
             {
