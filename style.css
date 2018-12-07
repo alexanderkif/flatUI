@@ -9,8 +9,8 @@
 
 .btn {
   position: relative;
-  width: 120px;
-  height: 30px;
+  width: 118px;
+  height: 32px;
   font-size: 12px;
   font-weight: bold;
   border: none;
@@ -20,50 +20,37 @@
   cursor: pointer;
   outline: none; }
   .btn_theme_red {
-    color: #e75735;
-    border: 1px solid #bf3e1f;
-    box-shadow: 0px 3px #bf3e1f; }
+    color: white;
+    box-shadow: 0px 3px #bf3e1f;
+    background-color: #e75735; }
     .btn_theme_red.btn_small {
       box-shadow: 0px 2px #bf3e1f; }
-    .btn_theme_red:hover {
-      color: white;
-      box-shadow: 0px 3px #bf3e1f;
-      background-color: #e75735; }
+    .btn_theme_red.disabled {
+      color: #e75735;
+      background-color: white;
+      border: 1px solid #e75735;
+      box-shadow: 0px 3px #e75735; }
   .btn_theme_green {
-    color: #4eb7a8;
-    border: 1px solid #28a290;
-    box-shadow: 0px 3px #28a290; }
+    color: white;
+    box-shadow: 0px 3px #28a290;
+    background-color: #4eb7a8; }
     .btn_theme_green.btn_small {
       box-shadow: 0px 2px #28a290; }
-    .btn_theme_green:hover {
-      color: white;
-      box-shadow: 0px 3px #28a290;
-      background-color: #4eb7a8; }
+    .btn_theme_green.disabled {
+      color: #e75735;
+      color: #4eb7a8;
+      border: 1px solid #4eb7a8;
+      box-shadow: 0px 3px #4eb7a8; }
   .btn_small {
     width: 80px;
     height: 22px;
     font-size: 10px;
     border-radius: 3px; }
-  .btn_disabled {
-    cursor: default;
-    border: 0px;
-    color: lightgray;
-    border: 1px solid lightgray;
-    box-shadow: 0 3px lightgray; }
-    .btn_disabled:hover {
-      transform: none;
-      background-color: #e5e5e5;
-      color: white;
-      box-shadow: 0 3px lightgray; }
-    .btn_disabled.btn_small {
-      box-shadow: 0 2px lightgray; }
-      .btn_disabled.btn_small:hover {
-        box-shadow: 0 2px lightgray; }
   .btn:active {
     transform: translateY(3px); }
-    .btn:active:not(.btn_disabled) {
+    .btn:active:not(.disabled) {
       box-shadow: 0px 0px; }
-    .btn:active.btn_disabled {
+    .btn:active.disabled {
       transform: translateY(0px); }
 
 /*  Ripple */
@@ -88,7 +75,7 @@
   height: 268px;
   padding-top: 20px; }
   .buttons__header {
-    margin-bottom: 70px; }
+    margin-bottom: 67px; }
   .buttons__content {
     display: flex;
     justify-content: space-around;
@@ -119,10 +106,10 @@
   .arrow-button_disabled {
     cursor: default;
     border: 0px;
-    color: lightgray;
-    border: 3px solid lightgray; }
+    background-color: #e5e5e5;
+    color: white; }
     .arrow-button_disabled:hover {
-      background-color: lightgray;
+      background-color: #e5e5e5;
       color: white; }
 
 .arrow-buttons {
