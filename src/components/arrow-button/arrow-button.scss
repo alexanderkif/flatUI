@@ -27,11 +27,11 @@ $color-green: #4eb7a8;
     &_disabled {
         cursor: default;
         border: 0px;
-        color: lightgray;
-        border: 3px solid lightgray;
+        background-color: #e5e5e5;
+        color: white;
 
         &:hover {
-            background-color: lightgray;
+            background-color: #e5e5e5;
             color: white;
         }
     }

@@ -1,12 +1,17 @@
 
 //- btnclass can be small theme_red|theme_green disabled
 
-mixin button(btnlabel, btnclasses)
+mixin button(btnlabel, view)
     - var btnClassString = `btn`
-    each btnclass in btnclasses
-        - btnClassString = `${btnClassString} btn_${btnclass}`
-    if (attributes.class)
-        - btnClassString=`${btnClassString} ${attributes.class}`
+    each attr in view
+        if (attr=='theme_green')
+            - btnClassString = `${btnClassString} btn_theme_green`
+        else
+            - btnClassString = `${btnClassString} btn_theme_red`
+        if (attr=='small')
+            - btnClassString = `${btnClassString} btn_small`
+        if (attr=='disabled')
+            - btnClassString = `${btnClassString} disabled`
     
     button(class=btnClassString)= btnlabel
     
