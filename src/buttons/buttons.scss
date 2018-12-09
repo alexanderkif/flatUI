@@ -16,4 +16,19 @@
         margin-top: 22px;
         max-width: 490px;
     }
+
+    &__btn {
+        width: 118px;
+        height: 32px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 4px;
+
+        &_small {
+            width: 80px;
+            height: 22px;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+    }
 }

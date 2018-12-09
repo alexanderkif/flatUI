@@ -3,4 +3,5 @@ mixin form-textarea(placeholder, cols, rows)
     .form-textarea
         .form-textarea__wrapper
             textarea.form-textarea__text(placeholder=placeholder, cols=cols, rows=rows)
-            +button('submit', ['theme_green'])(class='form-textarea__btn')
+            .form-textarea__btn
+                +button('submit', ['theme_green'])

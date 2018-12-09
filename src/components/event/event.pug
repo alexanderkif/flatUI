@@ -6,4 +6,5 @@ mixin event(header, date, month , text, img)
             .event__month= month
             .event__header= header            
             .event__text= text
-            +button('add to calendar', ['theme_green', 'small'])(class="event__btn")
+            .event__btn
+                +button('add to calendar', ['theme_green', 'small'])

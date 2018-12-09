@@ -7,4 +7,10 @@ mixin buttons({header,buttons})
         - for(var row = 0; row < buttons.length; row=row+4)
             .buttons__content
                 - for(var i = row; i < row+4; i++)
-                    +button(buttons[i].label, buttons[i].view)
+                    if (i%4==0 || i%4==3) 
+                        .buttons__btn.buttons__btn_small
+                            +button(buttons[i].label, buttons[i].view)
+                    else
+                        .buttons__btn
+                            +button(buttons[i].label, buttons[i].view)
+                    

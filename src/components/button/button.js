@@ -1,37 +1,20 @@
-$(".btn").click(function (e) {
-  
-    // Remove any old one
-    $(".ripple").remove();
-  
-    // Setup
-    var posX = $(this).offset().left,
-        posY = $(this).offset().top,
-        buttonWidth = $(this).width(),
-        buttonHeight =  $(this).height();
-    
+
+const rippleElements = document.getElementsByClassName("btn");
+
+for(let i = 0; i < rippleElements.length; i++) {
+  rippleElements[i].onclick = function(e){
     if (!$(this).hasClass('disabled')){
-      // Add the element
-      $(this).prepend("<span class='ripple'></span>");
+      let X = e.pageX - this.offsetLeft;
+      let Y = e.pageY - this.offsetTop;
+      let rippleDiv = document.createElement("div");
+      rippleDiv.classList.add('ripple');
+      rippleDiv.setAttribute("style","top:"+Y+"px; left:"+X+"px;");
+      let customColor = this.getAttribute('ripple-color');
+      if (customColor) rippleDiv.style.background = customColor;
+      this.appendChild(rippleDiv);
+      setTimeout(function(){
+        rippleDiv.parentElement.removeChild(rippleDiv);
+      }, 900);
     }
-  
-    
-   // Make it round!
-    if(buttonWidth >= buttonHeight) {
-      buttonHeight = buttonWidth;
-    } else {
-      buttonWidth = buttonHeight; 
-    }
-    
-    // Get the center of the element
-    var x = e.pageX - posX - buttonWidth / 2;
-    var y = e.pageY - posY - buttonHeight / 2;
-    
-   
-    // Add the ripples CSS and start the animation
-    $(".ripple").css({
-      width: buttonWidth,
-      height: buttonHeight,
-      top: y + 'px',
-      left: x + 'px'
-    }).addClass("rippleEffect");
-});
+  }
+}

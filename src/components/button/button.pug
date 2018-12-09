@@ -1,5 +1,5 @@
 
-//- btnclass can be small theme_red|theme_green disabled
+//- btnclass can be small theme_red|theme_green
 
 mixin button(btnlabel, view)
     - var btnClassString = `btn`
@@ -10,8 +10,6 @@ mixin button(btnlabel, view)
             - btnClassString = `${btnClassString} btn_theme_red`
         if (attr=='small')
             - btnClassString = `${btnClassString} btn_small`
-        if (attr=='disabled')
-            - btnClassString = `${btnClassString} disabled`
     
     button(class=btnClassString)= btnlabel
     
