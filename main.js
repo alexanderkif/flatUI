@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\nconst rippleElements = document.getElementsByClassName(\"btn\");\n\nfor (let i = 0; i < rippleElements.length; i++) {\n  rippleElements[i].onclick = function (e) {\n    if (!$(this).hasClass('disabled')) {\n      let X = e.pageX - this.offsetLeft;\n      let Y = e.pageY - this.offsetTop;\n      let rippleDiv = document.createElement(\"div\");\n      rippleDiv.classList.add('ripple');\n      rippleDiv.setAttribute(\"style\", \"top:\" + Y + \"px; left:\" + X + \"px;\");\n      let customColor = this.getAttribute('ripple-color');\n      if (customColor) rippleDiv.style.background = customColor;\n      this.appendChild(rippleDiv);\n      setTimeout(function () {\n        rippleDiv.parentElement.removeChild(rippleDiv);\n      }, 900);\n    }\n  };\n}\n\n//# sourceURL=webpack:///./src/components/button/button.js?");
+eval("\nconst rippleElements = document.getElementsByClassName(\"btn\");\n\nfor (let i = 0; i < rippleElements.length; i++) {\n  rippleElements[i].onclick = function (e) {\n    let X = e.pageX - this.offsetLeft;\n    let Y = e.pageY - this.offsetTop;\n    let rippleDiv = document.createElement(\"div\");\n    rippleDiv.classList.add('ripple');\n    rippleDiv.setAttribute(\"style\", \"top:\" + Y + \"px; left:\" + X + \"px;\");\n    let customColor = this.getAttribute('ripple-color');\n    if (customColor) rippleDiv.style.background = customColor;\n    this.appendChild(rippleDiv);\n    setTimeout(function () {\n      rippleDiv.parentElement.removeChild(rippleDiv);\n    }, 900);\n  };\n}\n\n//# sourceURL=webpack:///./src/components/button/button.js?");
 
 /***/ }),
 
