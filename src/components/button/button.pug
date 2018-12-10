@@ -6,7 +6,7 @@ mixin button(btnlabel, view)
     each attr in view
         if (attr=='theme_green')
             - btnClassString = `${btnClassString} btn_theme_green`
-        else
+        if (attr=='theme_red')
             - btnClassString = `${btnClassString} btn_theme_red`
         if (attr=='small')
             - btnClassString = `${btnClassString} btn_small`
