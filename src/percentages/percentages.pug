@@ -2,11 +2,11 @@ include ../components/header/header
 include ../components/percentage/percentage
 include ../components/sectors/sectors
 
-mixin percentages({header,values,sectors})
+mixin percentages({header,values,uisectors})
     .percentages
         .percentages__header 
             +header(header)
         .percentages__content
             each value in values
                 +percentage(value)
-            +sectors(sectors)
+            +sectors(uisectors)

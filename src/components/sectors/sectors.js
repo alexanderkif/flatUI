@@ -1,35 +1,29 @@
-$(document).ready(function(){
-    if(document.getElementById('cnvs')) {
-        var canvas=document.getElementById('cnvs');
+
+$(document).ready(function() {
+    var elements = document.getElementsByClassName("sectors");
+    for(var e = 0; e < elements.length; e++) {
+        var canvas = elements[e];
         var ctx = canvas.getContext('2d');
-        var p1 = canvas.getAttribute("p1");
-        var p2 = canvas.getAttribute("p2");
-        var p3 = canvas.getAttribute("p3");
+        var sectors = JSON.parse(canvas.getAttribute("sectors"));
         var r = canvas.getAttribute("r");
-        var a1 = 4.71+p1*2*Math.PI/100;
-        var a2 = a1+p2*2*Math.PI/100;
-        var a3 = a2+p3*2*Math.PI/100;
 
         ctx.lineWidth = r*0.33; // толщина линии
 
-        ctx.strokeStyle="#747474";
-        ctx.beginPath();
-        ctx.arc(r, r, r*0.7, 4.71, a1, false);
-        ctx.stroke();
+        var start = 4.71;
 
-        ctx.strokeStyle="#e75735";
-        ctx.beginPath();
-        ctx.arc(r, r, r*0.7, a1, a2, false);
-        ctx.stroke();
-
-        ctx.strokeStyle="#4eb7a8";
-        ctx.beginPath();
-        ctx.arc(r, r, r*0.7, a2, a3, false);
-        ctx.stroke();
+        for (var i=0; i<sectors.length; i++) {
+            var key = Object.keys(sectors[i])[0];
+            ctx.strokeStyle = key;
+            end = start + sectors[i][key]*2*Math.PI/100;
+            ctx.beginPath();
+            ctx.arc(r, r, r*0.7, start, end, false);
+            ctx.stroke();
+            start = end;
+        }
 
         ctx.strokeStyle="#e5e5e5";
         ctx.beginPath();
-        ctx.arc(r, r, r*0.7, a3, 4.71, false);
+        ctx.arc(r, r, r*0.7, start, 4.71, false);
         ctx.stroke();
     }
-})
+});

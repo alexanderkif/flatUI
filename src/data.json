@@ -2,7 +2,14 @@
     "percentages" : {
         "header" : "percentages / pie chart",
         "values" : [0,38,62,89],
-        "sectors" : [10,25,30,115]
+        "uisectors" : {
+            "sectors" : [
+                { "#747474" : 10},
+                { "#e75735" : 25},
+                { "#4eb7a8" : 30}
+            ],
+            "size" : 115
+        }
     },
     "sliders" : {
         "header" : "sliders",
