@@ -175,46 +175,42 @@
 
 .stage {
   width: 100%;
-  display: table;
-  font-weight: bold; }
-  .stage__noline {
-    width: 0px; }
-  .stage__line {
-    display: table-cell;
-    text-align: right; }
-    .stage__line_act {
-      border-top: 5px solid #e75735; }
-    .stage__line_pas {
-      border-top: 5px solid #e5e5e5; }
-  .stage__step {
-    width: 30px;
-    height: auto;
-    margin-right: -15px;
-    margin-top: -18px; }
-    .stage__step_first {
-      margin-left: -15px; }
+  display: flex;
+  font-weight: bold;
+  flex-direction: row;
+  align-items: center; }
+  .stage__circle {
+    width: 28px;
+    height: 28px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .stage__circle_active {
+      background-color: #e75735; }
   .stage__text {
-    font-weight: bold; }
-    .stage__text_act {
-      fill: white; }
-    .stage__text_pas {
-      fill: #747474; }
-  .stage__round_act {
-    fill: #e75735; }
-  .stage__round_pas {
-    fill: #e5e5e5; }
+    font-size: 14px;
+    color: #747474; }
+    .stage__text_active {
+      color: white; }
+  .stage__line {
+    flex: 1;
+    height: 5px;
+    background-color: #e5e5e5; }
+    .stage__line_active {
+      background-color: #e75735; }
 
 .stages {
   height: 110px;
   padding-top: 20px; }
   .stages__header {
-    margin-bottom: 36px; }
+    margin-bottom: 25px; }
   .stages__content {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     margin: 0px auto;
-    max-width: 565px;
     padding-left: 10px;
     padding-right: 10px; }
 
