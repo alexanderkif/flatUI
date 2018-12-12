@@ -275,7 +275,8 @@
   font-size: 14px;
   padding: 12px;
   display: block;
-  width: 100%; }
+  width: 100%;
+  outline: none; }
 
 .form-textarea__btn {
   align-self: flex-end;
@@ -411,15 +412,14 @@
     padding-left: 12px;
     outline: none; }
     .search__input_not-found {
-      background-color: #e75735; }
-      .search__input_not-found::placeholder {
-        color: white;
-        opacity: 1; }
+      background-color: #e75735;
+      color: white;
+      opacity: 1; }
   .search__button {
     display: block;
     flex: 0 33px;
     margin: 4px 0px;
-    height: 22px;
+    height: 28px;
     border-radius: 0px 3px 3px 0px;
     border: 0px;
     color: white;
@@ -427,13 +427,10 @@
     font-size: 12px;
     outline: none;
     text-align: center;
-    padding-top: 6px; }
+    padding-top: 6px;
+    background-color: #e75735; }
   .search__icon {
     font-size: 18px; }
-  .search__button-red {
-    background-color: #e75735; }
-  .search__button-green {
-    background-color: #4eb7a8; }
 
 .dropdown {
   position: relative;
@@ -457,7 +454,7 @@
     display: block;
     flex: 0 35px;
     margin: 4px 0px;
-    height: 26px;
+    height: 30px;
     border-radius: 0px 3px 3px 0px;
     border: 0px;
     color: white;
@@ -465,10 +462,7 @@
     font-size: 12px;
     outline: none;
     text-align: center;
-    padding-top: 4px; }
-  .dropdown__button_red {
-    background-color: #e75735; }
-  .dropdown__button_green {
+    padding-top: 4px;
     background-color: #4eb7a8; }
   .dropdown__menu {
     position: absolute;
@@ -476,7 +470,8 @@
     top: 34px;
     width: 100%;
     background-color: #4eb7a8;
-    border-radius: 2px; }
+    border-radius: 2px;
+    padding: 8px 0; }
     .dropdown__menu.visible {
       visibility: visible; }
   .dropdown__item {
@@ -487,12 +482,15 @@
     outline: none;
     margin: 0;
     text-decoration-line: none;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #4eb7a8;
     color: white;
     padding-top: 7px;
     height: 23px;
     z-index: 10000;
     cursor: pointer; }
+    .dropdown__item:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #4eb7a8; }
 
 .searches {
   width: 50%;
