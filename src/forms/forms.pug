@@ -11,7 +11,7 @@ mixin forms({header,inputs,textarea,toggles,ticks})
         form.forms__form(action="" method="get")
             .forms__form_left
                 each i in inputs
-                    +form-input(i.placeholder, i.textbutton, i.style)
+                    +form-input(i.placeholder, i.min)
                 +form-textarea(textarea.placeholder, textarea.cols, textarea.rows)
             .forms__form_right
                 .toggles

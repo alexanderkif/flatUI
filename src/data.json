@@ -64,13 +64,11 @@
         "inputs" : [
             {
                 "placeholder" : "Your Name", 
-                "textbutton" : "ERROR", 
-                "style" : "red"
+                "min" : 3
             },
             {
-                "placeholder" : "Your Email",
-                "textbutton" : "THANKS!", 
-                "style" : "green"
+                "placeholder" : "Your Email", 
+                "min" : 7
             }
         ],
         "textarea" : {

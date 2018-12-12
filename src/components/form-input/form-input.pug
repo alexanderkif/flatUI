@@ -1,5 +1,5 @@
-mixin form-input(placeholder, btntext, btncolor)
+mixin form-input(placeholder, min)
     .form-input
-        input.form-input__text(type="text" placeholder=placeholder)
-        .form-input__button(type="button", class=`form-input__button_${btncolor}`)
+        input.form-input__text(placeholder=placeholder data-min=min)
+        .form-input__button
             .form-input__button-text= btntext

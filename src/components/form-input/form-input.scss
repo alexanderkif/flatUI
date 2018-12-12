@@ -5,7 +5,6 @@ $color-lightgray: #e5e5e5;
 
 .form-input {
     display: flex;
-    position: relative;
 
     &__text {
         flex: 8;
@@ -19,6 +18,7 @@ $color-lightgray: #e5e5e5;
         font-weight: normal;
         font-size: 14px;
         padding-left: 12px;
+        outline: none;
     }
 
     &__button {
@@ -33,16 +33,13 @@ $color-lightgray: #e5e5e5;
         font-weight: normal;
         font-size: 10px;
         letter-spacing: 1px;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
+        background-color: $color-green;
 
-        &_red {
+        &_error {
             background-color: $color-red;  
-        }
-
-        &_green {
-            background-color: $color-green;
         }
 
         &::before {
@@ -50,7 +47,7 @@ $color-lightgray: #e5e5e5;
             position: absolute;
             background-color: inherit;   
             top: 12px;
-            left: -3px;
+            left: -2px;
             width: 6px;
             height: 6px;
             transform: rotate(-45deg);
