@@ -91,13 +91,10 @@
         "header" : "search / drop down",
         "searches" : [
             {
-                "placeholder" : "Search",
-                "btncolor" : "red"
+                "placeholder" : "Search"
             },
             {
-                "placeholder" : "I've not found what I'm looking for...",
-                "btncolor" : "red",
-                "status" : "not-found"
+                "placeholder" : "Another search"
             }
         ],
         "dropdown" : {

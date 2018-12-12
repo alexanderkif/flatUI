@@ -1,5 +1,5 @@
-mixin search(placeholder, btncolor, status)
+mixin search(placeholder)
     .search
-        input.search__input(type="text" placeholder=placeholder, class=`search__input_${status}`)
-        .search__button(class=`btn search__button-${btncolor}`)
+        input.search__input(placeholder=placeholder)
+        button.search__button
             i(class="material-icons icons-size search__icon")= 'search'
