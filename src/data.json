@@ -99,7 +99,6 @@
         ],
         "dropdown" : {
             "placeholder" : "Choose An Option",
-            "btncolor" : "green",
             "options" : ["This is option 1","This is option 2","This is option 3","This is option 4"]
         }
     },
