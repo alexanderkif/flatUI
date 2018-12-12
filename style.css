@@ -215,8 +215,7 @@
     padding-right: 10px; }
 
 .form-input {
-  display: flex;
-  position: relative; }
+  display: flex; }
   .form-input__text {
     flex: 8;
     margin: 5px;
@@ -228,7 +227,8 @@
     font-family: inherit;
     font-weight: normal;
     font-size: 14px;
-    padding-left: 12px; }
+    padding-left: 12px;
+    outline: none; }
   .form-input__button {
     position: relative;
     flex: 3;
@@ -241,19 +241,18 @@
     font-weight: normal;
     font-size: 10px;
     letter-spacing: 1px;
-    display: flex;
+    display: none;
     align-items: center;
-    justify-content: center; }
-    .form-input__button_red {
+    justify-content: center;
+    background-color: #4eb7a8; }
+    .form-input__button_error {
       background-color: #e75735; }
-    .form-input__button_green {
-      background-color: #4eb7a8; }
     .form-input__button::before {
       content: "";
       position: absolute;
       background-color: inherit;
       top: 12px;
-      left: -3px;
+      left: -2px;
       width: 6px;
       height: 6px;
       transform: rotate(-45deg); }
