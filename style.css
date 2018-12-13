@@ -427,7 +427,6 @@
     font-size: 12px;
     outline: none;
     text-align: center;
-    padding-top: 6px;
     background-color: #e75735; }
   .search__icon {
     font-size: 18px; }
@@ -462,7 +461,6 @@
     font-size: 12px;
     outline: none;
     text-align: center;
-    padding-top: 4px;
     background-color: #4eb7a8; }
   .dropdown__menu {
     position: absolute;
