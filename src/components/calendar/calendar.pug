@@ -1,34 +1,6 @@
 
-mixin calendar(date, month, firstdayinweek, daysinmonth)
+mixin calendar(date)
     .calendar
         .calendar__date= date
-        .calendar__carusel
-            .calendar__carusel-left
-                i.material-icons= "keyboard_arrow_left"
-            .calendar__carusel-month= month
-            .calendar__carusel-right
-                i.material-icons= "keyboard_arrow_right"
-        .calendar__week
-            each day in ['mon','tue','wed','thu','fri','sat','sun']
-                .days= day
-        - var currentday = 2 - firstdayinweek
-        - var first_days= [currentday] //[-2,5,12,19,26]
-
-        while currentday < daysinmonth - 6
-            - currentday= 7 + currentday
-            - first_days.push(currentday)
-
-        each first_day in first_days
-            .calendar__row
-                - var sevendays = [0,1,2,3,4,5,6]
-                each day in sevendays
-                    if first_day + day > 0 
-                        if first_day + day < daysinmonth + 1
-                            .calendar__day.calendar__day_thisMonth= first_day + day
-                        else
-                            .calendar__day= first_day + day - daysinmonth
-                    else
-                        .calendar__day= first_day + day + 31  
-
-
+        .mydatepicker
         .calendar__footer= 'today'
