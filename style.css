@@ -780,7 +780,7 @@
       border: none;
       border-radius: 0;
       background-color: inherit;
-      background: url("/dist/img/arrow.png") 50% 50% no-repeat;
+      background: url("/flatUI/img/arrow.png") 50% 50% no-repeat;
       background-size: 18px; }
     .calendar .ui-datepicker .ui-datepicker-header a.ui-datepicker-next.ui-corner-all, .calendar .ui-datepicker .ui-datepicker-header a.ui-datepicker-next-hover {
       right: 0px;
@@ -790,7 +790,7 @@
       border: none;
       border-radius: 0;
       background-color: inherit;
-      background: url("/dist/img/arrow.png") 50% 50% no-repeat;
+      background: url("/flatUI/img/arrow.png") 50% 50% no-repeat;
       background-size: 18px;
       transform: rotate(180deg); }
   .calendar .ui-datepicker table {
