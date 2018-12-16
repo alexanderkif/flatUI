@@ -40,4 +40,4 @@ class Calendar {
     }
 }
 
-[].forEach.call(document.getElementsByClassName('mydatepicker'), element => new Calendar(element));
+$('.mydatepicker').each((index,element) => new Calendar(element));
