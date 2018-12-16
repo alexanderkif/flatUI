@@ -150,10 +150,9 @@
     "calendarMessagingRow" : {
         "calendar" : {
             "header" : "calendar",
-            "date" : 24,
-            "month" : "september",
-            "firstdayinweek" : 4,
-            "daysinmonth" : 30
+            "date" : "24",
+            "month" : "09",
+            "year" : "2016"
         },
         "messaging" : {
             "header" : "messaging",

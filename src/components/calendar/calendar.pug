@@ -1,6 +1,6 @@
 
-mixin calendar(date)
+mixin calendar(date, month, year)
     .calendar
         .calendar__date= date
-        .mydatepicker
+        .mydatepicker(data-date=date data-month=month data-year=year)
         .calendar__footer= 'today'

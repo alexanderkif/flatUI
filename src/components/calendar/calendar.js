@@ -14,6 +14,5 @@ var mydatepickers = document.getElementsByClassName('mydatepicker');
             var day = this.parentElement.getElementsByClassName('calendar__date')[0];
             day.innerHTML = parseInt($(this).val().split('/')[1]);
         }
-    })
-    
+    }).datepicker("setDate", `${mydatepicker.dataset.month}/${mydatepicker.dataset.date}/${mydatepicker.dataset.year}`)
 });
