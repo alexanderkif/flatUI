@@ -104,7 +104,7 @@ eval("\nconst rippleElements = document.getElementsByClassName(\"btn\");\n\nfor 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\nvar mydatepickers = document.getElementsByClassName('mydatepicker');\n\n[].forEach.call(mydatepickers, function (mydatepicker) {\n\n    $(mydatepicker).datepicker({\n        inline: true,\n        firstDay: 1,\n        showOtherMonths: true,\n        showButtonPanel: true,\n        showYear: false,\n        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],\n        onSelect: function () {\n            var day = this.parentElement.getElementsByClassName('calendar__date')[0];\n            day.innerHTML = parseInt($(this).val().split('/')[1]);\n        }\n    });\n});\n\n//# sourceURL=webpack:///./src/components/calendar/calendar.js?");
+eval("\nvar mydatepickers = document.getElementsByClassName('mydatepicker');\n\n[].forEach.call(mydatepickers, function (mydatepicker) {\n\n    $(mydatepicker).datepicker({\n        inline: true,\n        firstDay: 1,\n        showOtherMonths: true,\n        showButtonPanel: true,\n        showYear: false,\n        dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],\n        onSelect: function () {\n            var day = this.parentElement.getElementsByClassName('calendar__date')[0];\n            day.innerHTML = parseInt($(this).val().split('/')[1]);\n        }\n    }).datepicker(\"setDate\", `${mydatepicker.dataset.month}/${mydatepicker.dataset.date}/${mydatepicker.dataset.year}`);\n});\n\n//# sourceURL=webpack:///./src/components/calendar/calendar.js?");
 
 /***/ }),
 
