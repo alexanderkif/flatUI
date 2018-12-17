@@ -1,4 +1,4 @@
-include ../components/button/button
+include ../components/arrow-button/arrow-button
 include ../percentages/percentages
 include ../components/sectors/sectors
 include ../components/sliderm2/sliderm2
@@ -40,15 +40,21 @@ html
                     .stat-page__row.stat-page__row_w300
                         .stat-page__item
                             span Prev
-                        +button('<', ['arrow'])
-                        +button('>', ['arrow', 'disable'])
+                        +arrow-button("keyboard_arrow_left", [])
+                        +arrow-button("keyboard_arrow_right", ['disabled'])
                         .stat-page__item
                             span Next
                         
                     h1 recommendation
                     .stat-page__row
                         .stat-page__row_left
-                            +sectors([50,35,10,400])
+                            +sectors({"sectors" : [
+                                { "#747474" : 10},
+                                { "#e75735" : 25},
+                                { "#4eb7a8" : 30}
+                                ],
+                                "size" : 300
+                            })
                         .stat-page__row_right
                             .stat-page__colors
                                 .stat-page__color.stat-page__color_grey
@@ -78,3 +84,7 @@ html
 
             //- = = = = = = = = end of page = = = = = = = = = =
         +footer
+        
+        script(src="https://code.jquery.com/jquery-1.12.4.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")

@@ -28,24 +28,24 @@ html
                 .user-page_left
                     .user-page__forms
                         span Send to us your message
-                        +form-input('Your Name', 'ERROR', 'red')
-                        +form-input('Your Email', 'THANKS!', 'green')
+                        +form-input('Your Name', 5)
+                        +form-input('Your Email', 8)
                         +form-textarea("Your Message", "30", "4")
                         .user-page__toggles
                             .user-page__toggle-block
-                                +form-toggle("check-3","6",true)
+                                +form-toggle(true)
                                 span Switch borders
                             .user-page__toggle-block
-                                +form-toggle("check-3","6",true)
+                                +form-toggle(true)
                                 span Switch shadows
                             .user-page__toggle-block
-                                +form-toggle("check-1","4",false)
+                                +form-toggle(false)
                                 span Switch to turn off your PC
 
                         .user-page__ticks
                             span Choose options you need
                             .user-page__tick-block
-                                +tick('active') 
+                                +tick('true') 
                                 span A
                                 +tick('') 
                                 span B
@@ -59,7 +59,7 @@ html
                 .user-page_right
                     .user-page__left-block
                         +search('Search', 'red')
-                        +dropdown('Choose An Option', 'green', ['This is option 1','This is option 2','This is option 3','This is option 4'])
+                        +dropdown('Choose An Option', ['This is option 1','This is option 2','This is option 3','This is option 4'])
       
                     .user-page__left-block
                         +messaging('Sarah Brown', 'sarah', 'Hey! So are we cool to meet at the art gallery? Say 8pm', 'Yeah that sounds great. See you then.')
@@ -67,3 +67,11 @@ html
 
             //- = = = = = = = = end of page = = = = = = = = = =
             +footer
+
+        script(src="https://code.jquery.com/jquery-1.12.4.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+        script(src="js/dropdown.js")
+        script(src="js/lc_switch.min.js")
+        link(rel="stylesheet" href="css/lc_switch.css")
+        
