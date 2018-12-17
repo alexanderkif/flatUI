@@ -66,14 +66,14 @@
           <div class="stat-page__row"><span>09.08.2018</span><span>11.08.2018</span><span>14.08.2018</span><span>16.08.2018</span><span>17.08.2018</span></div>
           <div class="stat-page__row stat-page__row_w300">
             <div class="stat-page__item"><span>Prev</span></div>
-            <button class="btn">&lt;</button>
-            <button class="btn">&gt;</button>
+            <button class="arrow-button"><i class="material-icons">keyboard_arrow_left</i></button>
+            <button class="arrow-button arrow-button_disabled"><i class="material-icons">keyboard_arrow_right</i></button>
             <div class="stat-page__item"><span>Next</span></div>
           </div>
           <h1>recommendation</h1>
           <div class="stat-page__row">
             <div class="stat-page__row_left">
-              <canvas class="sectors" width="undefinedpx" height="undefinedpx" r="null"></canvas>
+              <canvas class="sectors" width="300px" height="300px" r="150" sectors="[{&quot;#747474&quot;:10},{&quot;#e75735&quot;:25},{&quot;#4eb7a8&quot;:30}]"></canvas>
             </div>
             <div class="stat-page__row_right">
               <div class="stat-page__colors">
@@ -108,5 +108,8 @@
     <script src="js/lc_switch.min.js"></script>
     <link rel="stylesheet" href="css/lc_switch.css">
     <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script type="text/javascript" src="main.js"></script></body>
 </html>

@@ -17,13 +17,13 @@
         <div class="user-page_left">
           <div class="user-page__forms"><span>Send to us your message</span>
             <div class="form-input">
-              <input class="form-input__text" placeholder="Your Name" data-min="ERROR">
+              <input class="form-input__text" placeholder="Your Name" data-min="5">
               <div class="form-input__button">
                 <div class="form-input__button-text"></div>
               </div>
             </div>
             <div class="form-input">
-              <input class="form-input__text" placeholder="Your Email" data-min="THANKS!">
+              <input class="form-input__text" placeholder="Your Email" data-min="8">
               <div class="form-input__button">
                 <div class="form-input__button-text"></div>
               </div>
@@ -49,13 +49,13 @@
               </div>
               <div class="user-page__toggle-block">
                 <div class="form-toggle">
-                  <input type="checkbox" checked="checked">
+                  <input type="checkbox">
                 </div><span>Switch to turn off your PC</span>
               </div>
             </div>
             <div class="user-page__ticks"><span>Choose options you need</span>
               <div class="user-page__tick-block">
-                <div class="tick active" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div><span>A</span>
+                <div class="tick true" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div><span>A</span>
                 <div class="tick" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div><span>B</span>
                 <div class="tick" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div><span>C</span>
                 <div class="tick" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div><span>D</span>
@@ -75,7 +75,7 @@
             <div class="dropdown">
               <input class="dropdown__input" placeholder="Choose An Option">
               <button class="dropdown__button"><i class="material-icons icons-size">keyboard_arrow_down</i></button>
-              <div class="dropdown__menu"><a class="dropdown__item">g</a><a class="dropdown__item">r</a><a class="dropdown__item">e</a><a class="dropdown__item">e</a><a class="dropdown__item">n</a>
+              <div class="dropdown__menu"><a class="dropdown__item">This is option 1</a><a class="dropdown__item">This is option 2</a><a class="dropdown__item">This is option 3</a><a class="dropdown__item">This is option 4</a>
               </div>
             </div>
           </div>
@@ -102,5 +102,11 @@
       <link rel="stylesheet" href="css/lc_switch.css">
       <script src="main.js"></script>
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/dropdown.js"></script>
+    <script src="js/lc_switch.min.js"></script>
+    <link rel="stylesheet" href="css/lc_switch.css">
   <script type="text/javascript" src="main.js"></script></body>
 </html>
