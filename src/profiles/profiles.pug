@@ -3,8 +3,9 @@ include ../components/user-card/user-card
 
 mixin profiles({header,cards})
     .profiles
-        .profiles__header 
+        header.profiles__header 
             +header(header)
-        each c in cards
-            .profiles__item
-                +user-card(c.img, c.name, c.prof, c.color, c.a1, c.a2, c.a3)
+        ul.profiles__content
+            each c in cards
+                li.profiles__item
+                    +user-card(c.img, c.name, c.prof, c.color, c.a1, c.a2, c.a3)

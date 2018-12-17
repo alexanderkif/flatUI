@@ -10,13 +10,19 @@
     align-items: center;
 
     &__item {
-        margin: 13px;
-        margin-left: 29px;
+        margin-bottom: 25px;
+        margin-left: 11px;
+        list-style-type: none;
     }
 
     &__header {
         margin-top: 0px;
-        margin-bottom: 15px;
+        margin-bottom: 27px;
         letter-spacing: 1px;
+    }    
+
+    &__content {
+        padding-left: 0;
+        margin: 0;
     }
 }

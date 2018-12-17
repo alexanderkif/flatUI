@@ -147,20 +147,18 @@
         "lat" : 37.791235,
         "lng" : -122.414842
     },
-    "calendarMessagingRow" : {
-        "calendar" : {
-            "header" : "calendar",
-            "date" : "24",
-            "month" : "09",
-            "year" : "2016"
-        },
-        "messaging" : {
-            "header" : "messaging",
-            "user" : "Sarah Brown",
-            "img" : "sarah",
-            "message" : "Hey! So are we cool to meet at the art gallery? Say 8pm",
-            "placeholder" : "Yeah that sounds great. See you then."
-        }
+    "calendar" : {
+        "header" : "calendar",
+        "date" : "24",
+        "month" : "09",
+        "year" : "2016"
+    },
+    "messaging" : {
+        "header" : "messaging",
+        "user" : "Sarah Brown",
+        "img" : "sarah",
+        "message" : "Hey! So are we cool to meet at the art gallery? Say 8pm",
+        "placeholder" : "Yeah that sounds great. See you then."
     },
     "videoRow" : {
         "header" : "video",

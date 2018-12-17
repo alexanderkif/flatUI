@@ -42,6 +42,7 @@
         background-color: $color-green;
         border-radius: 2px;
         padding: 8px 0;
+        z-index: 10000;
         
         &.visible {
             visibility: visible;        
@@ -60,7 +61,6 @@
         color: white;
         padding-top: 7px;
         height: 23px;
-        z-index: 10000;
         cursor: pointer;
 
         &:hover {

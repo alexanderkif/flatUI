@@ -1,12 +1,10 @@
 
-//- btnclass can be small theme_red|theme_green disabled
+//- btnclass can be disabled
 
 mixin arrow-button(btnlabel, btnclasses)
     - var btnClassString = `arrow-button`
     each btnclass in btnclasses
         - btnClassString = `${btnClassString} arrow-button_${btnclass}`
-    if (attributes.class)
-        - btnClassString=`${btnClassString} ${attributes.class}`
     
     button(class=btnClassString)
          i.material-icons= btnlabel

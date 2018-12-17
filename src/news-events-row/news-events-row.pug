@@ -4,10 +4,10 @@ include ../components/event/event
 
 mixin news-events-row({header,news,event})
     .news-events-row
-        .news-events-row__header 
+        header.news-events-row__header 
             +header(header)
-        .news-events-row__content
-            .news-events-row__item
+        ul.news-events-row__content
+            li.news-events-row__item
                 +news(news.header, news.date, news.text, news.img, news.href)
-            .news-events-row__item
+            li.news-events-row__item
                 +event(event.header, event.date, event.month , event.text, event.img)

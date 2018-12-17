@@ -2,9 +2,9 @@ include ../components/arrow-button/arrow-button
 
 mixin arrow-buttons({header,buttons})
     .arrow-buttons
-        .arrow-buttons__header 
+        header.arrow-buttons__header 
             +header(header)
         .arrow-buttons__content
-            each b in buttons
-                +arrow-button(b.label, b.view)
+            each button in buttons
+                +arrow-button(button.label, button.view)
                 

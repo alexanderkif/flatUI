@@ -13,7 +13,7 @@ include ../location/location
 include ../calendar-messaging-row/calendar-messaging-row
 include ../video-row/video-row
 
-mixin flatUI({buttons,arrowButtons,percentages,sliders,stages,forms,searches,profiles,newsEventsRow,location,calendarMessagingRow,videoRow})
+mixin flatUI({buttons,arrowButtons,percentages,sliders,stages,forms,searches,profiles,newsEventsRow,location,calendar,messaging,videoRow})
     .flatUI
         +buttons(buttons)
         +arrow-buttons(arrowButtons)
@@ -26,5 +26,5 @@ mixin flatUI({buttons,arrowButtons,percentages,sliders,stages,forms,searches,pro
             +profiles(profiles)
         +news-events-row(newsEventsRow)
         +location(location)
-        +calendar-messaging-row(calendarMessagingRow)
+        +calendar-messaging-row(calendar,messaging)
         +video-row(videoRow)

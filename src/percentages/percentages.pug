@@ -4,9 +4,11 @@ include ../components/sectors/sectors
 
 mixin percentages({header,values,uisectors})
     .percentages
-        .percentages__header 
+        header.percentages__header 
             +header(header)
-        .percentages__content
+        ul.percentages__content
             each value in values
-                +percentage(value)
-            +sectors(uisectors)
+                li.percentages__item
+                    +percentage(value)
+            li.percentages__item
+                +sectors(uisectors)

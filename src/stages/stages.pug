@@ -3,7 +3,7 @@ include ../components/stage/stage
 
 mixin stages({header,steps,passed})
     .stages
-        .stages__header 
+        header.stages__header 
             +header(header)
         .stages__content
             +stage(steps,passed)

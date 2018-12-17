@@ -5,7 +5,7 @@
     padding-top: 20px;
 
     &__header {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     &__content {
@@ -15,5 +15,10 @@
         margin: 0px auto;
         margin-left: -10px;
         flex-wrap: wrap;
+        padding: 0;
+    }
+
+    &__item {
+        list-style-type: none;
     }
 }

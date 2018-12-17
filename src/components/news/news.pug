@@ -3,6 +3,6 @@ mixin news(header, date, text, img, href)
         a.news__link(href= href)
             img(src=`img/${img}.png` alt="no img" class="news__img")
             .news__content
-                .news__header= header
+                header.news__header= header
                 .news__date= date
-                .news__text= text
+                p.news__text= text
