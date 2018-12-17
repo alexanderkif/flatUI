@@ -145,14 +145,17 @@
   min-height: 156px;
   padding-top: 20px; }
   .percentages__header {
-    margin-bottom: 15px; }
+    margin-bottom: 10px; }
   .percentages__content {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
     margin: 0px auto;
     margin-left: -10px;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    padding: 0; }
+  .percentages__item {
+    list-style-type: none; }
 
 .sliderm2 {
   width: 100%;
@@ -337,7 +340,7 @@
   min-height: 328px;
   padding-top: 20px; }
   .forms__header {
-    margin-bottom: 42px; }
+    margin-bottom: 25px; }
   .forms__form {
     width: 100%;
     display: flex;
@@ -346,6 +349,7 @@
     justify-content: space-around; }
     .forms__form_left {
       min-width: 300px;
+      padding-left: 0;
       padding-bottom: 20px; }
     .forms__form_right {
       padding: 4px 5%;
@@ -357,6 +361,8 @@
       grid-gap: 15px;
       justify-items: center;
       align-items: start; }
+  .forms__item {
+    list-style-type: none; }
 
 .toggles {
   display: grid;
@@ -469,7 +475,8 @@
     width: 100%;
     background-color: #4eb7a8;
     border-radius: 2px;
-    padding: 8px 0; }
+    padding: 8px 0;
+    z-index: 10000; }
     .dropdown__menu.visible {
       visibility: visible; }
   .dropdown__item {
@@ -484,7 +491,6 @@
     color: white;
     padding-top: 7px;
     height: 23px;
-    z-index: 10000;
     cursor: pointer; }
     .dropdown__item:hover {
       background-color: rgba(255, 255, 255, 0.9);
@@ -499,11 +505,14 @@
     margin-bottom: 14px;
     letter-spacing: 1px; }
   .searches__content {
+    padding-left: 0;
+    margin: 0; }
+  .searches__item {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    margin: 0px auto;
-    margin: 9px 10px; }
+    margin: 8px 10px;
+    list-style-type: none; }
 
 .user-card {
   display: block;
@@ -574,12 +583,16 @@
   min-width: 300px;
   align-items: center; }
   .profiles__item {
-    margin: 13px;
-    margin-left: 29px; }
+    margin-bottom: 25px;
+    margin-left: 11px;
+    list-style-type: none; }
   .profiles__header {
     margin-top: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 27px;
     letter-spacing: 1px; }
+  .profiles__content {
+    padding-left: 0;
+    margin: 0; }
 
 .news {
   display: block;
@@ -670,9 +683,12 @@
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: space-around;
+    padding-left: 0;
+    margin: 0; }
   .news-events-row__item {
-    padding: 10px; }
+    padding: 10px;
+    list-style-type: none; }
 
 .map {
   width: 590px;
