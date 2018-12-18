@@ -3,21 +3,23 @@ class FormInput {
     constructor(element) {
         element.addEventListener('input', function() {
             if (element.value.length!=0) {
-                element.parentElement.getElementsByClassName('form-input__button')[0].remove();
+                if (element.parentElement.getElementsByClassName('form-input__button')[0])
+                    element.parentElement.getElementsByClassName('form-input__button')[0].remove();
                 var button = document.createElement('div');
                 button.style.display = 'flex';
-                if (element.value.length < element.dataset.min) {
+                var re = new RegExp(element.dataset.reg);
+                if (re.test(element.value)) {
                     button.className = "form-input__button form-input__button_error";
-                    button.innerHTML = 'ERROR';
+                    button.innerHTML = element.dataset.success;
                 }
                 else {
                     button.className = "form-input__button";
-                    button.innerHTML = 'THANKS!';
+                    button.innerHTML = element.dataset.error;
                 }
                 element.parentElement.appendChild(button);
             }
             else element.parentElement.getElementsByClassName('form-input__button')[0].style.display = 'none';
-        })
+        });
     }
 }
 

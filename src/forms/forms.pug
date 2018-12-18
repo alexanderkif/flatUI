@@ -12,7 +12,7 @@ mixin forms({header,inputs,textarea,toggles,ticks})
             ul.forms__form_left
                 each i in inputs
                     li.forms__item
-                        +form-input(i.placeholder, i.min)
+                        +form-input(i.placeholder, i.reg, i.success, i.error)
                 li.forms__item
                     +form-textarea(textarea.placeholder, textarea.cols, textarea.rows)
             ul.forms__form_right

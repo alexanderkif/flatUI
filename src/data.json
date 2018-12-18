@@ -64,11 +64,15 @@
         "inputs" : [
             {
                 "placeholder" : "Your Name", 
-                "min" : 3
+                "reg" : "/^([a-zA-Z_-]){3,5}$/",
+                "success" : "THANKS!",
+                "error" : "ERROR"
             },
             {
                 "placeholder" : "Your Email", 
-                "min" : 7
+                "reg" : "/^.*?@\\w+\\.\\w{2,5}$/",
+                "success" : "",
+                "error" : ""
             }
         ],
         "textarea" : {
@@ -91,10 +95,12 @@
         "header" : "search / drop down",
         "searches" : [
             {
-                "placeholder" : "Search"
+                "placeholder" : "Search",
+                "error" : "I've not found what I'm looking for..."
             },
             {
-                "placeholder" : "Another search"
+                "placeholder" : "Another search",
+                "error" : "I've not found too..."
             }
         ],
         "dropdown" : {
