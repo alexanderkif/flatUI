@@ -168,7 +168,7 @@
           <ul class="forms__form_left">
             <li class="forms__item">
               <div class="form-input">
-                <input class="form-input__text" placeholder="Your Name" data-min="3">
+                <input class="form-input__text" placeholder="Your Name" data-reg="^([a-zA-Z_-]){3,10}$" data-success="THANKS!" data-error="ERROR">
                 <div class="form-input__button">
                   <div class="form-input__button-text"></div>
                 </div>
@@ -176,7 +176,7 @@
             </li>
             <li class="forms__item">
               <div class="form-input">
-                <input class="form-input__text" placeholder="Your Email" data-min="7">
+                <input class="form-input__text" placeholder="Your Email" data-reg="^.*?@\w+\.\w{2,5}$" data-success="THANKS!" data-error="WRONG">
                 <div class="form-input__button">
                   <div class="form-input__button-text"></div>
                 </div>
@@ -235,13 +235,13 @@
           <ul class="searches__content">
             <li class="searches__item">
               <div class="search">
-                <input class="search__input" placeholder="Search">
+                <input class="search__input" placeholder="Search" data-error="I've not found what I'm looking for...">
                 <button class="search__button"><i class="material-icons icons-size search__icon">search</i></button>
               </div>
             </li>
             <li class="searches__item">
               <div class="search">
-                <input class="search__input" placeholder="Another search">
+                <input class="search__input" placeholder="Another search" data-error="I've not found too...">
                 <button class="search__button"><i class="material-icons icons-size search__icon">search</i></button>
               </div>
             </li>
