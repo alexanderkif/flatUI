@@ -1,26 +1,34 @@
 
 class FormInput {
     constructor(element) {
-        element.addEventListener('input', function() {
-            if (element.value.length!=0) {
-                if (element.parentElement.getElementsByClassName('form-input__button')[0])
-                    element.parentElement.getElementsByClassName('form-input__button')[0].remove();
-                var button = document.createElement('div');
-                button.style.display = 'flex';
-                var re = new RegExp(element.dataset.reg);
-                if (re.test(element.value)) {
-                    button.className = "form-input__button";
-                    button.innerHTML = element.dataset.success;
-                }
-                else {
-                    button.className = "form-input__button form-input__button_error";
-                    button.innerHTML = element.dataset.error;
-                }
-                element.parentElement.appendChild(button);
-            }
-            else element.parentElement.getElementsByClassName('form-input__button')[0].style.display = 'none';
-        });
+        this.reg = element.dataset.reg;
+        this.success = element.dataset.success;
+        this.error = element.dataset.error;
+        this.buttonDiv = element.parentElement.getElementsByClassName('form-input__button')[0];
+    }
+
+    check(value) {
+        var re = new RegExp(this.reg);
+        if (re.test(value)) {
+            this.buttonDiv.classList.remove("form-input__button_error");
+            this.buttonDiv.innerHTML = this.success;
+        }
+        else {
+            this.buttonDiv.classList.add("form-input__button_error");
+            this.buttonDiv.innerHTML = this.error;
+        }
     }
 }
 
-$('.form-input__text').each((index,element) => new FormInput(element));
+$('.form-input__text').each((index,element) => {
+        let input = new FormInput(element);
+        element.addEventListener('input', function() {
+            if (this.value.length==0) {
+                input.buttonDiv.style.display = 'none';
+                return;
+            }
+            input.buttonDiv.style.display = 'flex';
+            input.check(this.value);
+        });
+    }
+);
