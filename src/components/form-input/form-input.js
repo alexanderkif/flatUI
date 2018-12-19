@@ -9,11 +9,11 @@ class FormInput {
                 button.style.display = 'flex';
                 var re = new RegExp(element.dataset.reg);
                 if (re.test(element.value)) {
-                    button.className = "form-input__button form-input__button_error";
+                    button.className = "form-input__button";
                     button.innerHTML = element.dataset.success;
                 }
                 else {
-                    button.className = "form-input__button";
+                    button.className = "form-input__button form-input__button_error";
                     button.innerHTML = element.dataset.error;
                 }
                 element.parentElement.appendChild(button);

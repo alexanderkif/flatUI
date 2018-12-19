@@ -64,15 +64,15 @@
         "inputs" : [
             {
                 "placeholder" : "Your Name", 
-                "reg" : "/^([a-zA-Z_-]){3,5}$/",
+                "reg" : "^([a-zA-Z_-]){3,10}$",
                 "success" : "THANKS!",
                 "error" : "ERROR"
             },
             {
                 "placeholder" : "Your Email", 
-                "reg" : "/^.*?@\\w+\\.\\w{2,5}$/",
-                "success" : "",
-                "error" : ""
+                "reg" : "^.*?@\\w+\\.\\w{2,5}$",
+                "success" : "THANKS!",
+                "error" : "WRONG"
             }
         ],
         "textarea" : {
