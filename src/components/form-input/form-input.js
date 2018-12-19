@@ -4,31 +4,30 @@ class FormInput {
         this.reg = element.dataset.reg;
         this.success = element.dataset.success;
         this.error = element.dataset.error;
+        this.textDiv = element.parentElement.getElementsByClassName('form-input__text')[0];
         this.buttonDiv = element.parentElement.getElementsByClassName('form-input__button')[0];
+
+        element.addEventListener('input', function() {
+            if (this.textDiv.value.length==0) {
+                this.buttonDiv.style.display = 'none';
+                return;
+            }
+            this.buttonDiv.style.display = 'flex';
+            FormInput.check(this);
+        }.bind(this));
     }
 
-    check(value) {
-        var re = new RegExp(this.reg);
-        if (re.test(value)) {
-            this.buttonDiv.classList.remove("form-input__button_error");
-            this.buttonDiv.innerHTML = this.success;
+    static check(formInput) {
+        var re = new RegExp(formInput.reg);
+        if (re.test(formInput.textDiv.value)) {
+            formInput.buttonDiv.classList.remove("form-input__button_error");
+            formInput.buttonDiv.innerHTML = formInput.success;
         }
         else {
-            this.buttonDiv.classList.add("form-input__button_error");
-            this.buttonDiv.innerHTML = this.error;
+            formInput.buttonDiv.classList.add("form-input__button_error");
+            formInput.buttonDiv.innerHTML = formInput.error;
         }
     }
 }
 
-$('.form-input__text').each((index,element) => {
-        let input = new FormInput(element);
-        element.addEventListener('input', function() {
-            if (this.value.length==0) {
-                input.buttonDiv.style.display = 'none';
-                return;
-            }
-            input.buttonDiv.style.display = 'flex';
-            input.check(this.value);
-        });
-    }
-);
+$('.form-input__text').each((index,element) => new FormInput(element));
