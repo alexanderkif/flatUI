@@ -219,7 +219,7 @@
 
 .form-input {
   display: flex; }
-  .form-input__text {
+  .form-input .js-form-input__text {
     flex: 8;
     margin: 5px;
     height: 30px;
@@ -232,7 +232,7 @@
     font-size: 14px;
     padding-left: 12px;
     outline: none; }
-  .form-input__button {
+  .form-input .js-form-input__button {
     position: relative;
     flex: 3;
     margin: 5px;
@@ -248,9 +248,9 @@
     align-items: center;
     justify-content: center;
     background-color: #4eb7a8; }
-    .form-input__button_error {
+    .form-input .js-form-input__button.form-input__button_error {
       background-color: #e75735; }
-    .form-input__button::before {
+    .form-input .js-form-input__button::before {
       content: "";
       position: absolute;
       background-color: inherit;
