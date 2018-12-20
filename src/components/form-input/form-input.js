@@ -1,8 +1,8 @@
 
 class FormInput {
     constructor(element) {
-        this.textDiv = $('.form-input__text', element)[0];
-        this.buttonDiv = $('.form-input__button', element)[0];
+        this.textDiv = $('.js-form-input__text', element)[0];
+        this.buttonDiv = $('.js-form-input__button', element)[0];
         this.reg = this.textDiv.dataset.reg;
         this.success = this.textDiv.dataset.success;
         this.error = this.textDiv.dataset.error;

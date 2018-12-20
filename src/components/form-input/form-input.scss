@@ -6,7 +6,7 @@ $color-lightgray: #e5e5e5;
 .form-input {
     display: flex;
 
-    &__text {
+    .js-form-input__text {
         flex: 8;
         margin: 5px;
         height: 30px;
@@ -21,7 +21,7 @@ $color-lightgray: #e5e5e5;
         outline: none;
     }
 
-    &__button {
+    .js-form-input__button {
         position: relative;
         flex: 3;
         margin: 5px;
@@ -38,7 +38,7 @@ $color-lightgray: #e5e5e5;
         justify-content: center;
         background-color: $color-green;
 
-        &_error {
+        &.form-input__button_error {
             background-color: $color-red;  
         }
 
