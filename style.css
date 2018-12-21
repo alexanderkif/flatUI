@@ -250,6 +250,8 @@
     background-color: #4eb7a8; }
     .form-input__button_error {
       background-color: #e75735; }
+    .form-input__button_visible {
+      display: flex; }
     .form-input__button::before {
       content: "";
       position: absolute;
