@@ -42,6 +42,10 @@ $color-lightgray: #e5e5e5;
             background-color: $color-red;  
         }
 
+        &_visible {
+            display: flex;
+        }
+
         &::before {
             content: "";
             position: absolute;

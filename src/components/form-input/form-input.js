@@ -1,4 +1,4 @@
-import { bind, memoize, debounce } from 'decko';
+import { bind } from 'decko';
 
 class FormInput {
     constructor(element) {
@@ -13,12 +13,12 @@ class FormInput {
     @bind
     checkInput() {
         if (this.textDiv.value.length==0) {
-            this.buttonDiv.style.display = 'none';
+            this.buttonDiv.classList.remove("form-input__button_visible");
             return;
         }
-        this.buttonDiv.style.display = 'flex';
-        var re = new RegExp(this.reg);
-        if (re.test(this.textDiv.value)) {
+        this.buttonDiv.classList.add("form-input__button_visible");
+        var regExpToCheck = new RegExp(this.reg);
+        if (regExpToCheck.test(this.textDiv.value)) {
             this.buttonDiv.classList.remove("form-input__button_error");
             this.buttonDiv.innerHTML = this.success;
         }
