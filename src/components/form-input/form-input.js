@@ -1,3 +1,4 @@
+import { bind, memoize, debounce } from 'decko';
 
 class FormInput {
     constructor(element) {
@@ -6,9 +7,10 @@ class FormInput {
         this.reg = this.textDiv.dataset.reg;
         this.success = this.textDiv.dataset.success;
         this.error = this.textDiv.dataset.error;
-        element.addEventListener('input', this.checkInput.bind(this));
+        element.addEventListener('input', this.checkInput);
     }
     
+    @bind
     checkInput() {
         if (this.textDiv.value.length==0) {
             this.buttonDiv.style.display = 'none';
