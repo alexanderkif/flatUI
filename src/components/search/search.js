@@ -1,17 +1,25 @@
+import { bind } from 'decko';
 
 class SearchInput {
     constructor(element) {
-        var tmp = "";
-        element.addEventListener('click', function() {
-            element.classList.remove('search__input_not-found');
-            element.value = tmp;
-        });
-        element.parentElement.getElementsByClassName('search__button')[0].addEventListener('click', function() {
-            element.classList.add('search__input_not-found');
-            tmp = element.value;
-            element.value = element.dataset.error;
-        });
+        this.input = $('.search__input', element)[0];
+        this.tmp = "";
+        this.input.addEventListener('click', this.searchInputClick);
+        $('.search__button', element)[0].addEventListener('click', this.searchInputNotFound);
+    }
+
+    @bind
+    searchInputClick() {
+        this.input.classList.remove('search__input_not-found');
+        this.input.value = this.tmp;
+    }
+
+    @bind
+    searchInputNotFound() {
+        this.input.classList.add('search__input_not-found');
+        this.tmp = this.input.value;
+        this.input.value = this.input.dataset.error;
     }
 }
 
-$('.search__input').each((index,element) => new SearchInput(element));
+$('.search').each((index,element) => new SearchInput(element));
