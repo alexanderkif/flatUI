@@ -2,7 +2,7 @@
 @import '../components/sliderm2/sliderm2';
 
 .sliders {
-    height: 112px;
+    min-height: 112px;
     padding-top: 20px;
 
     &__header {

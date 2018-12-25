@@ -17,7 +17,7 @@
             {
                 "min" : 0, 
                 "max" : 100, 
-                "value1" : 40, 
+                "value1" : 20, 
                 "value2" : 40, 
                 "step" : 1, 
                 "intervals" : 3, 
@@ -29,6 +29,7 @@
                 "lineHeight" : 5, 
                 "pointSize" : 20, 
                 "colorLine" : "#e6e6e6", 
+                "colorRange" : "#e6e6e6", 
                 "colorPoint" : "#e75735", 
                 "colorScale" : "lightgrey", 
                 "colorText" : "white"
@@ -48,6 +49,7 @@
                 "lineHeight" : 5, 
                 "pointSize" : 20, 
                 "colorLine" : "#e6e6e6", 
+                "colorRange" : "#4eb7a8", 
                 "colorPoint" : "#4eb7a8", 
                 "colorScale" : "lightgrey", 
                 "colorText" : "white"
