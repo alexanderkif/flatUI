@@ -162,7 +162,7 @@
   font-weight: bold; }
 
 .sliders {
-  height: 112px;
+  min-height: 112px;
   padding-top: 20px; }
   .sliders__header {
     margin-bottom: 45px; }
