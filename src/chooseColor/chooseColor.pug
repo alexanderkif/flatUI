@@ -1,8 +1,9 @@
 include ../components/sliderm2/sliderm2
+- var itemStyle = 'width: 17%;'
 
 mixin chooseColor(r, g, b, o)
     .chooseColor(style='width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around;')
-        .chooseColor__item(style='width: 22%;')
+        .chooseColor__item(style=itemStyle)
             header Line color
             //- sliderm2(min, max, value1, value2, step, intervals, hint, scale, interval, vertical,  
             //-     verticalSize, lineHeight, pointSize, colorLine, colorPoint, colorScale, colorText) rgb(250, 235, 215, 0.5)
@@ -14,7 +15,17 @@ mixin chooseColor(r, g, b, o)
                 +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'blue', 'blue', 'lightgrey', 'white')
             .chooseColor__wrapper(style="padding:5px")
                 +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'lightgrey', 'white')
-        .chooseColor__item(style='width: 22%;')
+        .chooseColor__item(style=itemStyle)
+            header Range color
+            .chooseColor__wrapper(style="padding:5px")
+                +sliderm2(0, 255, 0, r, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'red', 'red', 'lightgrey', 'white')
+            .chooseColor__wrapper(style="padding:5px")
+                +sliderm2(0, 255, 0, g, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'green', 'green', 'lightgrey', 'white')
+            .chooseColor__wrapper(style="padding:5px")
+                +sliderm2(0, 255, 0, b, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'blue', 'blue', 'lightgrey', 'white')
+            .chooseColor__wrapper(style="padding:5px")
+                +sliderm2(0, 255, 0, o, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'lightgrey', 'white')
+        .chooseColor__item(style=itemStyle)
             header Point color
             .chooseColor__wrapper(style="padding:5px")
                 +sliderm2(0, 255, 0, r, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'red', 'red', 'lightgrey', 'white')
@@ -24,7 +35,7 @@ mixin chooseColor(r, g, b, o)
                 +sliderm2(0, 255, 0, b, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'blue', 'blue', 'lightgrey', 'white')
             .chooseColor__wrapper(style="padding:5px")
                 +sliderm2(0, 255, 0, o, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'lightgrey', 'white')
-        .chooseColor__item(style='width: 22%;')
+        .chooseColor__item(style=itemStyle)
             header Scale color
             .chooseColor__wrapper(style="padding:5px")
                 +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'red', 'red', 'lightgrey', 'white')
@@ -34,7 +45,7 @@ mixin chooseColor(r, g, b, o)
                 +sliderm2(0, 255, 0, 200, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'blue', 'blue', 'lightgrey', 'white')
             .chooseColor__wrapper(style="padding:5px")
                 +sliderm2(0, 255, 0, 255, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'lightgrey', 'lightgrey', 'lightgrey', 'white')
-        .chooseColor__item(style='width: 22%;')
+        .chooseColor__item(style=itemStyle)
             header Text color
             .chooseColor__wrapper(style="padding:5px")
                 +sliderm2(0, 255, 0, 0, 1, 1, '', '', '', '', '', 4, 10, '#e6e6e6', 'red', 'red', 'lightgrey', 'white')

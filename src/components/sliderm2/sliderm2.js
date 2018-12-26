@@ -1,4 +1,7 @@
 import { bind } from 'decko';
+// export default Sliderm2Line;
+// export default Sliderm2Range;
+// export default Sliderm2Point;
 
 class Sliderm2Line {
     constructor(min, max) {
@@ -31,6 +34,9 @@ class Sliderm2Line {
             sliderm2body.style.width = '100%';
             sliderm2body.style.transform = 'rotate(0deg)';
         }
+        this.min = dataset.min;
+        this.max = dataset.max;
+        this.range = dataset.max - dataset.min;
         return lineDiv;
     };
 
@@ -69,7 +75,9 @@ class Sliderm2Range {
         this.point2 = new Sliderm2Point(value2, line);
     }
 
-    drawRange (div, range, colorRange) {
+    drawRange (div, range, dataset) {
+        this.value1 = dataset.value1;
+        this.value2 = dataset.value2;
         var rangeDiv = document.createElement("div");
         rangeDiv.className = "sliderm2__range";
         rangeDiv.style.height = 'inherit';
@@ -78,12 +86,14 @@ class Sliderm2Range {
         rangeDiv.style.left = `${range.point1.value}%`;
         rangeDiv.style.width = `${range.point2.value - range.point1.value}%`;
         rangeDiv.style.borderRadius = 'inherit';
-        rangeDiv.style.backgroundColor = colorRange;
+        rangeDiv.style.backgroundColor = dataset.colorRange;
         div.appendChild(rangeDiv);
         return rangeDiv;
     };
 
     drawPoints(div, points, dataset) {
+        // this.point1 = new Sliderm2Point(dataset.value1, div);
+        // this.point2 = new Sliderm2Point(dataset.value2, div);
         var pointDivs = points.map(function(point) {
             var pointDiv = document.createElement("div");
             pointDiv.className = "sliderm2__point";
@@ -166,6 +176,7 @@ class Sliderm2 {
             return false;
         };        
         this.sliderm2body.addEventListener('mousedown', this.sliderm2bodyChangeListener);        
+        element.addEventListener('click', this.draw);  
         this.draw();
     }
     
@@ -179,7 +190,7 @@ class Sliderm2 {
             this.sliderm2ClassRemove(this.sliderm2body, 'sliderm2__scale');
         }
         this.drawLine = this.line.drawLine(this.sliderm2div, this.sliderm2div.dataset);
-        this.drawRange = this.range.drawRange(this.drawLine, this.range, this.sliderm2div.dataset.colorRange);        
+        this.drawRange = this.range.drawRange(this.drawLine, this.range, this.sliderm2div.dataset);        
         this.drawPoints = this.range.drawPoints(this.drawLine, points, this.sliderm2div.dataset);
         if (this.sliderm2div.dataset.scale) 
             this.drawScale = this.line.createScale(this.sliderm2body, this.line, this.sliderm2div.dataset);
