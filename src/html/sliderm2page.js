@@ -31,18 +31,18 @@ class Sliderm2pageContent {
         this.sliderm2pageInputDiv.addEventListener('click', this.inputsClick);
         this.sliderm2Div.addEventListener('mousemove', this.sliderm2change);
 
-        this.chooseColorLineDiv.parentElement.addEventListener('mousedown', this.colorsMousedown);	    
-        this.chooseColorLineDiv.parentElement.addEventListener('mouseup', this.colorsMouseup);
+        $(this.chooseColorLineDiv.parentElement).on('mousedown', this.colorsMousedown());	    
+        $(this.chooseColorLineDiv.parentElement).on('mouseup', this.colorsMouseup());
     }
 
     @bind
     colorsMousedown() {
-        this.chooseColorLineDiv.parentElement.addEventListener('mousemove', this.setResult);	
+        $(this.chooseColorLineDiv.parentElement).on('mousemove', this.setResult);	
     }
 
     @bind
     colorsMouseup() {
-        this.chooseColorLineDiv.parentElement.removeEventListener('mousemove', this.setResult);	
+        $(this.chooseColorLineDiv.parentElement).off('mousemove', this.setResult);	
     }
 
     @bind
@@ -104,6 +104,7 @@ class Sliderm2pageContent {
         this.sliderm2Div.dataset.max = this.inputSlidermMaxDiv.value;	
         this.sliderm2Div.dataset.step = this.inputSlidermStepDiv.value;	
         this.sliderm2Div.dataset.intervals = this.inputSlidermIntervalsDiv.value;
+        this.inputSlidermResultDiv.innerHTML = `${this.sliderm2Div.outerHTML.split('>')[0]}></div>`;
     };
 
     @bind
@@ -117,10 +118,10 @@ class Sliderm2pageContent {
         this.inputSlidermStepDiv.value = this.sliderm2Div.dataset.step;	
         this.inputSlidermIntervalsDiv.value = this.sliderm2Div.dataset.intervals;	
         this.inputSlidermLengthDiv.value = this.sliderm2Div.dataset.length;	
-        if (this.sliderm2Div.dataset.hint) this.inputTickHintDiv.classList.add('true');	
-        if (this.sliderm2Div.dataset.scale) this.inputTickScaleDiv.classList.add('true');	
-        if (this.sliderm2Div.dataset.interval) this.inputTickIntervalDiv.classList.add('true');
-        if (this.sliderm2Div.dataset.vertical) this.inputTickVerticalDiv.classList.add('true');	
+        if (this.sliderm2Div.dataset.hint) $(this.inputTickHintDiv).addClass('true');	
+        if (this.sliderm2Div.dataset.scale) $(this.inputTickScaleDiv).addClass('true');	
+        if (this.sliderm2Div.dataset.interval) $(this.inputTickIntervalDiv).addClass('true');
+        if (this.sliderm2Div.dataset.vertical) $(this.inputTickVerticalDiv).addClass('true');	
     };
 }
 

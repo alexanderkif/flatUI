@@ -1,7 +1,4 @@
 import { bind } from 'decko';
-// export default Sliderm2Line;
-// export default Sliderm2Range;
-// export default Sliderm2Point;
 
 class Sliderm2Line {
     constructor(min, max) {
@@ -175,8 +172,8 @@ class Sliderm2 {
         this.sliderm2body.ondragstart = function() {
             return false;
         };        
-        this.sliderm2body.addEventListener('mousedown', this.sliderm2bodyChangeListener);        
-        element.addEventListener('click', this.draw);  
+        $(this.sliderm2body).mousedown(this.sliderm2bodyChangeListener);        
+        $(element).click(this.draw);  
         this.draw();
     }
     
@@ -186,15 +183,15 @@ class Sliderm2 {
         this.sliderm2div.dataset.value2 = this.range.value2;
         if (this.sliderm2div.dataset.interval) this.sliderm2div.dataset.value1 = this.range.value1;
         if(this.sliderm2div) {
-            this.sliderm2ClassRemove(this.sliderm2div, 'sliderm2__line');
-            this.sliderm2ClassRemove(this.sliderm2body, 'sliderm2__scale');
+            $('.sliderm2__line', this.sliderm2div).remove();
+            $('.sliderm2__scale', this.sliderm2body).remove();
         }
         this.drawLine = this.line.drawLine(this.sliderm2div, this.sliderm2div.dataset);
         this.drawRange = this.range.drawRange(this.drawLine, this.range, this.sliderm2div.dataset);        
         this.drawPoints = this.range.drawPoints(this.drawLine, points, this.sliderm2div.dataset);
         if (this.sliderm2div.dataset.scale) 
             this.drawScale = this.line.createScale(this.sliderm2body, this.line, this.sliderm2div.dataset);
-        else this.sliderm2ClassRemove(this.sliderm2body, 'sliderm2__scale');
+        else $('.sliderm2__scale', this.sliderm2body).remove();
     };
 
     @bind
@@ -215,22 +212,22 @@ class Sliderm2 {
 
     @bind
     sliderm2bodyChangeListener(e) {
-        document.addEventListener('mouseup', this.cancelMove);
+        $(document).mouseup(this.cancelMove);
         if (this.sliderm2div.dataset.interval && 
                 this.getProcent(e) < (this.range.value2 - this.line.max * this.sliderm2div.dataset.pointSize / this.drawLine.clientWidth / 2)) {
             this.moveValue1(e);
-            document.addEventListener('mousemove', this.moveValue1);
+            $(document).mousemove(this.moveValue1);
         } else {
             this.moveValue2(e);
-            document.addEventListener('mousemove', this.moveValue2);
+            $(document).mousemove(this.moveValue2);
         }
         return false;
     }
 
     @bind
     cancelMove() {
-        document.removeEventListener('mousemove', this.moveValue2);
-        document.removeEventListener('mousemove', this.moveValue1);
+        $(document).off('mousemove', this.moveValue2);
+        $(document).off('mousemove', this.moveValue1);
     }
 
     @bind
@@ -264,14 +261,6 @@ class Sliderm2 {
             left: box.left + pageXOffset
         };
     }
-
-    sliderm2ClassRemove(div, removingClass) {
-        var elem = div.getElementsByClassName(removingClass)[0];
-        while (elem) {
-            elem.remove();
-            elem = div.getElementsByClassName(removingClass)[0];
-        }
-    };
 }
 
 $('.sliderm2').each((index,element) => new Sliderm2(element));

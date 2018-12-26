@@ -3,7 +3,7 @@ import { bind } from 'decko';
 class RippleButton {
     constructor(button) {
         this.button = button;
-        button.addEventListener('click', this.clickRipple);
+        $(button).click(this.clickRipple);
     }
 
     @bind
@@ -11,7 +11,7 @@ class RippleButton {
         let X = e.pageX - this.button.offsetLeft;
         let Y = e.pageY - this.button.offsetTop;
         let rippleDiv = document.createElement("div");
-        rippleDiv.classList.add('ripple');
+        $(rippleDiv).addClass('ripple');
         rippleDiv.setAttribute("style", `top:${Y}px; left:${X}px;`);
         let customColor = this.button.getAttribute('ripple-color');
         if (customColor) rippleDiv.style.background = customColor;

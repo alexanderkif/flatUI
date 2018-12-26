@@ -7,23 +7,23 @@ class FormInput {
         this.reg = this.textDiv.dataset.reg;
         this.success = this.textDiv.dataset.success;
         this.error = this.textDiv.dataset.error;
-        element.addEventListener('input', this.checkInput);
+        $(element).keyup(this.checkInput);
     }
     
     @bind
     checkInput() {
         if (this.textDiv.value.length==0) {
-            this.buttonDiv.classList.remove("form-input__button_visible");
+            $(this.buttonDiv).removeClass("form-input__button_visible");
             return;
         }
-        this.buttonDiv.classList.add("form-input__button_visible");
+        $(this.buttonDiv).addClass("form-input__button_visible");
         var regExpToCheck = new RegExp(this.reg);
         if (regExpToCheck.test(this.textDiv.value)) {
-            this.buttonDiv.classList.remove("form-input__button_error");
+            $(this.buttonDiv).removeClass("form-input__button_error");
             this.buttonDiv.innerHTML = this.success;
         }
         else {
-            this.buttonDiv.classList.add("form-input__button_error");
+            $(this.buttonDiv).addClass("form-input__button_error");
             this.buttonDiv.innerHTML = this.error;
         }
     }

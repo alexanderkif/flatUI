@@ -29,7 +29,7 @@ class Calendar {
             showYear: false,
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             onSelect: function () {
-                var day = this.parentElement.getElementsByClassName('calendar__date')[0];
+                var day = $('.calendar__date', this.parentElement)[0];
                 day.innerHTML = parseInt($(this).val().split('/')[1]);
             },
             onChangeMonthYear: function(y, m, i){                                

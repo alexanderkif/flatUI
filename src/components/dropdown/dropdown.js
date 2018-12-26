@@ -2,27 +2,27 @@ import { bind } from 'decko';
 
 class Dropdown {
     constructor(element) {
-        element.addEventListener('click', this.dropdownMenuClick);        
-        window.addEventListener('click', this.clickOutside);
+        $(element).click(this.dropdownMenuClick);
+        $(window).click(this.clickOutside);
     }
 
     @bind
     clickOutside() {
-        for (let dropdown of $('.dropdown__menu')) dropdown.classList.remove('visible');
+        for (let dropdown of $('.dropdown__menu')) dropdown.classList.remove('dropdown__menu_visible');
     }
 
     @bind
-    dropdownMenuClick () {
+    dropdownMenuClick (event) {
         this.menu = $('.dropdown__menu', event.currentTarget)[0];
-        this.menu.classList.toggle('visible');
+        this.menu.classList.toggle('dropdown__menu_visible');
         event.stopPropagation();
-        this.menu.addEventListener('click', this.chooseClickValue);
+        $(this.menu).click(this.chooseClickValue);
     }
 
     @bind
-    chooseClickValue() {
+    chooseClickValue(event) {
         if (event.target.firstChild.data) {
-            $('.dropdown__input', this.parentElement)[0].value = event.target.firstChild.data;
+            $('.dropdown__input', this.parentElement).val(event.target.firstChild.data);
         }
     }
 }
