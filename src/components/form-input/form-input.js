@@ -3,7 +3,7 @@ import { bind } from 'decko';
 class FormInput {
     constructor(element) {
         this.textDiv = $('.js-form-input__text', element)[0];
-        this.buttonDiv = $('.js-form-input__button', element)[0];
+        this.buttonDiv = $('.js-form-input__button', element);
         this.reg = this.textDiv.dataset.reg;
         this.success = this.textDiv.dataset.success;
         this.error = this.textDiv.dataset.error;
@@ -13,18 +13,18 @@ class FormInput {
     @bind
     checkInput() {
         if (this.textDiv.value.length==0) {
-            $(this.buttonDiv).removeClass("form-input__button_visible");
+            this.buttonDiv.removeClass("form-input__button_visible");
             return;
         }
-        $(this.buttonDiv).addClass("form-input__button_visible");
+        this.buttonDiv.addClass("form-input__button_visible");
         var regExpToCheck = new RegExp(this.reg);
         if (regExpToCheck.test(this.textDiv.value)) {
-            $(this.buttonDiv).removeClass("form-input__button_error");
-            this.buttonDiv.innerHTML = this.success;
+            this.buttonDiv.removeClass("form-input__button_error");
+            this.buttonDiv.html(this.success);
         }
         else {
-            $(this.buttonDiv).addClass("form-input__button_error");
-            this.buttonDiv.innerHTML = this.error;
+            this.buttonDiv.addClass("form-input__button_error");
+            this.buttonDiv.html(this.error);
         }
     }
 }

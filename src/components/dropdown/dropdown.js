@@ -8,13 +8,13 @@ class Dropdown {
 
     @bind
     clickOutside() {
-        for (let dropdown of $('.dropdown__menu')) dropdown.classList.remove('dropdown__menu_visible');
+        $('.dropdown__menu').removeClass('dropdown__menu_visible');
     }
 
     @bind
     dropdownMenuClick (event) {
         this.menu = $('.dropdown__menu', event.currentTarget)[0];
-        this.menu.classList.toggle('dropdown__menu_visible');
+        $(this.menu).toggleClass('dropdown__menu_visible');
         event.stopPropagation();
         $(this.menu).click(this.chooseClickValue);
     }
