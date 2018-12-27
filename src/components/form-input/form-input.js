@@ -18,14 +18,10 @@ class FormInput {
         }
         this.buttonDiv.addClass("form-input__button_visible");
         var regExpToCheck = new RegExp(this.reg);
-        if (regExpToCheck.test(this.textDiv.value)) {
-            this.buttonDiv.removeClass("form-input__button_error");
-            this.buttonDiv.html(this.success);
-        }
-        else {
-            this.buttonDiv.addClass("form-input__button_error");
-            this.buttonDiv.html(this.error);
-        }
+        if (regExpToCheck.test(this.textDiv.value))
+            this.buttonDiv.removeClass("form-input__button_error").html(this.success);
+        else
+            this.buttonDiv.addClass("form-input__button_error").html(this.error);
     }
 }
 

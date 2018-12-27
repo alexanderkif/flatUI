@@ -19,24 +19,30 @@ $.datepicker._gotoToday = function(id) {
     this._adjustDate(target);
 };
 
+import { bind } from 'decko';
 class Calendar {
     constructor(mydatepicker) {
-        $(mydatepicker).datepicker({
+        this.mdpicker = $(mydatepicker);
+        this.mdpicker.datepicker({
             inline: true,
             firstDay: 1,
             showOtherMonths: true,
             showButtonPanel: true,
             showYear: false,
             dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-            onSelect: function () {
-                var day = $('.calendar__date', this.parentElement);
-                day.html(parseInt($(this).val().split('/')[1]));
-            },
-            onChangeMonthYear: function(y, m, i){                                
-                var d = i.selectedDay;
-                $(this).datepicker('setDate', new Date(y, m - 1, d));
-            }
+            onSelect: this.setDay,
+            onChangeMonthYear: this.changeMonthHoldDay
         }).datepicker("setDate", `${mydatepicker.dataset.month}/${mydatepicker.dataset.date}/${mydatepicker.dataset.year}`);
+    }
+
+    @bind
+    setDay() {
+        $('.calendar__date', this.parentElement).html(parseInt(this.mdpicker.val().split('/')[1]));
+    }
+
+    @bind
+    changeMonthHoldDay(y, m, i){
+        this.mdpicker.datepicker('setDate', new Date(y, m - 1, i.selectedDay));
     }
 }
 

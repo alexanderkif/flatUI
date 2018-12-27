@@ -10,15 +10,13 @@ class SearchInput {
 
     @bind
     searchInputClick() {
-        this.input.removeClass('search__input_not-found');
-        this.input.val(this.tmp);
+        this.input.removeClass('search__input_not-found').val(this.tmp);
     }
 
     @bind
     searchInputNotFound() {
-        this.input.addClass('search__input_not-found');
-        this.tmp = this.input[0].value;
-        this.input.val(this.input[0].dataset.error);
+        this.tmp = this.input.val();
+        this.input.addClass('search__input_not-found').val(this.input[0].dataset.error);
     }
 }
 

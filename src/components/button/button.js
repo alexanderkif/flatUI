@@ -12,8 +12,6 @@ class RippleButton {
         let Y = e.pageY - this.button.offsetTop;
         let rippleDiv = document.createElement("div");
         $(rippleDiv).addClass('ripple').css({top:`${Y}px`, left:`${X}px`});
-        let customColor = $(this.button).attr('ripple-color');
-        if (customColor) rippleDiv.style.background = customColor;
         this.button.appendChild(rippleDiv);
         
         setTimeout(function(){

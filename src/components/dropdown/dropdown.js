@@ -13,17 +13,14 @@ class Dropdown {
 
     @bind
     dropdownMenuClick (event) {
-        this.menu = $('.dropdown__menu', event.currentTarget)[0];
-        $(this.menu).toggleClass('dropdown__menu_visible');
+        $('.dropdown__menu', event.currentTarget).toggleClass('dropdown__menu_visible').click(this.chooseClickValue);
         event.stopPropagation();
-        $(this.menu).click(this.chooseClickValue);
     }
 
     @bind
     chooseClickValue(event) {
-        if (event.target.firstChild.data) {
+        if (event.target.firstChild.data)
             $('.dropdown__input', this.parentElement).val(event.target.firstChild.data);
-        }
     }
 }
 
