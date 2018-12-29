@@ -36,8 +36,8 @@ class Calendar {
     }
 
     @bind
-    setDay() {
-        $('.calendar__date', this.parentElement).html(parseInt(this.mdpicker.val().split('/')[1]));
+    setDay(e) {
+        $('.calendar__date', this.parentElement).html(parseInt(e.split('/')[1]));
     }
 
     @bind
