@@ -31,24 +31,14 @@ class Sliderm2pageContent {
         this.sliderm2pageInputDiv.addEventListener('click', this.inputsClick);
         this.sliderm2Div.addEventListener('mousemove', this.sliderm2change);
 
-        $(this.chooseColorLineDiv.parentElement).on('mousedown', this.colorsMousedown());	    
-        $(this.chooseColorLineDiv.parentElement).on('mouseup', this.colorsMouseup());
-    }
-
-    @bind
-    colorsMousedown() {
-        $(this.chooseColorLineDiv.parentElement).on('mousemove', this.setResult);	
-    }
-
-    @bind
-    colorsMouseup() {
-        $(this.chooseColorLineDiv.parentElement).off('mousemove', this.setResult);	
+        $(this.chooseColorLineDiv.parentElement).bind("DOMSubtreeModified", this.setResult);
     }
 
     @bind
     sliderm2change() {
         this.setInputs();
-        this.inputSlidermResultDiv.innerHTML = `${this.sliderm2Div.outerHTML.split('>')[0]}></div>`;	
+        this.inputSlidermResultDiv.innerHTML = `${this.sliderm2Div.outerHTML.split('>')[0]}></div>`;
+        this.sliderm2Div.dispatchEvent(new Event('click'));		
     }
 
     @bind
