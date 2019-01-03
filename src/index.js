@@ -6,8 +6,8 @@ import "./components/dropdown/dropdown";
 import "./components/search/search";
 import "./components/calendar/calendar";
 import "./components/sectors/sectors";
-import "./components/sliderm2/sliderm2";
-import "./html/sliderm2page";
+import "./components/sliderm3/sliderm3";
+import "./html/sliderm3page";
 import "./components/form-toggle/form-toggle";
 
 console.log("Run flatUI...");

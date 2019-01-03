@@ -1,5 +1,5 @@
 include ../components/header/header
-include ../components/sliderm2/sliderm2
+include ../components/sliderm3/sliderm3
 
 mixin sliders({header, sliders})
     .sliders
@@ -7,4 +7,4 @@ mixin sliders({header, sliders})
             +header(header)
         .sliders__content
             each s in sliders
-                +sliderm2(s.min, s.max, s.value1, s.value2, s.step, s.intervals, s.hint, s.scale, s.interval, s.vertical, s.length, s.lineHeight, s.pointSize, s.colorLine, s.colorRange, s.colorPoint, s.colorScale, s.colorText)
+                +sliderm3(s.min, s.max, s.value1, s.value2, s.step, s.intervals, s.hint, s.scale, s.interval, s.vertical, s.length, s.lineHeight, s.pointSize, s.colorLine, s.colorRange, s.colorPoint, s.colorScale, s.colorText)

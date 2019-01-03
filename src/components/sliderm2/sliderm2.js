@@ -11,7 +11,9 @@ class Sliderm2Line {
         var lineDiv = document.createElement("div");
         lineDiv.className = "sliderm2__line";
         lineDiv.style.height = `${dataset.lineHeight}px`;
-        lineDiv.style.width = '100%';
+        lineDiv.style.position = "absolute";
+        lineDiv.style.width = `calc(100% + ${dataset.lineHeight}px`;
+        lineDiv.style.left = `-${dataset.lineHeight / 2}px`;
         lineDiv.style.borderRadius = `${dataset.lineHeight / 2}px`;
         lineDiv.style.backgroundColor = dataset.colorLine;
         var sliderm2body = $('.sliderm2__body', div)[0];
@@ -95,7 +97,7 @@ class Sliderm2Range {
             var pointDiv = document.createElement("div");
             pointDiv.className = "sliderm2__point";
             pointDiv.style.position = 'absolute';
-            pointDiv.style.height = `${pointDiv.style.width = dataset.pointSize}px`;
+            pointDiv.style.height = pointDiv.style.width = `${dataset.pointSize}px`;
             pointDiv.style.borderRadius = '50%';
             pointDiv.style.top = `${div.offsetHeight/2 - dataset.pointSize/2}px`;
             pointDiv.style.left = `calc(${point.value}% - ${dataset.pointSize/2}px)`;

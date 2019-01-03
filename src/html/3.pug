@@ -28,8 +28,8 @@ html
                 .user-page_left
                     .user-page__forms
                         span Send to us your message
-                        +form-input('Your Name', 5)
-                        +form-input('Your Email', 8)
+                        +form-input("Your Name","^([a-zA-Z_-]){3,10}$","THANKS!","ERROR")
+                        +form-input("Your Email","^(([^<>()[\\]\\\\.,;:\\s@\\']+(\\.[^<>()[\\]\\\\.,;:\\s@\\']+)*)|(\\'.+\\'))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$","THANKS!","WRONG")
                         +form-textarea("Your Message", "30", "4")
                         .user-page__toggles
                             .user-page__toggle-block
@@ -58,7 +58,7 @@ html
                             
                 .user-page_right
                     .user-page__left-block
-                        +search('Search', 'red')
+                        +search("Search", "I've not found what I'm looking for...")
                         +dropdown('Choose An Option', ['This is option 1','This is option 2','This is option 3','This is option 4'])
       
                     .user-page__left-block
@@ -68,10 +68,4 @@ html
             //- = = = = = = = = end of page = = = = = = = = = =
             +footer
 
-        script(src="https://code.jquery.com/jquery-1.12.4.js")
-        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
-        link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
-        script(src="js/dropdown.js")
-        script(src="js/lc_switch.min.js")
-        link(rel="stylesheet" href="css/lc_switch.css")
         
