@@ -125,7 +125,7 @@ class Sliderm3 {
             this.rangeDiv.style.left = `${this.div.dataset.lineHeight / 2}px`;
         }        
         this.rangeDiv.style.borderRadius = 'inherit';
-        this.rangeDiv.style.backgroundColor = 'inherit';
+        this.rangeDiv.style.backgroundColor = 'rgba(255, 255, 255, 0)';
         this.lineDiv.appendChild(this.rangeDiv);
 
         this.pointRange = document.createElement("div");
