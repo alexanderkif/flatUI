@@ -1,274 +1,75 @@
-
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Sliderm2 page</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://unpkg.com/ionicons@4.3.0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  <link href="style.css" rel="stylesheet"></head>
-  <body>
-    <div class="sliderm2page">
-      <div class="sliderm2page__header">sliderm2</div>
-      <div class="sliderm2page__content">
-        <div class="sliderm2page__slider sliderm2page__slider_1st">
-          <div class="sliderm2" data-min="20" data-max="120" data-value1="40" data-value2="60" data-step="2" data-intervals="3" data-hint="true" data-scale="" data-interval="" data-vertical="true" data-length="220" data-line-height="15" data-point-size="30" data-color-line="#e6e6e6" data-color-range="#e6e6e6" data-color-point="rgb(231, 87, 53)" data-color-scale="lightgrey" data-color-text="white"></div>
-        </div>
-        <div class="sliderm2page__inputs">
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">ScaleMin</div>
-            <input class="sliderm2page__input sliderm-min">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">ScaleMax</div>
-            <input class="sliderm2page__input sliderm-max">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Value1</div>
-            <input class="sliderm2page__input sliderm-value1">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Value2</div>
-            <input class="sliderm2page__input sliderm-value2">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Step</div>
-            <input class="sliderm2page__input sliderm-step">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Scale Intervals</div>
-            <input class="sliderm2page__input sliderm-intervals">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label sliderm2page__label_shot">Hint</div>
-            <div class="tick tick-hint" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-            <div class="sliderm2page__label sliderm2page__label_shot">Interval</div>
-            <div class="tick tick-interval" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label sliderm2page__label_shot">Scale</div>
-            <div class="tick tick-scale" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-            <div class="sliderm2page__label sliderm2page__label_shot">Vertical</div>
-            <div class="tick tick-vertical" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Length</div>
-            <input class="sliderm2page__input sliderm-length">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="chooseColor" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around;">
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Line color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Range color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="231" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="87" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="53" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Point color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="231" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="87" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="53" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Scale color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Text color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="0" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="0" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="0" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <textarea class="sliderm2page__result" rows="5"></textarea>
-      </div>
-      <hr>
-      <div class="sliderm2page__content">
-        <div class="sliderm2page__slider sliderm2page__slider_2nd">
-          <div class="sliderm2" data-min="70" data-max="120" data-value1="80" data-value2="100" data-step="0.5" data-intervals="6" data-hint="" data-scale="true" data-interval="" data-vertical="" data-length="350" data-line-height="8" data-point-size="16" data-color-line="#e6e6e6" data-color-range="rgba(200, 100, 200, 1)" data-color-point="rgba(200, 100, 200, 1)" data-color-scale="lightgrey" data-color-text="black"></div>
-        </div>
-        <div class="sliderm2page__inputs">
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">ScaleMin</div>
-            <input class="sliderm2page__input sliderm-min">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">ScaleMax</div>
-            <input class="sliderm2page__input sliderm-max">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Value1</div>
-            <input class="sliderm2page__input sliderm-value1">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Value2</div>
-            <input class="sliderm2page__input sliderm-value2">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Step</div>
-            <input class="sliderm2page__input sliderm-step">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Scale Intervals</div>
-            <input class="sliderm2page__input sliderm-intervals">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label sliderm2page__label_shot">Hint</div>
-            <div class="tick tick-hint" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-            <div class="sliderm2page__label sliderm2page__label_shot">Interval</div>
-            <div class="tick tick-interval" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label sliderm2page__label_shot">Scale</div>
-            <div class="tick tick-scale" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-            <div class="sliderm2page__label sliderm2page__label_shot">Vertical</div>
-            <div class="tick tick-vertical" onclick="this.classList.toggle('true');"><i class="material-icons icons-size">done</i></div>
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="sliderm2page__label">Length</div>
-            <input class="sliderm2page__input sliderm-length">
-          </div>
-          <div class="sliderm2page__inputs-item">
-            <div class="chooseColor" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around;">
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Line color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Range color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="100" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Point color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="100" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Scale color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="200" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-              <div class="chooseColor__item" style="width: 17%;">
-                <header>Text color</header>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="0" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="red" data-color-point="red" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="0" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="green" data-color-point="green" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="0" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="blue" data-color-point="blue" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-                <div class="chooseColor__wrapper" style="padding:5px">
-                  <div class="sliderm2" data-min="0" data-max="255" data-value1="0" data-value2="255" data-step="1" data-intervals="1" data-hint="" data-scale="" data-interval="" data-vertical="" data-length="" data-line-height="4" data-point-size="10" data-color-line="#e6e6e6" data-color-range="lightgrey" data-color-point="lightgrey" data-color-scale="lightgrey" data-color-text="white"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <textarea class="sliderm2page__result" rows="5"></textarea>
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/lc_switch.min.js"></script>
-    <link rel="stylesheet" href="css/lc_switch.css">
-  <script type="text/javascript" src="main.js"></script></body>
-</html>
+<head><link href="style.css" rel="stylesheet"></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/pug-loader/index.js):
+  Error: ENOENT: no such file or directory, open 'C:\Users\alexa\Documents\GitHub\flatUI\src\html\sliderm2page.pug':
+  Error: ENOENT: no such file or directory, open 'C:\Users\alexa\Documents\GitHub\flatUI\src\html\sliderm2page.pug'
+  
+  - compiler.js:79 childCompiler.runAsChild
+    [flatUI]/[html-webpack-plugin]/lib/compiler.js:79:16
+  
+  - Compiler.js:296 compile
+    [flatUI]/[webpack]/lib/Compiler.js:296:11
+  
+  - Compiler.js:553 hooks.afterCompile.callAsync.err
+    [flatUI]/[webpack]/lib/Compiler.js:553:14
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [flatUI]/[tapable]/lib/Hook.js:35:21
+  
+  - Compiler.js:550 compilation.seal.err
+    [flatUI]/[webpack]/lib/Compiler.js:550:30
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [flatUI]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:1284 hooks.optimizeAssets.callAsync.err
+    [flatUI]/[webpack]/lib/Compilation.js:1284:35
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [flatUI]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:1275 hooks.optimizeChunkAssets.callAsync.err
+    [flatUI]/[webpack]/lib/Compilation.js:1275:32
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [flatUI]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:1270 hooks.additionalAssets.callAsync.err
+    [flatUI]/[webpack]/lib/Compilation.js:1270:36
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [flatUI]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:1266 hooks.optimizeTree.callAsync.err
+    [flatUI]/[webpack]/lib/Compilation.js:1266:32
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [flatUI]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:1203 Compilation.seal
+    [flatUI]/[webpack]/lib/Compilation.js:1203:27
+  
+  - Compiler.js:547 hooks.make.callAsync.err
+    [flatUI]/[webpack]/lib/Compiler.js:547:17
+  
+  
+  - Compilation.js:1054 _addModuleChain
+    [flatUI]/[webpack]/lib/Compilation.js:1054:12
+  
+  - Compilation.js:980 processModuleDependencies.err
+    [flatUI]/[webpack]/lib/Compilation.js:980:9
+  
+  - next_tick.js:131 _combinedTickCallback
+    internal/process/next_tick.js:131:7
+  
+  - next_tick.js:180 process._tickCallback
+    internal/process/next_tick.js:180:9
+  
+</pre><script type="text/javascript" src="main.js"></script>

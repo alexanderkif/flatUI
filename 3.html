@@ -17,11 +17,11 @@
         <div class="user-page_left">
           <div class="user-page__forms"><span>Send to us your message</span>
             <div class="form-input">
-              <input class="form-input__text js-form-input__text" placeholder="Your Name" data-reg="5">
+              <input class="form-input__text js-form-input__text" placeholder="Your Name" data-reg="^([a-zA-Z_-]){3,10}$" data-success="THANKS!" data-error="ERROR">
               <div class="form-input__button js-form-input__button"></div>
             </div>
             <div class="form-input">
-              <input class="form-input__text js-form-input__text" placeholder="Your Email" data-reg="8">
+              <input class="form-input__text js-form-input__text" placeholder="Your Email" data-reg="^(([^&lt;&gt;()[\]\\.,;:\s@\']+(\.[^&lt;&gt;()[\]\\.,;:\s@\']+)*)|(\'.+\'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$" data-success="THANKS!" data-error="WRONG">
               <div class="form-input__button js-form-input__button"></div>
             </div>
             <div class="form-textarea">
@@ -65,7 +65,7 @@
         <div class="user-page_right">
           <div class="user-page__left-block">
             <div class="search">
-              <input class="search__input" placeholder="Search" data-error="red">
+              <input class="search__input" placeholder="Search" data-error="I've not found what I'm looking for...">
               <button class="search__button"><i class="material-icons icons-size search__icon">search</i></button>
             </div>
             <div class="dropdown">
@@ -93,16 +93,11 @@
         </div>
       </div>
       <div class="footer">footer here</div>
-      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script src="js/lc_switch.min.js"></script>
       <link rel="stylesheet" href="css/lc_switch.css">
-      <script src="main.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="js/dropdown.js"></script>
-    <script src="js/lc_switch.min.js"></script>
-    <link rel="stylesheet" href="css/lc_switch.css">
   <script type="text/javascript" src="main.js"></script></body>
 </html>
