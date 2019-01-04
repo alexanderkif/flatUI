@@ -28,6 +28,7 @@ class Sliderm3pageContent {
         this.sliderm3pageInputDiv.addEventListener('change', this.inputsChange);	
         this.sliderm3pageInputDiv.addEventListener('click', this.inputsClick);
         this.sliderm3Div.addEventListener('mousemove', this.sliderm3change);
+        this.sliderm3Div.addEventListener('mousedown', this.sliderm3change);
 
         $(this.chooseColorLineDiv.parentElement).bind("DOMSubtreeModified", this.setResult);
     }

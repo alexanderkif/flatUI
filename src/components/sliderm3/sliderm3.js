@@ -4,6 +4,8 @@ class Sliderm3 {
     constructor(element) {
         this.div = element;
         this.div.style.position = 'relative';
+        this.div.style.userSelect = 'none';
+        this.div.style.width = '100%';
         this.draw();
         this.div.oncontextmenu = function() {return false;};    
         this.div.ondragstart = function() {return false;};
@@ -12,6 +14,17 @@ class Sliderm3 {
         this.div.addEventListener('draw', this.draw);
         document.addEventListener('mousemove', this.sliderm3MouseMoveListener);
         document.addEventListener('mouseup', this.sliderm3CancelMove);
+        window.addEventListener('resize', this.resizeThrottler);
+    }
+
+    @bind
+    resizeThrottler() {
+        if ( !this.resizeTimeout ) {
+            this.resizeTimeout = setTimeout(function() {
+                this.resizeTimeout = null;
+                this.draw();
+            }.bind(this), 66);
+        }
     }
     
     @bind
@@ -21,7 +34,6 @@ class Sliderm3 {
         else
             this.mousedown = 2;
         this.changeRange(e);
-        return false;
     }
     
     @bind
@@ -29,7 +41,6 @@ class Sliderm3 {
         if (this.mousedown != 0) {
             this.changeRange(e);
         }
-        return false;
     }
 
     @bind
@@ -78,7 +89,8 @@ class Sliderm3 {
         this.lineDiv = document.createElement("div");
         this.lineDiv.className = "sliderm3__line";
         this.lineDiv.style.height = `${this.div.dataset.lineHeight}px`;
-        this.lineDiv.style.width = `${this.div.dataset.length}px`;
+        this.div.style.maxWidth = this.div.dataset.length;
+        // this.lineDiv.style.width = `${this.div.offsetWidth<this.div.dataset.length?this.div.offsetWidth:this.div.dataset.length}px`;
         this.lineDiv.style.borderRadius = `${this.div.dataset.lineHeight / 2}px`;
         this.lineDiv.style.backgroundColor = this.div.dataset.colorLine;
         this.div.appendChild(this.lineDiv); 
@@ -90,11 +102,12 @@ class Sliderm3 {
         this.scaleDiv = document.createElement("ul");
         this.scaleDiv.className = "sliderm3__scale";
         this.scaleDiv.style.position = 'absolute';
+        this.scaleDiv.style.margin = '0px';
+        this.scaleDiv.style.padding = '0px';
         this.scaleDiv.style.display = 'flex';
-        this.scaleDiv.style.padding = 0;
         this.scaleDiv.style.fontSize = `${this.div.dataset.pointSize * 3 / 6}px`;
         this.scaleDiv.style.justifyContent = 'space-between';
-        this.scaleDiv.style.top = `${+this.div.dataset.pointSize > +this.div.dataset.lineHeight? +this.div.dataset.pointSize: +this.div.dataset.lineHeight + 5}px`;
+        this.scaleDiv.style.top = `${+this.div.dataset.pointSize > +this.div.dataset.lineHeight? +this.div.dataset.lineHeight + (+this.div.dataset.pointSize - +this.div.dataset.lineHeight)/2 + 5: +this.div.dataset.lineHeight + 5}px`;
         this.scaleDiv.style.color = this.div.dataset.colorScale;
         this.lineDiv.appendChild(this.scaleDiv);
         this.scaleDiv.style.width = `${+this.lineDiv.offsetWidth * 1.04}px`;
@@ -109,7 +122,7 @@ class Sliderm3 {
     
     @bind
     drawRange() {
-        this.rangeMaxWidth = this.div.dataset.length - this.div.dataset.lineHeight;
+        this.rangeMaxWidth = this.lineDiv.offsetWidth - this.div.dataset.lineHeight;
         this.range = this.div.dataset.max - this.div.dataset.min;
         this.rangeDiv = document.createElement("div");
         this.rangeDiv.className = "sliderm3__range";

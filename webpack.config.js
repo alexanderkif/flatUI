@@ -90,5 +90,8 @@ module.exports = {
       filename: 'sliderm3page.html',
       template: 'src/html/sliderm3page.pug'
     })
-  ]
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist')
+  }
 };
