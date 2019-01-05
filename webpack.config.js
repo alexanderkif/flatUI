@@ -18,7 +18,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract(
           {
             fallback: 'style-loader',
@@ -43,7 +43,19 @@ module.exports = {
                 outputPath: 'fonts/'
             }
         }]
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i, 
+        // loader: "file-loader?name=/img/[name].[ext]"
+        exclude: /fonts/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+              name: '[name].[ext]',
+              outputPath: 'img/'
+          }
+        }],
+      },
     ]
   },
   plugins: [ 

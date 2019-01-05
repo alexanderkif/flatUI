@@ -33,16 +33,31 @@ class Calendar {
             onSelect: this.setDay,
             onChangeMonthYear: this.changeMonthHoldDay
         }).datepicker("setDate", `${mydatepicker.dataset.month}/${mydatepicker.dataset.date}/${mydatepicker.dataset.year}`);
+        this.prevDiv = document.createElement("img");
+        this.prevDiv.className = "ui-datepicker-prev-corner";
+        this.prevDiv.setAttribute("src", "img/arrow.png");
+        this.nextDiv = document.createElement("img");
+        this.nextDiv.className = "ui-datepicker-next-corner";
+        this.nextDiv.setAttribute("src", "img/arrow.png");
+        this.drawArrows();
+    }
+
+    @bind
+    drawArrows() {
+        $('.ui-datepicker-prev', this.mdpicker).append(this.prevDiv);
+        $('.ui-datepicker-next', this.mdpicker).append(this.nextDiv);
     }
 
     @bind
     setDay(e) {
         $('.calendar__date', this.parentElement).html(parseInt(e.split('/')[1]));
+        setTimeout(this.drawArrows, 100);
     }
 
     @bind
     changeMonthHoldDay(y, m, i){
         this.mdpicker.datepicker('setDate', new Date(y, m - 1, i.selectedDay));
+        setTimeout(this.drawArrows, 100);
     }
 }
 

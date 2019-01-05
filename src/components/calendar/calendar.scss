@@ -56,29 +56,52 @@ $color-red-carusel: #d54c2c;
         a > span {
             display: none;
         }
+
+        .ui-state-hover {
+            background: none;
+            border: none;
+        }
+
+        .ui-datepicker-prev-hover {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 1.8em;
+            height: 1.8em;
+        }
+
+        .ui-datepicker-next-hover {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 1.8em;
+            height: 1.8em;
+        }
         
-        a.ui-datepicker-prev.ui-corner-all, a.ui-datepicker-prev-hover {
-            left: 0px;
-            top: 0px;
-            height: 40px;
+        .ui-datepicker-prev-corner {
+            position: absolute;
+            left: 10px;
+            top: 6px;
+            height: 25px;
             flex: 1;
             border: none;
             border-radius: 0;
             background-color: inherit;
-            background: url('/flatUI/img/arrow.png') 50% 50% no-repeat;
-            background-size: 18px;
-        }        
+            // background: url('/flatUI/img/arrow.png') 50% 50% no-repeat;
+            // background-size: 18px;
+        }
         
-        a.ui-datepicker-next.ui-corner-all, a.ui-datepicker-next-hover {
-            right: 0px;
-            top: 0px;
-            height: 40px;
+        .ui-datepicker-next-corner {
+            position: absolute;
+            right: 10px;
+            top: 6px;
+            height: 25px;
             flex: 1;
             border: none;
             border-radius: 0;
             background-color: inherit;
-            background: url('/flatUI/img/arrow.png') 50% 50% no-repeat;
-            background-size: 18px;
+            // background: url('/flatUI/img/arrow.png') 50% 50% no-repeat;
+            // background-size: 18px;
             transform: rotate(180deg);
         }
     }

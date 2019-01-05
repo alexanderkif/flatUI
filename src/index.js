@@ -1,5 +1,12 @@
 
 import "./scss/main.scss";
+import "./public/img/arrow.png";
+import "./public/img/city.png";
+import "./public/img/john.png";
+import './public/img/sarah.png';
+import "./public/img/velo.png";
+import "./public/js/lc_switch.min.js";
+import "./public/css/lc_switch.css";
 import "./components/button/button";
 import "./components/form-input/form-input";
 import "./components/dropdown/dropdown";
