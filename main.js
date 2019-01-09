@@ -255,7 +255,7 @@ eval("module.exports = __webpack_require__.p + \"img/city.png\";\n\n//# sourceUR
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"/favicon.ico\";\n\n//# sourceURL=webpack:///./src/public/img/favicon.ico?");
+eval("module.exports = __webpack_require__.p + \"img/favicon.ico\";\n\n//# sourceURL=webpack:///./src/public/img/favicon.ico?");
 
 /***/ }),
 
