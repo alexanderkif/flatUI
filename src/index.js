@@ -5,6 +5,7 @@ import "./public/img/city.png";
 import "./public/img/john.png";
 import './public/img/sarah.png';
 import "./public/img/velo.png";
+import "./public/img/favicon.ico";
 import "./public/js/lc_switch.min.js";
 import "./public/css/lc_switch.css";
 import "./components/button/button";
