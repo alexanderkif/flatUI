@@ -113,6 +113,11 @@ module.exports = {
       template: 'src/html/sliderm3page.pug'
     })
   ],
+  resolve: {
+    alias: {
+      img: path.resolve(__dirname, 'src/public/img')
+    }
+  },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
   }
