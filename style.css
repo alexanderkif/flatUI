@@ -801,24 +801,16 @@
       right: 2px;
       width: 1.8em;
       height: 1.8em; }
-    .calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-prev-corner {
-      position: absolute;
-      left: 10px;
-      top: 6px;
-      height: 25px;
-      flex: 1;
-      border: none;
-      border-radius: 0;
-      background-color: inherit; }
-    .calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-next-corner {
-      position: absolute;
-      right: 10px;
-      top: 6px;
-      height: 25px;
-      flex: 1;
-      border: none;
-      border-radius: 0;
-      background-color: inherit;
+    .calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+      top: 0px;
+      height: 40px;
+      background: url("/img/arrow.png") 50% 50% no-repeat;
+      background-size: 18px; }
+    .calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+      top: 0px;
+      height: 40px;
+      background: url("/img/arrow.png") 50% 50% no-repeat;
+      background-size: 18px;
       transform: rotate(180deg); }
   .calendar .ui-datepicker table {
     border-spacing: 0px;
