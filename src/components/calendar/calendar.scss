@@ -78,30 +78,20 @@ $color-red-carusel: #d54c2c;
             height: 1.8em;
         }
         
-        .ui-datepicker-prev-corner {
-            position: absolute;
-            left: 10px;
-            top: 6px;
-            height: 25px;
-            flex: 1;
-            border: none;
-            border-radius: 0;
-            background-color: inherit;
-            // background: url('/flatUI/img/arrow.png') 50% 50% no-repeat;
-            // background-size: 18px;
+        .ui-datepicker-prev {
+            top: 0px;
+            height: 40px;
+            background: url('/img/arrow.png') 50% 50% no-repeat;
+            background-size: 18px;
+            cursor: pointer;
         }
         
-        .ui-datepicker-next-corner {
-            position: absolute;
-            right: 10px;
-            top: 6px;
-            height: 25px;
-            flex: 1;
-            border: none;
-            border-radius: 0;
-            background-color: inherit;
-            // background: url('/flatUI/img/arrow.png') 50% 50% no-repeat;
-            // background-size: 18px;
+        .ui-datepicker-next {
+            top: 0px;
+            height: 40px;
+            background: url('/img/arrow.png') 50% 50% no-repeat;
+            background-size: 18px;
+            cursor: pointer;
             transform: rotate(180deg);
         }
     }
