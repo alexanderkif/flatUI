@@ -1,7 +1,3 @@
-# Slider mod v3
-You can tune Sliderm3 for youself on the page:<br>
-https://alexanderkif.github.io/flatUI/sliderm3page.html<br>
- Copy the element and the link to the script into your html file. Then  copy the file sliderm3.js to the directory of the html file.
 # flatUI
 ## How to use:
 Clone the project to your local environment: <br>
