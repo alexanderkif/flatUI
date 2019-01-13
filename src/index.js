@@ -14,7 +14,7 @@ import "./components/dropdown/dropdown";
 import "./components/search/search";
 import "./components/calendar/calendar";
 import "./components/sectors/sectors";
-import 'modifiable-slider/dist/main';
+import { sliderm3 } from 'modifiable-slider';
 import "./components/form-toggle/form-toggle";
 
 console.log("Run flatUI...");
