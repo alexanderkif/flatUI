@@ -1,7 +1,7 @@
 {
-  "name": "resume",
+  "name": "flatui",
   "version": "1.0.0",
-  "description": "",
+  "description": "flatUI",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "decko": "^1.2.0",
+    "modifiable-slider": "git+https://github.com/alexanderkif/modifiable-slider.git",
     "npm": "^6.4.1"
   }
 }
