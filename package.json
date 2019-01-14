@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "decko": "^1.2.0",
+    "lc-switch": "git+https://github.com/alexanderkif/LC-switch.git",
     "modifiable-slider": "git+https://github.com/alexanderkif/modifiable-slider.git",
     "npm": "^6.4.1"
   }
