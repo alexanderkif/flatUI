@@ -1,3 +1,4 @@
+import { bind } from 'decko';
 
 $.datepicker._gotoToday = function(id) {
     var target = jQuery(id);
@@ -19,7 +20,6 @@ $.datepicker._gotoToday = function(id) {
     this._adjustDate(target);
 };
 
-import { bind } from 'decko';
 class Calendar {
     constructor(mydatepicker) {
         this.mdpicker = $(mydatepicker);
