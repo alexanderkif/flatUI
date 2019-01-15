@@ -1,11 +1,11 @@
 
 import "./scss/main.scss";
-import "./public/img/arrow.png";
-import "./public/img/city.png";
-import "./public/img/john.png";
-import './public/img/sarah.png';
-import "./public/img/velo.png";
-import "./public/img/favicon.ico";
+import "./img/arrow.png";
+import "./img/city.png";
+import "./img/john.png";
+import './img/sarah.png';
+import "./img/velo.png";
+import "./img/favicon.ico";
 import "../node_modules/lc-switch/lc_switch.min.js";
 import "../node_modules/lc-switch/lc_switch.css";
 import "./components/button/button";

@@ -111,7 +111,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      img: path.resolve(__dirname, 'src/public/img')
+      img: path.resolve(__dirname, 'src/img')
     }
   },
   devServer: {
