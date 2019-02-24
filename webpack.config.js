@@ -1,7 +1,7 @@
 // Webpack v4
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: { main: './src/index.js' },
   output: {
@@ -18,18 +18,25 @@ module.exports = {
         }
       },
       {
-        test: /\.(scss|css)$/,
-        use: ExtractTextPlugin.extract(
+        test: /\.(sa|sc|c)ss$/,
+        use: [
           {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              // publicPath: '../'
+            }
+          },
+          'css-loader',
+          // 'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.pug$/,
-        loaders: [{
-          loader: 'apply-loader'
-        }, {
+        loaders: [
+        {
           loader: 'pug-loader',
           options: { pretty: true }
         }]
@@ -68,16 +75,13 @@ module.exports = {
       },
     ]
   },
-  plugins: [ 
-    new ExtractTextPlugin(
-        {filename: 'style.css'}
-    ),
-    // new HtmlWebpackPlugin({
-    //   inject: false,
-    //   hash: true,
-    //   template: './src/index.html',
-    //   filename: 'index.html'
-    // })
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css"
+      // chunkFilename: "[id].css"
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.pug',
@@ -116,5 +120,6 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
-  }
+  },
+  devtool: 'source-map'
 };
