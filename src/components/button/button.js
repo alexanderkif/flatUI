@@ -1,3 +1,4 @@
+
 import { bind } from 'decko';
 
 class RippleButton {
@@ -8,16 +9,16 @@ class RippleButton {
 
     @bind
     clickRipple(e) {
-        let X = e.pageX - this.button.offsetLeft;
-        let Y = e.pageY - this.button.offsetTop;
-        let rippleDiv = document.createElement("div");
-        $(rippleDiv).addClass('ripple').css({top:`${Y}px`, left:`${X}px`});
+        const X = e.pageX - this.button.offsetLeft;
+        const Y = e.pageY - this.button.offsetTop;
+        const rippleDiv = document.createElement('div');
+        $(rippleDiv).addClass('ripple').css({ top: `${Y}px`, left: `${X}px` });
         this.button.appendChild(rippleDiv);
-        
-        setTimeout(function(){
+
+        setTimeout(() => {
             rippleDiv.parentElement.removeChild(rippleDiv);
         }, 900);
-    };
+    }
 }
 
 $('.btn').each((index, element) => new RippleButton(element));

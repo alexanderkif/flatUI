@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/alexanderkif/flatUI#readme",
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "gh-pages": "^2.0.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.14"

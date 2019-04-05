@@ -6,22 +6,21 @@ class Dropdown {
         $(window).click(this.clickOutside);
     }
 
-    @bind
+    // eslint-disable-next-line class-methods-use-this
     clickOutside() {
         $('.dropdown__menu').removeClass('dropdown__menu_visible');
     }
 
     @bind
-    dropdownMenuClick (event) {
+    dropdownMenuClick(event) {
         $('.dropdown__menu', event.currentTarget).toggleClass('dropdown__menu_visible').click(this.chooseClickValue);
         event.stopPropagation();
     }
 
     @bind
     chooseClickValue(event) {
-        if (event.target.firstChild.data)
-            $('.dropdown__input', this.parentElement).val(event.target.firstChild.data);
+        if (event.target.firstChild.data) { $('.dropdown__input', this.parentElement).val(event.target.firstChild.data); }
     }
 }
 
-$('.dropdown').each((index,element) => new Dropdown(element));
+$('.dropdown').each((index, element) => new Dropdown(element));

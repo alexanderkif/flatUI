@@ -3,7 +3,7 @@ import { bind } from 'decko';
 class SearchInput {
     constructor(element) {
         this.input = $('.search__input', element);
-        this.tmp = "";
+        this.tmp = '';
         this.input.click(this.searchInputClick);
         $('.search__button', element).click(this.searchInputNotFound);
     }
@@ -20,4 +20,4 @@ class SearchInput {
     }
 }
 
-$('.search').each((index,element) => new SearchInput(element));
+$('.search').each((index, element) => new SearchInput(element));
