@@ -6,7 +6,7 @@ mixin messaging(user, img, message, placeholder)
                 i.material-icons= "mode_comment"
                 i.material-icons= "local_see"
         .messaging__body
-            img.messaging__user-photo(src=`img/${img}.png`, alt="no image")
+            img.messaging__user-photo(src=`img/${img}.png`, alt="the message has no image")
             .messaging__message= message
             textarea(rows="3" cols="27").messaging__input= placeholder
             .messaging__btn

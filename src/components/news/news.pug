@@ -1,7 +1,7 @@
 mixin news(header, date, text, img, href)
     .news
         a.news__link(href= href)
-            img(src=`img/${img}.png` alt="no img" class="news__img")
+            img(src=`img/${img}.png` alt="the news has no image" class="news__img")
             .news__content
                 header.news__header= header
                 .news__date= date
