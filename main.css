@@ -141,6 +141,9 @@
   fill: #747474;
   font-weight: 300; }
 
+.percentage__circle {
+  width: 115px; }
+
 .percentages {
   min-height: 156px;
   padding-top: 20px; }
