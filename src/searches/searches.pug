@@ -7,8 +7,8 @@ mixin searches({header,searches,dropdown})
         header.searches__header 
             +header(header)
         ul.searches__content
-            each s in searches
+            each search in searches
                 li.searches__item
-                    +search(s.placeholder, s.error)
+                    +search(search.placeholder, search.error)
             li.searches__item
                 +dropdown(dropdown.placeholder, dropdown.options)

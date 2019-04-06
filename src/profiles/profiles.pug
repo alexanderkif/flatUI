@@ -6,6 +6,6 @@ mixin profiles({header,cards})
         header.profiles__header 
             +header(header)
         ul.profiles__content
-            each c in cards
+            each card in cards
                 li.profiles__item
-                    +user-card(c.img, c.name, c.prof, c.color, c.a1, c.a2, c.a3)
+                    +user-card(card.img, card.name, card.prof, card.color, card.a1, card.a2, card.a3)

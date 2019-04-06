@@ -6,6 +6,10 @@ mixin sliders({header, sliders})
         header.sliders__header 
             +header(header)
         .sliders__content                
-            each s in sliders
-                +sliderm3(s.min, s.max, s.value1, s.value2, s.step, s.intervals, s.hint, s.scale, s.interval, s.vertical, s.length, s.lineHeight, s.pointSize, s.colorLine, s.colorRange, s.colorPoint, s.colorScale, s.colorText)
+            each slider in sliders
+                +sliderm3(slider.min, slider.max, slider.value1, slider.value2, 
+                    slider.step, slider.intervals, slider.hint, slider.scale, 
+                    slider.interval, slider.vertical, slider.length, slider.lineHeight, 
+                    slider.pointSize, slider.colorLine, slider.colorRange, 
+                    slider.colorPoint, slider.colorScale, slider.colorText)
                 
