@@ -11,7 +11,7 @@ mixin percentage(percent)
     - var angle2= 3 * l - angle1
     - var angle3= 4 * l * percent / 100
     .percentage
-        svg(viewbox="0 0 10 10" style={width: '115px'} class="percentage__circle")
+        svg(viewbox="0 0 10 10" class="percentage__circle")
             defs
                 circle(id="circle" cx=cx cy=cy r=r stroke-width=width fill="transparent")
             use(xlink:href="#circle" stroke="#e75735" stroke-dasharray=`0,0,${angle1},${angle2},${angle3},0`)

@@ -13,4 +13,8 @@ $color-lightgray: #e5e5e5;
         fill: $color-grey;
         font-weight: 300;
     }
+
+    &__circle {
+        width: 115px;
+    }
 }
