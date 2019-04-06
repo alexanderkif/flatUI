@@ -1,6 +1,6 @@
 mixin user-card(img, name, prof, color, a1, a2, a3)
     .user-card
-        img.user-card__photo(src=`img/${img}.png` alt="no image")
+        img.user-card__photo(src=`img/${img}.png` alt="the card has no image")
         .user-card__panel(class=color?`user-card__panel_${color}`:"")
             .user-card__name(class=color?`user-card__name_${color}`:"")= name
             .user-card__prof(class=color?`user-card__prof_${color}`:"")= prof
