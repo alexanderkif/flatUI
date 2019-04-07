@@ -1778,33 +1778,33 @@ a.ui-button:active,
   border-radius: 0.25rem; }
 
 .form-toggle .lcs_switch {
-  box-shadow: 0 0 0 !important;
-  width: 3.75rem !important;
+  box-shadow: 0 0 0;
+  width: 3.75rem;
   height: 1.5rem; }
 
 .form-toggle .lcs_label {
-  font-family: 'Conv_Lato' !important;
-  font-weight: normal !important;
-  font-size: 0.75rem !important; }
+  font-family: 'Conv_Lato';
+  font-weight: normal;
+  font-size: 0.75rem; }
 
 .form-toggle .lcs_cursor {
   width: 1.125rem;
   height: 1.125rem; }
 
 .form-toggle .lcs_switch.lcs_on .lcs_cursor {
-  left: 2.5rem !important; }
+  left: 2.5rem; }
 
 .form-toggle .lcs_switch.lcs_off .lcs_label_off {
-  right: 0.3125rem !important; }
+  right: 0.3125rem; }
 
 .form-toggle .lcs_switch.lcs_on .lcs_label_on {
-  left: 0.44rem !important; }
+  left: 0.44rem; }
 
 .form-toggle .lcs_on {
-  background-color: #4eb7a8 !important; }
+  background: #4eb7a8; }
 
 .form-toggle .lcs_off {
-  background-color: #e5e5e5 !important; }
+  background: #e5e5e5; }
 
 .tick {
   display: inline-block;
