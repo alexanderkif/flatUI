@@ -118,18 +118,18 @@
                 "name" : "John Smith",
                 "prof" : "ux designer",
                 "color" : "",
-                "a1" : "3.html",
-                "a2" : "3.html",
-                "a3" : "3.html"
+                "a1" : "",
+                "a2" : "",
+                "a3" : ""
             },
             {
                 "img" : "sarah",
                 "name" : "Sarah Brown",
                 "prof" : "developer",
                 "color" : "green",
-                "a1" : "3.html",
-                "a2" : "3.html",
-                "a3" : "3.html"
+                "a1" : "",
+                "a2" : "",
+                "a3" : ""
             }
         ]
     },
@@ -140,7 +140,7 @@
             "date" : "24 august 2013",
             "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.",
             "img" : "velo",
-            "href" : "2.html"
+            "href" : ""
         },
         "event" : {
             "header" : "this is the title",
