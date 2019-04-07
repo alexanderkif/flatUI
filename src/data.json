@@ -66,13 +66,13 @@
         "inputs" : [
             {
                 "placeholder" : "Your Name", 
-                "reg" : "^([a-zA-Z_-]){3,10}$",
+                "reg" : "username",
                 "success" : "THANKS!",
                 "error" : "ERROR"
             },
             {
                 "placeholder" : "Your Email", 
-                "reg" : "^(([^<>()[\\]\\\\.,;:\\s@\\']+(\\.[^<>()[\\]\\\\.,;:\\s@\\']+)*)|(\\'.+\\'))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",
+                "reg" : "email",
                 "success" : "THANKS!",
                 "error" : "WRONG"
             }

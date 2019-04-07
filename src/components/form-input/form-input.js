@@ -4,7 +4,12 @@ class FormInput {
     constructor(element) {
         this.textDiv = element.querySelector('.js-form-input__text');
         this.buttonDiv = $('.js-form-input__button', element);
-        this.reg = this.textDiv.dataset.reg;
+        if (this.textDiv.dataset.reg === 'username') {
+            this.reg = new RegExp('^([a-zA-Z_-]){3,10}$');
+        }
+        if (this.textDiv.dataset.reg === 'email') {
+            this.reg = new RegExp("^(([^<>()[\\]\\\\.,;:\\s@\\']+(\\.[^<>()[\\]\\\\.,;:\\s@\\']+)*)|(\\'.+\\'))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$");
+        }
         this.success = this.textDiv.dataset.success;
         this.error = this.textDiv.dataset.error;
         $(element).keyup(this.checkInput);
