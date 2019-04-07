@@ -1,43 +1,43 @@
 .news {
     display: block;
-    width: 290px;
-    height: 212px;
+    width: 18.125rem;
+    height: 13.25rem;
     background-color: $color-red;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     font-weight: normal;
     color: white;
 
     &__img {
         display: block;
         float: left;
-        width: 95px;
+        width: 5.94rem;
         height: 100%;
-        border-radius: 5px 0px 0px 5px;
+        border-radius: 0.3125rem 0 0 0.3125rem;
     }
 
     &__content {
         display: block;
-        margin-left: 110px;
-        padding: 10px;
+        margin-left: 6.875rem;
+        padding: 0.625rem;
     }
 
     &__header {
-        margin-top: 10px;
+        margin-top: 0.625rem;
         display: block;
-        font-size: 26px;
+        font-size: 1.625rem;
         font-weight: 300;
     }
 
     &__date {
         display: block;
-        margin-top: 5px;
-        font-size: 12px;
+        margin-top: 0.3125rem;
+        font-size: 0.75rem;
         text-transform: uppercase;        
     }
     
     &__text {
         display: block;
-        margin-top: 10px;
-        font-size: 12px;
+        margin-top: 0.625rem;
+        font-size: 0.75rem;
     }
 }

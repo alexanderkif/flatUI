@@ -1,19 +1,19 @@
 @import '../components/percentage/percentage';
 
 .percentages {
-    min-height: 156px;
-    padding-top: 20px;
+    min-height: 9.75rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
     }
 
     &__content {
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        margin: 0px auto;
-        margin-left: -10px;
+        margin: 0 auto;
+        margin-left: -0.625rem;
         flex-wrap: wrap;
         padding: 0;
     }

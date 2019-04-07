@@ -4,13 +4,13 @@
 
 .searches {
     width: 50%;
-    min-width: 300px;
-    padding-bottom: 20px;
+    min-width: 18.75rem;
+    padding-bottom: 1.25rem;
 
     &__header {
-        margin: 0px;
-        margin-bottom: 14px;
-        letter-spacing: 1px;
+        margin: 0;
+        margin-bottom: 0.875rem;
+        letter-spacing: 0.06rem;
     }
 
     &__content {
@@ -22,7 +22,7 @@
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        margin: 8px 10px;
+        margin: 0.5rem 0.625rem;
         list-style-type: none;
     }
 }

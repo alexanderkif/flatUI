@@ -3,12 +3,12 @@
 @import '../components/event/event';
 
 .news-events-row {
-    min-height: 295px;
-    padding-top: 20px;
+    min-height: 18.44rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 20px;
-        letter-spacing: 1px;
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.06rem;
     }
 
     &__content {
@@ -21,7 +21,7 @@
     }
 
     &__item {
-        padding: 10px;
+        padding: 0.625rem;
         list-style-type: none;
     }
 }

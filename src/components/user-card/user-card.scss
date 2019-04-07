@@ -1,35 +1,35 @@
 .user-card {
     display: block;
-    width: 270px;
-    height: 95px;
+    width: 16.875rem;
+    height: 5.94rem;
     
     &__photo {
         display: block;
         float: left;
         border-radius: 50%;
-        border: 5px solid $color-lightgray;
-        margin: 0px;
+        border: 0.3125rem solid $color-lightgray;
+        margin: 0;
     }
 
     &__panel {
         display: block;
         float: right;
-        width: 165px;
-        height: 95px;
+        width: 10.3125rem;
+        height: 5.94rem;
         background-color: $color-lightgray;
-        border-radius: 5px;
+        border-radius: 0.3125rem;
         position: relative;
         text-align: center;
     
         &::before {
             content: "";
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 0.625rem;
+            height: 0.625rem;
             background-color: $color-lightgray;
             transform: rotate(45deg);
-            top: 41px;
-            left: -4px;
+            top: 2.56rem;
+            left: -0.25rem;
         }
 
         &_green {
@@ -45,25 +45,25 @@
     &__name {
         font-weight: normal;
         margin: 0;
-        margin-top: 10px;
+        margin-top: 0.625rem;
         color: $color-red;
-        font-size: 18px
+        font-size: 1.125rem;
     }
 
     &__prof {
         margin: 0;
         text-transform: uppercase;
         color: $color-grey;
-        font-size: 10px;
-        letter-spacing: 1px;
+        font-size: 0.625rem;
+        letter-spacing: 0.06rem;
     }
 
     &__socials {
-        margin: 10px auto;
+        margin: 0.625rem auto;
         i {
-            font-size: 28px;
-            letter-spacing: 10px;
-            margin-left: 8px;
+            font-size: 1.75rem;
+            letter-spacing: 0.625rem;
+            margin-left: 0.5rem;
             color: $color-grey;
             
             &.ion-logo-twitter {

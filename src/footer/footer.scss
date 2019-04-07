@@ -1,17 +1,17 @@
 .footer {
     display: flex;
     width: 100%;
-    min-height: 150px;
+    min-height: 9.375rem;
     font-weight: bold;
-    font-size: 100px;
+    font-size: 6.25rem;
     text-transform: uppercase;
-    letter-spacing: 30px;
+    letter-spacing: 1.875rem;
     color: $color-green;
     background: linear-gradient($color-green-l, $color-red);
     justify-content: center;
     text-align: center;
     align-items: flex-end;
-    border-radius: 10px;
-    box-shadow: 5px 10px 25px $color-shadow;
-    border: 1px solid $color-border;
+    border-radius: 0.625rem;
+    box-shadow: 0.3125rem 0.625rem 1.5625rem $color-shadow;
+    border: 0.06rem solid $color-border;
 }

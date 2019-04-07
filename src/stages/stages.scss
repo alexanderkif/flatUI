@@ -3,19 +3,19 @@
 
 
 .stages {
-    height: 110px;
-    padding-top: 20px;
+    height: 6.875rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 25px;
+        margin-bottom: 1.56rem;
     }
 
     &__content {
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        margin: 0px auto;
-        padding-left: 10px;
-        padding-right: 10px;
+        margin: 0 auto;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
     }
 }

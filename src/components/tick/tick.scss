@@ -1,7 +1,7 @@
 .tick {
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: $color-lightgray;
     color: $color-grey;
@@ -9,8 +9,8 @@
     user-select: none;
 
     i {
-        font-size: 18px;
-        margin-top: 3px;
+        font-size: 1.125rem;
+        margin-top: 0.1875rem;
     }
     
     &.true {

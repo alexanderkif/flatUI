@@ -5,7 +5,7 @@ $color-lightgray: #e5e5e5;
 
 .form-textarea {
     &__wrapper {
-        padding: 5px;
+        padding: 0.3125rem;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -14,14 +14,14 @@ $color-lightgray: #e5e5e5;
     &__text {
         height: auto;
         resize: none;
-        border-radius: 5px;
-        border: 0px;
+        border-radius: 0.3125rem;
+        border: 0;
         background-color: $color-lightgray;
         color: $color-grey;
         font-family: inherit;
         font-weight: normal;
-        font-size: 14px;
-        padding: 12px;
+        font-size: 0.875rem;
+        padding: 0.75rem;
         display: block;
         width: 100%;
         outline: none;
@@ -30,11 +30,11 @@ $color-lightgray: #e5e5e5;
     &__btn {
         align-self: flex-end;
         justify-self: right;
-        margin-top: 7px;
-        height: 32px;
-        width: 118px;
-        font-size: 12px;
+        margin-top: 0.44rem;
+        height: 2rem;
+        width: 7.375rem;
+        font-size: 0.75rem;
         font-weight: bold;
-        border-radius: 4px;
+        border-radius: 0.25rem;
     }
 }

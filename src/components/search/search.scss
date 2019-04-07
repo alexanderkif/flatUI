@@ -6,16 +6,16 @@
         
     &__input {
         display: block;
-        margin: 4px 0px;
+        margin: 0.75rem 0;
         flex: 1 auto;
-        height: 28px;
-        border-radius: 3px 0px 0px 3px;
-        border: 0px;
+        height: 1.75rem;
+        border-radius: 0.1875rem 0 0 0.1875rem;
+        border: 0;
         background-color: $color-lightgray;
         color: $color-grey;
         font-weight: normal;
-        font-size: 13px;
-        padding-left: 12px;
+        font-size: 0.8125rem;
+        padding-left: 0.75rem;
         outline: none;
 
         &_not-found {
@@ -27,20 +27,20 @@
     
     &__button {
         display: block;
-        flex: 0 33px;
-        margin: 4px 0px;
-        height: 28px;
-        border-radius: 0px 3px 3px 0px;
-        border: 0px;
+        flex: 0 2.06rem;
+        margin: 0.75rem 0;
+        height: 1.75rem;
+        border-radius: 0 0.1875rem 0.1875rem 0;
+        border: 0;
         color: white;
         font-weight: normal;
-        font-size: 12px;
+        font-size: 0.75rem;
         outline: none;
         text-align: center;
         background-color: $color-red; 
     }
 
     &__icon {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 }

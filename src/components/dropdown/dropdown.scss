@@ -6,29 +6,29 @@
 
     &__input {
         display: block;
-        margin: 4px 0px;
+        margin: 0.25rem 0;
         flex: 1 auto;
-        height: 30px;
-        border-radius: 3px 0px 0px 3px;
-        border: 0px;
+        height: 1.875rem;
+        border-radius: 0.2rem 0 0 0.2rem;
+        border: 0;
         background-color: $color-lightgray;
         color: $color-grey;
         font-weight: normal;
-        font-size: 13px;
-        padding-left: 12px;
+        font-size: 0.81rem;
+        padding-left: 0.75rem;
         outline: none;
     }
 
     &__button {
         display: block;
-        flex: 0 35px;
-        margin: 4px 0px;
-        height: 30px;
-        border-radius: 0px 3px 3px 0px;
-        border: 0px;
+        flex: 0 2.2rem;
+        margin: 0.25rem 0;
+        height: 1.875rem;
+        border-radius: 0 0.2rem 0.2rem 0;
+        border: 0;
         color: white;
         font-weight: normal;
-        font-size: 12px;
+        font-size: 0.75rem;
         outline: none;
         text-align: center;
         background-color: $color-green;
@@ -37,11 +37,11 @@
     &__menu {
         position: absolute;
         visibility: hidden;
-        top: 34px;
+        top: 2.125rem;
         width: 100%;
         background-color: $color-green;
-        border-radius: 2px;
-        padding: 8px 0;
+        border-radius: 0.125rem;
+        padding: 0.5rem 0;
         z-index: 10000;
         
         &_visible {
@@ -52,15 +52,15 @@
     &__item {
         display: block;
         font-weight: normal;
-        font-size: 14px;
-        padding-left: 12px;
+        font-size: 0.875rem;
+        padding-left: 0.75rem;
         outline: none;
         margin: 0;
         text-decoration-line: none;
         background-color: $color-green;
         color: white;
-        padding-top: 7px;
-        height: 23px;
+        padding-top: 0.44rem;
+        height: 1.44rem;
         cursor: pointer;
 
         &:hover {

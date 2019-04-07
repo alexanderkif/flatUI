@@ -13,13 +13,13 @@ $color-shadow: #bbbbbb;
     width: 95%;
     font-family: 'Conv_Lato';
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-bottom: 3.125rem;
     height: auto;
 
     &__wrapper {
-        margin-top: 50px;
+        margin-top: 3.125rem;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -38,52 +38,52 @@ $color-shadow: #bbbbbb;
     &__video {
         flex: 1;
         margin: 0 auto;
-        padding-top: 20px;
-        padding-bottom: 30px;
-        margin-bottom: 50px;
+        padding-top: 1.25rem;
+        padding-bottom: 1.875rem;
+        margin-bottom: 3.125rem;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-border;
-        border-radius: 5px;
-        border: 1px solid $color-shadow;
+        box-shadow: 0.3125rem 0.625rem 1.56rem $color-border;
+        border-radius: 0.3125rem;
+        border: 0.06rem solid $color-shadow;
         justify-content: center;
 
         .video {
             display: flex;
-            width: 600px;
+            width: 37.5rem;
             transition: all 0.2s ease-in-out;
 
-            @media screen and (max-width: 680px) {
+            @media screen and (max-width: 42.5rem) {
                 transform: scale(0.7);
-                height: 300px;
-                width: 450px;
+                height: 18.75rem;
+                width: 28.125rem;
             }    
         }
     }
     
     &__left-block {
-        width: 300px;
+        width: 18.75rem;
         margin: 0 auto;
-        padding: 25px;
-        padding-bottom: 30px;
-        margin-bottom: 50px;
+        padding: 1.56rem;
+        padding-bottom: 1.875rem;
+        margin-bottom: 3.125rem;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-border;
-        border-radius: 5px;
-        border: 1px solid $color-shadow;
+        box-shadow: 0.3125rem 0.625rem 1.56rem $color-border;
+        border-radius: 0.3125rem;
+        border: 0.06rem solid $color-shadow;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     &__item {
-        padding: 5px 0px;        
+        padding: 0.3125rem 0;        
     }
     
     &__video-text {
         display: block;
         width: 90%;
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 1.25rem;
         text-align: justify;
     }    
 }

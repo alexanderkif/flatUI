@@ -6,19 +6,19 @@
     flex-wrap: wrap;
     flex-direction: column;
     width: 50%;
-    min-width: 300px;
+    min-width: 18.75rem;
     align-items: center;
 
     &__item {
-        margin-bottom: 25px;
-        margin-left: 11px;
+        margin-bottom: 1.56rem;
+        margin-left: 0.6875rem;
         list-style-type: none;
     }
 
     &__header {
-        margin-top: 0px;
-        margin-bottom: 27px;
-        letter-spacing: 1px;
+        margin-top: 0;
+        margin-bottom: 1.6875rem;
+        letter-spacing: 0.06rem;
     }    
 
     &__content {

@@ -1,18 +1,18 @@
 @import '../components/arrow-button/arrow-button';
 
 .arrow-buttons {
-    height: 131px;
-    padding-top: 20px;
+    height: 8.2rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 33px;
+        margin-bottom: 2rem;
     }
 
     &__content {
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        margin: 0px auto;
-        max-width: 445px;
+        margin: 0 auto;
+        max-width: 27.8rem;
     }
 }

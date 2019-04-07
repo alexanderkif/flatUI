@@ -6,11 +6,11 @@
 
 
 .forms {
-    min-height: 328px;
-    padding-top: 20px;
+    min-height: 20.5rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 25px;
+        margin-bottom: 1.5625rem;
     }
 
     &__form {
@@ -21,19 +21,19 @@
         justify-content: space-around;
 
         &_left {
-            min-width: 300px;
+            min-width: 18.75rem;
             padding-left: 0;
-            padding-bottom: 20px;
+            padding-bottom: 1.25rem;
         }
 
         &_right {
-            padding: 4px 5%;
-            width: 230px;
-            min-width: 100px;
+            padding: 0.25rem 5%;
+            width: 14.375rem;
+            min-width: 6.25rem;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 98px 80px;
-            grid-gap: 15px;
+            grid-template-rows: 6.125rem 5rem;
+            grid-gap: 0.94rem;
             justify-items: center;
             align-items: start;
         }
@@ -47,8 +47,8 @@
 .toggles {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 35px 45px;
-    grid-gap: 15px;
+    grid-template-rows: 2.1875rem 2.8125rem;
+    grid-gap: 0.94rem;
     justify-items: center;
     align-items: start;
     grid-template-areas: 
@@ -73,9 +73,9 @@
 .ticks { 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 35px 30px;
-    grid-gap: 15px;
-    grid-column-gap: 20px;
+    grid-template-rows: 2.1875rem 1.875rem;
+    grid-gap: 0.94rem;
+    grid-column-gap: 1.25rem;
     justify-items: center;
     align-items: start;
     grid-template-areas: 

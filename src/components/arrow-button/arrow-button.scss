@@ -3,10 +3,10 @@ $color-green: #4eb7a8;
 .arrow-button {
     cursor: pointer;
     outline: none;
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     border-radius: 50%;
-    border: 3px solid $color-green;
+    border: 0.2rem solid $color-green;
     color: $color-green;
     background-color: white;
     display: flex;
@@ -14,7 +14,7 @@ $color-green: #4eb7a8;
     justify-content: center;
 
     .material-icons {
-        font-size: 42px;
+        font-size: 2.625rem;
         align-self: center;
         vertical-align: middle;
     }
@@ -26,7 +26,7 @@ $color-green: #4eb7a8;
 
     &_disabled {
         cursor: default;
-        border: 0px;
+        border: 0;
         background-color: #e5e5e5;
         color: white;
 

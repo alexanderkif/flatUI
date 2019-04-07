@@ -1,22 +1,22 @@
 
 
 .sliders {
-    min-height: 112px;
-    padding-top: 20px;
+    min-height: 7rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 45px;
+        margin-bottom: 2.81rem;
     }
 
     &__content {
         display: flex;
-        margin: 0px auto;
-        max-width: 590px;
+        margin: 0 auto;
+        max-width: 36.875rem;
         align-items: flex-start;
         justify-content: space-between;
 
         .sliderm3 {
-            font-size: 13px;
+            font-size: 0.81rem;
             font-weight: normal;
         }
     }

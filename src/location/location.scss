@@ -1,28 +1,28 @@
 @import '../components/map/map';
 
 .location {
-    height: 353px;
-    padding-top: 20px;
+    height: 22.06rem;
+    padding-top: 1.25rem;
 
     &__header {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
     }
 
     &__content {
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        margin: 0px auto;
+        margin: 0 auto;
     }
 
     transition: all 0.2s ease-in-out;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 37.5rem) {
         &__content {
             transform: scale(0.6);
-            height: 190px;
+            height: 11.875rem;
         }
 
-        height: 220px;
+        height: 13.75rem;
     }
 }

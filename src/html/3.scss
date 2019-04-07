@@ -11,13 +11,13 @@ $color-red-shadow: #bf3e1f;
     width: 95%;
     font-family: 'Conv_Lato';
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-bottom: 3.125rem;
     height: auto;
     
     &__wrapper {
-        margin-top: 50px;
+        margin-top: 3.125rem;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -27,7 +27,7 @@ $color-red-shadow: #bf3e1f;
     &_left {
         flex: 2;
         margin: 0 auto;
-        min-width: 360px;
+        min-width: 22.5rem;
     }
     
     &_right {
@@ -36,27 +36,27 @@ $color-red-shadow: #bf3e1f;
     }
     
     &__forms {
-        max-width: 640px;
+        max-width: 40rem;
         margin: 0 auto;
-        padding: 30px;
-        margin-bottom: 50px;
+        padding: 1.875rem;
+        margin-bottom: 3.125rem;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-shadow;
-        border-radius: 5px;
-        border: 1px solid $color-border;
+        box-shadow: 0.3125rem 0.625rem 1.56rem $color-shadow;
+        border-radius: 0.3125rem;
+        border: 0.06rem solid $color-border;
         justify-content: center;
     }
 
     &__left-block {
-        width: 300px;
+        width: 18.75rem;
         margin: 0 auto;
-        padding: 25px;
-        padding-bottom: 30px;
-        margin-bottom: 50px;
+        padding: 1.56rem;
+        padding-bottom: 1.875rem;
+        margin-bottom: 3.125rem;
         background-color: white;
-        box-shadow: 5px 10px 25px $color-border;
-        border-radius: 5px;
-        border: 1px solid $color-shadow;
+        box-shadow: 0.3125rem 0.625rem 1.56rem $color-border;
+        border-radius: 0.3125rem;
+        border: 0.06rem solid $color-shadow;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -65,39 +65,39 @@ $color-red-shadow: #bf3e1f;
     &__toggles, &__ticks {
         display: block;
         width: 100%;
-        margin: 20px;
-        font-size: 18px;
+        margin: 1.25rem;
+        font-size: 1.125rem;
     }
 
     &__toggle-block {
         display: block;
         width: 100%;
-        margin: 0px auto;
+        margin: 0 auto;
 
         span {
             display: inline-block;
             text-align: left;
-            margin: 5px;
+            margin: 0.3125rem;
         }
     }
 
     &__tick-block {
         display: block;
         width: 100%;
-        margin: 0px auto;
+        margin: 0 auto;
 
         span {
             display: inline-block;
             text-align: left;
-            margin: 5px;
-            margin-right: 30px;
+            margin: 0.3125rem;
+            margin-right: 1.875rem;
         }
     }
 
     &__btn {
         // display: inline-block;
         text-align: right;
-        margin: 5px;
+        margin: 0.3125rem;
     }
 }
 

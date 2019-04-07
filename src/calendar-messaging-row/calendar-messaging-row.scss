@@ -3,24 +3,24 @@
 @import '../components/messaging/messaging';
 
 .calendar-messaging-row {
-    min-height: 529px;
+    min-height: 33rem;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-around;
 
     &__header {
-        padding-top: 20px;
-        margin: 0px;
-        margin-bottom: 23px;
-        letter-spacing: 1px;
+        padding-top: 1.25rem;
+        margin: 0;
+        margin-bottom: 1.44rem;
+        letter-spacing: 0.06rem;
     }
 
     &__calendar {
-        max-width: 280px;
+        max-width: 17.5rem;
     }
 
     &__messaging {
-        max-width: 290px;
+        max-width: 18.125rem;
     }
 }
