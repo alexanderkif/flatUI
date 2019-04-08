@@ -17,12 +17,6 @@
         font-size: 0.8125rem;
         padding-left: 0.75rem;
         outline: none;
-
-        &_not-found {
-            background-color: $color-red;
-            color: white;
-            opacity: 1;
-        }
     }
     
     &__button {
@@ -43,4 +37,10 @@
     &__icon {
         font-size: 1.125rem;
     }
+}
+
+.js-search__input_not-found {
+    background-color: $color-red;
+    color: white;
+    opacity: 1;
 }

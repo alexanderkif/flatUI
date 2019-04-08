@@ -38,14 +38,6 @@ $color-lightgray: #e5e5e5;
         justify-content: center;
         background-color: $color-green;
 
-        &_error {
-            background-color: $color-red;  
-        }
-
-        &_visible {
-            display: flex;
-        }
-
         &::before {
             content: "";
             position: absolute;
@@ -57,4 +49,12 @@ $color-lightgray: #e5e5e5;
             transform: rotate(-45deg);
         }
     }
+}
+
+.js-form-input__button_visible {
+    display: flex;
+}
+
+.js-form-input__button_error {
+    background-color: $color-red;
 }

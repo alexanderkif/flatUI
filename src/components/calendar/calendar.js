@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { bind } from 'decko';
 
+// eslint-disable-next-line func-names
 $.datepicker._gotoToday = function (id) {
     const target = jQuery(id);
     const inst = this._getInst(target[0]);

@@ -8,12 +8,12 @@ class Dropdown {
 
     // eslint-disable-next-line class-methods-use-this
     clickOutside() {
-        $('.dropdown__menu').removeClass('dropdown__menu_visible');
+        $('.dropdown__menu').removeClass('js-dropdown__menu_visible');
     }
 
     @bind
     dropdownMenuClick(event) {
-        $('.dropdown__menu', event.currentTarget).toggleClass('dropdown__menu_visible').click(this.chooseClickValue);
+        $('.dropdown__menu', event.currentTarget).toggleClass('js-dropdown__menu_visible').click(this.chooseClickValue);
         event.stopPropagation();
     }
 
