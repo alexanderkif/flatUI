@@ -27,8 +27,8 @@ html
                 .user-page_left
                     .user-page__forms
                         span Send to us your message
-                        +form-input("Your Name","^([a-zA-Z_-]){3,10}$","THANKS!","ERROR")
-                        +form-input("Your Email","^(([^<>()[\\]\\\\.,;:\\s@\\']+(\\.[^<>()[\\]\\\\.,;:\\s@\\']+)*)|(\\'.+\\'))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$","THANKS!","WRONG")
+                        +form-input("Your Name","username","THANKS!","ERROR")
+                        +form-input("Your Email","email","THANKS!","WRONG")
                         +form-textarea("Your Message", "30", "4")
                         .user-page__toggles
                             .user-page__toggle-block

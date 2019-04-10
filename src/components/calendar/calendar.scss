@@ -1,8 +1,4 @@
-$color-grey-light: #f2f2f2;
-$color-red: #e75735;
-$color-red-carusel: #d54c2c;
-$color-grey: #747474;
-$color-lightgray: #e5e5e5;
+@import "../../scss/constants.scss";
 
 .calendar {
     width: 17.5rem;

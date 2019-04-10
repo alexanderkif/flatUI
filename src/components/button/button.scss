@@ -1,7 +1,4 @@
-$color-green: #4eb7a8;
-$color-green-shadow: #28a290;
-$color-red: #e75735;
-$color-red-shadow: #bf3e1f;
+@import "../../scss/constants.scss";
 
 .btn {
     position: relative;
