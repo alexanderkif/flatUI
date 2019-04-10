@@ -10,9 +10,9 @@ mixin forms({header,inputs,textarea,toggles,ticks})
             +header(header)
         form.forms__form(action="" method="get")
             ul.forms__form_left
-                each i in inputs
+                each input in inputs
                     li.forms__item
-                        +form-input(i.placeholder, i.reg, i.success, i.error)
+                        +form-input(input.placeholder, input.reg, input.success, input.error)
                 li.forms__item
                     +form-textarea(textarea.placeholder, textarea.cols, textarea.rows)
             ul.forms__form_right

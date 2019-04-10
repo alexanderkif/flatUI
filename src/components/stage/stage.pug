@@ -3,12 +3,12 @@ mixin stage(stages,stage)
     .stage
         .stage__circle.stage__circle_active
             .stage__text.stage__text_active= 1
-        - for (var i = 2; i <= stages; i++)
-            if i <= stage
+        - for (let currentStage = 2; currentStage <= stages; currentStage++)
+            if currentStage <= stage
                 .stage__line.stage__line_active
                 .stage__circle.stage__circle_active
-                    .stage__text.stage__text_active= i
+                    .stage__text.stage__text_active= currentStage
             else
                 .stage__line
                 .stage__circle
-                    .stage__text= i
+                    .stage__text= currentStage

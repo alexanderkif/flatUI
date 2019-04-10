@@ -9,15 +9,15 @@ class Sectors {
 
         let start = 4.71;
 
-        for (let i = 0; i < sectors.length; i += 1) {
-            const key = Object.keys(sectors[i])[0];
+        sectors.forEach((sector) => {
+            const key = Object.keys(sector)[0];
             ctx.strokeStyle = key;
-            const end = start + sectors[i][key] * 2 * Math.PI / 100;
+            const end = start + sector[key] * 2 * Math.PI / 100;
             ctx.beginPath();
             ctx.arc(r, r, r * 0.7, start, end, false);
             ctx.stroke();
             start = end;
-        }
+        });
 
         ctx.strokeStyle = '#e5e5e5';
         ctx.beginPath();
