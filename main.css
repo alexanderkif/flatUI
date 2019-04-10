@@ -129,34 +129,6 @@
   z-index: -1;
   background-color: inherit; }
 
-.arrow-button {
-  cursor: pointer;
-  outline: none;
-  width: 3.125rem;
-  height: 3.125rem;
-  border-radius: 50%;
-  border: 0.2rem solid #4eb7a8;
-  color: #4eb7a8;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .arrow-button .material-icons {
-    font-size: 2.625rem;
-    align-self: center;
-    vertical-align: middle; }
-  .arrow-button:hover {
-    background-color: #4eb7a8;
-    color: white; }
-  .arrow-button_disabled {
-    cursor: default;
-    border: 0;
-    background-color: #e5e5e5;
-    color: white; }
-    .arrow-button_disabled:hover {
-      background-color: #e5e5e5;
-      color: white; }
-
 .arrow-buttons {
   height: 8.2rem;
   padding-top: 1.25rem; }
@@ -266,12 +238,12 @@
       color: white;
       background-color: #e75735; }
   .btn_theme_green {
-    box-shadow: 0 0.2rem #28a290;
-    border: 0.06rem solid #28a290;
+    box-shadow: 0 0.2rem #29a391;
+    border: 0.06rem solid #29a391;
     color: #4eb7a8;
     background-color: white; }
     .btn_theme_green.btn_small {
-      box-shadow: 0 0.125rem #28a290; }
+      box-shadow: 0 0.125rem #29a391; }
     .btn_theme_green:hover {
       color: white;
       background-color: #4eb7a8; }
@@ -716,7 +688,7 @@
   .messaging__line {
     width: 100%;
     height: 2.1875rem;
-    background-color: #28a290; }
+    background-color: #29a391; }
   .messaging__icons {
     margin: 0 auto;
     width: 80%;
@@ -997,7 +969,7 @@ a {
   font-size: 6.25rem;
   text-transform: uppercase;
   letter-spacing: 1.875rem;
-  color: #4eb7a7;
+  color: #4eb7a8;
   background: linear-gradient(#b1ece3, #e75735);
   justify-content: center;
   text-align: center;
@@ -1304,7 +1276,7 @@ a {
     .stat-page__color_red {
       background-color: #e75735; }
     .stat-page__color_green {
-      background-color: #4eb7a7; }
+      background-color: #4eb7a8; }
     .stat-page__color_lightgray {
       background-color: #e5e5e5; }
   .stat-page__colors {
@@ -1419,7 +1391,7 @@ a {
   font-size: 6.25rem;
   text-transform: uppercase;
   letter-spacing: 1.875rem;
-  color: #4eb7a7;
+  color: #4eb7a8;
   background: linear-gradient(#e75735, #e75735, #b1ece3);
   justify-content: center;
   text-align: center;
@@ -1471,6 +1443,7 @@ a {
   .profiles__content {
     padding-left: 0;
     margin: 0; }
+
 
 /*!
   Ionicons, v4.5.4
