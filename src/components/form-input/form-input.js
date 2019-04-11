@@ -2,8 +2,8 @@ import { bind } from 'decko';
 
 class FormInput {
     constructor(element) {
-        this.textDiv = element.querySelector('.form-input__text');
-        this.buttonDiv = $('.form-input__button', element);
+        this.textDiv = element.querySelector('.js-form-input__text');
+        this.$buttonDiv = $('.js-form-input__button', element);
         if (this.textDiv.dataset.reg === 'username') {
             this.reg = new RegExp('^([a-zA-Z_-]){3,10}$');
         }
@@ -18,17 +18,17 @@ class FormInput {
     @bind
     checkInput() {
         if (this.textDiv.value.length === 0) {
-            this.buttonDiv.removeClass('js-form-input__button_visible');
+            this.$buttonDiv.removeClass('form-input__button_visible');
             return;
         }
-        this.buttonDiv.addClass('js-form-input__button_visible');
+        this.$buttonDiv.addClass('form-input__button_visible');
         const regExpToCheck = new RegExp(this.reg);
         if (regExpToCheck.test(this.textDiv.value)) {
-            this.buttonDiv.removeClass('js-form-input__button_error').html(this.success);
+            this.$buttonDiv.removeClass('form-input__button_error').html(this.success);
         } else {
-            this.buttonDiv.addClass('js-form-input__button_error').html(this.error);
+            this.$buttonDiv.addClass('form-input__button_error').html(this.error);
         }
     }
 }
 
-$('.form-input').each((index, element) => new FormInput(element));
+$('.js-form-input').each((index, element) => new FormInput(element));

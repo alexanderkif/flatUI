@@ -1,5 +1,5 @@
 mixin search(placeholder, error)
-    .search
-        input.search__input(placeholder=placeholder data-error=error)
-        button.search__button
+    .search.js-search
+        input.search__input.js-search__input(placeholder=placeholder data-error=error)
+        button.search__button.js-search__button
             i(class="material-icons icons-size search__icon")= 'search'

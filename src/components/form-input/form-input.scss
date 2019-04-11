@@ -34,6 +34,14 @@
         align-items: center;
         justify-content: center;
         background-color: $color-green;
+        
+        &_visible {
+            display: flex;
+        }
+
+        &_error {
+            background-color: $color-red;
+        }
 
         &::before {
             content: "";
@@ -46,12 +54,4 @@
             transform: rotate(-45deg);
         }
     }
-}
-
-.js-form-input__button_visible {
-    display: flex;
-}
-
-.js-form-input__button_error {
-    background-color: $color-red;
 }
