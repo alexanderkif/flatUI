@@ -627,7 +627,8 @@
 .map {
   width: 36.875rem;
   height: 16.875rem;
-  border-radius: 0.3125rem; }
+  border-radius: 0.3125rem;
+  overflow: hidden; }
   .map__bottom {
     background-color: #e75735;
     color: white;
@@ -661,6 +662,8 @@
     width: 3.44rem; }
     .map__point i, .map__target i {
       cursor: pointer; }
+  .map #map {
+    height: 12.5rem; }
 
 .messaging {
   display: flex;
