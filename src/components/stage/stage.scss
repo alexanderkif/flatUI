@@ -38,5 +38,9 @@
         &_active {
             background-color: $color-red;
         }
+
+        &:first-child {
+            flex: 0;
+        }
     }
 }

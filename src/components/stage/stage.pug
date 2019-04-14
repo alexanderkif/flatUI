@@ -1,9 +1,7 @@
 
 mixin stage(stages,stage)
     .stage
-        .stage__circle.stage__circle_active
-            .stage__text.stage__text_active= 1
-        - for (let currentStage = 2; currentStage <= stages; currentStage++)
+        - for (let currentStage = 1; currentStage <= stages; currentStage++)
             if currentStage <= stage
                 .stage__line.stage__line_active
                 .stage__circle.stage__circle_active

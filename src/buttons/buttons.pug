@@ -2,32 +2,15 @@ include ../components/button/button
 
 mixin buttons({header,buttons})
     .buttons
-        header.buttons__header 
+        header.buttons__header
             +header(header)
-        .buttons__content
-            .buttons__btn.buttons__btn_small
-                +button(buttons[0].label, buttons[0].view)
-            .buttons__btn
-                +button(buttons[1].label, buttons[1].view)
-            .buttons__btn
-                +button(buttons[2].label, buttons[2].view)
-            .buttons__btn.buttons__btn_small
-                +button(buttons[3].label, buttons[3].view)
-        .buttons__content
-            .buttons__btn.buttons__btn_small
-                +button(buttons[4].label, buttons[4].view)
-            .buttons__btn
-                +button(buttons[5].label, buttons[5].view)
-            .buttons__btn
-                +button(buttons[6].label, buttons[6].view)
-            .buttons__btn.buttons__btn_small
-                +button(buttons[7].label, buttons[7].view)
-        .buttons__content
-            .buttons__btn.buttons__btn_small
-                +button(buttons[8].label, buttons[8].view)
-            .buttons__btn
-                +button(buttons[9].label, buttons[9].view)
-            .buttons__btn
-                +button(buttons[10].label, buttons[10].view)
-            .buttons__btn.buttons__btn_small
-                +button(buttons[11].label, buttons[11].view)
+        - for(var row = 0; row < buttons.length; row++)
+            .buttons__content
+                - for(var button = 0; button < buttons[row].length; button++)
+                    if (buttons[row][button].view.includes('small'))
+                        .buttons__btn.buttons__btn_small
+                            +button(buttons[row][button].label, buttons[row][button].view)
+                    else
+                        .buttons__btn
+                            +button(buttons[row][button].label, buttons[row][button].view)
+                            

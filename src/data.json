@@ -204,7 +204,7 @@
     "buttons" : {
         "header" : "standard buttons",
         "buttons" : [
-            {
+            [{
                 "label" : "button",
                 "view" : ["theme_green", "small"]
             },
@@ -219,8 +219,8 @@
             {
                 "label" : "button",
                 "view" : ["theme_red", "small"]
-            },
-            {
+            }],
+            [{
                 "label" : "button",
                 "view" : ["theme_green", "small"]
             },
@@ -235,8 +235,8 @@
             {
                 "label" : "button",
                 "view" : ["theme_red", "small"]
-            },
-            {
+            }],
+            [{
                 "label" : "button",
                 "view" : ["theme_green", "small"]
             },
@@ -251,7 +251,7 @@
             {
                 "label" : "button",
                 "view" : ["theme_red", "small"]
-            }
+            }]
         ]
     }
 }
