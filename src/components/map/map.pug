@@ -1,7 +1,23 @@
 mixin map(lat, lng)
     .map
-        iframe(src="https://www.google.com/maps/d/embed?mid=1IOv1Q_0JVnri9txJzSFlBvhrah-wO2bH" width="590" height="200" frameborder="0" style="border:0")
-        //- iframe(src=`https://maps.google.com/maps?q=${lat}, ${lng}&z=15&output=embed` width="590" height="200" frameborder="0" style="border:0")
+        //- iframe(width="590" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyACjcGssb7pPGZFo7tRn8A47E86XYjRnTc&zoom=14&center=37.7911%2C-122.4151" allowfullscreen)
+        //- iframe(src="https://www.google.com/maps/d/embed?mid=1IOv1Q_0JVnri9txJzSFlBvhrah-wO2bH" width="590" height="200" frameborder="0" style="border:0")
+        //- iframe(src=`https://maps.google.com/maps?q=${lat}, ${lng}&z=14&output=embed` width="590" height="200" frameborder="0" style="border:0")
+        #map
+        script.
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: #{lat}, lng: #{lng}},
+                zoom: 13.5
+                });
+                var marker = new google.maps.Marker({
+                position: {lat: #{lat}-0.0035, lng: #{lng}},
+                map: map,
+                icon: "img/red.png"
+                });
+            }
+
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACjcGssb7pPGZFo7tRn8A47E86XYjRnTc&callback=initMap" async defer)
         .map__bottom
             .map__slogan= "Meet us!"
             .map__address
