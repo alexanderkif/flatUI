@@ -856,6 +856,8 @@
     background-color: #e5e5e5; }
     .stage__line_active {
       background-color: #e75735; }
+    .stage__line:first-child {
+      flex: 0; }
 
 .tick {
   display: inline-block;
