@@ -9,7 +9,7 @@
     &__input {
         display: block;
         margin: 0.25rem 0;
-        flex: 1 auto;
+        flex: 1;
         height: 1.875rem;
         border-radius: 0.2rem 0 0 0.2rem;
         border: 0;
@@ -19,36 +19,36 @@
         font-size: 0.81rem;
         padding-left: 0.75rem;
         outline: none;
+        -webkit-appearance: button;
+        appearance: button;
     }
 
-    &__button {
-        display: block;
-        flex: 0 2.2rem;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 2.2rem;
         margin: 0.25rem 0;
         height: 1.875rem;
         border-radius: 0 0.2rem 0.2rem 0;
         border: 0;
         color: white;
         font-weight: normal;
-        font-size: 0.75rem;
+        font-size: 1.75rem;
         outline: none;
         text-align: center;
         background-color: $color-green;
+        pointer-events: none;
     }
-    
-    &__menu {
-        position: absolute;
-        visibility: hidden;
-        top: 2.125rem;
-        width: 100%;
-        background-color: $color-green;
-        border-radius: 0.125rem;
-        padding: 0.5rem 0;
-        z-index: 10000;
 
-        &_visible {
-            visibility: visible;        
-        }
+    &__button {
+        background: none;
+        border: none;
+        z-index: 1;
+        color: white;
+        position: absolute;
+        right: 0;
+        top: 0.35rem;
+        pointer-events: none;
     }
     
     &__item {

@@ -1,9 +1,10 @@
 
 mixin dropdown(placeholder, options)
-    .dropdown.js-dropdown
-        input.dropdown__input.js-dropdown__input(placeholder=placeholder readonly)
+    .dropdown
+        select.dropdown__input
+            option(selected hidden)= placeholder
+            each option in options
+                option.dropdown__item= option
         button.dropdown__button
             i(class="material-icons icons-size")= 'keyboard_arrow_down'
-        .dropdown__menu.js-dropdown__menu
-            each option in options
-                a(class="dropdown__item")= option
+            
