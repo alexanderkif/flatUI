@@ -21,4 +21,4 @@ class RippleButton {
     }
 }
 
-$('.btn').each((index, element) => new RippleButton(element));
+$('.js-btn').each((index, element) => new RippleButton(element));

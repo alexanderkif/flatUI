@@ -1,6 +1,6 @@
 
 mixin calendar(date, month, year)
     .calendar
-        .calendar__date= date
-        .mydatepicker(data-date=date data-month=month data-year=year)
+        .calendar__date.js-calendar__date= date
+        .mydatepicker.js-mydatepicker(data-date=date data-month=month data-year=year)
         .calendar__footer= 'today'

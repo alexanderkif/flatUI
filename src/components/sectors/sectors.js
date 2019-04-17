@@ -26,4 +26,4 @@ class Sectors {
     }
 }
 
-$('.sectors').each((index, element) => new Sectors(element));
+$('.js-sectors').each((index, element) => new Sectors(element));

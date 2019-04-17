@@ -42,7 +42,7 @@ class Calendar {
 
     @bind
     setDay(e) {
-        $('.calendar__date', this.parentElement).html(parseInt(e.split('/')[1], 10));
+        $('.js-calendar__date', this.parentElement).html(parseInt(e.split('/')[1], 10));
     }
 
     @bind
@@ -51,4 +51,4 @@ class Calendar {
     }
 }
 
-$('.mydatepicker').each((index, element) => new Calendar(element));
+$('.js-mydatepicker').each((index, element) => new Calendar(element));

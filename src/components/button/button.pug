@@ -1,6 +1,6 @@
 
 mixin button(btnlabel, view)
-    - var btnClassString = `btn`
+    - var btnClassString = `btn js-btn`
     each attr in view
         if (attr=='theme_green')
             - btnClassString = `${btnClassString} btn_theme_green`

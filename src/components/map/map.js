@@ -2,7 +2,7 @@ import { bind } from "decko";
 
 class Map {
     constructor(element) {
-        this.mapDiv = element.querySelector('.map__frame');
+        this.mapDiv = element.querySelector('.js-map__frame');
         document.addEventListener('DOMContentLoaded', this.initMap);
     }
 
@@ -20,4 +20,4 @@ class Map {
     }
 }
 
-$('.map').each((index, element) => new Map(element));
+$('.js-map').each((index, element) => new Map(element));

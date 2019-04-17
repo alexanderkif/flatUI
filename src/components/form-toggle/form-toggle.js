@@ -1,4 +1,4 @@
 
 $(document).ready(() => {
-    $('input').lc_switch();
+    $('.js-toggle').lc_switch();
 });
